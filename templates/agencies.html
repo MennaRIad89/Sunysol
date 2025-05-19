@@ -1,0 +1,201 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">
+                    {{ message }}
+                    <button class="close-flash">&times;</button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+<!-- Agency Page Hero -->
+<section class="hero-section agency-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Partner With Us – For Travel Agencies</h1>
+        <h2>Your Trusted Local Expert in the UAE</h2>
+    </div>
+</section>
+
+<!-- Intro Section -->
+<section class="agency-intro-section">
+    <div class="container">
+        <div class="agency-intro">
+            <p class="lead">Looking for a reliable, certified, Spanish-speaking guide in the UAE to elevate your clients' travel experience? You're in the right place.</p>
+            
+            <p>With over 9 years of experience working with leading agencies across Spain and Latin America, I specialize in delivering seamless, high-quality tours tailored to your client's needs — from individual travelers to large corporate or student groups.</p>
+        </div>
+    </div>
+</section>
+
+<!-- What I Offer Section -->
+<section class="agency-offers-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>What I Offer</h2>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="offers-grid">
+            <div class="offer-card">
+                <div class="offer-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <h3>Fully Guided Tours</h3>
+                <p>Complete Spanish-language tours across Dubai, Abu Dhabi & the Northern Emirates.</p>
+            </div>
+            
+            <div class="offer-card">
+                <div class="offer-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Group Management</h3>
+                <p>Full logistics, coordination, and transport for groups of all sizes.</p>
+            </div>
+            
+            <div class="offer-card">
+                <div class="offer-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>VIP & Private</h3>
+                <p>Premium experiences for your most discerning clients.</p>
+            </div>
+            
+            <div class="offer-card">
+                <div class="offer-icon">
+                    <i class="fas fa-ticket-alt"></i>
+                </div>
+                <h3>Attraction Bookings</h3>
+                <p>Desert safaris, museums, cruises, parks, and more.</p>
+            </div>
+            
+            <div class="offer-card">
+                <div class="offer-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Licensed Vehicles</h3>
+                <p>Cars, vans, and luxury buses to suit your needs.</p>
+            </div>
+            
+            <div class="offer-card">
+                <div class="offer-icon">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+                <h3>Custom Itineraries</h3>
+                <p>Tailor-made experiences that match agency requirements.</p>
+            </div>
+            
+            <div class="offer-card">
+                <div class="offer-icon">
+                    <i class="fas fa-life-ring"></i>
+                </div>
+                <h3>On-Ground Support</h3>
+                <p>Immediate assistance for changes or emergencies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Partner Section -->
+<section class="agency-why-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Partner With Me</h2>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="why-partner-container">
+            <div class="why-partner-image">
+                <img src="https://pixabay.com/get/gefc2a85e9bf69cf8f0ed0fd1b2d2fe0daad47de1c9b3bf9d11d5ad4c1c38e60c8dfcc3022c5e1c5e5d99a5a5d75b6d52_1280.jpg" alt="Professional tour guiding" />
+            </div>
+            
+            <div class="why-partner-content">
+                <ul class="why-partner-list">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Trusted by agencies in the UAE, Spain & Latin America</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Deep local knowledge with cultural sensitivity</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Responsive, reliable, and professional</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Certified in both Dubai and Abu Dhabi</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Strong network of licensed guides & trusted suppliers</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Partnership Models Section -->
+<section class="partnership-models-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Partnership Models</h2>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="models-container">
+            <div class="model-card">
+                <div class="model-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <h3>Commission-Based</h3>
+                <p>Competitive commission structure with clear terms and transparent payments.</p>
+            </div>
+            
+            <div class="model-card">
+                <div class="model-icon">
+                    <i class="fas fa-tag"></i>
+                </div>
+                <h3>White-Label Options</h3>
+                <p>Your brand, my service – seamless integration with your company image.</p>
+            </div>
+            
+            <div class="model-card">
+                <div class="model-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>Custom Pricing</h3>
+                <p>Flexible per-tour or package booking options to suit your business model.</p>
+            </div>
+            
+            <div class="model-card">
+                <div class="model-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Long-Term Collaborations</h3>
+                <p>Develop ongoing relationships with preferred status and enhanced benefits.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Let's Work Together Section -->
+<section class="work-together-section">
+    <div class="container">
+        <div class="work-together-content">
+            <h2>Let's Work Together</h2>
+            <p>Ready to discuss a partnership? I'd love to hear from you.</p>
+            <a href="/#contact" class="btn primary-btn">Contact for Agency Collaboration</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

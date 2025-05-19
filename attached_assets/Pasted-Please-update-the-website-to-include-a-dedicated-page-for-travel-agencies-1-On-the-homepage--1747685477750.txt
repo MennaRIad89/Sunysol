@@ -1,0 +1,45 @@
+Please update the website to include a dedicated page for travel agencies.
+
+1. On the homepage:
+- Add a short section titled “🤝 Partner With Us”
+- Include a sentence: “If you're a travel agency or tour operator looking to collaborate in the UAE, click below to learn more about our partnership programs.”
+- Add a button that says “Learn More” linking to a new page: agencies.html
+
+2. Create a new page named agencies.html
+Include the following content in a clean, professional layout:
+
+Header: Partner With Us – For Travel Agencies
+Subheading: Your Trusted Local Expert in the UAE
+
+Intro:
+Looking for a reliable, certified, Spanish-speaking guide in the UAE to elevate your clients’ travel experience? You're in the right place.
+
+With over 9 years of experience working with leading agencies across Spain and Latin America, I specialize in delivering seamless, high-quality tours tailored to your client’s needs — from individual travelers to large corporate or student groups.
+
+Section: What I Offer
+- Fully guided tours in Spanish across Dubai, Abu Dhabi & the Northern Emirates
+- Group tour management: logistics, coordination, transport
+- VIP & Private experiences for premium clients
+- Attraction bookings (desert safaris, museums, cruises, parks, etc.)
+- Licensed vehicles: cars, vans, luxury buses
+- Custom itineraries to match agency requirements
+- On-the-ground support for changes or emergencies
+
+Section: Why Partner With Me
+- Trusted by agencies in the UAE, Spain & Latin America
+- Deep local knowledge with cultural sensitivity
+- Responsive, reliable, and professional
+- Certified in both Dubai and Abu Dhabi
+- Strong network of licensed guides & trusted suppliers
+
+Section: Partnership Models
+- Commission-based programs
+- White-label options (your brand, my service)
+- Custom pricing for per-tour or package bookings
+- Flexible long-term collaborations
+
+Section: Let’s Work Together
+Text: Ready to discuss a partnership? I’d love to hear from you.
+Add a button that links to the contact section on the main page with the label: “Contact for Agency Collaboration”
+
+Make sure the new page uses the same design style, color scheme, and navigation as the main website.
