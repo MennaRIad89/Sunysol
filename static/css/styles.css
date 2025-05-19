@@ -215,7 +215,7 @@ img {
     justify-content: center;
     text-align: center;
     padding: 0 1rem;
-    background: url('https://pixabay.com/get/g594242d647479d7fa54b445176e264a757910d78e73d61c52c3a9e1ea0f2a1b8f9c6fd8ecc9fd984ddaf0736901d0218369e9880a2a70b30a76accc4d679040d_1280.jpg') no-repeat center center/cover;
+    background: url('../images/burj-khalifa.png') no-repeat center center/cover;
     color: var(--white);
 }
 
