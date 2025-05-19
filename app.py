@@ -10,6 +10,10 @@ app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
 def index():
     return render_template('index.html')
 
+@app.route('/agencies')
+def agencies():
+    return render_template('agencies.html')
+
 @app.route('/submit_review', methods=['POST'])
 def submit_review():
     try:

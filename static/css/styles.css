@@ -719,6 +719,189 @@ img {
     box-shadow: 0 5px 15px var(--shadow-color);
 }
 
+/* ===== Agency Page Styles ===== */
+.agency-hero {
+    height: 60vh;
+    min-height: 400px;
+    background: url('https://pixabay.com/get/gbf66b4d31fae4e8e273a6c9c1abe5c8e62cd81ba6ff7eb0a97c8dae4b5b4bbff76fe94b8b1ba3fdd48a15c1d7f3e5e03_1280.jpg') no-repeat center center/cover;
+}
+
+.agency-intro-section {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.agency-intro {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.agency-intro .lead {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+    line-height: 1.5;
+}
+
+.agency-offers-section {
+    padding: 5rem 0;
+    background-color: var(--light-gray);
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.offer-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+.offer-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.offer-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.offer-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.agency-why-section {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.why-partner-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.why-partner-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.why-partner-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.why-partner-image:hover img {
+    transform: scale(1.05);
+}
+
+.why-partner-content {
+    flex: 1;
+}
+
+.why-partner-list {
+    list-style: none;
+}
+
+.why-partner-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.why-partner-list li i {
+    color: var(--accent-color);
+    font-size: 1.25rem;
+    margin-right: 1rem;
+}
+
+.partnership-models-section {
+    padding: 5rem 0;
+    background-color: var(--light-gray);
+}
+
+.models-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.model-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.model-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+.model-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.model-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.model-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.work-together-section {
+    padding: 5rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://pixabay.com/get/g9aeb6d76be6deea2c4e53d39b1bd63d1d1d28ba6fe1486b10dd4fed4bfd8be8f3b1429fb0583f02b3ceb3faca16d3e07_1280.jpg') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+}
+
+.work-together-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.work-together-content h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.work-together-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
 /* ===== Gallery Section ===== */
 .gallery-section {
     padding: 6rem 0;
