@@ -517,6 +517,15 @@ img {
     color: var(--accent-color);
 }
 
+.partnership-intro {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--accent-color);
+    margin: 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(232, 106, 51, 0.2);
+}
+
 .benefit h4 {
     margin-bottom: 0.5rem;
 }
@@ -900,6 +909,15 @@ img {
 .work-together-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+}
+
+.section-divider {
+    height: 1px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(232, 106, 51, 0.3), rgba(0,0,0,0));
+    margin-top: -1rem;
+    margin-bottom: 1rem;
 }
 
 /* ===== Gallery Section ===== */
