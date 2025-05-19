@@ -740,6 +740,28 @@ img {
     background-color: var(--white);
 }
 
+.back-link {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.back-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--button-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background-color: rgba(29, 91, 126, 0.1);
+}
+
+.back-link a:hover {
+    background-color: rgba(29, 91, 126, 0.2);
+    transform: translateX(-5px);
+}
+
 .agency-intro {
     max-width: 900px;
     margin: 0 auto;
@@ -909,6 +931,24 @@ img {
 .work-together-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.back-btn {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.back-btn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
 }
 
 .section-divider {
