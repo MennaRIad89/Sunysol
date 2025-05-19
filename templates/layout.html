@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun y Sol - Your Gateway to the UAE</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="#">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+                            <circle cx="25" cy="25" r="20" fill="#E86A33"/>
+                            <path d="M25 5C14.5066 5 6 13.5066 6 24C6 34.4934 14.5066 43 25 43C35.4934 43 44 34.4934 44 24C44 13.5066 35.4934 5 25 5ZM25 40C16.1634 40 9 32.8366 9 24C9 15.1634 16.1634 8 25 8C33.8366 8 41 15.1634 41 24C41 32.8366 33.8366 40 25 40Z" fill="#1A5D57"/>
+                            <path d="M25 11C17.8203 11 12 16.8203 12 24C12 31.1797 17.8203 37 25 37C32.1797 37 38 31.1797 38 24C38 16.8203 32.1797 11 25 11ZM25 34C19.4772 34 15 29.5228 15 24C15 18.4772 19.4772 14 25 14C30.5228 14 35 18.4772 35 24C35 29.5228 30.5228 34 25 34Z" fill="#FDF8F3"/>
+                        </svg>
+                        <span>Sun y Sol</span>
+                    </a>
+                </div>
+                <div class="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#tours" class="nav-link">Tours</a></li>
+                    <li><a href="#agencies" class="nav-link">For Agencies</a></li>
+                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+                    <circle cx="25" cy="25" r="20" fill="#E86A33"/>
+                    <path d="M25 5C14.5066 5 6 13.5066 6 24C6 34.4934 14.5066 43 25 43C35.4934 43 44 34.4934 44 24C44 13.5066 35.4934 5 25 5ZM25 40C16.1634 40 9 32.8366 9 24C9 15.1634 16.1634 8 25 8C33.8366 8 41 15.1634 41 24C41 32.8366 33.8366 40 25 40Z" fill="#1A5D57"/>
+                    <path d="M25 11C17.8203 11 12 16.8203 12 24C12 31.1797 17.8203 37 25 37C32.1797 37 38 31.1797 38 24C38 16.8203 32.1797 11 25 11ZM25 34C19.4772 34 15 29.5228 15 24C15 18.4772 19.4772 14 25 14C30.5228 14 35 18.4772 35 24C35 29.5228 30.5228 34 25 34Z" fill="#FDF8F3"/>
+                </svg>
+                <h3>Sun y Sol</h3>
+            </div>
+            <div class="footer-links">
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#tours">Tours</a></li>
+                        <li><a href="#agencies">For Agencies</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Sun y Sol. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

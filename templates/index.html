@@ -1,0 +1,396 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">
+                    {{ message }}
+                    <button class="close-flash">&times;</button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+<!-- Home Section -->
+<section id="home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Your Personal Gateway to the UAE</h1>
+        <h2>With a Spanish-Speaking Expert by Your Side</h2>
+        <p>Experience the UAE through the eyes of a local expert. Discover the hidden gems and iconic landmarks with personalized tours tailored to your interests.</p>
+        <div class="hero-buttons">
+            <a href="#tours" class="btn primary-btn">Explore Our Tours</a>
+            <a href="#contact" class="btn secondary-btn">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>About Your Guide</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://pixabay.com/get/g447595d41fa6630883a2466429ff3297cc795acb49b43158bec806320027990ef5e4bca5954865a900dcfe8bd9cbdc7359643b3547bb737e7d2774c8e0a5e02f_1280.jpg" alt="Menna, your tour guide" />
+            </div>
+            <div class="about-text">
+                <h3>Meet Menna</h3>
+                <p>With 9 years of experience as a certified tour guide in the UAE, Menna brings her passion for culture and history to every tour. Originally from Egypt, she is fluent in both Spanish and English, allowing her to connect deeply with visitors from around the world.</p>
+                <p>Menna specializes in creating personalized experiences that go beyond the typical tourist attractions. Her extensive knowledge of local customs, hidden gems, and authentic experiences ensures that every tour is unique and memorable.</p>
+                <div class="guide-credentials">
+                    <div class="credential">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certified UAE Tour Guide</span>
+                    </div>
+                    <div class="credential">
+                        <i class="fas fa-language"></i>
+                        <span>Fluent in Spanish & English</span>
+                    </div>
+                    <div class="credential">
+                        <i class="fas fa-history"></i>
+                        <span>9 Years of Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tours Section -->
+<section id="tours" class="tours-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Featured Tours</h2>
+            <div class="divider"></div>
+            <p>All tours available as Private, Group, or VIP experiences</p>
+        </div>
+        <div class="tours-grid">
+            <!-- Dubai City Tour -->
+            <div class="tour-card">
+                <div class="tour-image">
+                    <img src="https://pixabay.com/get/g27f944550afdaed143d849f5fc43a54bd38bd8a9d314de88229576cf4b53a4b467f1abf738418898d837ec559b38fa4b7f1009ce6d32d98d00095b9802fa279a_1280.jpg" alt="Dubai Skyline" />
+                </div>
+                <div class="tour-content">
+                    <h3>Dubai City Tour</h3>
+                    <div class="tour-highlights">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Burj Khalifa Observation Deck</li>
+                            <li><i class="fas fa-check-circle"></i> Dubai Mall & Fountain Show</li>
+                            <li><i class="fas fa-check-circle"></i> Historical Al Fahidi District</li>
+                            <li><i class="fas fa-check-circle"></i> Traditional Abra Ride on Dubai Creek</li>
+                            <li><i class="fas fa-check-circle"></i> Gold & Spice Souks</li>
+                        </ul>
+                    </div>
+                    <div class="tour-options">
+                        <span class="tour-option">Private</span>
+                        <span class="tour-option">Group</span>
+                        <span class="tour-option">VIP</span>
+                    </div>
+                    <a href="#contact" class="btn primary-btn">Inquire Now</a>
+                </div>
+            </div>
+
+            <!-- Abu Dhabi City Tour -->
+            <div class="tour-card">
+                <div class="tour-image">
+                    <img src="https://pixabay.com/get/gd94d08a679ea07ee6d918b3b65021ea02d4bda6a3d4c30cbc0fce064f0c302d6722c5c52332ec32ca001192b9afc4acb0227325d62b06031ff85abb79fef05b0_1280.jpg" alt="Sheikh Zayed Grand Mosque" />
+                </div>
+                <div class="tour-content">
+                    <h3>Abu Dhabi City Tour</h3>
+                    <div class="tour-highlights">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Sheikh Zayed Grand Mosque</li>
+                            <li><i class="fas fa-check-circle"></i> Louvre Abu Dhabi</li>
+                            <li><i class="fas fa-check-circle"></i> Heritage Village</li>
+                            <li><i class="fas fa-check-circle"></i> Qasr Al Watan Presidential Palace</li>
+                            <li><i class="fas fa-check-circle"></i> Corniche & Dates Market</li>
+                        </ul>
+                    </div>
+                    <div class="tour-options">
+                        <span class="tour-option">Private</span>
+                        <span class="tour-option">Group</span>
+                        <span class="tour-option">VIP</span>
+                    </div>
+                    <a href="#contact" class="btn primary-btn">Inquire Now</a>
+                </div>
+            </div>
+
+            <!-- Northern Emirates Tour -->
+            <div class="tour-card">
+                <div class="tour-image">
+                    <img src="https://pixabay.com/get/gb4057f903551ee3880fb71acf01a9128505eb80ae7d434ff024985cdf3d5e6b37d2dcca5b9a2a2f5371040e50fd4f9aa63405bf6bcdd17f03abb983e567b9606_1280.jpg" alt="Northern Emirates Landscape" />
+                </div>
+                <div class="tour-content">
+                    <h3>Northern Emirates Tour</h3>
+                    <div class="tour-highlights">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Sharjah Arts & Heritage Areas</li>
+                            <li><i class="fas fa-check-circle"></i> Ajman Museum</li>
+                            <li><i class="fas fa-check-circle"></i> Fujairah Fort & Heritage Village</li>
+                            <li><i class="fas fa-check-circle"></i> Ras Al Khaimah Mountains</li>
+                            <li><i class="fas fa-check-circle"></i> Umm Al Quwain Pearl History</li>
+                        </ul>
+                    </div>
+                    <div class="tour-options">
+                        <span class="tour-option">Private</span>
+                        <span class="tour-option">Group</span>
+                        <span class="tour-option">VIP</span>
+                    </div>
+                    <a href="#contact" class="btn primary-btn">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Travel Agencies Section -->
+<section id="agencies" class="agencies-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>For Travel Agencies</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="agencies-content">
+            <div class="agencies-image">
+                <img src="https://pixabay.com/get/g460079e9efa38f123832b3b195922b83205104e528e985aed5efa11b141b14eaa74f21189128e05da1ea935458989684c1974f85ef2707fe47b7c5a730831510_1280.jpg" alt="Travel agency collaboration" />
+            </div>
+            <div class="agencies-text">
+                <h3>Partner With Us</h3>
+                <p>Sun y Sol offers tailored B2B services for travel agencies looking to provide exceptional UAE experiences to their Spanish-speaking clients. Our collaborative approach ensures seamless logistics, competitive commissions, and personalized service.</p>
+                
+                <div class="agency-benefits">
+                    <div class="benefit">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Collaboration</h4>
+                        <p>Custom itineraries designed to match your clients' preferences and your agency's brand.</p>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-percentage"></i>
+                        <h4>Commissions</h4>
+                        <p>Competitive commission structure with volume-based incentives for regular partners.</p>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-truck"></i>
+                        <h4>Logistics</h4>
+                        <p>Full support with transportation, accommodation recommendations, and special arrangements.</p>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h4>Bookings</h4>
+                        <p>Flexible booking system with priority reservations for agency partners.</p>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="btn primary-btn">Discuss Partnership</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reviews Section -->
+<section id="reviews" class="reviews-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Guest Reviews</h2>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="reviews-container">
+            <div class="reviews-carousel">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="review-info">
+                            <h4>María Rodriguez</h4>
+                            <p>Spain • Dubai City Tour</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Encontrar una guía que hablara español fue increíble. Menna conoce Dubai perfectamente y nos mostró lugares que nunca hubiéramos encontrado por nuestra cuenta. ¡Una experiencia inolvidable!"</p>
+                        <p class="review-translation">"Finding a Spanish-speaking guide was incredible. Menna knows Dubai perfectly and showed us places we would never have found on our own. An unforgettable experience!"</p>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="review-info">
+                            <h4>Carlos Mendoza</h4>
+                            <p>Mexico • Abu Dhabi City Tour</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"El tour por Abu Dhabi superó todas nuestras expectativas. La Mezquita Sheikh Zayed es impresionante, y Menna explicó todo el contexto cultural e histórico que hizo que nuestra visita fuera mucho más significativa."</p>
+                        <p class="review-translation">"The Abu Dhabi tour exceeded all our expectations. The Sheikh Zayed Mosque is impressive, and Menna explained all the cultural and historical context that made our visit much more meaningful."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-form-container">
+                <h3>Share Your Experience</h3>
+                <form action="/submit_review" method="post" class="review-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tour">Tour Taken</label>
+                        <select id="tour" name="tour" required>
+                            <option value="">Select a tour...</option>
+                            <option value="Dubai City Tour">Dubai City Tour</option>
+                            <option value="Abu Dhabi City Tour">Abu Dhabi City Tour</option>
+                            <option value="Northern Emirates Tour">Northern Emirates Tour</option>
+                            <option value="Custom Tour">Custom Tour</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Your Experience</label>
+                        <textarea id="comment" name="comment" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <div class="divider"></div>
+            <p>Ready to explore the UAE with us? Have questions about our tours? We'd love to hear from you!</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Start Planning Your Adventure</h3>
+                <p>Whether you're just starting to plan your trip or ready to book, we're here to help make your UAE experience unforgettable. No pressure, just friendly advice and expert guidance.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="method-details">
+                            <h4>WhatsApp</h4>
+                            <p>For quick questions and immediate assistance</p>
+                            <a href="https://wa.me/1234567890" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div class="method-details">
+                            <h4>Email</h4>
+                            <p>For detailed inquiries and bookings</p>
+                            <a href="mailto:info@sunysoltravel.com">info@sunysoltravel.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-follow">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <h3>Send Us a Message</h3>
+                <form action="/send_message" method="post" class="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="traveler-type">I am a:</label>
+                        <select id="traveler-type" name="traveler_type" required>
+                            <option value="">Select an option...</option>
+                            <option value="Solo Traveler">Solo Traveler</option>
+                            <option value="Couple">Couple</option>
+                            <option value="Family">Family with Kids</option>
+                            <option value="Group">Group of Friends</option>
+                            <option value="Travel Agency">Travel Agency</option>
+                            <option value="Corporate">Corporate Client</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section (Additional) -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Experience the UAE</h2>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://pixabay.com/get/g8ad8bc6b01885255b35a4d5923fa2d9b95f905a14758a11066907c5f229b8d3b40f7b4d835e01154546f6f8634a959862e6d0b56c291d41623311d99379bc68c_1280.jpg" alt="Dubai Skyline at Night">
+            </div>
+            <div class="gallery-item">
+                <img src="https://pixabay.com/get/g25c763fd15e6e978cedefda98e0bd9543a9cc2c7382ccd0040795a1681aa4ce9c275ab6e409d45662850f4bb1dbe4fbd2137fb6506ff32c03b4993421e90b773_1280.jpg" alt="Abu Dhabi Grand Mosque">
+            </div>
+            <div class="gallery-item">
+                <img src="https://pixabay.com/get/gad6e9e58c5ccbc638a309599b78f002eb7f5c5c53f67190fb0485ef51e503585086a765a3f08ddc25542d90555a281baa4cba36c84b6910404dc84f38134f2e8_1280.jpg" alt="Desert Landscape">
+            </div>
+            <div class="gallery-item">
+                <img src="https://pixabay.com/get/g575c0e5423427757d4d1c09fd50a409f5b86cdd8e099bedc950f6db42f238a61b2a530ec8a1b5a42dfdcdeae26e11405ce91107aa9d99c0e1198a597df1e80b8_1280.jpg" alt="Tourist Experience">
+            </div>
+            <div class="gallery-item">
+                <img src="https://pixabay.com/get/g47fabaf3fbca3fcd9cda8d9b7a6751369eb7131feafb93da2bfc22fade5eb6943004fe00bd845abccf5c4d673c38a8b402045b74880281f4ce497a504c22cd47_1280.jpg" alt="Dubai Marina">
+            </div>
+            <div class="gallery-item">
+                <img src="https://pixabay.com/get/g8bdd7c0a78207b18f112ff48f1c463296f2a93d2ce5e32b83a1619744529fd9e1d54c2ecaf2807cd2bd796d0c53d06f5a5de4345d04b93099328bcfe16643409_1280.jpg" alt="Desert Safari">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
