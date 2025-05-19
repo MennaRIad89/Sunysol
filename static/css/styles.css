@@ -1,14 +1,17 @@
 /* ===== Base Styles ===== */
 :root {
-    --bg-color: #FDF8F3;
+    --bg-color: #FFF8E9;
     --accent-color: #E86A33;
-    --text-color: #4B4B4B;
-    --button-color: #1A5D57;
+    --text-color: #2D3142;
+    --button-color: #1D5B7E;
     --white: #FFFFFF;
-    --light-gray: #F5F5F5;
-    --border-color: #DDDDDD;
+    --light-gray: #F9F2E2;
+    --border-color: #E0D4C1;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease-in-out;
+    --secondary-accent: #D2AB67;
+    --footer-bg: #2D3142;
+    --footer-text: #F9F2E2;
 }
 
 * {
@@ -381,7 +384,7 @@ img {
 
 .tour-option {
     padding: 0.25rem 0.75rem;
-    background-color: rgba(232, 106, 51, 0.1);
+    background-color: rgba(232, 106, 51, 0.15);
     color: var(--accent-color);
     font-size: 0.75rem;
     font-weight: 600;
@@ -670,8 +673,8 @@ img {
 
 /* ===== Footer ===== */
 footer {
-    background-color: #2A2A2A;
-    color: var(--white);
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
     padding: 4rem 0 2rem;
 }
 
