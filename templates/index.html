@@ -20,12 +20,12 @@
 <section id="home" class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h1>Your Personal Gateway to the UAE</h1>
-        <h2>With a Spanish, Arabic and English Speaking Expert by Your Side</h2>
-        <p>Discover the magic of Dubai, Abu Dhabi, and the Northern Emirates through immersive Group, Private or VIP tours designed especially for Spanish-speaking travelers. Trusted by top travel agencies for over 9 years.</p>
+        <h1>{{ g.translations.hero_title }}</h1>
+        <h2>{{ g.translations.hero_subtitle }}</h2>
+        <p>{{ g.translations.hero_description }}</p>
         <div class="hero-buttons">
-            <a href="#tours" class="btn primary-btn">Explore Our Tours</a>
-            <a href="#contact" class="btn secondary-btn">Contact Us</a>
+            <a href="#tours" class="btn primary-btn">{{ g.translations.explore_tours }}</a>
+            <a href="#contact" class="btn secondary-btn">{{ g.translations.contact_us }}</a>
         </div>
     </div>
 </section>
@@ -34,7 +34,7 @@
 <section id="about" class="about-section">
     <div class="container">
         <div class="section-header" id="updated-section">
-            <h2>Meet Your Guide</h2>
+            <h2>{{ g.translations.about_title }}</h2>
             <div class="divider"></div>
         </div>
         <div class="about-content">
@@ -42,9 +42,9 @@
                 <img src="https://pixabay.com/get/g447595d41fa6630883a2466429ff3297cc795acb49b43158bec806320027990ef5e4bca5954865a900dcfe8bd9cbdc7359643b3547bb737e7d2774c8e0a5e02f_1280.jpg" alt="Menna, your tour guide" />
             </div>
             <div class="about-text">
-                <h3>Hi, I'm Menna — your guide and your friend in the Emirates.</h3>
+                <h3>{{ g.translations.about_subtitle }}</h3>
                 
-                <p class="about-intro">I'm an Egyptian tour guide, certified in both Dubai and Abu Dhabi, and I've called the UAE home for over 9 years. During that time, I've guided hundreds of Spanish-speaking travelers through the heart of this fascinating country — from the golden dunes of the desert to the grandeur of the Grand Mosque.</p>
+                <p class="about-intro">{{ g.translations.about_description }}</p>
                 
                 <p>I speak Spanish and English fluently, and I believe that great tours aren't just about places — they're about <span class="highlight">people, stories, and shared experiences</span>. My approach is warm, personal, and flexible. Whether you're a solo traveler, a family, or a group, I'll make sure you feel at home — and leave with unforgettable memories.</p>
                 

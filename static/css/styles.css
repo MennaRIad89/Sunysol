@@ -1222,6 +1222,16 @@ footer {
         display: flex;
     }
     
+    .language-toggle {
+        position: absolute;
+        top: 20px;
+        right: 70px;
+        margin: 0;
+        z-index: 100;
+        background-color: var(--white);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
     .nav-menu {
         position: fixed;
         right: -100%;
