@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ g.language }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun y Sol - Your Gateway to the UAE</title>
+    <title>{{ g.translations.site_title }}</title>
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,18 +25,27 @@
                         <img src="{{ url_for('static', filename='images/logo.png', v='1.2') }}" alt="Sun y Sol" width="225" class="logo-img">
                     </a>
                 </div>
+                <div class="language-toggle">
+                    <a href="{{ url_for('switch_language', language='en') }}" class="language-btn {% if g.language == 'en' %}active{% endif %}" aria-label="Switch to English">
+                        <span>EN</span>
+                    </a>
+                    <span class="language-separator">|</span>
+                    <a href="{{ url_for('switch_language', language='es') }}" class="language-btn {% if g.language == 'es' %}active{% endif %}" aria-label="Switch to Spanish">
+                        <span>ES</span>
+                    </a>
+                </div>
                 <div class="menu-toggle">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="/#home" class="nav-link">Home</a></li>
-                    <li><a href="/#about" class="nav-link">About</a></li>
-                    <li><a href="/#tours" class="nav-link">Tours</a></li>
-                    <li><a href="/#agencies" class="nav-link">For Agencies</a></li>
-                    <li><a href="/#reviews" class="nav-link">Reviews</a></li>
-                    <li><a href="/#contact" class="nav-link">Contact</a></li>
+                    <li><a href="/#home" class="nav-link">{{ g.translations.nav_home }}</a></li>
+                    <li><a href="/#about" class="nav-link">{{ g.translations.nav_about }}</a></li>
+                    <li><a href="/#tours" class="nav-link">{{ g.translations.nav_tours }}</a></li>
+                    <li><a href="/#agencies" class="nav-link">{{ g.translations.nav_agencies }}</a></li>
+                    <li><a href="/#reviews" class="nav-link">{{ g.translations.nav_reviews }}</a></li>
+                    <li><a href="/#contact" class="nav-link">{{ g.translations.nav_contact }}</a></li>
                 </ul>
             </div>
         </nav>
