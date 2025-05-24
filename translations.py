@@ -128,7 +128,14 @@ TRANSLATIONS = {
         'entrance_fees': 'Entrance fees to attractions',
         'meals': 'Meals (unless specified)',
         'personal_expenses': 'Personal expenses and shopping',
-        'tips_gratuities': 'Tips and gratuities'
+        'tips_gratuities': 'Tips and gratuities',
+        
+        # Abu Dhabi Tours page translations
+        'abudhabi_adventure_title': 'Choose Your Abu Dhabi Adventure',
+        'abudhabi_heritage_tour': 'Abu Dhabi Full-Day City Tour – Heritage Edition',
+        'abudhabi_heritage_description': 'Explore Abu Dhabi\'s rich cultural heritage from the magnificent Sheikh Zayed Grand Mosque to traditional Emirati villages.',
+        'abudhabi_louvre_tour': 'Abu Dhabi Full-Day City Tour – Louvre Edition',
+        'abudhabi_louvre_description': 'Combine Abu Dhabi\'s cultural landmarks with world-class art at the stunning Louvre Abu Dhabi museum.'
     },
     
     'es': {
@@ -260,6 +267,13 @@ TRANSLATIONS = {
         'entrance_fees': 'Tarifas de entrada a atracciones',
         'meals': 'Comidas (a menos que se especifique)',
         'personal_expenses': 'Gastos personales y compras',
-        'tips_gratuities': 'Propinas y gratificaciones'
+        'tips_gratuities': 'Propinas y gratificaciones',
+        
+        # Abu Dhabi Tours page translations
+        'abudhabi_adventure_title': 'Elige Tu Aventura en Abu Dhabi',
+        'abudhabi_heritage_tour': 'Tour de Día Completo en Abu Dhabi – Edición Patrimonio',
+        'abudhabi_heritage_description': 'Explora el rico patrimonio cultural de Abu Dhabi desde la magnífica Mezquita Sheikh Zayed hasta las aldeas tradicionales emiratíes.',
+        'abudhabi_louvre_tour': 'Tour de Día Completo en Abu Dhabi – Edición Louvre',
+        'abudhabi_louvre_description': 'Combina los monumentos culturales de Abu Dhabi con arte de clase mundial en el impresionante museo Louvre Abu Dhabi.'
     }
 }

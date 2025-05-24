@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ g.translations.abudhabi_adventure_title }} - Sun y Sol{% endblock %}
+
+{% block content %}
+<!-- Abu Dhabi Tours Header -->
+<section class="dubai-tours-header">
+    <div class="container">
+        <div class="tours-header-content">
+            <h1>{{ g.translations.abudhabi_adventure_title }}</h1>
+            <p>{{ g.translations.tours_include_guide }}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Abu Dhabi Tours Grid -->
+<section class="dubai-tours-content">
+    <div class="container">
+        <div class="dubai-tours-grid">
+            
+            <!-- Abu Dhabi Heritage Edition Tour -->
+            <div class="tour-preview-card" data-tour="heritage">
+                <div class="tour-image">
+                    <img src="{{ url_for('static', filename='images/sheikh-zayed-mosque.jpg') }}" alt="Sheikh Zayed Grand Mosque">
+                </div>
+                <div class="tour-preview-content">
+                    <h3>{{ g.translations.abudhabi_heritage_tour }}</h3>
+                    <p>{{ g.translations.abudhabi_heritage_description }}</p>
+                    <div class="tour-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 8-9 {{ g.translations.hours }}</span>
+                        <span class="pickup"><i class="fas fa-map-marker-alt"></i> Dubai {{ g.translations.hotel_pickup }}</span>
+                    </div>
+                    <button class="toggle-details-btn" onclick="toggleTourDetails('heritage')">
+                        <span class="btn-text">View Details</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Heritage Tour Detailed Content -->
+            <div class="tour-detailed-content" id="heritage-details">
+                <div class="tour-section">
+                    <h4><i class="fas fa-route"></i> {{ g.translations.itinerary }}</h4>
+                    <ul class="tour-list">
+                        <li>Sheikh Zayed Grand Mosque – One of the world's largest and most beautiful mosques</li>
+                        <li>Heritage Village – Traditional Emirati culture and crafts demonstration</li>
+                        <li>Corniche Road – Scenic waterfront drive with stunning city views</li>
+                        <li>Emirates Palace (Photo Stop) – Luxurious 7-star hotel</li>
+                        <li>Qasr Al Watan Presidential Palace – Architectural marvel and cultural landmark</li>
+                        <li>Marina Mall – Shopping and dining with Ferrari World views</li>
+                        <li>Yas Island Drive – Modern entertainment district</li>
+                        <li>Saadiyat Island – Cultural district and pristine beaches</li>
+                    </ul>
+                </div>
+
+                <div class="tour-includes-grid">
+                    <div class="included">
+                        <h4><i class="fas fa-check-circle"></i> {{ g.translations.includes }}</h4>
+                        <ul class="tour-list">
+                            <li>{{ g.translations.hotel_pickup_dropoff }}</li>
+                            <li>{{ g.translations.air_conditioned_transport }}</li>
+                            <li>{{ g.translations.professional_guide }}</li>
+                            <li>Sheikh Zayed Grand Mosque guided tour</li>
+                            <li>{{ g.translations.bottled_water }}</li>
+                            <li>All taxes and charges</li>
+                        </ul>
+                    </div>
+                    <div class="not-included">
+                        <h4><i class="fas fa-times-circle"></i> {{ g.translations.excludes }}</h4>
+                        <ul class="tour-list">
+                            <li>{{ g.translations.entrance_fees }}</li>
+                            <li>{{ g.translations.meals }}</li>
+                            <li>{{ g.translations.personal_expenses }}</li>
+                            <li>{{ g.translations.tips_gratuities }}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tour-action">
+                    <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                </div>
+            </div>
+
+            <!-- Abu Dhabi Louvre Edition Tour -->
+            <div class="tour-preview-card" data-tour="louvre">
+                <div class="tour-image">
+                    <img src="{{ url_for('static', filename='images/louvre-abu-dhabi.jpg') }}" alt="Louvre Abu Dhabi">
+                </div>
+                <div class="tour-preview-content">
+                    <h3>{{ g.translations.abudhabi_louvre_tour }}</h3>
+                    <p>{{ g.translations.abudhabi_louvre_description }}</p>
+                    <div class="tour-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 8-9 {{ g.translations.hours }}</span>
+                        <span class="pickup"><i class="fas fa-map-marker-alt"></i> Dubai {{ g.translations.hotel_pickup }}</span>
+                    </div>
+                    <button class="toggle-details-btn" onclick="toggleTourDetails('louvre')">
+                        <span class="btn-text">View Details</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Louvre Tour Detailed Content -->
+            <div class="tour-detailed-content" id="louvre-details">
+                <div class="tour-section">
+                    <h4><i class="fas fa-route"></i> {{ g.translations.itinerary }}</h4>
+                    <ul class="tour-list">
+                        <li>Sheikh Zayed Grand Mosque – Architectural masterpiece and spiritual landmark</li>
+                        <li>Louvre Abu Dhabi – World-class art museum with global collections</li>
+                        <li>Saadiyat Island Cultural District – Hub of arts and culture</li>
+                        <li>Corniche Road – Panoramic city and sea views</li>
+                        <li>Emirates Palace (Photo Stop) – Iconic luxury hotel</li>
+                        <li>Qasr Al Watan Presidential Palace – Symbol of governance and culture</li>
+                        <li>Marina Mall – Modern shopping destination</li>
+                        <li>Yas Island – Entertainment and leisure district</li>
+                    </ul>
+                </div>
+
+                <div class="tour-includes-grid">
+                    <div class="included">
+                        <h4><i class="fas fa-check-circle"></i> {{ g.translations.includes }}</h4>
+                        <ul class="tour-list">
+                            <li>{{ g.translations.hotel_pickup_dropoff }}</li>
+                            <li>{{ g.translations.air_conditioned_transport }}</li>
+                            <li>{{ g.translations.professional_guide }}</li>
+                            <li>Sheikh Zayed Grand Mosque guided tour</li>
+                            <li>Louvre Abu Dhabi entry ticket</li>
+                            <li>{{ g.translations.bottled_water }}</li>
+                            <li>All taxes and charges</li>
+                        </ul>
+                    </div>
+                    <div class="not-included">
+                        <h4><i class="fas fa-times-circle"></i> {{ g.translations.excludes }}</h4>
+                        <ul class="tour-list">
+                            <li>{{ g.translations.meals }}</li>
+                            <li>{{ g.translations.personal_expenses }}</li>
+                            <li>{{ g.translations.tips_gratuities }}</li>
+                            <li>Additional attraction entries</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tour-action">
+                    <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
