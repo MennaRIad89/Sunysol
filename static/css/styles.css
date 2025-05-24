@@ -294,42 +294,17 @@ img {
 }
 
 /* Dubai Tours Page Styles */
-.page-hero {
-    height: 300px;
-    background: linear-gradient(135deg, #D2691E, #FF8C00);
-    display: flex;
-    align-items: center;
-    color: white;
+.simple-page-header {
+    background-color: white;
+    padding: 40px 0 20px 0;
+    text-align: center;
 }
 
-.hero-overlay {
-    width: 100%;
-}
-
-.page-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
+.simple-page-header h1 {
+    color: #8B4513;
+    font-size: 2.5rem;
     font-weight: 700;
-}
-
-.page-hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    opacity: 0.9;
-}
-
-.breadcrumb {
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-.breadcrumb a {
-    color: white;
-    text-decoration: none;
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
+    margin: 0;
 }
 
 .tours-detail-section {
