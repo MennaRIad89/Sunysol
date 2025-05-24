@@ -21,12 +21,12 @@ TRANSLATIONS = {
         
         # About section
         'about_title': 'Meet Your Guide',
-        'about_subtitle': 'Hello, I\'m Menna!',
-        'about_description': 'Born in Egypt and now proudly calling Dubai home, I\'m a certified tour guide with over 9 years of experience showcasing the beauty and wonders of the UAE.',
-        'about_credentials': 'Certified by both Dubai Tourism and Abu Dhabi Tourism & Culture Authority',
-        'about_languages': 'Fluent in Spanish, English, and Arabic',
-        'about_expertise': 'Specialized in cultural, historical, and modern tours across the Emirates',
-        'about_quote': '"My mission is to create unforgettable experiences that go beyond typical tourist attractions, connecting you with the heart and soul of the UAE."',
+        'about_subtitle': 'Hi, I\'m Menna — your guide and your friend in the Emirates.',
+        'about_description': 'I\'m an Egyptian tour guide, certified in both Dubai and Abu Dhabi, and I\'ve called the UAE home for over 9 years. During that time, I\'ve guided hundreds of Spanish-speaking travelers through the heart of this fascinating country — from the golden dunes of the desert to the grandeur of the Grand Mosque.',
+        'about_quote': 'I speak Spanish and English fluently, and I believe that great tours aren\'t just about places — they\'re about people, stories, and shared experiences. My approach is warm, personal, and flexible. Whether you\'re a solo traveler, a family, or a group, I\'ll make sure you feel at home — and leave with unforgettable memories.',
+        'about_credentials': 'Certified Tour Guide in Dubai & Abu Dhabi',
+        'about_languages': 'Fluent in Spanish, English & Arabic',
+        'about_expertise': 'Private, Group or VIP Tours',
         
         # Tours section
         'tours_title': 'Our Tours',
@@ -153,12 +153,12 @@ TRANSLATIONS = {
         
         # About section
         'about_title': 'Conoce a Tu Guía',
-        'about_subtitle': '¡Hola, soy Menna!',
-        'about_description': 'Nacida en Egipto y ahora orgullosamente establecida en Dubái, soy una guía turística certificada con más de 9 años de experiencia mostrando la belleza y las maravillas de los EAU.',
-        'about_credentials': 'Certificada por Dubai Tourism y la Autoridad de Turismo y Cultura de Abu Dhabi',
-        'about_languages': 'Fluente en español, inglés y árabe',
-        'about_expertise': 'Especializada en tours culturales, históricos y modernos por los Emiratos',
-        'about_quote': '"Mi misión es crear experiencias inolvidables que van más allá de las atracciones turísticas típicas, conectándote con el corazón y el alma de los EAU."',
+        'about_subtitle': 'Hola, soy Menna — tu guía y tu amiga en los Emiratos.',
+        'about_description': 'Soy una guía turística egipcia, certificada tanto en Dubái como en Abu Dhabi, y he llamado hogar a los EAU durante más de 9 años. Durante ese tiempo, he guiado a cientos de viajeros hispanohablantes a través del corazón de este fascinante país — desde las dunas doradas del desierto hasta la grandeza de la Gran Mezquita.',
+        'about_quote': 'Hablo español e inglés con fluidez, y creo que los grandes tours no son solo sobre lugares — son sobre personas, historias y experiencias compartidas. Mi enfoque es cálido, personal y flexible. Ya seas un viajero solo, una familia o un grupo, me aseguraré de que te sientas como en casa — y te vayas con recuerdos inolvidables.',
+        'about_credentials': 'Guía Turística Certificada en Dubái y Abu Dhabi',
+        'about_languages': 'Fluente en Español, Inglés y Árabe',
+        'about_expertise': 'Tours Privados, Grupales o VIP',
         
         # Tours section
         'tours_title': 'Nuestros Tours',
