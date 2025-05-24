@@ -334,7 +334,16 @@ img {
 
 .tours-detail-section {
     padding: 80px 0;
-    background-color: #fff;
+    background-color: #fff !important;
+}
+
+/* Force white background for Dubai tours page */
+body.dubai-tours-page {
+    background-color: #fff !important;
+}
+
+.dubai-tours-page .container {
+    background-color: #fff !important;
 }
 
 /* Tour Preview Cards */
