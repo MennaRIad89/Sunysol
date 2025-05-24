@@ -199,6 +199,100 @@ img {
     color: white;
 }
 
+/* Small City Blocks Row */
+.city-blocks-row {
+    display: flex;
+    gap: 25px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.city-block-small {
+    flex: 1;
+    max-width: 300px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.city-block-small:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    text-decoration: none;
+}
+
+.city-image-small {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.city-image-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.city-block-small:hover .city-image-small img {
+    transform: scale(1.05);
+}
+
+.city-overlay-small {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.city-block-small:hover .city-overlay-small {
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+
+.city-overlay-small h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+.city-overlay-small i {
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.city-block-small:hover .city-overlay-small i {
+    transform: translateX(3px);
+}
+
+/* Mobile responsiveness for small city blocks */
+@media (max-width: 768px) {
+    .city-blocks-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .city-block-small {
+        max-width: 100%;
+        height: 150px;
+    }
+    
+    .city-overlay-small h3 {
+        font-size: 1rem;
+    }
+}
+
 .language-btn:hover:not(.active) {
     background-color: rgba(0, 0, 0, 0.05);
     color: var(--accent-color);
