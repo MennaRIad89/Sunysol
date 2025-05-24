@@ -16,7 +16,7 @@ main {
 <!-- Simple Page Header -->
 <div class="simple-page-header">
     <div class="container">
-        <h1>Choose Your Dubai Adventure</h1>
+        <h1>{{ g.translations.dubai_adventure_title }}</h1>
     </div>
 </div>
 
@@ -24,7 +24,7 @@ main {
 <section class="tours-detail-section" style="background-color: white;">
     <div class="container">
         <div class="section-header">
-            <p>All tours include professional English/Spanish-speaking guide and modern air-conditioned transport</p>
+            <p>{{ g.translations.tours_include_guide }}</p>
         </div>
 
         <div class="tour-preview-cards">
@@ -34,11 +34,11 @@ main {
                     <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dubai Modern Tour" />
                 </div>
                 <div class="tour-preview-content">
-                    <h3>Dubai Half Day Modern Tour</h3>
-                    <p>Experience Dubai's futuristic skyline, luxury hotels, and iconic landmarks including Burj Khalifa, Palm Jumeirah, and Dubai Marina.</p>
+                    <h3>{{ g.translations.dubai_modern_tour }}</h3>
+                    <p>{{ g.translations.dubai_modern_description }}</p>
                     <div class="tour-preview-meta">
-                        <span><i class="fas fa-clock"></i> 4-5 Hours</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Hotel Pick-up</span>
+                        <span><i class="fas fa-clock"></i> 4-5 {{ g.translations.hours }}</span>
+                        <span><i class="fas fa-map-marker-alt"></i> {{ g.translations.hotel_pickup }}</span>
                     </div>
                 </div>
                 <div class="tour-preview-toggle">
