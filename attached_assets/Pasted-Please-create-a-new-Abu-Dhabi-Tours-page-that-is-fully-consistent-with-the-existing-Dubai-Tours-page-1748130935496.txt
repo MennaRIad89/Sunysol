@@ -1,0 +1,112 @@
+Please create a new Abu Dhabi Tours page that is fully consistent with the existing Dubai Tours page. Follow the same layout, design, and structure exactly as it is on the Dubai Tours page. This includes:
+
+A simple page header with a white background and the page title.
+
+Tour preview cards for each tour, with an image, tour title, short description, duration, pickup information, and a toggle icon to expand.
+
+Expandable sections for each tour with:
+
+The itinerary in bullet points.
+
+The "What's Included" and "What's Not Included" sections in two columns with tick and cross icons.
+
+A "Book This Tour" button linking to the contact section.
+
+Use the same fonts, button styles, layout, and expand/collapse animations as the Dubai Tours page.
+
+For the two tours, use these exact details:
+
+Full-Day Abu Dhabi City Tour – Heritage Edition
+Duration: 8 to 9 hours
+Pick-up & Drop-off: Included (from your hotel in Dubai)
+
+Tour Itinerary
+
+Sheikh Zayed Grand Mosque – Visit the UAE’s largest and most iconic mosque, with stunning architecture and intricate design.
+
+Qasr Al Watan (Presidential Palace) – Visit this majestic palace and explore its cultural and architectural wonders.
+
+Photo Stop at Emirates Palace Hotel – Capture the beauty of this luxurious hotel, a symbol of Arabian elegance.
+
+Photo Stop at Louvre Abu Dhabi – Take pictures of the famous museum’s unique architecture.
+
+Heritage Village – Discover Abu Dhabi’s traditional Bedouin culture, crafts, and lifestyle at this open-air museum.
+
+International & Traditional Buffet Lunch – Enjoy a delicious buffet featuring Emirati and international cuisine.
+
+Corniche Drive – Scenic drive along Abu Dhabi’s beautiful waterfront promenade.
+
+What’s Included
+
+Pick-up & drop-off from your Dubai hotel
+
+Air-conditioned, modern vehicle
+
+Professional, English/Spanish-speaking guide
+
+Visit to Sheikh Zayed Grand Mosque & Qasr Al Watan
+
+Photo stops at Emirates Palace, Louvre Abu Dhabi, Corniche
+
+Visit to Heritage Village
+
+Buffet lunch (International & Emirati cuisine)
+
+Bottled water
+
+Taxes & charges
+
+What’s Not Included
+
+Entry tickets for Louvre Abu Dhabi
+
+Personal expenses
+
+Tips & gratuities (optional)
+
+Full-Day Abu Dhabi City Tour – Louvre Edition
+Duration: 8 to 9 hours
+Pick-up & Drop-off: Included (from your hotel in Dubai)
+
+Tour Itinerary
+
+Sheikh Zayed Grand Mosque – Visit the UAE’s largest and most iconic mosque, with stunning architecture and intricate design.
+
+Qasr Al Watan (Presidential Palace) – Visit this majestic palace and explore its cultural and architectural wonders.
+
+Photo Stop at Emirates Palace Hotel – Capture the beauty of this luxurious hotel, a symbol of Arabian elegance.
+
+Louvre Abu Dhabi (Entry Ticket Included) – Explore the world-famous museum with incredible exhibits blending cultures and civilizations.
+
+International & Traditional Buffet Lunch – Enjoy a delicious buffet featuring Emirati and international cuisine.
+
+Corniche Drive – Scenic drive along Abu Dhabi’s beautiful waterfront promenade.
+
+What’s Included
+
+Pick-up & drop-off from your Dubai hotel
+
+Air-conditioned, modern vehicle
+
+Professional, English/Spanish-speaking guide
+
+Visit to Sheikh Zayed Grand Mosque, Qasr Al Watan, and Louvre Abu Dhabi
+
+Photo stops at Emirates Palace and Corniche
+
+Buffet lunch (International & Emirati cuisine)
+
+Bottled water
+
+Taxes & charges
+
+What’s Not Included
+
+Personal expenses
+
+Tips & gratuities (optional)
+
+Please select royalty-free images for each tour, just like the images used for the Dubai Tours page. The Heritage Edition could feature the Sheikh Zayed Grand Mosque or Heritage Village. The Louvre Edition could feature Louvre Abu Dhabi.
+
+No need for SEO tweaks at this stage; I will handle that later. Focus on creating the page structure and interactivity exactly like the Dubai Tours page.
+

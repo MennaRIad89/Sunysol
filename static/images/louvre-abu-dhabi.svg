@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E90FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buildingGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F5F5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DCDCDC;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="domePattern" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#C0C0C0;stop-opacity:0.8" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Water background -->
+  <rect width="800" height="600" fill="url(#waterGradient)"/>
+  
+  <!-- Louvre main structure -->
+  <rect x="150" y="300" width="500" height="150" fill="url(#buildingGradient)" stroke="#999" stroke-width="2"/>
+  
+  <!-- Iconic perforated dome -->
+  <ellipse cx="400" cy="300" rx="180" ry="80" fill="url(#domePattern)" stroke="#888" stroke-width="2"/>
+  
+  <!-- Dome perforations pattern -->
+  <g opacity="0.6">
+    <!-- Row 1 -->
+    <circle cx="320" cy="280" r="4" fill="#4682B4"/>
+    <circle cx="340" cy="275" r="3" fill="#4682B4"/>
+    <circle cx="360" cy="270" r="4" fill="#4682B4"/>
+    <circle cx="380" cy="268" r="3" fill="#4682B4"/>
+    <circle cx="400" cy="265" r="5" fill="#4682B4"/>
+    <circle cx="420" cy="268" r="3" fill="#4682B4"/>
+    <circle cx="440" cy="270" r="4" fill="#4682B4"/>
+    <circle cx="460" cy="275" r="3" fill="#4682B4"/>
+    <circle cx="480" cy="280" r="4" fill="#4682B4"/>
+    
+    <!-- Row 2 -->
+    <circle cx="300" cy="295" r="3" fill="#4682B4"/>
+    <circle cx="330" cy="290" r="4" fill="#4682B4"/>
+    <circle cx="350" cy="285" r="3" fill="#4682B4"/>
+    <circle cx="370" cy="283" r="4" fill="#4682B4"/>
+    <circle cx="400" cy="280" r="6" fill="#4682B4"/>
+    <circle cx="430" cy="283" r="4" fill="#4682B4"/>
+    <circle cx="450" cy="285" r="3" fill="#4682B4"/>
+    <circle cx="470" cy="290" r="4" fill="#4682B4"/>
+    <circle cx="500" cy="295" r="3" fill="#4682B4"/>
+    
+    <!-- Row 3 -->
+    <circle cx="280" cy="310" r="4" fill="#4682B4"/>
+    <circle cx="320" cy="305" r="3" fill="#4682B4"/>
+    <circle cx="360" cy="300" r="4" fill="#4682B4"/>
+    <circle cx="400" cy="298" r="5" fill="#4682B4"/>
+    <circle cx="440" cy="300" r="4" fill="#4682B4"/>
+    <circle cx="480" cy="305" r="3" fill="#4682B4"/>
+    <circle cx="520" cy="310" r="4" fill="#4682B4"/>
+  </g>
+  
+  <!-- Building wings -->
+  <rect x="100" y="350" width="150" height="100" fill="url(#buildingGradient)" stroke="#999" stroke-width="1"/>
+  <rect x="550" y="350" width="150" height="100" fill="url(#buildingGradient)" stroke="#999" stroke-width="1"/>
+  
+  <!-- Modern architectural details -->
+  <rect x="200" y="320" width="400" height="30" fill="#E6E6FA" stroke="#999" stroke-width="1"/>
+  
+  <!-- Windows -->
+  <rect x="170" y="370" width="20" height="30" fill="#4169E1" opacity="0.3"/>
+  <rect x="200" y="370" width="20" height="30" fill="#4169E1" opacity="0.3"/>
+  <rect x="230" y="370" width="20" height="30" fill="#4169E1" opacity="0.3"/>
+  
+  <rect x="580" y="370" width="20" height="30" fill="#4169E1" opacity="0.3"/>
+  <rect x="610" y="370" width="20" height="30" fill="#4169E1" opacity="0.3"/>
+  <rect x="640" y="370" width="20" height="30" fill="#4169E1" opacity="0.3"/>
+  
+  <!-- Water reflections -->
+  <ellipse cx="400" cy="500" rx="180" ry="20" fill="#FFFFFF" opacity="0.3"/>
+  <rect x="150" y="520" width="500" height="20" fill="#FFFFFF" opacity="0.2"/>
+  
+  <!-- Palm trees on sides -->
+  <g>
+    <rect x="46" y="400" width="8" height="50" fill="#8B4513"/>
+    <ellipse cx="50" cy="400" rx="12" ry="25" fill="#228B22"/>
+    <ellipse cx="45" cy="395" rx="8" ry="15" fill="#32CD32"/>
+    <ellipse cx="55" cy="395" rx="8" ry="15" fill="#32CD32"/>
+  </g>
+  
+  <g>
+    <rect x="746" y="400" width="8" height="50" fill="#8B4513"/>
+    <ellipse cx="750" cy="400" rx="12" ry="25" fill="#228B22"/>
+    <ellipse cx="745" cy="395" rx="8" ry="15" fill="#32CD32"/>
+    <ellipse cx="755" cy="395" rx="8" ry="15" fill="#32CD32"/>
+  </g>
+  
+  <!-- Museum entrance -->
+  <rect x="380" y="400" width="40" height="50" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+  <path d="M 385 435 Q 385 420 400 420 Q 415 420 415 435 Z" fill="#2F4F4F"/>
+</svg>

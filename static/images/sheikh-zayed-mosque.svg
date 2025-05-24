@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B0E0E6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mosqueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5F5F5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="domeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0E68C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="800" height="600" fill="url(#skyGradient)"/>
+  
+  <!-- Reflecting pool/ground -->
+  <rect x="0" y="450" width="800" height="150" fill="#E6F3FF"/>
+  
+  <!-- Main mosque structure -->
+  <rect x="200" y="250" width="400" height="200" fill="url(#mosqueGradient)" stroke="#DDD" stroke-width="2"/>
+  
+  <!-- Central dome -->
+  <ellipse cx="400" cy="250" rx="80" ry="60" fill="url(#domeGradient)" stroke="#DAA520" stroke-width="2"/>
+  <circle cx="400" cy="240" r="8" fill="#DAA520"/>
+  
+  <!-- Side domes -->
+  <ellipse cx="280" cy="280" rx="40" ry="30" fill="url(#domeGradient)" stroke="#DAA520" stroke-width="1"/>
+  <circle cx="280" cy="275" r="4" fill="#DAA520"/>
+  
+  <ellipse cx="520" cy="280" rx="40" ry="30" fill="url(#domeGradient)" stroke="#DAA520" stroke-width="1"/>
+  <circle cx="520" cy="275" r="4" fill="#DAA520"/>
+  
+  <!-- Minarets -->
+  <rect x="150" y="150" width="20" height="150" fill="url(#mosqueGradient)" stroke="#DDD" stroke-width="1"/>
+  <ellipse cx="160" cy="150" rx="15" ry="20" fill="url(#domeGradient)" stroke="#DAA520" stroke-width="1"/>
+  <circle cx="160" cy="145" r="3" fill="#DAA520"/>
+  
+  <rect x="630" y="150" width="20" height="150" fill="url(#mosqueGradient)" stroke="#DDD" stroke-width="1"/>
+  <ellipse cx="640" cy="150" rx="15" ry="20" fill="url(#domeGradient)" stroke="#DAA520" stroke-width="1"/>
+  <circle cx="640" cy="145" r="3" fill="#DAA520"/>
+  
+  <!-- Arched windows -->
+  <path d="M 230 350 Q 230 320 250 320 Q 270 320 270 350 Z" fill="#4169E1" opacity="0.3"/>
+  <path d="M 290 350 Q 290 320 310 320 Q 330 320 330 350 Z" fill="#4169E1" opacity="0.3"/>
+  <path d="M 470 350 Q 470 320 490 320 Q 510 320 510 350 Z" fill="#4169E1" opacity="0.3"/>
+  <path d="M 530 350 Q 530 320 550 320 Q 570 320 570 350 Z" fill="#4169E1" opacity="0.3"/>
+  
+  <!-- Decorative elements -->
+  <rect x="350" y="350" width="100" height="100" fill="url(#mosqueGradient)" stroke="#DDD" stroke-width="2"/>
+  <path d="M 375 420 Q 375 400 400 400 Q 425 400 425 420 Z" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+  
+  <!-- Palm trees -->
+  <ellipse cx="100" cy="400" rx="8" ry="30" fill="#228B22"/>
+  <rect x="96" y="400" width="8" height="50" fill="#8B4513"/>
+  
+  <ellipse cx="700" cy="400" rx="8" ry="30" fill="#228B22"/>
+  <rect x="696" y="400" width="8" height="50" fill="#8B4513"/>
+</svg>

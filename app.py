@@ -33,6 +33,10 @@ def agencies():
 def dubai_tours():
     return render_template('dubai_tours.html')
 
+@app.route('/abudhabi-tours')
+def abudhabi_tours():
+    return render_template('abudhabi_tours.html')
+
 @app.route('/submit_review', methods=['POST'])
 def submit_review():
     try:

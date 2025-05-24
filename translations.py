@@ -128,7 +128,15 @@ TRANSLATIONS = {
         'entrance_fees': 'Entrance fees to attractions',
         'meals': 'Meals (unless specified)',
         'personal_expenses': 'Personal expenses and shopping',
-        'tips_gratuities': 'Tips and gratuities'
+        'tips_gratuities': 'Tips and gratuities',
+        
+        # Abu Dhabi Tours page translations
+        'abudhabi_adventure_title': 'Choose Your Abu Dhabi Adventure',
+        'abudhabi_tours_include_guide': 'All tours include professional English/Spanish-speaking guide and modern air-conditioned transport',
+        'abudhabi_heritage_tour': 'Full-Day Abu Dhabi City Tour – Heritage Edition',
+        'abudhabi_heritage_description': 'Explore Abu Dhabi\'s magnificent landmarks, cultural heritage, and traditional Bedouin lifestyle with visits to the Grand Mosque, Presidential Palace, and Heritage Village.',
+        'abudhabi_louvre_tour': 'Full-Day Abu Dhabi City Tour – Louvre Edition',
+        'abudhabi_louvre_description': 'Experience Abu Dhabi\'s cultural treasures including the world-famous Louvre museum, majestic mosques, and architectural masterpieces.'
     },
     
     'es': {
@@ -260,6 +268,14 @@ TRANSLATIONS = {
         'entrance_fees': 'Tarifas de entrada a atracciones',
         'meals': 'Comidas (a menos que se especifique)',
         'personal_expenses': 'Gastos personales y compras',
-        'tips_gratuities': 'Propinas y gratificaciones'
+        'tips_gratuities': 'Propinas y gratificaciones',
+        
+        # Abu Dhabi Tours page translations
+        'abudhabi_adventure_title': 'Elige Tu Aventura en Abu Dhabi',
+        'abudhabi_tours_include_guide': 'Todos los tours incluyen guía profesional de habla inglesa/española y transporte moderno con aire acondicionado',
+        'abudhabi_heritage_tour': 'Tour de Día Completo de Abu Dhabi – Edición Patrimonio',
+        'abudhabi_heritage_description': 'Explora los magníficos monumentos de Abu Dhabi, el patrimonio cultural y el estilo de vida beduino tradicional con visitas a la Gran Mezquita, el Palacio Presidencial y la Aldea del Patrimonio.',
+        'abudhabi_louvre_tour': 'Tour de Día Completo de Abu Dhabi – Edición Louvre',
+        'abudhabi_louvre_description': 'Experimenta los tesoros culturales de Abu Dhabi incluyendo el mundialmente famoso museo Louvre, mezquitas majestuosas y obras maestras arquitectónicas.'
     }
 }

@@ -1,0 +1,178 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>{{ g.translations.abudhabi_adventure_title }}</h1>
+        <p>{{ g.translations.abudhabi_tours_include_guide }}</p>
+    </div>
+</div>
+
+<div class="tours-container">
+    <div class="container">
+        <div class="tours-grid">
+            <!-- Abu Dhabi Heritage Edition Tour -->
+            <div class="tour-card" data-tour="heritage">
+                <div class="tour-image">
+                    <img src="/static/images/sheikh-zayed-mosque.svg" alt="Sheikh Zayed Grand Mosque">
+                </div>
+                <div class="tour-preview">
+                    <div class="tour-header">
+                        <h3>{{ g.translations.abudhabi_heritage_tour }}</h3>
+                        <button class="expand-btn" onclick="toggleTour('heritage')">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <p class="tour-description">{{ g.translations.abudhabi_heritage_description }}</p>
+                    <div class="tour-meta">
+                        <span class="duration">
+                            <i class="fas fa-clock"></i>
+                            8-9 {{ g.translations.hours }}
+                        </span>
+                        <span class="pickup">
+                            <i class="fas fa-map-marker-alt"></i>
+                            {{ g.translations.hotel_pickup }}
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tour-details" id="heritage-details">
+                    <div class="tour-section">
+                        <h4><i class="fas fa-route"></i> {{ g.translations.itinerary }}</h4>
+                        <ul class="tour-list">
+                            <li>Sheikh Zayed Grand Mosque – Visit the UAE's largest and most iconic mosque, with stunning architecture and intricate design</li>
+                            <li>Qasr Al Watan (Presidential Palace) – Visit this majestic palace and explore its cultural and architectural wonders</li>
+                            <li>Photo Stop at Emirates Palace Hotel – Capture the beauty of this luxurious hotel, a symbol of Arabian elegance</li>
+                            <li>Photo Stop at Louvre Abu Dhabi – Take pictures of the famous museum's unique architecture</li>
+                            <li>Heritage Village – Discover Abu Dhabi's traditional Bedouin culture, crafts, and lifestyle at this open-air museum</li>
+                            <li>International & Traditional Buffet Lunch – Enjoy a delicious buffet featuring Emirati and international cuisine</li>
+                            <li>Corniche Drive – Scenic drive along Abu Dhabi's beautiful waterfront promenade</li>
+                        </ul>
+                    </div>
+
+                    <div class="tour-includes-grid">
+                        <div class="included">
+                            <h4><i class="fas fa-check-circle"></i> {{ g.translations.includes }}</h4>
+                            <ul class="tour-list">
+                                <li>Pick-up & drop-off from your Dubai hotel</li>
+                                <li>Air-conditioned, modern vehicle</li>
+                                <li>Professional, English/Spanish-speaking guide</li>
+                                <li>Visit to Sheikh Zayed Grand Mosque & Qasr Al Watan</li>
+                                <li>Photo stops at Emirates Palace, Louvre Abu Dhabi, Corniche</li>
+                                <li>Visit to Heritage Village</li>
+                                <li>Buffet lunch (International & Emirati cuisine)</li>
+                                <li>Bottled water</li>
+                                <li>Taxes & charges</li>
+                            </ul>
+                        </div>
+                        <div class="not-included">
+                            <h4><i class="fas fa-times-circle"></i> {{ g.translations.excludes }}</h4>
+                            <ul class="tour-list">
+                                <li>Entry tickets for Louvre Abu Dhabi</li>
+                                <li>Personal expenses</li>
+                                <li>Tips & gratuities (optional)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tour-action">
+                        <a href="/#contact" class="btn primary-btn">Book This Tour</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abu Dhabi Louvre Edition Tour -->
+            <div class="tour-card" data-tour="louvre">
+                <div class="tour-image">
+                    <img src="/static/images/louvre-abu-dhabi.jpg" alt="Louvre Abu Dhabi">
+                </div>
+                <div class="tour-preview">
+                    <div class="tour-header">
+                        <h3>{{ g.translations.abudhabi_louvre_tour }}</h3>
+                        <button class="expand-btn" onclick="toggleTour('louvre')">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <p class="tour-description">{{ g.translations.abudhabi_louvre_description }}</p>
+                    <div class="tour-meta">
+                        <span class="duration">
+                            <i class="fas fa-clock"></i>
+                            8-9 {{ g.translations.hours }}
+                        </span>
+                        <span class="pickup">
+                            <i class="fas fa-map-marker-alt"></i>
+                            {{ g.translations.hotel_pickup }}
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tour-details" id="louvre-details">
+                    <div class="tour-section">
+                        <h4><i class="fas fa-route"></i> {{ g.translations.itinerary }}</h4>
+                        <ul class="tour-list">
+                            <li>Sheikh Zayed Grand Mosque – Visit the UAE's largest and most iconic mosque, with stunning architecture and intricate design</li>
+                            <li>Qasr Al Watan (Presidential Palace) – Visit this majestic palace and explore its cultural and architectural wonders</li>
+                            <li>Photo Stop at Emirates Palace Hotel – Capture the beauty of this luxurious hotel, a symbol of Arabian elegance</li>
+                            <li>Louvre Abu Dhabi (Entry Ticket Included) – Explore the world-famous museum with incredible exhibits blending cultures and civilizations</li>
+                            <li>International & Traditional Buffet Lunch – Enjoy a delicious buffet featuring Emirati and international cuisine</li>
+                            <li>Corniche Drive – Scenic drive along Abu Dhabi's beautiful waterfront promenade</li>
+                        </ul>
+                    </div>
+
+                    <div class="tour-includes-grid">
+                        <div class="included">
+                            <h4><i class="fas fa-check-circle"></i> {{ g.translations.includes }}</h4>
+                            <ul class="tour-list">
+                                <li>Pick-up & drop-off from your Dubai hotel</li>
+                                <li>Air-conditioned, modern vehicle</li>
+                                <li>Professional, English/Spanish-speaking guide</li>
+                                <li>Visit to Sheikh Zayed Grand Mosque, Qasr Al Watan, and Louvre Abu Dhabi</li>
+                                <li>Photo stops at Emirates Palace and Corniche</li>
+                                <li>Buffet lunch (International & Emirati cuisine)</li>
+                                <li>Bottled water</li>
+                                <li>Taxes & charges</li>
+                            </ul>
+                        </div>
+                        <div class="not-included">
+                            <h4><i class="fas fa-times-circle"></i> {{ g.translations.excludes }}</h4>
+                            <ul class="tour-list">
+                                <li>Personal expenses</li>
+                                <li>Tips & gratuities (optional)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tour-action">
+                        <a href="/#contact" class="btn primary-btn">Book This Tour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleTour(tourId) {
+    const details = document.getElementById(tourId + '-details');
+    const button = document.querySelector(`[data-tour="${tourId}"] .expand-btn i`);
+    
+    if (details.style.display === 'none' || details.style.display === '') {
+        details.style.display = 'block';
+        button.classList.remove('fa-chevron-down');
+        button.classList.add('fa-chevron-up');
+    } else {
+        details.style.display = 'none';
+        button.classList.remove('fa-chevron-up');
+        button.classList.add('fa-chevron-down');
+    }
+}
+
+// Initialize all tour details as hidden
+document.addEventListener('DOMContentLoaded', function() {
+    const tourDetails = document.querySelectorAll('.tour-details');
+    tourDetails.forEach(detail => {
+        detail.style.display = 'none';
+    });
+});
+</script>
+{% endblock %}
