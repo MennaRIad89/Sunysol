@@ -437,11 +437,13 @@ img {
 /* Expandable Tour Details */
 .tour-details {
     display: none;
-    background: #f8f5f1;
+    background: white;
     border-radius: 0 0 15px 15px;
     margin-top: -20px;
     margin-bottom: 20px;
     animation: slideDown 0.3s ease;
+    border: 1px solid #f0f0f0;
+    border-top: none;
 }
 
 .tour-details.expanded {
