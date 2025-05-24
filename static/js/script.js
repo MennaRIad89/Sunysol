@@ -223,4 +223,32 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.animate').forEach(element => {
         element.classList.add('show');
     });
+    
+    // Tour card expand/collapse functionality
+    const tourPreviewCards = document.querySelectorAll('.tour-preview-card');
+    
+    tourPreviewCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const tourType = this.getAttribute('data-tour');
+            const detailsElement = document.getElementById(tourType + '-details');
+            
+            // Close all other expanded cards
+            tourPreviewCards.forEach(otherCard => {
+                if (otherCard !== this) {
+                    otherCard.classList.remove('expanded');
+                    const otherTourType = otherCard.getAttribute('data-tour');
+                    const otherDetailsElement = document.getElementById(otherTourType + '-details');
+                    if (otherDetailsElement) {
+                        otherDetailsElement.classList.remove('expanded');
+                    }
+                }
+            });
+            
+            // Toggle current card
+            this.classList.toggle('expanded');
+            if (detailsElement) {
+                detailsElement.classList.toggle('expanded');
+            }
+        });
+    });
 });

@@ -24,348 +24,388 @@
             <p>All tours include professional English/Spanish-speaking guide and modern air-conditioned transport</p>
         </div>
 
-        <div class="tours-cards">
+        <div class="tour-preview-cards">
             <!-- Dubai Half Day Modern Tour -->
-            <div class="tour-detail-card">
-                <div class="tour-header">
+            <div class="tour-preview-card" data-tour="modern">
+                <div class="tour-preview-image">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dubai Modern Tour" />
+                </div>
+                <div class="tour-preview-content">
                     <h3>Dubai Half Day Modern Tour</h3>
-                    <div class="tour-duration">
-                        <i class="fas fa-clock"></i>
-                        <span>4-5 Hours</span>
+                    <p>Experience Dubai's futuristic skyline, luxury hotels, and iconic landmarks including Burj Khalifa, Palm Jumeirah, and Dubai Marina.</p>
+                    <div class="tour-preview-meta">
+                        <span><i class="fas fa-clock"></i> 4-5 Hours</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Hotel Pick-up</span>
                     </div>
                 </div>
-                <div class="tour-pickup">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Pick-up & Drop-off: Included (from your hotel in Dubai)</span>
+                <div class="tour-preview-toggle">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-                
-                <div class="tour-itinerary">
-                    <h4><i class="fas fa-route"></i> Itinerary</h4>
-                    <ul>
-                        <li>Dubai Marina – Modern waterfront district with stunning skyscrapers and luxury yachts</li>
-                        <li>Palm Jumeirah – Drive through the iconic man-made island, shaped like a palm tree</li>
-                        <li>Atlantis The Palm (Photo Stop) – World-famous luxury hotel</li>
-                        <li>Atlantis The Royal (Photo Stop) – Only 6-star hotel in the world</li>
-                        <li>Ain Dubai (Dubai Eye) – World's largest observation wheel</li>
-                        <li>Souk Madinat Jumeirah – Arabian-style market with Burj Al Arab views</li>
-                        <li>Burj Al Arab (Photo Stop) – Iconic 7-star hotel</li>
-                        <li>Dubai Mall – World's largest shopping destination</li>
-                        <li>Burj Khalifa (Photo Stop) – World's tallest building</li>
-                        <li>Museum of the Future (Photo Stop) – Architectural masterpiece</li>
-                    </ul>
-                </div>
+            </div>
 
-                <div class="tour-addons">
-                    <h4><i class="fas fa-plus"></i> Optional Add-ons (Extra Charge)</h4>
-                    <div class="addons-grid">
-                        <span class="addon-item">Burj Khalifa – At The Top</span>
-                        <span class="addon-item">The View at The Palm</span>
-                        <span class="addon-item">Museum of the Future Entry</span>
-                        <span class="addon-item">Burj Al Arab Tour</span>
-                        <span class="addon-item">Ain Dubai Ticket</span>
+            <!-- Expandable Details for Modern Tour -->
+            <div class="tour-details" id="modern-details">
+                <div class="tour-detail-content">
+                    <div class="tour-itinerary">
+                        <h4><i class="fas fa-route"></i> Itinerary</h4>
+                        <ul>
+                            <li>Dubai Marina – Modern waterfront district with stunning skyscrapers and luxury yachts</li>
+                            <li>Palm Jumeirah – Drive through the iconic man-made island, shaped like a palm tree</li>
+                            <li>Atlantis The Palm (Photo Stop) – World-famous luxury hotel</li>
+                            <li>Atlantis The Royal (Photo Stop) – Only 6-star hotel in the world</li>
+                            <li>Ain Dubai (Dubai Eye) – World's largest observation wheel</li>
+                            <li>Souk Madinat Jumeirah – Arabian-style market with Burj Al Arab views</li>
+                            <li>Burj Al Arab (Photo Stop) – Iconic 7-star hotel</li>
+                            <li>Dubai Mall – World's largest shopping destination</li>
+                            <li>Burj Khalifa (Photo Stop) – World's tallest building</li>
+                            <li>Museum of the Future (Photo Stop) – Architectural masterpiece</li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="tour-includes">
-                    <div class="includes-grid">
-                        <div class="included">
-                            <h4><i class="fas fa-check-circle"></i> Included</h4>
-                            <ul>
-                                <li>Hotel pick-up & drop-off</li>
-                                <li>Air-conditioned vehicle</li>
-                                <li>Professional guide (English/Spanish)</li>
-                                <li>Photo stops at landmarks</li>
-                                <li>Bottled water</li>
-                                <li>Taxes & charges</li>
-                            </ul>
-                        </div>
-                        <div class="not-included">
-                            <h4><i class="fas fa-times-circle"></i> Not Included</h4>
-                            <ul>
-                                <li>Entry tickets for attractions</li>
-                                <li>Meals & personal expenses</li>
-                                <li>Tips & gratuities</li>
-                            </ul>
+                    <div class="tour-addons">
+                        <h4><i class="fas fa-plus"></i> Optional Add-ons (Extra Charge)</h4>
+                        <div class="addons-grid">
+                            <span class="addon-item">Burj Khalifa – At The Top</span>
+                            <span class="addon-item">The View at The Palm</span>
+                            <span class="addon-item">Museum of the Future Entry</span>
+                            <span class="addon-item">Burj Al Arab Tour</span>
+                            <span class="addon-item">Ain Dubai Ticket</span>
                         </div>
                     </div>
-                </div>
 
-                <div class="tour-action">
-                    <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                    <div class="tour-includes">
+                        <div class="includes-grid">
+                            <div class="included">
+                                <h4><i class="fas fa-check-circle"></i> Included</h4>
+                                <ul>
+                                    <li>Hotel pick-up & drop-off</li>
+                                    <li>Air-conditioned vehicle</li>
+                                    <li>Professional guide (English/Spanish)</li>
+                                    <li>Photo stops at landmarks</li>
+                                    <li>Bottled water</li>
+                                    <li>Taxes & charges</li>
+                                </ul>
+                            </div>
+                            <div class="not-included">
+                                <h4><i class="fas fa-times-circle"></i> Not Included</h4>
+                                <ul>
+                                    <li>Entry tickets for attractions</li>
+                                    <li>Meals & personal expenses</li>
+                                    <li>Tips & gratuities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-action">
+                        <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Dubai Half Day Classic Tour -->
-            <div class="tour-detail-card">
-                <div class="tour-header">
+            <div class="tour-preview-card" data-tour="classic">
+                <div class="tour-preview-image">
+                    <img src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dubai Classic Tour" />
+                </div>
+                <div class="tour-preview-content">
                     <h3>Dubai Half Day Classic Tour</h3>
-                    <div class="tour-duration">
-                        <i class="fas fa-clock"></i>
-                        <span>4-5 Hours</span>
+                    <p>Discover Dubai's rich heritage through traditional souqs, historic districts, and authentic cultural experiences including an abra ride.</p>
+                    <div class="tour-preview-meta">
+                        <span><i class="fas fa-clock"></i> 4-5 Hours</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Hotel Pick-up</span>
                     </div>
                 </div>
-                <div class="tour-pickup">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Pick-up & Drop-off: Included (from your hotel in Dubai)</span>
+                <div class="tour-preview-toggle">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-                
-                <div class="tour-itinerary">
-                    <h4><i class="fas fa-route"></i> Itinerary</h4>
-                    <ul>
-                        <li>Al Seef Area – Heritage waterfront blending old-world charm with modern design</li>
-                        <li>Al Fahidi Historical District (Bastakiya) – Traditional wind-tower architecture</li>
-                        <li>Abra Ride (Water Taxi) – Authentic wooden abra across Dubai Creek</li>
-                        <li>Spice Souq – Traditional spice market with rich aromas</li>
-                        <li>Gold Souq – One of the world's largest gold markets</li>
-                        <li>Jumeirah Mosque (Photo Stop) – Stunning Fatimid style mosque</li>
-                        <li>Dubai Frame (Photo Stop) – Architectural marvel framing old and new Dubai</li>
-                    </ul>
-                </div>
+            </div>
 
-                <div class="tour-addons">
-                    <h4><i class="fas fa-plus"></i> Optional Add-on (Extra Charge)</h4>
-                    <div class="addons-grid">
-                        <span class="addon-item">Dubai Frame Entry Ticket</span>
+            <!-- Expandable Details for Classic Tour -->
+            <div class="tour-details" id="classic-details">
+                <div class="tour-detail-content">
+                    <div class="tour-itinerary">
+                        <h4><i class="fas fa-route"></i> Itinerary</h4>
+                        <ul>
+                            <li>Al Seef Area – Heritage waterfront blending old-world charm with modern design</li>
+                            <li>Al Fahidi Historical District (Bastakiya) – Traditional wind-tower architecture</li>
+                            <li>Abra Ride (Water Taxi) – Authentic wooden abra across Dubai Creek</li>
+                            <li>Spice Souq – Traditional spice market with rich aromas</li>
+                            <li>Gold Souq – One of the world's largest gold markets</li>
+                            <li>Jumeirah Mosque (Photo Stop) – Stunning Fatimid style mosque</li>
+                            <li>Dubai Frame (Photo Stop) – Architectural marvel framing old and new Dubai</li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="tour-includes">
-                    <div class="includes-grid">
-                        <div class="included">
-                            <h4><i class="fas fa-check-circle"></i> Included</h4>
-                            <ul>
-                                <li>Hotel pick-up & drop-off</li>
-                                <li>Air-conditioned vehicle</li>
-                                <li>Professional guide (English/Spanish)</li>
-                                <li>Abra ride across Dubai Creek</li>
-                                <li>Bottled water</li>
-                                <li>Taxes & charges</li>
-                            </ul>
-                        </div>
-                        <div class="not-included">
-                            <h4><i class="fas fa-times-circle"></i> Not Included</h4>
-                            <ul>
-                                <li>Entry tickets for optional attractions</li>
-                                <li>Meals & personal expenses</li>
-                                <li>Tips & gratuities</li>
-                            </ul>
+                    <div class="tour-addons">
+                        <h4><i class="fas fa-plus"></i> Optional Add-on (Extra Charge)</h4>
+                        <div class="addons-grid">
+                            <span class="addon-item">Dubai Frame Entry Ticket</span>
                         </div>
                     </div>
-                </div>
 
-                <div class="tour-action">
-                    <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                    <div class="tour-includes">
+                        <div class="includes-grid">
+                            <div class="included">
+                                <h4><i class="fas fa-check-circle"></i> Included</h4>
+                                <ul>
+                                    <li>Hotel pick-up & drop-off</li>
+                                    <li>Air-conditioned vehicle</li>
+                                    <li>Professional guide (English/Spanish)</li>
+                                    <li>Abra ride across Dubai Creek</li>
+                                    <li>Bottled water</li>
+                                    <li>Taxes & charges</li>
+                                </ul>
+                            </div>
+                            <div class="not-included">
+                                <h4><i class="fas fa-times-circle"></i> Not Included</h4>
+                                <ul>
+                                    <li>Entry tickets for optional attractions</li>
+                                    <li>Meals & personal expenses</li>
+                                    <li>Tips & gratuities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-action">
+                        <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Dubai Full Day Modern & Classic Tour -->
-            <div class="tour-detail-card">
-                <div class="tour-header">
+            <div class="tour-preview-card" data-tour="fullday">
+                <div class="tour-preview-image">
+                    <img src="https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dubai Full Day Tour" />
+                </div>
+                <div class="tour-preview-content">
                     <h3>Dubai Full Day Modern & Classic Tour</h3>
-                    <div class="tour-duration">
-                        <i class="fas fa-clock"></i>
-                        <span>8-9 Hours</span>
+                    <p>The ultimate Dubai experience combining both classic heritage sites and modern attractions in one comprehensive day tour.</p>
+                    <div class="tour-preview-meta">
+                        <span><i class="fas fa-clock"></i> 8-9 Hours</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Hotel Pick-up</span>
                     </div>
                 </div>
-                <div class="tour-pickup">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Pick-up & Drop-off: Included (from your hotel in Dubai)</span>
+                <div class="tour-preview-toggle">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-                
-                <div class="tour-itinerary">
-                    <h4><i class="fas fa-route"></i> Itinerary</h4>
-                    <div class="itinerary-sections">
-                        <div class="morning-section">
-                            <h5>Morning – Classic Dubai Highlights:</h5>
-                            <ul>
-                                <li>Al Seef Area – Heritage waterfront along Dubai Creek</li>
-                                <li>Al Fahidi Historical District (Bastakiya) – Traditional wind-tower houses</li>
-                                <li>Abra Ride (Water Taxi) – Traditional wooden abra experience</li>
-                                <li>Spice Souq – Aromatic spices and herbs market</li>
-                                <li>Gold Souq – World's largest gold market</li>
-                                <li>Jumeirah Mosque (Photo Stop) – Famous Fatimid style mosque</li>
-                            </ul>
-                        </div>
-                        <div class="afternoon-section">
-                            <h5>Afternoon – Modern Dubai Highlights:</h5>
-                            <ul>
-                                <li>Dubai Marina – Dazzling waterfront district</li>
-                                <li>Ain Dubai (Dubai Eye) – World's largest observation wheel</li>
-                                <li>Palm Jumeirah – Iconic man-made island</li>
-                                <li>Atlantis The Palm & The Royal (Photo Stops)</li>
-                                <li>Souk Madinat Jumeirah – Modern traditional souq</li>
-                                <li>Burj Al Arab (Photo Stop) – World's only 7-star hotel</li>
-                                <li>Dubai Mall – World's largest shopping mall</li>
-                                <li>Burj Khalifa (Photo Stop) – Tallest building in the world</li>
-                                <li>Museum of the Future (Photo Stop) – Innovation showcase</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            </div>
 
-                <div class="tour-addons">
-                    <h4><i class="fas fa-plus"></i> Optional Add-ons (Extra Charge)</h4>
-                    <div class="addons-grid">
-                        <span class="addon-item">Dubai Frame Entry</span>
-                        <span class="addon-item">Burj Khalifa – At The Top</span>
-                        <span class="addon-item">The View at The Palm</span>
-                        <span class="addon-item">Museum of the Future Entry</span>
-                        <span class="addon-item">Burj Al Arab Tour</span>
-                    </div>
-                </div>
-
-                <div class="tour-includes">
-                    <div class="includes-grid">
-                        <div class="included">
-                            <h4><i class="fas fa-check-circle"></i> Included</h4>
-                            <ul>
-                                <li>Hotel pick-up & drop-off</li>
-                                <li>Air-conditioned vehicle</li>
-                                <li>Professional guide (English/Spanish)</li>
-                                <li>Abra ride across Dubai Creek</li>
-                                <li>Bottled water</li>
-                                <li>Taxes & charges</li>
-                            </ul>
+            <!-- Expandable Details for Full Day Tour -->
+            <div class="tour-details" id="fullday-details">
+                <div class="tour-detail-content">
+                    <div class="tour-itinerary">
+                        <h4><i class="fas fa-route"></i> Itinerary</h4>
+                        <div class="itinerary-sections">
+                            <div class="morning-section">
+                                <h5>Morning – Classic Dubai Highlights:</h5>
+                                <ul>
+                                    <li>Al Seef Area – Heritage waterfront along Dubai Creek</li>
+                                    <li>Al Fahidi Historical District (Bastakiya) – Traditional wind-tower houses</li>
+                                    <li>Abra Ride (Water Taxi) – Traditional wooden abra experience</li>
+                                    <li>Spice Souq – Aromatic spices and herbs market</li>
+                                    <li>Gold Souq – World's largest gold market</li>
+                                    <li>Jumeirah Mosque (Photo Stop) – Famous Fatimid style mosque</li>
+                                </ul>
+                            </div>
+                            <div class="afternoon-section">
+                                <h5>Afternoon – Modern Dubai Highlights:</h5>
+                                <ul>
+                                    <li>Dubai Marina – Dazzling waterfront district</li>
+                                    <li>Ain Dubai (Dubai Eye) – World's largest observation wheel</li>
+                                    <li>Palm Jumeirah – Iconic man-made island</li>
+                                    <li>Atlantis The Palm & The Royal (Photo Stops)</li>
+                                    <li>Souk Madinat Jumeirah – Modern traditional souq</li>
+                                    <li>Burj Al Arab (Photo Stop) – World's only 7-star hotel</li>
+                                    <li>Dubai Mall – World's largest shopping mall</li>
+                                    <li>Burj Khalifa (Photo Stop) – Tallest building in the world</li>
+                                    <li>Museum of the Future (Photo Stop) – Innovation showcase</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="not-included">
-                            <h4><i class="fas fa-times-circle"></i> Not Included</h4>
-                            <ul>
-                                <li>Entry tickets for optional attractions</li>
-                                <li>Meals & personal expenses</li>
-                                <li>Tips & gratuities</li>
-                            </ul>
+                    </div>
+
+                    <div class="tour-addons">
+                        <h4><i class="fas fa-plus"></i> Optional Add-ons (Extra Charge)</h4>
+                        <div class="addons-grid">
+                            <span class="addon-item">Dubai Frame Entry</span>
+                            <span class="addon-item">Burj Khalifa – At The Top</span>
+                            <span class="addon-item">The View at The Palm</span>
+                            <span class="addon-item">Museum of the Future Entry</span>
+                            <span class="addon-item">Burj Al Arab Tour</span>
                         </div>
                     </div>
-                </div>
 
-                <div class="tour-action">
-                    <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                    <div class="tour-includes">
+                        <div class="includes-grid">
+                            <div class="included">
+                                <h4><i class="fas fa-check-circle"></i> Included</h4>
+                                <ul>
+                                    <li>Hotel pick-up & drop-off</li>
+                                    <li>Air-conditioned vehicle</li>
+                                    <li>Professional guide (English/Spanish)</li>
+                                    <li>Abra ride across Dubai Creek</li>
+                                    <li>Bottled water</li>
+                                    <li>Taxes & charges</li>
+                                </ul>
+                            </div>
+                            <div class="not-included">
+                                <h4><i class="fas fa-times-circle"></i> Not Included</h4>
+                                <ul>
+                                    <li>Entry tickets for optional attractions</li>
+                                    <li>Meals & personal expenses</li>
+                                    <li>Tips & gratuities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-action">
+                        <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Dubai Marina Cruise Experience -->
-            <div class="tour-detail-card">
-                <div class="tour-header">
+            <div class="tour-preview-card" data-tour="cruise">
+                <div class="tour-preview-image">
+                    <img src="https://images.unsplash.com/photo-1544465544-5eb5ac765773?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dubai Marina Cruise" />
+                </div>
+                <div class="tour-preview-content">
                     <h3>Dubai Marina Cruise Experience</h3>
-                    <div class="tour-duration">
-                        <i class="fas fa-clock"></i>
-                        <span>1.5-2 Hours</span>
+                    <p>Sail through Dubai Marina's stunning waterfront aboard a traditional dhow or luxury yacht with entertainment and dining options.</p>
+                    <div class="tour-preview-meta">
+                        <span><i class="fas fa-clock"></i> 1.5-2 Hours</span>
+                        <span><i class="fas fa-ship"></i> Dubai Marina</span>
                     </div>
                 </div>
-                <div class="tour-pickup">
-                    <i class="fas fa-ship"></i>
-                    <span>Location: Dubai Marina | Traditional Dhow or Luxury Yacht</span>
+                <div class="tour-preview-toggle">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-                
-                <div class="tour-itinerary">
-                    <h4><i class="fas fa-anchor"></i> Experience Highlights</h4>
-                    <ul>
-                        <li>Sail through Dubai Marina waterfront</li>
-                        <li>Pass by Ain Dubai, JBR, Bluewaters Island, and Palm Jumeirah</li>
-                        <li>Entertainment shows on board</li>
-                        <li>Open-air upper deck and air-conditioned lower deck</li>
-                        <li>Sunset & evening cruises available</li>
-                    </ul>
-                </div>
+            </div>
 
-                <div class="tour-addons">
-                    <h4><i class="fas fa-plus"></i> Optional Add-ons (Extra Charge)</h4>
-                    <div class="addons-grid">
-                        <span class="addon-item">Private Yacht Upgrade</span>
-                        <span class="addon-item">Birthday/Anniversary Cake</span>
-                        <span class="addon-item">Special Decorations</span>
+            <!-- Expandable Details for Cruise -->
+            <div class="tour-details" id="cruise-details">
+                <div class="tour-detail-content">
+                    <div class="tour-itinerary">
+                        <h4><i class="fas fa-anchor"></i> Experience Highlights</h4>
+                        <ul>
+                            <li>Sail through Dubai Marina waterfront</li>
+                            <li>Pass by Ain Dubai, JBR, Bluewaters Island, and Palm Jumeirah</li>
+                            <li>Entertainment shows on board</li>
+                            <li>Open-air upper deck and air-conditioned lower deck</li>
+                            <li>Sunset & evening cruises available</li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="tour-includes">
-                    <div class="includes-grid">
-                        <div class="included">
-                            <h4><i class="fas fa-check-circle"></i> Included</h4>
-                            <ul>
-                                <li>1.5-2 hour cruise</li>
-                                <li>Welcome drinks (Juice, Water)</li>
-                                <li>Buffet dinner or light snacks</li>
-                                <li>Live entertainment shows</li>
-                                <li>Air-conditioned & open-air seating</li>
-                                <li>Safety equipment</li>
-                            </ul>
-                        </div>
-                        <div class="not-included">
-                            <h4><i class="fas fa-times-circle"></i> Not Included</h4>
-                            <ul>
-                                <li>Transfers (available on request)</li>
-                                <li>Alcoholic beverages</li>
-                                <li>Personal expenses & tips</li>
-                            </ul>
+                    <div class="tour-addons">
+                        <h4><i class="fas fa-plus"></i> Optional Add-ons (Extra Charge)</h4>
+                        <div class="addons-grid">
+                            <span class="addon-item">Private Yacht Upgrade</span>
+                            <span class="addon-item">Birthday/Anniversary Cake</span>
+                            <span class="addon-item">Special Decorations</span>
                         </div>
                     </div>
-                </div>
 
-                <div class="tour-action">
-                    <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                    <div class="tour-includes">
+                        <div class="includes-grid">
+                            <div class="included">
+                                <h4><i class="fas fa-check-circle"></i> Included</h4>
+                                <ul>
+                                    <li>1.5-2 hour cruise</li>
+                                    <li>Welcome drinks (Juice, Water)</li>
+                                    <li>Buffet dinner or light snacks</li>
+                                    <li>Live entertainment shows</li>
+                                    <li>Air-conditioned & open-air seating</li>
+                                    <li>Safety equipment</li>
+                                </ul>
+                            </div>
+                            <div class="not-included">
+                                <h4><i class="fas fa-times-circle"></i> Not Included</h4>
+                                <ul>
+                                    <li>Transfers (available on request)</li>
+                                    <li>Alcoholic beverages</li>
+                                    <li>Personal expenses & tips</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-action">
+                        <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Desert Safari Tour -->
-            <div class="tour-detail-card">
-                <div class="tour-header">
+            <div class="tour-preview-card" data-tour="desert">
+                <div class="tour-preview-image">
+                    <img src="https://images.unsplash.com/photo-1471919743851-c4df8b6ee a95?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Desert Safari" />
+                </div>
+                <div class="tour-preview-content">
                     <h3>Desert Safari Tour (Evening Experience)</h3>
-                    <div class="tour-duration">
-                        <i class="fas fa-clock"></i>
-                        <span>6-7 Hours</span>
+                    <p>Adventure into the Arabian desert with dune bashing, camel rides, cultural shows, and traditional BBQ dinner under the stars.</p>
+                    <div class="tour-preview-meta">
+                        <span><i class="fas fa-clock"></i> 6-7 Hours</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Hotel Pick-up</span>
                     </div>
                 </div>
-                <div class="tour-pickup">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Pick-up & Drop-off: Included (from your hotel in Dubai)</span>
+                <div class="tour-preview-toggle">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-                
-                <div class="tour-itinerary">
-                    <h4><i class="fas fa-sun"></i> Safari Experience Highlights</h4>
-                    <ul>
-                        <li>Dune Bashing in 4x4 Land Cruiser</li>
-                        <li>Photo Stop in the Desert</li>
-                        <li>Short Camel Ride</li>
-                        <li>Sandboarding</li>
-                        <li>Henna Tattoo</li>
-                        <li>Traditional Dress Photo</li>
-                        <li>Hubbly Bubbly (Shisha) Experience</li>
-                        <li>Live Shows: Tanoura, Belly Dance, Fire Show</li>
-                    </ul>
-                </div>
+            </div>
 
-                <div class="tour-food">
-                    <h4><i class="fas fa-utensils"></i> Food & Drinks</h4>
-                    <ul>
-                        <li>Unlimited soft drinks, tea, coffee, and water</li>
-                        <li>Snacks on arrival</li>
-                        <li>Open BBQ buffet dinner (vegetarian and non-vegetarian options)</li>
-                    </ul>
-                </div>
+            <!-- Expandable Details for Desert Safari -->
+            <div class="tour-details" id="desert-details">
+                <div class="tour-detail-content">
+                    <div class="tour-itinerary">
+                        <h4><i class="fas fa-sun"></i> Safari Experience Highlights</h4>
+                        <ul>
+                            <li>Dune Bashing in 4x4 Land Cruiser</li>
+                            <li>Photo Stop in the Desert</li>
+                            <li>Short Camel Ride</li>
+                            <li>Sandboarding</li>
+                            <li>Henna Tattoo</li>
+                            <li>Traditional Dress Photo</li>
+                            <li>Hubbly Bubbly (Shisha) Experience</li>
+                            <li>Live Shows: Tanoura, Belly Dance, Fire Show</li>
+                        </ul>
+                    </div>
 
-                <div class="tour-includes">
-                    <div class="includes-grid">
-                        <div class="included">
-                            <h4><i class="fas fa-check-circle"></i> Included</h4>
-                            <ul>
-                                <li>Pick-up & drop-off in 4x4 Land Cruiser</li>
-                                <li>All listed experiences and shows</li>
-                                <li>Bottled water & all taxes</li>
-                            </ul>
-                        </div>
-                        <div class="not-included">
-                            <h4><i class="fas fa-times-circle"></i> Not Included</h4>
-                            <ul>
-                                <li>Alcoholic beverages (available at camp)</li>
-                                <li>Quad biking or dune buggy rides</li>
-                                <li>Personal expenses & tips</li>
-                            </ul>
+                    <div class="tour-food">
+                        <h4><i class="fas fa-utensils"></i> Food & Drinks</h4>
+                        <ul>
+                            <li>Unlimited soft drinks, tea, coffee, and water</li>
+                            <li>Snacks on arrival</li>
+                            <li>Open BBQ buffet dinner (vegetarian and non-vegetarian options)</li>
+                        </ul>
+                    </div>
+
+                    <div class="tour-includes">
+                        <div class="includes-grid">
+                            <div class="included">
+                                <h4><i class="fas fa-check-circle"></i> Included</h4>
+                                <ul>
+                                    <li>Pick-up & drop-off in 4x4 Land Cruiser</li>
+                                    <li>All listed experiences and shows</li>
+                                    <li>Bottled water & all taxes</li>
+                                </ul>
+                            </div>
+                            <div class="not-included">
+                                <h4><i class="fas fa-times-circle"></i> Not Included</h4>
+                                <ul>
+                                    <li>Alcoholic beverages (available at camp)</li>
+                                    <li>Quad biking or dune buggy rides</li>
+                                    <li>Personal expenses & tips</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="tour-action">
-                    <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                    <div class="tour-action">
+                        <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                    </div>
                 </div>
             </div>
         </div>
