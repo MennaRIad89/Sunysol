@@ -29,6 +29,10 @@ def index():
 def agencies():
     return render_template('agencies.html')
 
+@app.route('/dubai-tours')
+def dubai_tours():
+    return render_template('dubai_tours.html')
+
 @app.route('/submit_review', methods=['POST'])
 def submit_review():
     try:

@@ -293,6 +293,296 @@ img {
     }
 }
 
+/* Dubai Tours Page Styles */
+.page-hero {
+    height: 300px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-overlay {
+    width: 100%;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.breadcrumb {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.tours-detail-section {
+    padding: 80px 0;
+    background-color: #f8f5f1;
+}
+
+.tours-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.tour-detail-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tour-detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.tour-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.tour-header h3 {
+    color: #8B4513;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.tour-duration {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #D2691E;
+    font-weight: 500;
+}
+
+.tour-pickup {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.tour-pickup i {
+    color: #D2691E;
+}
+
+.tour-itinerary h4,
+.tour-addons h4,
+.tour-includes h4,
+.tour-food h4 {
+    color: #8B4513;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tour-itinerary ul,
+.tour-food ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tour-itinerary li,
+.tour-food li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #666;
+    line-height: 1.5;
+}
+
+.tour-itinerary li:before,
+.tour-food li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #D2691E;
+    font-weight: bold;
+}
+
+.itinerary-sections {
+    margin-top: 15px;
+}
+
+.morning-section,
+.afternoon-section {
+    margin-bottom: 25px;
+}
+
+.morning-section h5,
+.afternoon-section h5 {
+    color: #8B4513;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.addons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.addon-item {
+    background: linear-gradient(135deg, #D2691E, #FF8C00);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.tour-includes {
+    margin: 25px 0;
+}
+
+.includes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.included h4 i {
+    color: #28a745;
+}
+
+.not-included h4 i {
+    color: #dc3545;
+}
+
+.included ul,
+.not-included ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.included li,
+.not-included li {
+    margin: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.included li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.not-included li:before {
+    content: "✗";
+    position: absolute;
+    left: 0;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.tour-action {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.tours-contact {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-card h3 {
+    color: #8B4513;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.contact-options {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Mobile responsiveness for tours page */
+@media (max-width: 768px) {
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .tour-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .includes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contact-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .addons-grid {
+        justify-content: center;
+    }
+}
+
 .language-btn:hover:not(.active) {
     background-color: rgba(0, 0, 0, 0.05);
     color: var(--accent-color);
