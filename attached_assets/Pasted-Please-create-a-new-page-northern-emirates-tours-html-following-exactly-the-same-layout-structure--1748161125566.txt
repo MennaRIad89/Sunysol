@@ -1,0 +1,99 @@
+Please create a new page northern_emirates_tours.html following exactly the same layout, structure, and style as dubai_tours.html and abudhabi_tours.html. The new page should have 2 key tours.
+
+✅ Page Name: northern_emirates_tours.html
+✅ URL Route: /northern-emirates-tours
+✅ Translations: Use structured translation keys for itineraries, inclusions, and exclusions—just like you did for Dubai and Abu Dhabi tours.
+✅ Tours to Include:
+🚗 Half-Day Sharjah City Tour
+Duration: 4 to 5 hours
+
+Pick-up & Drop-off: Included (from your hotel in Dubai or Sharjah)
+
+Tour Itinerary:
+
+King Faisal Mosque
+
+Al Noor Mosque (Photo Stop)
+
+Blue Souk (Central Market)
+
+Sharjah Museum of Islamic Civilization
+
+Sharjah Corniche Drive
+
+Heritage Area & Souk Al Arsah
+
+What’s Included:
+
+Pick-up & drop-off from hotel in Dubai or Sharjah
+
+Air-conditioned, modern vehicle
+
+Professional, English/Spanish-speaking guide
+
+Entry to Sharjah Museum of Islamic Civilization
+
+Photo stops at major landmarks
+
+Bottled water
+
+Taxes & charges
+
+What’s Not Included:
+
+Entry ticket to Eye of the Emirates Ferris Wheel (optional)
+
+Meals & personal expenses
+
+Tips & gratuities (optional)
+
+🚗 Full-Day Fujairah & East Coast Tour
+Duration: 8 to 9 hours
+
+Pick-up & Drop-off: Included (from your hotel in Dubai or Sharjah)
+
+Tour Itinerary:
+
+Fujairah Fort
+
+Al Badiyah Mosque
+
+Friday Market
+
+Fujairah Museum
+
+Fujairah Corniche
+
+Khor Fakkan Beach (Photo Stop)
+
+Mountain Drive through Hajar Mountains
+
+Lunch Break (optional, extra charge)
+
+What’s Included:
+
+Pick-up & drop-off from hotel in Dubai or Sharjah
+
+Air-conditioned, modern vehicle
+
+Professional, English/Spanish-speaking guide
+
+Entry to Fujairah Fort and Fujairah Museum
+
+Photo stops at key landmarks
+
+Bottled water
+
+Taxes & charges
+
+What’s Not Included:
+
+Lunch (optional, extra charge)
+
+Personal expenses
+
+Tips & gratuities (optional)
+
+✅ Use the same style of tour cards and expandable details.
+✅ Ensure translation keys are created for all itinerary points, inclusions, and exclusions.
+✅ Use placeholder images for now.

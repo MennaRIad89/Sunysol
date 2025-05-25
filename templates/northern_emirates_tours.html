@@ -1,0 +1,173 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ g.translations.northern_emirates_adventure_title }} - Sun y Sol{% endblock %}
+
+{% block content %}
+<section class="tours-page">
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="tours-hero">
+            <h1>{{ g.translations.northern_emirates_adventure_title }}</h1>
+            <p>{{ g.translations.northern_emirates_tours_include_guide }}</p>
+        </div>
+
+        <!-- Tours Grid -->
+        <div class="tours-grid">
+            <!-- Half-Day Sharjah City Tour -->
+            <div class="tour-preview-card" data-tour="sharjah">
+                <div class="tour-preview-image">
+                    <img src="{{ url_for('static', filename='images/sharjah-tour.jpg') }}" alt="Sharjah City Tour" />
+                </div>
+                <div class="tour-preview-content">
+                    <h3>{{ g.translations.sharjah_city_tour }}</h3>
+                    <p>{{ g.translations.sharjah_city_description }}</p>
+                    <div class="tour-preview-meta">
+                        <span><i class="fas fa-clock"></i> 4-5 {{ g.translations.hours }}</span>
+                        <span><i class="fas fa-map-marker-alt"></i> {{ g.translations.hotel_pickup }}</span>
+                    </div>
+                </div>
+                <div class="tour-preview-toggle">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+            <!-- Expandable Details for Sharjah Tour -->
+            <div class="tour-details" id="sharjah-details">
+                <div class="tour-detail-content">
+                    <div class="tour-itinerary">
+                        <h4><i class="fas fa-route"></i> {{ g.translations.itinerary }}</h4>
+                        <ul>
+                            <li><strong>{{ g.translations.king_faisal_mosque }}</strong> – {{ g.translations.king_faisal_mosque_desc }}</li>
+                            <li><strong>{{ g.translations.al_noor_mosque }}</strong> – {{ g.translations.al_noor_mosque_desc }}</li>
+                            <li><strong>{{ g.translations.blue_souk }}</strong> – {{ g.translations.blue_souk_desc }}</li>
+                            <li><strong>{{ g.translations.sharjah_museum_islamic }}</strong> – {{ g.translations.sharjah_museum_islamic_desc }}</li>
+                            <li><strong>{{ g.translations.sharjah_corniche }}</strong> – {{ g.translations.sharjah_corniche_desc }}</li>
+                            <li><strong>{{ g.translations.heritage_area_souk }}</strong> – {{ g.translations.heritage_area_souk_desc }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="tour-addons">
+                        <h4><i class="fas fa-plus"></i> {{ g.translations.optional_addons }}</h4>
+                        <div class="addons-grid">
+                            <span class="addon-item">Eye of the Emirates Ferris Wheel</span>
+                        </div>
+                    </div>
+
+                    <div class="tour-includes">
+                        <div class="includes-grid">
+                            <div class="included">
+                                <h4><i class="fas fa-check-circle"></i> {{ g.translations.included }}</h4>
+                                <ul>
+                                    <li>{{ g.translations.hotel_pickup_dropoff_dubai_sharjah }}</li>
+                                    <li>{{ g.translations.air_conditioned_vehicle }}</li>
+                                    <li>{{ g.translations.professional_guide_eng_spa }}</li>
+                                    <li>{{ g.translations.sharjah_museum_entry }}</li>
+                                    <li>{{ g.translations.photo_stops_landmarks }}</li>
+                                    <li>{{ g.translations.bottled_water }}</li>
+                                    <li>{{ g.translations.taxes_charges }}</li>
+                                </ul>
+                            </div>
+                            <div class="not-included">
+                                <h4><i class="fas fa-times-circle"></i> {{ g.translations.not_included }}</h4>
+                                <ul>
+                                    <li>{{ g.translations.eye_emirates_ferris_wheel }}</li>
+                                    <li>{{ g.translations.meals_personal_expenses }}</li>
+                                    <li>{{ g.translations.tips_gratuities }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-action">
+                        <a href="#contact" class="btn primary-btn">{{ g.translations.book_this_tour }}</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full-Day Fujairah & East Coast Tour -->
+            <div class="tour-preview-card" data-tour="fujairah">
+                <div class="tour-preview-image">
+                    <img src="{{ url_for('static', filename='images/fujairah-tour.jpg') }}" alt="Fujairah East Coast Tour" />
+                </div>
+                <div class="tour-preview-content">
+                    <h3>{{ g.translations.fujairah_east_coast_tour }}</h3>
+                    <p>{{ g.translations.fujairah_east_coast_description }}</p>
+                    <div class="tour-preview-meta">
+                        <span><i class="fas fa-clock"></i> 8-9 {{ g.translations.hours }}</span>
+                        <span><i class="fas fa-map-marker-alt"></i> {{ g.translations.hotel_pickup }}</span>
+                    </div>
+                </div>
+                <div class="tour-preview-toggle">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+            <!-- Expandable Details for Fujairah Tour -->
+            <div class="tour-details" id="fujairah-details">
+                <div class="tour-detail-content">
+                    <div class="tour-itinerary">
+                        <h4><i class="fas fa-route"></i> {{ g.translations.itinerary }}</h4>
+                        <ul>
+                            <li><strong>{{ g.translations.fujairah_fort }}</strong> – {{ g.translations.fujairah_fort_desc }}</li>
+                            <li><strong>{{ g.translations.al_badiyah_mosque }}</strong> – {{ g.translations.al_badiyah_mosque_desc }}</li>
+                            <li><strong>{{ g.translations.friday_market }}</strong> – {{ g.translations.friday_market_desc }}</li>
+                            <li><strong>{{ g.translations.fujairah_museum }}</strong> – {{ g.translations.fujairah_museum_desc }}</li>
+                            <li><strong>{{ g.translations.fujairah_corniche }}</strong> – {{ g.translations.fujairah_corniche_desc }}</li>
+                            <li><strong>{{ g.translations.khor_fakkan_beach }}</strong> – {{ g.translations.khor_fakkan_beach_desc }}</li>
+                            <li><strong>{{ g.translations.hajar_mountains_drive }}</strong> – {{ g.translations.hajar_mountains_drive_desc }}</li>
+                            <li><strong>{{ g.translations.lunch_break }}</strong> – {{ g.translations.lunch_break_desc }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="tour-addons">
+                        <h4><i class="fas fa-plus"></i> {{ g.translations.optional_addons }}</h4>
+                        <div class="addons-grid">
+                            <span class="addon-item">Traditional Lunch Experience</span>
+                        </div>
+                    </div>
+
+                    <div class="tour-includes">
+                        <div class="includes-grid">
+                            <div class="included">
+                                <h4><i class="fas fa-check-circle"></i> {{ g.translations.included }}</h4>
+                                <ul>
+                                    <li>{{ g.translations.hotel_pickup_dropoff_dubai_sharjah }}</li>
+                                    <li>{{ g.translations.air_conditioned_vehicle }}</li>
+                                    <li>{{ g.translations.professional_guide_eng_spa }}</li>
+                                    <li>{{ g.translations.fujairah_fort_museum_entry }}</li>
+                                    <li>{{ g.translations.photo_stops_landmarks }}</li>
+                                    <li>{{ g.translations.bottled_water }}</li>
+                                    <li>{{ g.translations.taxes_charges }}</li>
+                                </ul>
+                            </div>
+                            <div class="not-included">
+                                <h4><i class="fas fa-times-circle"></i> {{ g.translations.not_included }}</h4>
+                                <ul>
+                                    <li>{{ g.translations.lunch_optional_extra }}</li>
+                                    <li>{{ g.translations.personal_expenses }}</li>
+                                    <li>{{ g.translations.tips_gratuities }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-action">
+                        <a href="#contact" class="btn primary-btn">{{ g.translations.book_this_tour }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="tours-contact">
+            <div class="contact-card">
+                <h3>{{ g.translations.ready_to_explore_northern_emirates }}</h3>
+                <p>{{ g.translations.northern_emirates_contact_description }}</p>
+                <div class="contact-options" style="justify-content: center;">
+                    <a href="#contact" class="btn primary-btn">{{ g.translations.get_in_touch }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -243,7 +243,60 @@ TRANSLATIONS = {
         # Call-to-action sections
         'ready_to_explore_dubai': 'Ready to Explore Dubai?',
         'dubai_contact_description': 'Contact us for personalized packages, group discounts, or any questions about our Dubai tours.',
-        'get_in_touch': 'Get in Touch'
+        'get_in_touch': 'Get in Touch',
+        'ready_to_explore_northern_emirates': 'Ready to Explore the Northern Emirates?',
+        'northern_emirates_contact_description': 'Contact us for personalized packages, group discounts, or any questions about our Northern Emirates tours.',
+        
+        # Northern Emirates Tours page translations
+        'northern_emirates_adventure_title': 'Choose Your Northern Emirates Adventure',
+        'northern_emirates_tours_include_guide': 'All tours include professional English/Spanish-speaking guide and modern air-conditioned transport',
+        'sharjah_city_tour': 'Half-Day Sharjah City Tour',
+        'sharjah_city_description': 'Discover Sharjah\'s rich Islamic heritage, stunning mosques, vibrant souks, and cultural treasures in the UAE\'s cultural capital.',
+        'fujairah_east_coast_tour': 'Full-Day Fujairah & East Coast Tour',
+        'fujairah_east_coast_description': 'Explore the UAE\'s stunning east coast, ancient forts, pristine beaches, and dramatic Hajar Mountains.',
+        
+        # Sharjah tour locations
+        'king_faisal_mosque': 'King Faisal Mosque',
+        'al_noor_mosque': 'Al Noor Mosque (Photo Stop)',
+        'blue_souk': 'Blue Souk (Central Market)',
+        'sharjah_museum_islamic': 'Sharjah Museum of Islamic Civilization',
+        'sharjah_corniche': 'Sharjah Corniche Drive',
+        'heritage_area_souk': 'Heritage Area & Souk Al Arsah',
+        
+        # Sharjah tour descriptions
+        'king_faisal_mosque_desc': 'One of the largest mosques in the UAE with stunning Islamic architecture',
+        'al_noor_mosque_desc': 'Beautiful mosque with distinctive architecture overlooking Khalid Lagoon',
+        'blue_souk_desc': 'Traditional market with blue tiles, offering carpets, jewelry, and souvenirs',
+        'sharjah_museum_islamic_desc': 'World-class museum showcasing Islamic art, culture, and civilization',
+        'sharjah_corniche_desc': 'Scenic waterfront drive with beautiful views of Khalid Lagoon',
+        'heritage_area_souk_desc': 'Restored traditional market area showcasing Emirati heritage and culture',
+        
+        # Fujairah tour locations
+        'fujairah_fort': 'Fujairah Fort',
+        'al_badiyah_mosque': 'Al Badiyah Mosque',
+        'friday_market': 'Friday Market',
+        'fujairah_museum': 'Fujairah Museum',
+        'fujairah_corniche': 'Fujairah Corniche',
+        'khor_fakkan_beach': 'Khor Fakkan Beach (Photo Stop)',
+        'hajar_mountains_drive': 'Mountain Drive through Hajar Mountains',
+        'lunch_break': 'Lunch Break',
+        
+        # Fujairah tour descriptions
+        'fujairah_fort_desc': 'Historic 17th-century fort offering panoramic views and rich heritage',
+        'al_badiyah_mosque_desc': 'Oldest mosque in the UAE, dating back to 1446 with unique architecture',
+        'friday_market_desc': 'Traditional market selling fresh produce, carpets, and local handicrafts',
+        'fujairah_museum_desc': 'Archaeological museum showcasing local heritage and ancient artifacts',
+        'fujairah_corniche_desc': 'Beautiful coastal drive with stunning views of the Gulf of Oman',
+        'khor_fakkan_beach_desc': 'Pristine beach with crystal-clear waters and mountain backdrop',
+        'hajar_mountains_drive_desc': 'Scenic drive through dramatic mountain landscapes',
+        'lunch_break_desc': 'Optional traditional lunch experience (extra charge)',
+        
+        # Northern Emirates specific inclusions/exclusions
+        'hotel_pickup_dropoff_dubai_sharjah': 'Pick-up & drop-off from hotel in Dubai or Sharjah',
+        'sharjah_museum_entry': 'Entry to Sharjah Museum of Islamic Civilization',
+        'eye_emirates_ferris_wheel': 'Entry ticket to Eye of the Emirates Ferris Wheel (optional)',
+        'fujairah_fort_museum_entry': 'Entry to Fujairah Fort and Fujairah Museum',
+        'lunch_optional_extra': 'Lunch (optional, extra charge)'
     },
     
     'es': {
@@ -505,6 +558,59 @@ TRANSLATIONS = {
         # Call-to-action sections
         'ready_to_explore_dubai': '¿Listo para Explorar Dubái?',
         'dubai_contact_description': 'Contáctanos para paquetes personalizados, descuentos grupales, o cualquier pregunta sobre nuestros tours de Dubái.',
-        'get_in_touch': 'Ponte en Contacto'
+        'get_in_touch': 'Ponte en Contacto',
+        'ready_to_explore_northern_emirates': '¿Listo para Explorar los Emiratos del Norte?',
+        'northern_emirates_contact_description': 'Contáctanos para paquetes personalizados, descuentos grupales, o cualquier pregunta sobre nuestros tours de los Emiratos del Norte.',
+        
+        # Northern Emirates Tours page translations
+        'northern_emirates_adventure_title': 'Elige tu Aventura en los Emiratos del Norte',
+        'northern_emirates_tours_include_guide': 'Todos los tours incluyen guía profesional que habla inglés/español y transporte moderno con aire acondicionado',
+        'sharjah_city_tour': 'Tour de Medio Día por la Ciudad de Sharjah',
+        'sharjah_city_description': 'Descubre el rico patrimonio islámico de Sharjah, mezquitas impresionantes, zocos vibrantes y tesoros culturales en la capital cultural de los EAU.',
+        'fujairah_east_coast_tour': 'Tour de Día Completo por Fujairah y la Costa Este',
+        'fujairah_east_coast_description': 'Explora la impresionante costa este de los EAU, fortalezas antiguas, playas vírgenes y las dramáticas Montañas Hajar.',
+        
+        # Sharjah tour locations
+        'king_faisal_mosque': 'Mezquita del Rey Faisal',
+        'al_noor_mosque': 'Mezquita Al Noor (Parada para Fotos)',
+        'blue_souk': 'Zoco Azul (Mercado Central)',
+        'sharjah_museum_islamic': 'Museo de la Civilización Islámica de Sharjah',
+        'sharjah_corniche': 'Paseo por la Corniche de Sharjah',
+        'heritage_area_souk': 'Área del Patrimonio y Zoco Al Arsah',
+        
+        # Sharjah tour descriptions
+        'king_faisal_mosque_desc': 'Una de las mezquitas más grandes de los EAU con impresionante arquitectura islámica',
+        'al_noor_mosque_desc': 'Hermosa mezquita con arquitectura distintiva con vista a la Laguna Khalid',
+        'blue_souk_desc': 'Mercado tradicional con azulejos azules, que ofrece alfombras, joyas y recuerdos',
+        'sharjah_museum_islamic_desc': 'Museo de clase mundial que exhibe arte, cultura y civilización islámica',
+        'sharjah_corniche_desc': 'Paseo escénico por la costa con hermosas vistas de la Laguna Khalid',
+        'heritage_area_souk_desc': 'Área de mercado tradicional restaurada que muestra el patrimonio y la cultura emiratí',
+        
+        # Fujairah tour locations
+        'fujairah_fort': 'Fuerte de Fujairah',
+        'al_badiyah_mosque': 'Mezquita Al Badiyah',
+        'friday_market': 'Mercado de los Viernes',
+        'fujairah_museum': 'Museo de Fujairah',
+        'fujairah_corniche': 'Corniche de Fujairah',
+        'khor_fakkan_beach': 'Playa Khor Fakkan (Parada para Fotos)',
+        'hajar_mountains_drive': 'Paseo por las Montañas Hajar',
+        'lunch_break': 'Pausa para Almorzar',
+        
+        # Fujairah tour descriptions
+        'fujairah_fort_desc': 'Fuerte histórico del siglo XVII que ofrece vistas panorámicas y rico patrimonio',
+        'al_badiyah_mosque_desc': 'La mezquita más antigua de los EAU, que data de 1446 con arquitectura única',
+        'friday_market_desc': 'Mercado tradicional que vende productos frescos, alfombras y artesanías locales',
+        'fujairah_museum_desc': 'Museo arqueológico que exhibe patrimonio local y artefactos antiguos',
+        'fujairah_corniche_desc': 'Hermoso paseo costero con vistas impresionantes del Golfo de Omán',
+        'khor_fakkan_beach_desc': 'Playa prístina con aguas cristalinas y fondo montañoso',
+        'hajar_mountains_drive_desc': 'Paseo escénico por paisajes montañosos dramáticos',
+        'lunch_break_desc': 'Experiencia de almuerzo tradicional opcional (cargo extra)',
+        
+        # Northern Emirates specific inclusions/exclusions
+        'hotel_pickup_dropoff_dubai_sharjah': 'Recogida y entrega en hotel en Dubái o Sharjah',
+        'sharjah_museum_entry': 'Entrada al Museo de la Civilización Islámica de Sharjah',
+        'eye_emirates_ferris_wheel': 'Boleto de entrada al Eye of the Emirates Ferris Wheel (opcional)',
+        'fujairah_fort_museum_entry': 'Entrada al Fuerte de Fujairah y Museo de Fujairah',
+        'lunch_optional_extra': 'Almuerzo (opcional, cargo extra)'
     }
 }
