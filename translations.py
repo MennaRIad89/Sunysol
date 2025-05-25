@@ -236,6 +236,35 @@ TRANSLATIONS = {
         'quad_biking_dune_buggy': 'Quad biking or dune buggy rides',
         'cruise_duration': '1.5-2 hour cruise',
         
+        # Marina Cruise experience highlights
+        'experience_highlights': 'Experience Highlights',
+        'sail_through_marina': 'Sail through Dubai Marina\'s stunning waterfront',
+        'pass_by_landmarks': 'Pass by iconic landmarks and skyscrapers',
+        'entertainment_shows_board': 'Entertainment shows on board',
+        'open_air_deck': 'Open-air deck for perfect photos',
+        'sunset_evening_cruises': 'Sunset and evening cruise options',
+        'optional_addons': 'Optional Add-ons (Extra Charge)',
+        'private_yacht_upgrade': 'Private Yacht Upgrade',
+        'birthday_anniversary_cake': 'Birthday/Anniversary Cake',
+        'special_decorations': 'Special Decorations',
+        
+        # Desert Safari experience highlights
+        'safari_experience_highlights': 'Safari Experience Highlights',
+        'dune_bashing_4x4': 'Dune bashing in Land Cruiser 4x4',
+        'photo_stop_desert': 'Photo stop in the heart of the desert',
+        'short_camel_ride': 'Short camel ride experience',
+        'sandboarding': 'Sandboarding down the dunes',
+        'henna_tattoo': 'Henna tattoo application',
+        'traditional_dress_photo': 'Traditional dress photo opportunities',
+        'hubbly_bubbly_shisha': 'Hubbly bubbly (shisha) experience',
+        'live_shows_tanoura': 'Live shows: Tanoura dance, belly dancing, fire shows',
+        'food_drinks': 'Food & Drinks',
+        'unlimited_soft_drinks': 'Unlimited soft drinks, tea, coffee',
+        'snacks_on_arrival': 'Light snacks on arrival at camp',
+        'open_bbq_buffet': 'Open BBQ buffet dinner',
+        'alcoholic_beverages_available_camp': 'Alcoholic beverages (available at camp)',
+        'quad_biking_dune_buggy_rides': 'Quad biking or dune buggy rides',
+        
         # Dubai Full Day Tour itinerary sections
         'morning_classic_highlights': 'Morning – Classic Dubai Highlights:',
         'afternoon_modern_highlights': 'Afternoon – Modern Dubai Highlights:',
