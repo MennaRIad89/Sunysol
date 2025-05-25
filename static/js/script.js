@@ -258,4 +258,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    
+    // Book This Tour button functionality
+    document.querySelectorAll('.book-tour-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 });
