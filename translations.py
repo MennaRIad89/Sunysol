@@ -234,7 +234,7 @@ TRANSLATIONS = {
         'bottled_water_all_taxes': 'Bottled water & all taxes',
         'alcoholic_beverages_camp': 'Alcoholic beverages (available at camp)',
         'quad_biking_dune_buggy': 'Quad biking or dune buggy rides',
-        '15_2_hour_cruise': '1.5-2 hour cruise'
+        'cruise_duration': '1.5-2 hour cruise'
     },
     
     'es': {
@@ -472,6 +472,32 @@ TRANSLATIONS = {
         'bottled_water_all_taxes': 'Agua embotellada y todos los impuestos',
         'alcoholic_beverages_camp': 'Bebidas alcohólicas (disponibles en el campamento)',
         'quad_biking_dune_buggy': 'Paseos en quad o dune buggy',
-        '15_2_hour_cruise': 'Crucero de 1.5-2 horas'
+        'cruise_duration': 'Crucero de 1.5-2 horas',
+        
+        # Marina Cruise specific
+        'experience_highlights': 'Destacados de la Experiencia',
+        'sail_through_marina': 'Navegar por la costa de Dubai Marina',
+        'pass_by_landmarks': 'Pasar por Ain Dubai, JBR, Bluewaters Island y Palm Jumeirah',
+        'entertainment_shows_board': 'Espectáculos de entretenimiento a bordo',
+        'open_air_deck': 'Cubierta al aire libre y cubierta inferior con aire acondicionado',
+        'sunset_evening_cruises': 'Cruceros de atardecer y nocturno disponibles',
+        'transfers_available_on_request': 'Traslados (disponibles bajo petición)',
+        
+        # Desert Safari specific
+        'safari_experience_highlights': 'Destacados de la Experiencia Safari',
+        'dune_bashing_4x4': 'Paseo por dunas en Land Cruiser 4x4',
+        'photo_stop_desert': 'Parada fotográfica en el desierto',
+        'short_camel_ride': 'Paseo corto en camello',
+        'sandboarding': 'Sandboarding',
+        'henna_tattoo': 'Tatuaje de henna',
+        'traditional_dress_photo': 'Foto con vestimenta tradicional',
+        'hubbly_bubbly_shisha': 'Experiencia Hubbly Bubbly (Shisha)',
+        'live_shows_tanoura': 'Espectáculos en vivo: Tanoura, Danza del Vientre, Espectáculo de Fuego',
+        'food_drinks': 'Comida y Bebidas',
+        'unlimited_soft_drinks': 'Bebidas sin alcohol, té, café y agua ilimitados',
+        'snacks_on_arrival': 'Aperitivos al llegar',
+        'open_bbq_buffet': 'Cena buffet BBQ abierto (opciones vegetarianas y no vegetarianas)',
+        'alcoholic_beverages_available_camp': 'Bebidas alcohólicas (disponibles en el campamento)',
+        'quad_biking_dune_buggy_rides': 'Paseos en quad o dune buggy'
     }
 }

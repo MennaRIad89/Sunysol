@@ -92,7 +92,7 @@ main {
                             <div class="not-included">
                                 <h4><i class="fas fa-times-circle"></i> {{ g.translations.not_included }}</h4>
                                 <ul>
-                                    <li>{{ g.translations.entry_tickets_attractions }}</li>
+                                    <li>{{ g.translations.entry_tickets_optional }}</li>
                                     <li>{{ g.translations.meals_personal_expenses }}</li>
                                     <li>{{ g.translations.tips_gratuities }}</li>
                                 </ul>
@@ -292,13 +292,13 @@ main {
             <div class="tour-details" id="cruise-details">
                 <div class="tour-detail-content">
                     <div class="tour-itinerary">
-                        <h4><i class="fas fa-anchor"></i> Experience Highlights</h4>
+                        <h4><i class="fas fa-anchor"></i> {{ g.translations.experience_highlights }}</h4>
                         <ul>
-                            <li>Sail through Dubai Marina waterfront</li>
-                            <li>Pass by Ain Dubai, JBR, Bluewaters Island, and Palm Jumeirah</li>
-                            <li>Entertainment shows on board</li>
-                            <li>Open-air upper deck and air-conditioned lower deck</li>
-                            <li>Sunset & evening cruises available</li>
+                            <li>{{ g.translations.sail_through_marina }}</li>
+                            <li>{{ g.translations.pass_by_landmarks }}</li>
+                            <li>{{ g.translations.entertainment_shows_board }}</li>
+                            <li>{{ g.translations.open_air_deck }}</li>
+                            <li>{{ g.translations.sunset_evening_cruises }}</li>
                         </ul>
                     </div>
 
@@ -316,20 +316,20 @@ main {
                             <div class="included">
                                 <h4><i class="fas fa-check-circle"></i> {{ g.translations.included }}</h4>
                                 <ul>
-                                    <li>1.5-2 hour cruise</li>
-                                    <li>Welcome drinks (Juice, Water)</li>
-                                    <li>Buffet dinner or light snacks</li>
-                                    <li>Live entertainment shows</li>
-                                    <li>Air-conditioned & open-air seating</li>
-                                    <li>Safety equipment</li>
+                                    <li>{{ g.translations.cruise_duration }}</li>
+                                    <li>{{ g.translations.welcome_drinks_juice_water }}</li>
+                                    <li>{{ g.translations.buffet_dinner_light_snacks }}</li>
+                                    <li>{{ g.translations.live_entertainment_shows }}</li>
+                                    <li>{{ g.translations.air_conditioned_open_seating }}</li>
+                                    <li>{{ g.translations.safety_equipment }}</li>
                                 </ul>
                             </div>
                             <div class="not-included">
                                 <h4><i class="fas fa-times-circle"></i> {{ g.translations.not_included }}</h4>
                                 <ul>
-                                    <li>Transfers (available on request)</li>
-                                    <li>Alcoholic beverages</li>
-                                    <li>Personal expenses & tips</li>
+                                    <li>{{ g.translations.transfers_available_on_request }}</li>
+                                    <li>{{ g.translations.alcoholic_beverages }}</li>
+                                    <li>{{ g.translations.personal_expenses_tips }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -363,25 +363,25 @@ main {
             <div class="tour-details" id="desert-details">
                 <div class="tour-detail-content">
                     <div class="tour-itinerary">
-                        <h4><i class="fas fa-sun"></i> Safari Experience Highlights</h4>
+                        <h4><i class="fas fa-sun"></i> {{ g.translations.safari_experience_highlights }}</h4>
                         <ul>
-                            <li>Dune Bashing in 4x4 Land Cruiser</li>
-                            <li>Photo Stop in the Desert</li>
-                            <li>Short Camel Ride</li>
-                            <li>Sandboarding</li>
-                            <li>Henna Tattoo</li>
-                            <li>Traditional Dress Photo</li>
-                            <li>Hubbly Bubbly (Shisha) Experience</li>
-                            <li>Live Shows: Tanoura, Belly Dance, Fire Show</li>
+                            <li>{{ g.translations.dune_bashing_4x4 }}</li>
+                            <li>{{ g.translations.photo_stop_desert }}</li>
+                            <li>{{ g.translations.short_camel_ride }}</li>
+                            <li>{{ g.translations.sandboarding }}</li>
+                            <li>{{ g.translations.henna_tattoo }}</li>
+                            <li>{{ g.translations.traditional_dress_photo }}</li>
+                            <li>{{ g.translations.hubbly_bubbly_shisha }}</li>
+                            <li>{{ g.translations.live_shows_tanoura }}</li>
                         </ul>
                     </div>
 
                     <div class="tour-food">
-                        <h4><i class="fas fa-utensils"></i> Food & Drinks</h4>
+                        <h4><i class="fas fa-utensils"></i> {{ g.translations.food_drinks }}</h4>
                         <ul>
-                            <li>Unlimited soft drinks, tea, coffee, and water</li>
-                            <li>Snacks on arrival</li>
-                            <li>Open BBQ buffet dinner (vegetarian and non-vegetarian options)</li>
+                            <li>{{ g.translations.unlimited_soft_drinks }}</li>
+                            <li>{{ g.translations.snacks_on_arrival }}</li>
+                            <li>{{ g.translations.open_bbq_buffet }}</li>
                         </ul>
                     </div>
 
@@ -390,17 +390,17 @@ main {
                             <div class="included">
                                 <h4><i class="fas fa-check-circle"></i> {{ g.translations.included }}</h4>
                                 <ul>
-                                    <li>Pick-up & drop-off in 4x4 Land Cruiser</li>
-                                    <li>All listed experiences and shows</li>
-                                    <li>Bottled water & all taxes</li>
+                                    <li>{{ g.translations.pickup_dropoff_4x4 }}</li>
+                                    <li>{{ g.translations.all_listed_experiences }}</li>
+                                    <li>{{ g.translations.bottled_water_all_taxes }}</li>
                                 </ul>
                             </div>
                             <div class="not-included">
                                 <h4><i class="fas fa-times-circle"></i> {{ g.translations.not_included }}</h4>
                                 <ul>
-                                    <li>Alcoholic beverages (available at camp)</li>
-                                    <li>Quad biking or dune buggy rides</li>
-                                    <li>Personal expenses & tips</li>
+                                    <li>{{ g.translations.alcoholic_beverages_available_camp }}</li>
+                                    <li>{{ g.translations.quad_biking_dune_buggy_rides }}</li>
+                                    <li>{{ g.translations.personal_expenses_tips }}</li>
                                 </ul>
                             </div>
                         </div>
