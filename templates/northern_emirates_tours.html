@@ -3,16 +3,29 @@
 {% block title %}{{ g.translations.northern_emirates_adventure_title }} - Sun y Sol{% endblock %}
 
 {% block content %}
-<section class="tours-page">
+<style>
+.tours-detail-section {
+    background-color: white !important;
+}
+.tours-detail-section {
+    background-color: white !important;
+}
+</style>
+<!-- Simple Page Header -->
+<div class="simple-page-header" style="padding-top: 120px;">
     <div class="container">
-        <!-- Hero Section -->
-        <div class="tours-hero">
-            <h1>{{ g.translations.northern_emirates_adventure_title }}</h1>
+        <h1>{{ g.translations.northern_emirates_adventure_title }}</h1>
+    </div>
+</div>
+
+<!-- Northern Emirates Tours Section -->
+<section class="tours-detail-section" style="background-color: white;">
+    <div class="container">
+        <div class="section-header">
             <p>{{ g.translations.northern_emirates_tours_include_guide }}</p>
         </div>
 
-        <!-- Tours Grid -->
-        <div class="tours-grid">
+        <div class="tour-preview-cards">
             <!-- Half-Day Sharjah City Tour -->
             <div class="tour-preview-card" data-tour="sharjah">
                 <div class="tour-preview-image">
@@ -156,6 +169,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+
         </div>
 
         <!-- Contact Section -->
