@@ -241,24 +241,26 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const tourType = this.getAttribute('data-tour');
             const detailsElement = document.getElementById(tourType + '-details');
+            const isCurrentlyExpanded = this.classList.contains('expanded');
             
-            // Close all other expanded cards
+            // Always close ALL cards first (accordion behavior)
             tourPreviewCards.forEach(otherCard => {
-                if (otherCard !== this) {
-                    otherCard.classList.remove('expanded');
-                    const otherTourType = otherCard.getAttribute('data-tour');
-                    const otherDetailsElement = document.getElementById(otherTourType + '-details');
-                    if (otherDetailsElement) {
-                        otherDetailsElement.classList.remove('expanded');
-                    }
+                otherCard.classList.remove('expanded');
+                const otherTourType = otherCard.getAttribute('data-tour');
+                const otherDetailsElement = document.getElementById(otherTourType + '-details');
+                if (otherDetailsElement) {
+                    otherDetailsElement.classList.remove('expanded');
                 }
             });
             
-            // Toggle current card
-            this.classList.toggle('expanded');
-            if (detailsElement) {
-                detailsElement.classList.toggle('expanded');
+            // If the clicked card wasn't already expanded, open it
+            if (!isCurrentlyExpanded) {
+                this.classList.add('expanded');
+                if (detailsElement) {
+                    detailsElement.classList.add('expanded');
+                }
             }
+            // If it was already expanded, it stays closed (already handled above)
         });
     });
 });
