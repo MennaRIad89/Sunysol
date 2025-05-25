@@ -136,7 +136,42 @@ TRANSLATIONS = {
         'abudhabi_heritage_tour': 'Full-Day Abu Dhabi City Tour – Heritage Edition',
         'abudhabi_heritage_description': 'Explore Abu Dhabi\'s magnificent landmarks, cultural heritage, and traditional Bedouin lifestyle with visits to the Grand Mosque, Presidential Palace, and Heritage Village.',
         'abudhabi_louvre_tour': 'Full-Day Abu Dhabi City Tour – Louvre Edition',
-        'abudhabi_louvre_description': 'Experience Abu Dhabi\'s cultural treasures including the world-famous Louvre museum, majestic mosques, and architectural masterpieces.'
+        'abudhabi_louvre_description': 'Experience Abu Dhabi\'s cultural treasures including the world-famous Louvre museum, majestic mosques, and architectural masterpieces.',
+        
+        # Common tour terms
+        'included': 'Included',
+        'not_included': 'Not Included',
+        'book_this_tour': 'Book This Tour',
+        
+        # Abu Dhabi tour specific content
+        'sheikh_zayed_mosque': 'Sheikh Zayed Grand Mosque',
+        'qasr_al_watan': 'Qasr Al Watan (Presidential Palace)',
+        'emirates_palace_photo': 'Photo Stop at Emirates Palace Hotel',
+        'louvre_photo_stop': 'Photo Stop at Louvre Abu Dhabi',
+        'louvre_entry_included': 'Louvre Abu Dhabi (Entry Ticket Included)',
+        'heritage_village': 'Heritage Village',
+        'buffet_lunch': 'International & Traditional Buffet Lunch',
+        'corniche_drive': 'Corniche Drive',
+        
+        # Dubai tour specific content
+        'dubai_marina': 'Dubai Marina',
+        'palm_jumeirah': 'Palm Jumeirah',
+        'atlantis_palm': 'Atlantis The Palm (Photo Stop)',
+        'atlantis_royal': 'Atlantis The Royal (Photo Stop)',
+        'ain_dubai': 'Ain Dubai (Dubai Eye)',
+        'souk_madinat': 'Souk Madinat Jumeirah',
+        'burj_al_arab': 'Burj Al Arab (Photo Stop)',
+        'dubai_mall': 'Dubai Mall',
+        'burj_khalifa': 'Burj Khalifa (Photo Stop)',
+        'museum_future': 'Museum of the Future (Photo Stop)',
+        'al_seef_area': 'Al Seef Area',
+        'al_fahidi_district': 'Al Fahidi Historical District (Bastakiya)',
+        'abra_ride': 'Abra Ride (Water Taxi)',
+        'spice_souq': 'Spice Souq',
+        'gold_souq': 'Gold Souq',
+        'jumeirah_mosque': 'Jumeirah Mosque (Photo Stop)',
+        'dubai_frame': 'Dubai Frame (Photo Stop)',
+        'atlantis_both': 'Atlantis The Palm & The Royal (Photo Stops)'
     },
     
     'es': {
@@ -276,6 +311,41 @@ TRANSLATIONS = {
         'abudhabi_heritage_tour': 'Tour de Día Completo de Abu Dhabi – Edición Patrimonio',
         'abudhabi_heritage_description': 'Explora los magníficos monumentos de Abu Dhabi, el patrimonio cultural y el estilo de vida beduino tradicional con visitas a la Gran Mezquita, el Palacio Presidencial y la Aldea del Patrimonio.',
         'abudhabi_louvre_tour': 'Tour de Día Completo de Abu Dhabi – Edición Louvre',
-        'abudhabi_louvre_description': 'Experimenta los tesoros culturales de Abu Dhabi incluyendo el mundialmente famoso museo Louvre, mezquitas majestuosas y obras maestras arquitectónicas.'
+        'abudhabi_louvre_description': 'Experimenta los tesoros culturales de Abu Dhabi incluyendo el mundialmente famoso museo Louvre, mezquitas majestuosas y obras maestras arquitectónicas.',
+        
+        # Common tour terms
+        'included': 'Incluido',
+        'not_included': 'No Incluido',
+        'book_this_tour': 'Reservar Este Tour',
+        
+        # Abu Dhabi tour specific content
+        'sheikh_zayed_mosque': 'Gran Mezquita Sheikh Zayed',
+        'qasr_al_watan': 'Qasr Al Watan (Palacio Presidencial)',
+        'emirates_palace_photo': 'Parada Fotográfica en Hotel Emirates Palace',
+        'louvre_photo_stop': 'Parada Fotográfica en Louvre Abu Dhabi',
+        'louvre_entry_included': 'Louvre Abu Dhabi (Entrada Incluida)',
+        'heritage_village': 'Aldea del Patrimonio',
+        'buffet_lunch': 'Almuerzo Buffet Internacional y Tradicional',
+        'corniche_drive': 'Paseo por Corniche',
+        
+        # Dubai tour specific content
+        'dubai_marina': 'Dubai Marina',
+        'palm_jumeirah': 'Palm Jumeirah',
+        'atlantis_palm': 'Atlantis The Palm (Parada Fotográfica)',
+        'atlantis_royal': 'Atlantis The Royal (Parada Fotográfica)',
+        'ain_dubai': 'Ain Dubai (Ojo de Dubái)',
+        'souk_madinat': 'Souk Madinat Jumeirah',
+        'burj_al_arab': 'Burj Al Arab (Parada Fotográfica)',
+        'dubai_mall': 'Dubai Mall',
+        'burj_khalifa': 'Burj Khalifa (Parada Fotográfica)',
+        'museum_future': 'Museo del Futuro (Parada Fotográfica)',
+        'al_seef_area': 'Área Al Seef',
+        'al_fahidi_district': 'Distrito Histórico Al Fahidi (Bastakiya)',
+        'abra_ride': 'Paseo en Abra (Taxi Acuático)',
+        'spice_souq': 'Zoco de Especias',
+        'gold_souq': 'Zoco de Oro',
+        'jumeirah_mosque': 'Mezquita Jumeirah (Parada Fotográfica)',
+        'dubai_frame': 'Marco de Dubái (Parada Fotográfica)',
+        'atlantis_both': 'Atlantis The Palm y The Royal (Paradas Fotográficas)'
     }
 }
