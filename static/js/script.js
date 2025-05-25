@@ -235,9 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return; // Let the button/link work normally
             }
             
-            // Capture current scroll position before any changes
-            const previousScrollY = window.scrollY;
-            
             const tourType = this.getAttribute('data-tour');
             const detailsElement = document.getElementById(tourType + '-details');
             const isCurrentlyExpanded = this.classList.contains('expanded');
@@ -259,11 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     detailsElement.classList.add('expanded');
                 }
             }
-            
-            // Force scroll position to remain unchanged after DOM changes
-            requestAnimationFrame(() => {
-                window.scrollTo(0, previousScrollY);
-            });
         });
     });
 });
