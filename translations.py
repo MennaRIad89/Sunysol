@@ -450,7 +450,7 @@ TRANSLATIONS = {
         'hotel_pickup_dropoff': 'Recogida y entrega en hotel',
         'air_conditioned_vehicle': 'Vehículo con aire acondicionado',
         'professional_guide_eng_spa': 'Guía profesional (Inglés/Español)',
-        'photo_stops_landmarks': 'Paradas fotográficas en monumentos',
+        'photo_stops_landmarks': 'Paradas fotográficas en monumentos principales',
         'bottled_water': 'Agua embotellada',
         'taxes_charges': 'Impuestos y cargos',
         'entry_tickets_attractions': 'Entradas para atracciones',
