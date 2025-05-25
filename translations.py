@@ -234,7 +234,11 @@ TRANSLATIONS = {
         'bottled_water_all_taxes': 'Bottled water & all taxes',
         'alcoholic_beverages_camp': 'Alcoholic beverages (available at camp)',
         'quad_biking_dune_buggy': 'Quad biking or dune buggy rides',
-        'cruise_duration': '1.5-2 hour cruise'
+        'cruise_duration': '1.5-2 hour cruise',
+        
+        # Dubai Full Day Tour itinerary sections
+        'morning_classic_highlights': 'Morning – Classic Dubai Highlights:',
+        'afternoon_modern_highlights': 'Afternoon – Modern Dubai Highlights:'
     },
     
     'es': {
@@ -498,6 +502,10 @@ TRANSLATIONS = {
         'snacks_on_arrival': 'Aperitivos al llegar',
         'open_bbq_buffet': 'Cena buffet BBQ abierto (opciones vegetarianas y no vegetarianas)',
         'alcoholic_beverages_available_camp': 'Bebidas alcohólicas (disponibles en el campamento)',
-        'quad_biking_dune_buggy_rides': 'Paseos en quad o dune buggy'
+        'quad_biking_dune_buggy_rides': 'Paseos en quad o dune buggy',
+        
+        # Dubai Full Day Tour itinerary sections
+        'morning_classic_highlights': 'Mañana - Destacados Clásicos de Dubái:',
+        'afternoon_modern_highlights': 'Tarde - Destacados Modernos de Dubái:'
     }
 }
