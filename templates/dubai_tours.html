@@ -66,7 +66,7 @@ main {
                     </div>
 
                     <div class="tour-addons">
-                        <h4><i class="fas fa-plus"></i> Optional Add-ons (Extra Charge)</h4>
+                        <h4><i class="fas fa-plus"></i> {{ g.translations.optional_addons }}</h4>
                         <div class="addons-grid">
                             <span class="addon-item">Burj Khalifa – At The Top</span>
                             <span class="addon-item">The View at The Palm</span>
@@ -101,7 +101,7 @@ main {
                     </div>
 
                     <div class="tour-action">
-                        <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                        <a href="#contact" class="btn primary-btn">{{ g.translations.book_this_tour }}</a>
                     </div>
                 </div>
             </div>
@@ -112,11 +112,11 @@ main {
                     <img src="{{ url_for('static', filename='images/heritage-dubai.jpg') }}" alt="Dubai Classic Tour" />
                 </div>
                 <div class="tour-preview-content">
-                    <h3>Dubai Half Day Classic Tour</h3>
-                    <p>Discover Dubai's rich heritage through traditional souqs, historic districts, and authentic cultural experiences including an abra ride.</p>
+                    <h3>{{ g.translations.dubai_heritage_tour }}</h3>
+                    <p>{{ g.translations.dubai_heritage_description }}</p>
                     <div class="tour-preview-meta">
-                        <span><i class="fas fa-clock"></i> 4-5 Hours</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Hotel Pick-up</span>
+                        <span><i class="fas fa-clock"></i> 4-5 {{ g.translations.hours }}</span>
+                        <span><i class="fas fa-map-marker-alt"></i> {{ g.translations.hotel_pickup }}</span>
                     </div>
                 </div>
                 <div class="tour-preview-toggle">
@@ -128,7 +128,7 @@ main {
             <div class="tour-details" id="classic-details">
                 <div class="tour-detail-content">
                     <div class="tour-itinerary">
-                        <h4><i class="fas fa-route"></i> Itinerary</h4>
+                        <h4><i class="fas fa-route"></i> {{ g.translations.itinerary }}</h4>
                         <ul>
                             <li><strong>{{ g.translations.al_seef_area }}</strong> – Heritage waterfront blending old-world charm with modern design</li>
                             <li><strong>{{ g.translations.al_fahidi_district }}</strong> – Traditional wind-tower architecture</li>
@@ -150,7 +150,7 @@ main {
                     <div class="tour-includes">
                         <div class="includes-grid">
                             <div class="included">
-                                <h4><i class="fas fa-check-circle"></i> Included</h4>
+                                <h4><i class="fas fa-check-circle"></i> {{ g.translations.included }}</h4>
                                 <ul>
                                     <li>Hotel pick-up & drop-off</li>
                                     <li>Air-conditioned vehicle</li>
@@ -161,7 +161,7 @@ main {
                                 </ul>
                             </div>
                             <div class="not-included">
-                                <h4><i class="fas fa-times-circle"></i> Not Included</h4>
+                                <h4><i class="fas fa-times-circle"></i> {{ g.translations.not_included }}</h4>
                                 <ul>
                                     <li>Entry tickets for optional attractions</li>
                                     <li>Meals & personal expenses</li>
@@ -172,7 +172,7 @@ main {
                     </div>
 
                     <div class="tour-action">
-                        <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                        <a href="#contact" class="btn primary-btn">{{ g.translations.book_this_tour }}</a>
                     </div>
                 </div>
             </div>
@@ -187,7 +187,7 @@ main {
                     <p>The ultimate Dubai experience combining both classic heritage sites and modern attractions in one comprehensive day tour.</p>
                     <div class="tour-preview-meta">
                         <span><i class="fas fa-clock"></i> 8-9 Hours</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Hotel Pick-up</span>
+                        <span><i class="fas fa-map-marker-alt"></i> {{ g.translations.hotel_pickup }}</span>
                     </div>
                 </div>
                 <div class="tour-preview-toggle">
@@ -199,7 +199,7 @@ main {
             <div class="tour-details" id="fullday-details">
                 <div class="tour-detail-content">
                     <div class="tour-itinerary">
-                        <h4><i class="fas fa-route"></i> Itinerary</h4>
+                        <h4><i class="fas fa-route"></i> {{ g.translations.itinerary }}</h4>
                         <div class="itinerary-sections">
                             <div class="morning-section">
                                 <h5>Morning – Classic Dubai Highlights:</h5>
@@ -230,7 +230,7 @@ main {
                     </div>
 
                     <div class="tour-addons">
-                        <h4><i class="fas fa-plus"></i> Optional Add-ons (Extra Charge)</h4>
+                        <h4><i class="fas fa-plus"></i> {{ g.translations.optional_addons }}</h4>
                         <div class="addons-grid">
                             <span class="addon-item">Dubai Frame Entry</span>
                             <span class="addon-item">Burj Khalifa – At The Top</span>
@@ -243,7 +243,7 @@ main {
                     <div class="tour-includes">
                         <div class="includes-grid">
                             <div class="included">
-                                <h4><i class="fas fa-check-circle"></i> Included</h4>
+                                <h4><i class="fas fa-check-circle"></i> {{ g.translations.included }}</h4>
                                 <ul>
                                     <li>Hotel pick-up & drop-off</li>
                                     <li>Air-conditioned vehicle</li>
@@ -254,7 +254,7 @@ main {
                                 </ul>
                             </div>
                             <div class="not-included">
-                                <h4><i class="fas fa-times-circle"></i> Not Included</h4>
+                                <h4><i class="fas fa-times-circle"></i> {{ g.translations.not_included }}</h4>
                                 <ul>
                                     <li>Entry tickets for optional attractions</li>
                                     <li>Meals & personal expenses</li>
@@ -265,7 +265,7 @@ main {
                     </div>
 
                     <div class="tour-action">
-                        <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                        <a href="#contact" class="btn primary-btn">{{ g.translations.book_this_tour }}</a>
                     </div>
                 </div>
             </div>
@@ -303,7 +303,7 @@ main {
                     </div>
 
                     <div class="tour-addons">
-                        <h4><i class="fas fa-plus"></i> Optional Add-ons (Extra Charge)</h4>
+                        <h4><i class="fas fa-plus"></i> {{ g.translations.optional_addons }}</h4>
                         <div class="addons-grid">
                             <span class="addon-item">Private Yacht Upgrade</span>
                             <span class="addon-item">Birthday/Anniversary Cake</span>
@@ -314,7 +314,7 @@ main {
                     <div class="tour-includes">
                         <div class="includes-grid">
                             <div class="included">
-                                <h4><i class="fas fa-check-circle"></i> Included</h4>
+                                <h4><i class="fas fa-check-circle"></i> {{ g.translations.included }}</h4>
                                 <ul>
                                     <li>1.5-2 hour cruise</li>
                                     <li>Welcome drinks (Juice, Water)</li>
@@ -325,7 +325,7 @@ main {
                                 </ul>
                             </div>
                             <div class="not-included">
-                                <h4><i class="fas fa-times-circle"></i> Not Included</h4>
+                                <h4><i class="fas fa-times-circle"></i> {{ g.translations.not_included }}</h4>
                                 <ul>
                                     <li>Transfers (available on request)</li>
                                     <li>Alcoholic beverages</li>
@@ -336,7 +336,7 @@ main {
                     </div>
 
                     <div class="tour-action">
-                        <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                        <a href="#contact" class="btn primary-btn">{{ g.translations.book_this_tour }}</a>
                     </div>
                 </div>
             </div>
@@ -351,7 +351,7 @@ main {
                     <p>Adventure into the Arabian desert with dune bashing, camel rides, cultural shows, and traditional BBQ dinner under the stars.</p>
                     <div class="tour-preview-meta">
                         <span><i class="fas fa-clock"></i> 6-7 Hours</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Hotel Pick-up</span>
+                        <span><i class="fas fa-map-marker-alt"></i> {{ g.translations.hotel_pickup }}</span>
                     </div>
                 </div>
                 <div class="tour-preview-toggle">
@@ -388,7 +388,7 @@ main {
                     <div class="tour-includes">
                         <div class="includes-grid">
                             <div class="included">
-                                <h4><i class="fas fa-check-circle"></i> Included</h4>
+                                <h4><i class="fas fa-check-circle"></i> {{ g.translations.included }}</h4>
                                 <ul>
                                     <li>Pick-up & drop-off in 4x4 Land Cruiser</li>
                                     <li>All listed experiences and shows</li>
@@ -396,7 +396,7 @@ main {
                                 </ul>
                             </div>
                             <div class="not-included">
-                                <h4><i class="fas fa-times-circle"></i> Not Included</h4>
+                                <h4><i class="fas fa-times-circle"></i> {{ g.translations.not_included }}</h4>
                                 <ul>
                                     <li>Alcoholic beverages (available at camp)</li>
                                     <li>Quad biking or dune buggy rides</li>
@@ -407,7 +407,7 @@ main {
                     </div>
 
                     <div class="tour-action">
-                        <a href="#contact" class="btn primary-btn">Book This Tour</a>
+                        <a href="#contact" class="btn primary-btn">{{ g.translations.book_this_tour }}</a>
                     </div>
                 </div>
             </div>
