@@ -171,7 +171,34 @@ TRANSLATIONS = {
         'gold_souq': 'Gold Souq',
         'jumeirah_mosque': 'Jumeirah Mosque (Photo Stop)',
         'dubai_frame': 'Dubai Frame (Photo Stop)',
-        'atlantis_both': 'Atlantis The Palm & The Royal (Photo Stops)'
+        'atlantis_both': 'Atlantis The Palm & The Royal (Photo Stops)',
+        
+        # Tour descriptions
+        'dubai_marina_desc': 'Modern waterfront district with stunning skyscrapers and luxury yachts',
+        'palm_jumeirah_desc': 'Drive through the iconic man-made island, shaped like a palm tree',
+        'atlantis_palm_desc': 'World-famous luxury hotel',
+        'atlantis_royal_desc': 'Only 6-star hotel in the world',
+        'ain_dubai_desc': 'World\'s largest observation wheel',
+        'souk_madinat_desc': 'Arabian-style market with Burj Al Arab views',
+        'burj_al_arab_desc': 'Iconic 7-star hotel',
+        'dubai_mall_desc': 'World\'s largest shopping destination',
+        'burj_khalifa_desc': 'World\'s tallest building',
+        'museum_future_desc': 'Architectural masterpiece',
+        'al_seef_desc': 'Heritage waterfront blending old-world charm with modern design',
+        'al_fahidi_desc': 'Traditional wind-tower architecture',
+        'abra_ride_desc': 'Authentic wooden abra across Dubai Creek',
+        'spice_souq_desc': 'Traditional spice market with rich aromas',
+        'gold_souq_desc': 'One of the world\'s largest gold markets',
+        'jumeirah_mosque_desc': 'Stunning Fatimid style mosque',
+        'dubai_frame_desc': 'Architectural marvel framing old and new Dubai',
+        'sheikh_zayed_desc': 'Visit the UAE\'s largest and most iconic mosque, with stunning architecture and intricate design',
+        'qasr_al_watan_desc': 'Visit this majestic palace and explore its cultural and architectural wonders',
+        'emirates_palace_desc': 'Capture the beauty of this luxurious hotel, a symbol of Arabian elegance',
+        'louvre_photo_desc': 'Take pictures of the famous museum\'s unique architecture',
+        'louvre_entry_desc': 'Explore the world-famous museum with incredible exhibits blending cultures and civilizations',
+        'heritage_village_desc': 'Discover Abu Dhabi\'s traditional Bedouin culture, crafts, and lifestyle at this open-air museum',
+        'buffet_lunch_desc': 'Enjoy a delicious buffet featuring Emirati and international cuisine',
+        'corniche_drive_desc': 'Scenic drive along Abu Dhabi\'s beautiful waterfront promenade'
     },
     
     'es': {
@@ -346,6 +373,33 @@ TRANSLATIONS = {
         'gold_souq': 'Zoco de Oro',
         'jumeirah_mosque': 'Mezquita Jumeirah (Parada Fotográfica)',
         'dubai_frame': 'Marco de Dubái (Parada Fotográfica)',
-        'atlantis_both': 'Atlantis The Palm y The Royal (Paradas Fotográficas)'
+        'atlantis_both': 'Atlantis The Palm y The Royal (Paradas Fotográficas)',
+        
+        # Tour descriptions
+        'dubai_marina_desc': 'Distrito costero moderno con rascacielos impresionantes y yates de lujo',
+        'palm_jumeirah_desc': 'Conduce por la icónica isla artificial con forma de palmera',
+        'atlantis_palm_desc': 'Hotel de lujo mundialmente famoso',
+        'atlantis_royal_desc': 'El único hotel de 6 estrellas del mundo',
+        'ain_dubai_desc': 'La noria de observación más grande del mundo',
+        'souk_madinat_desc': 'Mercado de estilo árabe con vistas al Burj Al Arab',
+        'burj_al_arab_desc': 'Icónico hotel de 7 estrellas',
+        'dubai_mall_desc': 'El destino de compras más grande del mundo',
+        'burj_khalifa_desc': 'El edificio más alto del mundo',
+        'museum_future_desc': 'Obra maestra arquitectónica',
+        'al_seef_desc': 'Paseo marítimo patrimonial que combina encanto antiguo con diseño moderno',
+        'al_fahidi_desc': 'Arquitectura tradicional de torres de viento',
+        'abra_ride_desc': 'Auténtico abra de madera a través del Dubai Creek',
+        'spice_souq_desc': 'Mercado tradicional de especias con aromas ricos',
+        'gold_souq_desc': 'Uno de los mercados de oro más grandes del mundo',
+        'jumeirah_mosque_desc': 'Impresionante mezquita de estilo fatimí',
+        'dubai_frame_desc': 'Maravilla arquitectónica que enmarca el Dubái antiguo y nuevo',
+        'sheikh_zayed_desc': 'Visita la mezquita más grande e icónica de los EAU, con arquitectura impresionante y diseño intrincado',
+        'qasr_al_watan_desc': 'Visita este majestuoso palacio y explora sus maravillas culturales y arquitectónicas',
+        'emirates_palace_desc': 'Captura la belleza de este lujoso hotel, símbolo de la elegancia árabe',
+        'louvre_photo_desc': 'Toma fotos de la arquitectura única del famoso museo',
+        'louvre_entry_desc': 'Explora el museo mundialmente famoso con increíbles exhibiciones que mezclan culturas y civilizaciones',
+        'heritage_village_desc': 'Descubre la cultura beduina tradicional de Abu Dhabi, artesanías y estilo de vida en este museo al aire libre',
+        'buffet_lunch_desc': 'Disfruta de un delicioso buffet con cocina emiratí e internacional',
+        'corniche_drive_desc': 'Paseo escénico por el hermoso paseo marítimo de Abu Dhabi'
     }
 }
