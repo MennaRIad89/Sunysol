@@ -420,18 +420,21 @@ body.dubai-tours-page {
 
 /* Expandable Tour Details */
 .tour-details {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
     background: white;
     border-radius: 0 0 15px 15px;
     margin-top: -20px;
     margin-bottom: 20px;
-    animation: slideDown 0.3s ease;
     border: 1px solid #f0f0f0;
     border-top: none;
 }
 
 .tour-details.expanded {
-    display: block;
+    max-height: 3000px;
+    opacity: 1;
 }
 
 @keyframes slideDown {
