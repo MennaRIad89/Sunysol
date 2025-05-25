@@ -238,7 +238,12 @@ TRANSLATIONS = {
         
         # Dubai Full Day Tour itinerary sections
         'morning_classic_highlights': 'Morning – Classic Dubai Highlights:',
-        'afternoon_modern_highlights': 'Afternoon – Modern Dubai Highlights:'
+        'afternoon_modern_highlights': 'Afternoon – Modern Dubai Highlights:',
+        
+        # Call-to-action sections
+        'ready_to_explore_dubai': 'Ready to Explore Dubai?',
+        'dubai_contact_description': 'Contact us for personalized packages, group discounts, or any questions about our Dubai tours.',
+        'get_in_touch': 'Get in Touch'
     },
     
     'es': {
@@ -495,6 +500,11 @@ TRANSLATIONS = {
         
         # Dubai Full Day Tour itinerary sections
         'morning_classic_highlights': 'Mañana - Destacados Clásicos de Dubái:',
-        'afternoon_modern_highlights': 'Tarde - Destacados Modernos de Dubái:'
+        'afternoon_modern_highlights': 'Tarde - Destacados Modernos de Dubái:',
+        
+        # Call-to-action sections
+        'ready_to_explore_dubai': '¿Listo para Explorar Dubái?',
+        'dubai_contact_description': 'Contáctanos para paquetes personalizados, descuentos grupales, o cualquier pregunta sobre nuestros tours de Dubái.',
+        'get_in_touch': 'Ponte en Contacto'
     }
 }
