@@ -229,7 +229,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     tourPreviewCards.forEach(card => {
         card.addEventListener('click', function(e) {
-            // Prevent default browser behavior and event bubbling
+            // Don't expand/collapse if clicking on buttons or links inside the card
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || 
+                e.target.closest('a') || e.target.closest('button')) {
+                return; // Let the button/link work normally
+            }
+            
+            // Prevent default browser behavior and event bubbling for card expansion
             e.preventDefault();
             e.stopPropagation();
             
