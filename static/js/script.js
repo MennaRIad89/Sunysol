@@ -228,7 +228,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const tourPreviewCards = document.querySelectorAll('.tour-preview-card');
     
     tourPreviewCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function(e) {
+            // Prevent default browser behavior and event bubbling
+            e.preventDefault();
+            e.stopPropagation();
+            
             const tourType = this.getAttribute('data-tour');
             const detailsElement = document.getElementById(tourType + '-details');
             
