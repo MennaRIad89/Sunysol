@@ -153,34 +153,5 @@
     </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const tourCards = document.querySelectorAll('.tour-preview-card');
-    
-    tourCards.forEach(card => {
-        const toggle = card.querySelector('.tour-preview-toggle');
-        const details = card.querySelector('.tour-details');
-        const icon = toggle.querySelector('i');
-        
-        // Initially hide all tour details
-        if (details) {
-            details.style.display = 'none';
-        }
-        
-        toggle.addEventListener('click', function() {
-            if (details.style.display === 'none' || details.style.display === '') {
-                details.style.display = 'block';
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-                card.classList.add('expanded');
-            } else {
-                details.style.display = 'none';
-                icon.classList.remove('fa-chevron-up');
-                icon.classList.add('fa-chevron-down');
-                card.classList.remove('expanded');
-            }
-        });
-    });
-});
-</script>
+
 {% endblock %}
