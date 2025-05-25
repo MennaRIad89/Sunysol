@@ -276,8 +276,8 @@ main {
                     <img src="{{ url_for('static', filename='images/marina-cruise.jpg') }}" alt="Dubai Marina Cruise" />
                 </div>
                 <div class="tour-preview-content">
-                    <h3>Dubai Marina Cruise Experience</h3>
-                    <p>Sail through Dubai Marina's stunning waterfront aboard a traditional dhow or luxury yacht with entertainment and dining options.</p>
+                    <h3>{{ g.translations.marina_cruise_tour }}</h3>
+                    <p>{{ g.translations.marina_cruise_description }}</p>
                     <div class="tour-preview-meta">
                         <span><i class="fas fa-clock"></i> 1.5-2 Hours</span>
                         <span><i class="fas fa-ship"></i> Dubai Marina</span>
@@ -347,8 +347,8 @@ main {
                     <img src="{{ url_for('static', filename='images/desert-safari.jpg') }}" alt="Desert Safari" />
                 </div>
                 <div class="tour-preview-content">
-                    <h3>Desert Safari Tour (Evening Experience)</h3>
-                    <p>Adventure into the Arabian desert with dune bashing, camel rides, cultural shows, and traditional BBQ dinner under the stars.</p>
+                    <h3>{{ g.translations.desert_safari_tour }}</h3>
+                    <p>{{ g.translations.desert_safari_description }}</p>
                     <div class="tour-preview-meta">
                         <span><i class="fas fa-clock"></i> 6-7 Hours</span>
                         <span><i class="fas fa-map-marker-alt"></i> {{ g.translations.hotel_pickup }}</span>
