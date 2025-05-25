@@ -208,7 +208,7 @@ TRANSLATIONS = {
         'hotel_pickup_dropoff': 'Hotel pick-up & drop-off',
         'air_conditioned_vehicle': 'Air-conditioned vehicle',
         'professional_guide_eng_spa': 'Professional guide (English/Spanish)',
-        'photo_stops_landmarks': 'Photo stops at landmarks',
+        'photo_stops_landmarks': 'Photo stops at major landmarks',
         'bottled_water': 'Bottled water',
         'taxes_charges': 'Taxes & charges',
         'entry_tickets_attractions': 'Entry tickets for attractions',
