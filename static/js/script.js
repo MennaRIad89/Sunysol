@@ -235,15 +235,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 return; // Let the button/link work normally
             }
             
-            // Prevent default browser behavior and event bubbling for card expansion
-            e.preventDefault();
-            e.stopPropagation();
+            // Capture current scroll position before any changes
+            const previousScrollY = window.scrollY;
             
             const tourType = this.getAttribute('data-tour');
             const detailsElement = document.getElementById(tourType + '-details');
             const isCurrentlyExpanded = this.classList.contains('expanded');
             
-            // Always close ALL cards first (accordion behavior)
+            // Always close ALL cards first (true accordion behavior)
             tourPreviewCards.forEach(otherCard => {
                 otherCard.classList.remove('expanded');
                 const otherTourType = otherCard.getAttribute('data-tour');
@@ -260,7 +259,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     detailsElement.classList.add('expanded');
                 }
             }
-            // If it was already expanded, it stays closed (already handled above)
+            
+            // Force scroll position to remain unchanged after DOM changes
+            requestAnimationFrame(() => {
+                window.scrollTo(0, previousScrollY);
+            });
         });
     });
 });
