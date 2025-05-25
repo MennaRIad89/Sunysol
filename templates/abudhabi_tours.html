@@ -1,39 +1,49 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="page-header">
+<style>
+.simple-page-header {
+    background-color: white;
+    padding: 40px 0;
+    margin-top: 80px;
+}
+
+.simple-page-header h1 {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+</style>
+<!-- Simple Page Header -->
+<div class="simple-page-header" style="padding-top: 120px;">
     <div class="container">
         <h1>{{ g.translations.abudhabi_adventure_title }}</h1>
-        <p>{{ g.translations.abudhabi_tours_include_guide }}</p>
     </div>
 </div>
 
-<div class="dubai-tours-container">
+<!-- Abu Dhabi Tours Section -->
+<section class="tours-detail-section" style="background-color: white;">
     <div class="container">
-        <div class="dubai-tours-grid">
+        <div class="section-header">
+            <p>{{ g.translations.abudhabi_tours_include_guide }}</p>
+        </div>
+
+        <div class="tour-preview-cards">
             <!-- Abu Dhabi Heritage Edition Tour -->
-            <div class="dubai-tour-card" data-tour="heritage">
-                <div class="tour-image">
-                    <img src="/static/images/abu-dhabi-heritage.jpg?v=2.0" alt="Sheikh Zayed Grand Mosque">
+            <div class="tour-preview-card" data-tour="heritage">
+                <div class="tour-preview-image">
+                    <img src="/static/images/abu-dhabi-heritage.jpg?v=2.0" alt="Sheikh Zayed Grand Mosque" />
                 </div>
-                <div class="tour-preview">
-                    <div class="tour-card-header">
-                        <h3>{{ g.translations.abudhabi_heritage_tour }}</h3>
-                        <button class="expand-btn" onclick="toggleTour('heritage')">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
+                <div class="tour-preview-content">
+                    <h3>{{ g.translations.abudhabi_heritage_tour }}</h3>
+                    <p>{{ g.translations.abudhabi_heritage_description }}</p>
+                    <div class="tour-preview-meta">
+                        <span><i class="fas fa-clock"></i> 8-9 {{ g.translations.hours }}</span>
+                        <span><i class="fas fa-map-marker-alt"></i> {{ g.translations.hotel_pickup }}</span>
                     </div>
-                    <p class="tour-description">{{ g.translations.abudhabi_heritage_description }}</p>
-                    <div class="tour-meta">
-                        <span class="duration">
-                            <i class="fas fa-clock"></i>
-                            8-9 {{ g.translations.hours }}
-                        </span>
-                        <span class="pickup">
-                            <i class="fas fa-map-marker-alt"></i>
-                            {{ g.translations.hotel_pickup }}
-                        </span>
-                    </div>
+                </div>
+                <div class="tour-preview-toggle">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
                 
                 <div class="tour-details" id="heritage-details">
@@ -82,28 +92,20 @@
             </div>
 
             <!-- Abu Dhabi Louvre Edition Tour -->
-            <div class="dubai-tour-card" data-tour="louvre">
-                <div class="tour-image">
-                    <img src="/static/images/louvre-edition-tour.jpg" alt="Louvre Abu Dhabi">
+            <div class="tour-preview-card" data-tour="louvre">
+                <div class="tour-preview-image">
+                    <img src="/static/images/louvre-edition-tour.jpg" alt="Louvre Abu Dhabi" />
                 </div>
-                <div class="tour-preview">
-                    <div class="tour-card-header">
-                        <h3>{{ g.translations.abudhabi_louvre_tour }}</h3>
-                        <button class="expand-btn" onclick="toggleTour('louvre')">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
+                <div class="tour-preview-content">
+                    <h3>{{ g.translations.abudhabi_louvre_tour }}</h3>
+                    <p>{{ g.translations.abudhabi_louvre_description }}</p>
+                    <div class="tour-preview-meta">
+                        <span><i class="fas fa-clock"></i> 8-9 {{ g.translations.hours }}</span>
+                        <span><i class="fas fa-map-marker-alt"></i> {{ g.translations.hotel_pickup }}</span>
                     </div>
-                    <p class="tour-description">{{ g.translations.abudhabi_louvre_description }}</p>
-                    <div class="tour-meta">
-                        <span class="duration">
-                            <i class="fas fa-clock"></i>
-                            8-9 {{ g.translations.hours }}
-                        </span>
-                        <span class="pickup">
-                            <i class="fas fa-map-marker-alt"></i>
-                            {{ g.translations.hotel_pickup }}
-                        </span>
-                    </div>
+                </div>
+                <div class="tour-preview-toggle">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
                 
                 <div class="tour-details" id="louvre-details">
@@ -149,29 +151,35 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <script>
-function toggleTour(tourId) {
-    const details = document.getElementById(tourId + '-details');
-    const button = document.querySelector(`[data-tour="${tourId}"] .expand-btn i`);
-    
-    if (details.style.display === 'none' || details.style.display === '') {
-        details.style.display = 'block';
-        button.classList.remove('fa-chevron-down');
-        button.classList.add('fa-chevron-up');
-    } else {
-        details.style.display = 'none';
-        button.classList.remove('fa-chevron-up');
-        button.classList.add('fa-chevron-down');
-    }
-}
-
-// Initialize all tour details as hidden
 document.addEventListener('DOMContentLoaded', function() {
-    const tourDetails = document.querySelectorAll('.tour-details');
-    tourDetails.forEach(detail => {
-        detail.style.display = 'none';
+    const tourCards = document.querySelectorAll('.tour-preview-card');
+    
+    tourCards.forEach(card => {
+        const toggle = card.querySelector('.tour-preview-toggle');
+        const details = card.querySelector('.tour-details');
+        const icon = toggle.querySelector('i');
+        
+        // Initially hide all tour details
+        if (details) {
+            details.style.display = 'none';
+        }
+        
+        toggle.addEventListener('click', function() {
+            if (details.style.display === 'none' || details.style.display === '') {
+                details.style.display = 'block';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+                card.classList.add('expanded');
+            } else {
+                details.style.display = 'none';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+                card.classList.remove('expanded');
+            }
+        });
     });
 });
 </script>
