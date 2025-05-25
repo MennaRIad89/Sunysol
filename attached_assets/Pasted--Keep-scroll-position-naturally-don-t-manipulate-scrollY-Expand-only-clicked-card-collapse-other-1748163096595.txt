@@ -1,0 +1,59 @@
+✅ Keep scroll position naturally—don’t manipulate scrollY
+✅ Expand only clicked card, collapse others, but don’t reflow page aggressively
+
+Here's the corrected JS logic (replace your current tour card JS):
+javascript
+Copy
+Edit
+document.addEventListener('DOMContentLoaded', () => {
+    const tourPreviewCards = document.querySelectorAll('.tour-preview-card');
+
+    tourPreviewCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || 
+                e.target.closest('a') || e.target.closest('button')) {
+                return; // Let buttons/links work normally
+            }
+
+            const isExpanded = this.classList.contains('expanded');
+
+            // Only collapse others if clicked card is not already expanded
+            tourPreviewCards.forEach(otherCard => {
+                if (otherCard !== this) {
+                    otherCard.classList.remove('expanded');
+                    const otherDetails = document.getElementById(otherCard.getAttribute('data-tour') + '-details');
+                    if (otherDetails) {
+                        otherDetails.classList.remove('expanded');
+                    }
+                }
+            });
+
+            // Toggle clicked card
+            if (!isExpanded) {
+                this.classList.add('expanded');
+                const detailsElement = document.getElementById(this.getAttribute('data-tour') + '-details');
+                if (detailsElement) {
+                    detailsElement.classList.add('expanded');
+                }
+            } else {
+                this.classList.remove('expanded');
+                const detailsElement = document.getElementById(this.getAttribute('data-tour') + '-details');
+                if (detailsElement) {
+                    detailsElement.classList.remove('expanded');
+                }
+            }
+        });
+    });
+});
+✅ Key changes:
+
+No scrollTo or scroll position hacks
+
+No resetting of scroll position
+
+Keeps natural page flow
+
+Expands only one card at a time (true accordion)
+
+Clicking the same card toggles it open/closed
+

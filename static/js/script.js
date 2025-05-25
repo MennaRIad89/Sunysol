@@ -226,34 +226,39 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Tour card expand/collapse functionality
     const tourPreviewCards = document.querySelectorAll('.tour-preview-card');
-    
+
     tourPreviewCards.forEach(card => {
         card.addEventListener('click', function(e) {
-            // Don't expand/collapse if clicking on buttons or links inside the card
             if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || 
                 e.target.closest('a') || e.target.closest('button')) {
-                return; // Let the button/link work normally
+                return; // Let buttons/links work normally
             }
-            
-            const tourType = this.getAttribute('data-tour');
-            const detailsElement = document.getElementById(tourType + '-details');
-            const isCurrentlyExpanded = this.classList.contains('expanded');
-            
-            // Always close ALL cards first (true accordion behavior)
+
+            const isExpanded = this.classList.contains('expanded');
+
+            // Only collapse others if clicked card is not already expanded
             tourPreviewCards.forEach(otherCard => {
-                otherCard.classList.remove('expanded');
-                const otherTourType = otherCard.getAttribute('data-tour');
-                const otherDetailsElement = document.getElementById(otherTourType + '-details');
-                if (otherDetailsElement) {
-                    otherDetailsElement.classList.remove('expanded');
+                if (otherCard !== this) {
+                    otherCard.classList.remove('expanded');
+                    const otherDetails = document.getElementById(otherCard.getAttribute('data-tour') + '-details');
+                    if (otherDetails) {
+                        otherDetails.classList.remove('expanded');
+                    }
                 }
             });
-            
-            // If the clicked card wasn't already expanded, open it
-            if (!isCurrentlyExpanded) {
+
+            // Toggle clicked card
+            if (!isExpanded) {
                 this.classList.add('expanded');
+                const detailsElement = document.getElementById(this.getAttribute('data-tour') + '-details');
                 if (detailsElement) {
                     detailsElement.classList.add('expanded');
+                }
+            } else {
+                this.classList.remove('expanded');
+                const detailsElement = document.getElementById(this.getAttribute('data-tour') + '-details');
+                if (detailsElement) {
+                    detailsElement.classList.remove('expanded');
                 }
             }
         });
