@@ -198,7 +198,21 @@ TRANSLATIONS = {
         'louvre_entry_desc': 'Explore the world-famous museum with incredible exhibits blending cultures and civilizations',
         'heritage_village_desc': 'Discover Abu Dhabi\'s traditional Bedouin culture, crafts, and lifestyle at this open-air museum',
         'buffet_lunch_desc': 'Enjoy a delicious buffet featuring Emirati and international cuisine',
-        'corniche_drive_desc': 'Scenic drive along Abu Dhabi\'s beautiful waterfront promenade'
+        'corniche_drive_desc': 'Scenic drive along Abu Dhabi\'s beautiful waterfront promenade',
+        
+        # Inclusion/Exclusion items
+        'hotel_pickup_dropoff': 'Hotel pick-up & drop-off',
+        'air_conditioned_vehicle': 'Air-conditioned vehicle',
+        'professional_guide_eng_spa': 'Professional guide (English/Spanish)',
+        'photo_stops_landmarks': 'Photo stops at landmarks',
+        'bottled_water': 'Bottled water',
+        'taxes_charges': 'Taxes & charges',
+        'entry_tickets_attractions': 'Entry tickets for attractions',
+        'meals_personal_expenses': 'Meals & personal expenses',
+        'tips_gratuities': 'Tips & gratuities',
+        'personal_expenses': 'Personal expenses',
+        'meals_unless_specified': 'Meals (unless specified)',
+        'entrance_fees_attractions': 'Entrance fees to attractions'
     },
     
     'es': {
@@ -400,6 +414,20 @@ TRANSLATIONS = {
         'louvre_entry_desc': 'Explora el museo mundialmente famoso con increíbles exhibiciones que mezclan culturas y civilizaciones',
         'heritage_village_desc': 'Descubre la cultura beduina tradicional de Abu Dhabi, artesanías y estilo de vida en este museo al aire libre',
         'buffet_lunch_desc': 'Disfruta de un delicioso buffet con cocina emiratí e internacional',
-        'corniche_drive_desc': 'Paseo escénico por el hermoso paseo marítimo de Abu Dhabi'
+        'corniche_drive_desc': 'Paseo escénico por el hermoso paseo marítimo de Abu Dhabi',
+        
+        # Inclusion/Exclusion items
+        'hotel_pickup_dropoff': 'Recogida y entrega en hotel',
+        'air_conditioned_vehicle': 'Vehículo con aire acondicionado',
+        'professional_guide_eng_spa': 'Guía profesional (Inglés/Español)',
+        'photo_stops_landmarks': 'Paradas fotográficas en monumentos',
+        'bottled_water': 'Agua embotellada',
+        'taxes_charges': 'Impuestos y cargos',
+        'entry_tickets_attractions': 'Entradas para atracciones',
+        'meals_personal_expenses': 'Comidas y gastos personales',
+        'tips_gratuities': 'Propinas y gratificaciones',
+        'personal_expenses': 'Gastos personales',
+        'meals_unless_specified': 'Comidas (a menos que se especifique)',
+        'entrance_fees_attractions': 'Tarifas de entrada a atracciones'
     }
 }
