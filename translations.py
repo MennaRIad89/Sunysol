@@ -212,7 +212,25 @@ TRANSLATIONS = {
         'tips_gratuities': 'Tips & gratuities',
         'personal_expenses': 'Personal expenses',
         'meals_unless_specified': 'Meals (unless specified)',
-        'entrance_fees_attractions': 'Entrance fees to attractions'
+        'entrance_fees_attractions': 'Entrance fees to attractions',
+        
+        # Additional inclusion/exclusion items
+        'abra_ride_across_creek': 'Abra ride across Dubai Creek',
+        'entry_tickets_optional': 'Entry tickets for optional attractions',
+        'welcome_drinks_juice_water': 'Welcome drinks (Juice, Water)',
+        'buffet_dinner_light_snacks': 'Buffet dinner or light snacks',
+        'live_entertainment_shows': 'Live entertainment shows',
+        'air_conditioned_open_seating': 'Air-conditioned & open-air seating',
+        'safety_equipment': 'Safety equipment',
+        'transfers_available_request': 'Transfers (available on request)',
+        'alcoholic_beverages': 'Alcoholic beverages',
+        'personal_expenses_tips': 'Personal expenses & tips',
+        'pickup_dropoff_4x4': 'Pick-up & drop-off in 4x4 Land Cruiser',
+        'all_listed_experiences': 'All listed experiences and shows',
+        'bottled_water_all_taxes': 'Bottled water & all taxes',
+        'alcoholic_beverages_camp': 'Alcoholic beverages (available at camp)',
+        'quad_biking_dune_buggy': 'Quad biking or dune buggy rides',
+        '15_2_hour_cruise': '1.5-2 hour cruise'
     },
     
     'es': {
@@ -428,6 +446,24 @@ TRANSLATIONS = {
         'tips_gratuities': 'Propinas y gratificaciones',
         'personal_expenses': 'Gastos personales',
         'meals_unless_specified': 'Comidas (a menos que se especifique)',
-        'entrance_fees_attractions': 'Tarifas de entrada a atracciones'
+        'entrance_fees_attractions': 'Tarifas de entrada a atracciones',
+        
+        # Additional inclusion/exclusion items
+        'abra_ride_across_creek': 'Paseo en abra por Dubai Creek',
+        'entry_tickets_optional': 'Entradas para atracciones opcionales',
+        'welcome_drinks_juice_water': 'Bebidas de bienvenida (Jugo, Agua)',
+        'buffet_dinner_light_snacks': 'Cena buffet o aperitivos ligeros',
+        'live_entertainment_shows': 'Espectáculos de entretenimiento en vivo',
+        'air_conditioned_open_seating': 'Asientos con aire acondicionado y al aire libre',
+        'safety_equipment': 'Equipo de seguridad',
+        'transfers_available_request': 'Traslados (disponibles bajo petición)',
+        'alcoholic_beverages': 'Bebidas alcohólicas',
+        'personal_expenses_tips': 'Gastos personales y propinas',
+        'pickup_dropoff_4x4': 'Recogida y entrega en Land Cruiser 4x4',
+        'all_listed_experiences': 'Todas las experiencias y espectáculos listados',
+        'bottled_water_all_taxes': 'Agua embotellada y todos los impuestos',
+        'alcoholic_beverages_camp': 'Bebidas alcohólicas (disponibles en el campamento)',
+        'quad_biking_dune_buggy': 'Paseos en quad o dune buggy',
+        '15_2_hour_cruise': 'Crucero de 1.5-2 horas'
     }
 }
