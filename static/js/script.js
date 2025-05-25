@@ -234,6 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 return; // Let buttons/links work normally
             }
 
+            // Temporarily disable smooth scroll during accordion operations
+            document.documentElement.classList.add('no-smooth-scroll');
+
             const isExpanded = this.classList.contains('expanded');
 
             // Only collapse others if clicked card is not already expanded
@@ -261,6 +264,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     detailsElement.classList.remove('expanded');
                 }
             }
+
+            // Re-enable smooth scrolling after a brief timeout
+            setTimeout(() => {
+                document.documentElement.classList.remove('no-smooth-scroll');
+            }, 50);
         });
     });
     
