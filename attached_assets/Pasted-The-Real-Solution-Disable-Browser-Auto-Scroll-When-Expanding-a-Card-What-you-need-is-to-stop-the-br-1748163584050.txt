@@ -1,0 +1,85 @@
+The Real Solution: Disable Browser Auto-Scroll When Expanding a Card
+What you need is to stop the browser from auto-scrolling when a card expands. Here’s the fix:
+
+1️⃣ Add preventDefault() or stopPropagation() where necessary in JS
+(You already do this to stop clicks on buttons inside cards. Good.)
+
+2️⃣ Override the browser's scroll behavior during accordion transitions by removing scrollIntoView triggers (you don't seem to call scrollIntoView on card clicks, so that's fine).
+
+3️⃣ ✅ Final touch: Tell the browser not to auto-scroll on CSS height changes. But this is tricky, because browsers naturally adjust scroll position when an element's height changes above the viewport.
+
+🚀 The Workaround: Use scroll-margin-top or a Scroll Correction Hack
+Here’s what actually works:
+
+🧩 Option 1: Use scroll-margin-top in CSS
+Add this CSS rule for .tour-preview-card:
+
+css
+Copy
+Edit
+.tour-preview-card {
+    scroll-margin-top: 80px; /* Adjust to match your fixed navbar height */
+}
+This tells the browser how much margin to leave above the clicked card when it auto-scrolls it into view. It softens the jump.
+
+🧩 Option 2: Force Manual Scroll Control
+Modify your accordion JS so that it:
+
+Expands the card without any auto-scroll.
+
+If needed, scrolls manually to the card's top only when necessary.
+
+Update your accordion click logic like this:
+
+javascript
+Copy
+Edit
+tourPreviewCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || 
+            e.target.closest('a') || e.target.closest('button')) {
+            return;
+        }
+
+        const tourType = this.getAttribute('data-tour');
+        const detailsElement = document.getElementById(tourType + '-details');
+        const isCurrentlyExpanded = this.classList.contains('expanded');
+
+        // Close all
+        tourPreviewCards.forEach(otherCard => {
+            otherCard.classList.remove('expanded');
+            const otherTourType = otherCard.getAttribute('data-tour');
+            const otherDetails = document.getElementById(otherTourType + '-details');
+            if (otherDetails) otherDetails.classList.remove('expanded');
+        });
+
+        // Open if it wasn't expanded
+        if (!isCurrentlyExpanded) {
+            this.classList.add('expanded');
+            if (detailsElement) detailsElement.classList.add('expanded');
+
+            // Optional: Scroll the card into view if it's offscreen
+            const rect = this.getBoundingClientRect();
+            if (rect.top < 0 || rect.bottom > window.innerHeight) {
+                this.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    });
+});
+This keeps the page still unless the clicked card is fully offscreen.
+
+🧩 Option 3: Disable Smooth Scroll on Accordion Clicks
+If you want no automatic scroll at all, disable scroll-behavior: smooth on the <html> element just for accordion clicks:
+
+javascript
+Copy
+Edit
+document.querySelectorAll('.tour-preview-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+        document.documentElement.style.scrollBehavior = 'auto';
+        // your toggle code...
+        setTimeout(() => {
+            document.documentElement.style.scrollBehavior = 'smooth';
+        }, 500);
+    });
+});

@@ -337,6 +337,7 @@ body.dubai-tours-page {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     border: 1px solid #f0f0f0;
+    scroll-margin-top: 100px;
 }
 
 .tour-preview-card:hover {
