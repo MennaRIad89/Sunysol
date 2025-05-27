@@ -39,7 +39,7 @@
         </div>
         <div class="about-content">
             <div class="about-image">
-                <img src="https://pixabay.com/get/g447595d41fa6630883a2466429ff3297cc795acb49b43158bec806320027990ef5e4bca5954865a900dcfe8bd9cbdc7359643b3547bb737e7d2774c8e0a5e02f_1280.jpg" alt="Menna, your tour guide" />
+                <img src="{{ url_for('static', filename='images/Meet Menna.jpg') }}" alt="Menna, your tour guide" />
             </div>
             <div class="about-text">
                 <h3>{{ g.translations.about_subtitle }}</h3>
@@ -96,7 +96,7 @@
             <!-- Abu Dhabi Tours Block -->
             <a href="/abudhabi-tours" class="city-block-small">
                 <div class="city-image-small">
-                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Abu Dhabi Sheikh Zayed Mosque" />
+                    <img src="{{ url_for('static', filename='images/SZ_MSQ.jpg') }}" alt="Abu Dhabi Sheikh Zayed Mosque" />
                     <div class="city-overlay-small">
                         <h3>Abu Dhabi Tours</h3>
                         <i class="fas fa-arrow-right"></i>
@@ -107,7 +107,7 @@
             <!-- Northern Emirates Tours Block -->
             <a href="/northern-emirates-tours" class="city-block-small">
                 <div class="city-image-small">
-                    <img src="https://images.unsplash.com/photo-1578068558264-c4b8a7c4a1e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Northern Emirates Mountains" />
+                    <img src="{{ url_for('static', filename='images/SHJ_Tour.jpg') }}" alt="Northern Emirates Mountains" />
                     <div class="city-overlay-small">
                         <h3>Northern Emirates Tours</h3>
                         <i class="fas fa-arrow-right"></i>
