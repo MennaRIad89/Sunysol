@@ -2051,3 +2051,51 @@ footer {
         right: 5%;
     }
 }
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 150px; /* height of navbar */
+  min-height: calc(100vh - 0px); /* Use full viewport height */
+  background: url('../images/burj-khalifa.png') no-repeat center center/cover;
+  position: relative;
+}
+
+.hero-content {
+  background: rgba(32, 24, 12, 0.68); /* Or your current bg */
+  border-radius: 20px;
+  padding: 4rem 2rem 4rem 2rem; /* Increase top/bottom padding! */
+  width: 80vw;
+  max-width: 900px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  margin-top: 0; /* sits right under navbar */
+  margin-bottom: 4rem; /* stretches it further down */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+/* On smaller screens, adjust padding */
+@media (max-width: 900px) {
+  .hero-content {
+    padding: 2.5rem 1rem 2.5rem 1rem;
+    width: 98vw;
+    max-width: 99vw;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding-top: 120px; /* if navbar shrinks */
+    min-height: calc(100vh - 0px);
+  }
+  .hero-content {
+    padding: 1.5rem 0.5rem 2.5rem 0.5rem;
+    width: 99vw;
+    margin-bottom: 2rem;
+  }
+}
