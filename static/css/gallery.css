@@ -361,11 +361,15 @@
     padding: 12px 30px;
     border-radius: 30px;
     font-weight: 500;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    font-size: 1rem;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .btn.nav-btn:hover {

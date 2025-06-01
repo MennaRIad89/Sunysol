@@ -15,6 +15,12 @@ TRANSLATIONS = {
         'Reviews',
         'nav_contact':
         'Contact',
+        'dubai_tours':
+        'Dubai Tours',
+        'abudhabi_tours':
+        'Abu Dhabi Tours',
+        'northern_emirates_tours':
+        'Northern Emirates Tours',
         'quick_links':
         'Quick Links',
         'connect_with_us':
@@ -712,6 +718,12 @@ TRANSLATIONS = {
         'Opiniones',
         'nav_contact':
         'Contacto',
+        'dubai_tours':
+        'Tours de Dubái',
+        'abudhabi_tours':
+        'Tours de Abu Dhabi',
+        'northern_emirates_tours':
+        'Tours de Emiratos del Norte',
         'quick_links':
         'Enlaces Rápidos',
         'connect_with_us':
