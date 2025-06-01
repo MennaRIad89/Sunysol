@@ -105,8 +105,8 @@ def gallery_page(gallery_type):
     # Gallery data with existing images
     galleries = {
         'dubai-modern': {
-            'title': 'Dubai Half Day Modern Tour',
-            'description': 'Experience Dubai\'s futuristic skyline, luxury hotels, and iconic landmarks including Burj Khalifa, Palm Jumeirah, and Dubai Marina.',
+            'title': g.translations.get('dubai_modern_tour', 'Dubai Half Day Modern Tour'),
+            'description': g.translations.get('dubai_modern_description', 'Experience Dubai\'s futuristic skyline, luxury hotels, and iconic landmarks including Burj Khalifa, Palm Jumeirah, and Dubai Marina.'),
             'images': [
                 {'src': 'images/dubai-modern-1.jpg', 'alt': 'Dubai Modern Architecture'},
                 {'src': 'images/dubai-modern-2.jpg', 'alt': 'Dubai Skyline View'},
