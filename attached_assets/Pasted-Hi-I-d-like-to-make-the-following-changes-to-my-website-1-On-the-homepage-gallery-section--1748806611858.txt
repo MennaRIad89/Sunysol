@@ -1,0 +1,33 @@
+Hi! I’d like to make the following changes to my website:
+
+1) On the homepage gallery section:  
+Problem: Images are stacked vertically; the page becomes too long.
+Desired: A horizontal scrollable gallery (carousel style), where images are beside each other, and you can scroll left/right.
+
+- Change the current stacked layout to a **horizontal scrollable gallery (carousel style)**, where images are beside each other.  
+- Add **left/right arrows** outside the gallery for scrolling.  
+- On click, open the image in a **lightbox** with its own navigation.
+
+2) For the **"Book This Tour"** and **"View Gallery"** buttons on tour pages (like Dubai Tours page):  
+- **Center-align** these two buttons horizontally.  
+- Keep the **orange button** styling for "Book This Tour" (with the white text and orange background).  
+- For the **"View Gallery"** button:  
+  - Improve its visual design so it doesn't look like plain text on a white background.  
+  - Make it more like a **secondary button**—for example, a subtle border, slight background color (like light grey), or matching rounded shape to the "Book This Tour" button, but less visually dominant.
+
+3)For all per-tour gallery pages (e.g., Dubai Modern, Abu Dhabi heritage edition):  
+- Add a consistent **"Back to [Tour Page]" button** at the bottom.  
+- The button should navigate to the corresponding tour page (e.g., Dubai Modern → Dubai Tours page).  
+- **Remove the "Ready to Book This Tour?" footer section** entirely from all gallery pages.
+
+4) For all other pages (e.g., tour pages):  
+- Also **remove the "Ready to Book This Tour?" footer section**.  
+- Only keep the **"Back to Tour Page" button** where it makes sense.
+
+5) Ensure all **page titles** (h1, h2) are **consistent in color, font size, and weight** across the site—match the design of the homepage hero section.
+
+6) Make sure everything is **responsive** across desktop, tablet, and mobile.
+
+7) make sure all translation for the gallaries pages and sections is working, i did some but please finetune it and add the missings
+
+Thanks!

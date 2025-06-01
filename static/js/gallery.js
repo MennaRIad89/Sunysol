@@ -137,9 +137,72 @@ class GalleryLightbox {
     }
 }
 
+// Gallery Carousel for Homepage
+class GalleryCarousel {
+    constructor() {
+        this.carousel = document.getElementById('gallery-carousel');
+        this.prevBtn = document.getElementById('gallery-prev');
+        this.nextBtn = document.getElementById('gallery-next');
+        this.currentIndex = 0;
+        this.itemWidth = 320; // 300px + 20px gap
+        this.visibleItems = this.getVisibleItems();
+        
+        if (this.carousel) {
+            this.init();
+        }
+    }
+
+    init() {
+        this.bindEvents();
+        this.updateCarousel();
+        window.addEventListener('resize', () => {
+            this.visibleItems = this.getVisibleItems();
+            this.updateCarousel();
+        });
+    }
+
+    getVisibleItems() {
+        const containerWidth = this.carousel?.parentElement?.offsetWidth || 1000;
+        return Math.floor(containerWidth / this.itemWidth);
+    }
+
+    bindEvents() {
+        this.prevBtn?.addEventListener('click', () => this.prevSlide());
+        this.nextBtn?.addEventListener('click', () => this.nextSlide());
+    }
+
+    prevSlide() {
+        const totalItems = this.carousel.children.length;
+        this.currentIndex = Math.max(0, this.currentIndex - 1);
+        this.updateCarousel();
+    }
+
+    nextSlide() {
+        const totalItems = this.carousel.children.length;
+        const maxIndex = Math.max(0, totalItems - this.visibleItems);
+        this.currentIndex = Math.min(maxIndex, this.currentIndex + 1);
+        this.updateCarousel();
+    }
+
+    updateCarousel() {
+        const translateX = -this.currentIndex * this.itemWidth;
+        this.carousel.style.transform = `translateX(${translateX}px)`;
+        
+        // Update button visibility
+        const totalItems = this.carousel.children.length;
+        const maxIndex = Math.max(0, totalItems - this.visibleItems);
+        
+        this.prevBtn.style.opacity = this.currentIndex === 0 ? '0.5' : '1';
+        this.nextBtn.style.opacity = this.currentIndex >= maxIndex ? '0.5' : '1';
+        this.prevBtn.style.pointerEvents = this.currentIndex === 0 ? 'none' : 'auto';
+        this.nextBtn.style.pointerEvents = this.currentIndex >= maxIndex ? 'none' : 'auto';
+    }
+}
+
 // Initialize gallery when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new GalleryLightbox();
+    new GalleryCarousel();
 });
 
 // Refresh gallery when new content is loaded (for dynamic content)
@@ -149,4 +212,5 @@ window.refreshGallery = function() {
         existingLightbox.remove();
     }
     new GalleryLightbox();
+    new GalleryCarousel();
 };

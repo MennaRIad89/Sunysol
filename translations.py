@@ -273,6 +273,20 @@ TRANSLATIONS = {
         'Book This Tour',
         'view_gallery':
         'View Gallery',
+        
+        # Gallery translations
+        'gallery_title':
+        'Our Gallery',
+        'gallery_description':
+        'Discover the beauty of UAE through our curated photo collection',
+        'back_to_tours':
+        'Back to Tours',
+        'back_to_dubai_tours':
+        'Back to Dubai Tours',
+        'back_to_abudhabi_tours':
+        'Back to Abu Dhabi Tours',
+        'back_to_northern_tours':
+        'Back to Northern Emirates Tours',
 
         # Abu Dhabi tour specific content
         'sheikh_zayed_mosque':
@@ -956,6 +970,20 @@ TRANSLATIONS = {
         'Reservar Este Tour',
         'view_gallery':
         'Ver Galería',
+        
+        # Gallery translations
+        'gallery_title':
+        'Nuestra Galería',
+        'gallery_description':
+        'Descubre la belleza de los Emiratos Árabes Unidos a través de nuestra colección de fotos seleccionadas',
+        'back_to_tours':
+        'Volver a Tours',
+        'back_to_dubai_tours':
+        'Volver a Tours de Dubai',
+        'back_to_abudhabi_tours':
+        'Volver a Tours de Abu Dhabi',
+        'back_to_northern_tours':
+        'Volver a Tours de los Emiratos del Norte',
 
         # Abu Dhabi tour specific content
         'sheikh_zayed_mosque':

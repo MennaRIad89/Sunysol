@@ -173,12 +173,20 @@
             <p>{{ g.translations.gallery_description or "Discover the beauty of UAE through our curated photo collection" }}</p>
         </div>
         <div class="gallery-preview-grid">
-            <img src="{{ url_for('static', filename='images/Gallary_Photo1.jpg') }}" alt="Dubai Tours - Modern City" class="gallery-thumb">
-            <img src="{{ url_for('static', filename='images/Gallary_Photo2.jpg') }}" alt="Abu Dhabi Heritage Sites" class="gallery-thumb">
-            <img src="{{ url_for('static', filename='images/Gallary_Photo3.jpg') }}" alt="Northern Emirates Adventure" class="gallery-thumb">
-            <img src="{{ url_for('static', filename='images/burj-khalifa.png') }}" alt="Burj Khalifa - Dubai Icon" class="gallery-thumb">
-            <img src="{{ url_for('static', filename='images/desert-safari.jpg') }}" alt="Desert Safari Experience" class="gallery-thumb">
-            <img src="{{ url_for('static', filename='images/marina-cruise.jpg') }}" alt="Dubai Marina Dhow Cruise" class="gallery-thumb">
+            <button class="gallery-carousel-nav prev" id="gallery-prev">&#8249;</button>
+            <div class="gallery-carousel-container">
+                <div class="gallery-carousel" id="gallery-carousel">
+                    <img src="{{ url_for('static', filename='images/Gallary_Photo1.jpg') }}" alt="Dubai Tours - Modern City" class="gallery-thumb">
+                    <img src="{{ url_for('static', filename='images/Gallary_Photo2.jpg') }}" alt="Abu Dhabi Heritage Sites" class="gallery-thumb">
+                    <img src="{{ url_for('static', filename='images/Gallary_Photo3.jpg') }}" alt="Northern Emirates Adventure" class="gallery-thumb">
+                    <img src="{{ url_for('static', filename='images/burj-khalifa.png') }}" alt="Burj Khalifa - Dubai Icon" class="gallery-thumb">
+                    <img src="{{ url_for('static', filename='images/desert-safari.jpg') }}" alt="Desert Safari Experience" class="gallery-thumb">
+                    <img src="{{ url_for('static', filename='images/marina-cruise.jpg') }}" alt="Dubai Marina Dhow Cruise" class="gallery-thumb">
+                    <img src="{{ url_for('static', filename='images/heritage-dubai.jpg') }}" alt="Dubai Heritage Experience" class="gallery-thumb">
+                    <img src="{{ url_for('static', filename='images/combo-dubai.jpg') }}" alt="Complete Dubai Experience" class="gallery-thumb">
+                </div>
+            </div>
+            <button class="gallery-carousel-nav next" id="gallery-next">&#8250;</button>
         </div>
     </div>
 </section>
