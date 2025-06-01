@@ -13,16 +13,14 @@ main {
     background-color: white !important;
 }
 </style>
-<!-- Dark Hero Header -->
-<div class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/combo-dubai.jpg') }}') no-repeat center center/cover; padding-top: 120px;">
-    <div class="container">
-        <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <h1 style="color: white; font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">{{ g.translations.dubai_adventure_title }}</h1>
-            <p style="color: #D2AB67; font-size: 1.3rem; font-style: italic; margin-bottom: 1.5rem;">{{ g.translations.tours_include_guide }}</p>
-            <p style="color: white; font-size: 1.1rem; line-height: 1.6; margin-bottom: 0;">{{ g.translations.dubai_tours_description or "Dubai is a city of dreams, where ancient traditions and modern marvels blend seamlessly. From iconic landmarks like the Burj Khalifa to the charm of the old souks, our Dubai tours are designed to help you experience the city through a local's eyes—with a personal touch and in your own language." }}</p>
-        </div>
+<!-- Hero Section -->
+<section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/combo-dubai.jpg') }}') no-repeat center center/cover;">
+    <div class="hero-content">
+        <h1>{{ g.translations.dubai_adventure_title }}</h1>
+        <h2>{{ g.translations.tours_include_guide }}</h2>
+        <p>{{ g.translations.dubai_tours_description or "Dubai is a city of dreams, where ancient traditions and modern marvels blend seamlessly. From iconic landmarks like the Burj Khalifa to the charm of the old souks, our Dubai tours are designed to help you experience the city through a local's eyes—with a personal touch and in your own language." }}</p>
     </div>
-</div>
+</section>
 
 <!-- Dubai Tours Section -->
 <section class="tours-detail-section" style="background-color: white;">

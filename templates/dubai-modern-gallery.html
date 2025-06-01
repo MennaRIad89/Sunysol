@@ -4,22 +4,13 @@
 
 {% block content %}
 <div class="gallery-page">
-<!-- Dark Hero Header -->
-<div class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/dubai-modern-1.jpg') }}') no-repeat center center/cover; padding-top: 120px;">
-    <div class="container">
-        <div class="hero-content">
-            <h1>Dubai Modern Tour Gallery</h1>
-            <p>Experience the contemporary marvels of Dubai</p>
-            <div class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-top: 1rem;">
-                <a href="/" style="color: rgba(255,255,255,0.8);">{{ g.translations.nav_home or "Home" }}</a> 
-                <span>/</span> 
-                <a href="/dubai-tours" style="color: rgba(255,255,255,0.8);">Dubai Tours</a>
-                <span>/</span>
-                <span style="color: white;">Gallery</span>
-            </div>
-        </div>
+<!-- Hero Section -->
+<section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/dubai-modern-1.jpg') }}') no-repeat center center/cover;">
+    <div class="hero-content">
+        <h1>Dubai Half Day Modern Tour</h1>
+        <h2>Experience Dubai's futuristic skyline, luxury hotels, and iconic landmarks including Burj Khalifa, Palm Jumeirah, and Dubai Marina.</h2>
     </div>
-</div>
+</section>
 
 <!-- Gallery Section -->
 <section class="galleries-section">

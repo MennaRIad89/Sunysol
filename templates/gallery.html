@@ -4,28 +4,13 @@
 
 {% block content %}
 <div class="gallery-page">
-<!-- Dark Hero Header -->
-<div class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename=gallery.images[0].src) }}') no-repeat center center/cover; padding-top: 120px;">
-    <div class="container">
-        <div class="hero-content">
-            <h1>{{ gallery.title }}</h1>
-            <p>{{ gallery.description }}</p>
-            <div class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-top: 1rem;">
-                <a href="/" style="color: rgba(255,255,255,0.8);">{{ g.translations.nav_home or "Home" }}</a> 
-                <span>/</span> 
-                {% if 'dubai' in gallery_type %}
-                    <a href="/dubai-tours" style="color: rgba(255,255,255,0.8);">Dubai Tours</a>
-                {% elif 'abudhabi' in gallery_type %}
-                    <a href="/abudhabi-tours" style="color: rgba(255,255,255,0.8);">Abu Dhabi Tours</a>
-                {% elif 'northern' in gallery_type %}
-                    <a href="/northern-emirates-tours" style="color: rgba(255,255,255,0.8);">Northern Emirates Tours</a>
-                {% endif %}
-                <span>/</span>
-                <span style="color: white;">Gallery</span>
-            </div>
-        </div>
+<!-- Hero Section -->
+<section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename=gallery.images[0].src) }}') no-repeat center center/cover;">
+    <div class="hero-content">
+        <h1>{{ gallery.title }}</h1>
+        <h2>{{ gallery.description }}</h2>
     </div>
-</div>
+</section>
 
 <!-- Gallery Section -->
 <section class="galleries-section">

@@ -14,16 +14,14 @@
     margin-bottom: 0;
 }
 </style>
-<!-- Dark Hero Header -->
-<div class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/abu-dhabi-heritage.jpg') }}') no-repeat center center/cover; padding-top: 120px;">
-    <div class="container">
-        <div class="hero-content">
-            <h1>{{ g.translations.abudhabi_adventure_title }}</h1>
-            <p>{{ g.translations.abudhabi_tours_description or "Abu Dhabi invites you to explore its grandeur—from the breathtaking Sheikh Zayed Mosque to the cultural richness of the Heritage Village. Our tours reveal the stories behind the sights, immersing you in a journey of discovery, tailored for Spanish-speaking travelers." }}</p>
-            <p style="margin-top: 1rem; font-size: 1.1rem; color: rgba(255,255,255,0.9);">{{ g.translations.abudhabi_tours_include_guide }}</p>
-        </div>
+<!-- Hero Section -->
+<section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/abu-dhabi-heritage.jpg') }}') no-repeat center center/cover;">
+    <div class="hero-content">
+        <h1>{{ g.translations.abudhabi_adventure_title }}</h1>
+        <h2>{{ g.translations.abudhabi_tours_include_guide }}</h2>
+        <p>{{ g.translations.abudhabi_tours_description or "Abu Dhabi invites you to explore its grandeur—from the breathtaking Sheikh Zayed Mosque to the cultural richness of the Heritage Village. Our tours reveal the stories behind the sights, immersing you in a journey of discovery, tailored for Spanish-speaking travelers." }}</p>
     </div>
-</div>
+</section>
 
 <!-- Abu Dhabi Tours Section -->
 <section class="tours-detail-section" style="background-color: white;">
