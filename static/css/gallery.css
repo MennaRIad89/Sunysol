@@ -313,25 +313,29 @@
 }
 
 .tour-action .btn.secondary-btn {
-    background-color: transparent;
-    color: #D4AF37;
-    border: 2px solid #D4AF37;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 500;
+    background-color: #3D3228;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: inherit;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    font-size: 1rem;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .tour-action .btn.secondary-btn:hover {
-    background-color: white;
-    color: black;
-    border-color: #D4AF37;
+    background-color: #C49A6C;
+    color: #000000;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 12px rgba(196, 154, 108, 0.3);
 }
 
 /* Tour Navigation Buttons */
