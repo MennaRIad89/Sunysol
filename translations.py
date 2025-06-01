@@ -278,7 +278,7 @@ TRANSLATIONS = {
         'gallery_title':
         'Our Gallery',
         'gallery_description':
-        'Discover the beauty of UAE through our curated photo collection',
+        'Take a closer look at our past adventures with Menna and her guests. Each picture tells a story of discovery, friendship, and unforgettable moments.',
         'back_to_tours':
         'Back to Tours',
         'back_to_dubai_tours':
@@ -287,6 +287,18 @@ TRANSLATIONS = {
         'Back to Abu Dhabi Tours',
         'back_to_northern_tours':
         'Back to Northern Emirates Tours',
+        
+        # Tours intro text
+        'tours_intro_text':
+        'Whether you\'re looking for adventure, culture, or simply a memorable time with your loved ones, I\'ll make sure you have fun, feel relaxed, and enjoy every moment of your journey through the UAE.',
+        
+        # Tour page descriptions
+        'dubai_tours_description':
+        'Dubai is a city of dreams, where ancient traditions and modern marvels blend seamlessly. From iconic landmarks like the Burj Khalifa to the charm of the old souks, our Dubai tours are designed to help you experience the city through a local\'s eyes—with a personal touch and in your own language.',
+        'abudhabi_tours_description':
+        'Abu Dhabi invites you to explore its grandeur—from the breathtaking Sheikh Zayed Mosque to the cultural richness of the Heritage Village. Our tours reveal the stories behind the sights, immersing you in a journey of discovery, tailored for Spanish-speaking travelers.',
+        'northern_emirates_tours_description':
+        'The Northern Emirates offer a world of hidden treasures—serene mountains, traditional markets, and pristine beaches. Our tours are crafted to unveil the authentic beauty of Sharjah, Fujairah, and beyond, creating memories that last a lifetime.',
 
         # Abu Dhabi tour specific content
         'sheikh_zayed_mosque':
@@ -975,7 +987,7 @@ TRANSLATIONS = {
         'gallery_title':
         'Nuestra Galería',
         'gallery_description':
-        'Descubre la belleza de los Emiratos Árabes Unidos a través de nuestra colección de fotos seleccionadas',
+        'Echa un vistazo más de cerca a nuestras aventuras pasadas con Menna y sus huéspedes. Cada imagen cuenta una historia de descubrimiento, amistad y momentos inolvidables.',
         'back_to_tours':
         'Volver a Tours',
         'back_to_dubai_tours':
@@ -984,6 +996,18 @@ TRANSLATIONS = {
         'Volver a Tours de Abu Dhabi',
         'back_to_northern_tours':
         'Volver a Tours de los Emiratos del Norte',
+        
+        # Tours intro text
+        'tours_intro_text':
+        'Ya sea que busques aventura, cultura, o simplemente un momento memorable con tus seres queridos, me aseguraré de que te diviertas, te sientas relajado y disfrutes cada momento de tu viaje por los Emiratos Árabes Unidos.',
+        
+        # Tour page descriptions
+        'dubai_tours_description':
+        'Dubai es una ciudad de sueños, donde las tradiciones ancestrales y las maravillas modernas se mezclan perfectamente. Desde monumentos icónicos como el Burj Khalifa hasta el encanto de los viejos zocos, nuestros tours de Dubai están diseñados para ayudarte a experimentar la ciudad a través de los ojos de un local—con un toque personal y en tu propio idioma.',
+        'abudhabi_tours_description':
+        'Abu Dhabi te invita a explorar su grandeza—desde la impresionante Mezquita Sheikh Zayed hasta la riqueza cultural de la Aldea del Patrimonio. Nuestros tours revelan las historias detrás de los sitios, sumergiéndote en un viaje de descubrimiento, diseñado para viajeros de habla hispana.',
+        'northern_emirates_tours_description':
+        'Los Emiratos del Norte ofrecen un mundo de tesoros ocultos—montañas serenas, mercados tradicionales y playas vírgenes. Nuestros tours están diseñados para revelar la auténtica belleza de Sharjah, Fujairah y más allá, creando recuerdos que duran toda la vida.',
 
         # Abu Dhabi tour specific content
         'sheikh_zayed_mosque':
