@@ -13,19 +13,20 @@ main {
     background-color: white !important;
 }
 </style>
-<!-- Simple Page Header -->
-<div class="simple-page-header" style="padding-top: 120px;">
+<!-- Dark Hero Header -->
+<div class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/combo-dubai.jpg') }}') no-repeat center center/cover; padding-top: 120px;">
     <div class="container">
-        <h1>{{ g.translations.dubai_adventure_title }}</h1>
+        <div class="hero-content">
+            <h1>{{ g.translations.dubai_adventure_title }}</h1>
+            <p>{{ g.translations.dubai_tours_description or "Dubai is a city of dreams, where ancient traditions and modern marvels blend seamlessly. From iconic landmarks like the Burj Khalifa to the charm of the old souks, our Dubai tours are designed to help you experience the city through a local's eyes—with a personal touch and in your own language." }}</p>
+            <p style="margin-top: 1rem; font-size: 1.1rem; color: rgba(255,255,255,0.9);">{{ g.translations.tours_include_guide }}</p>
+        </div>
     </div>
 </div>
 
 <!-- Dubai Tours Section -->
 <section class="tours-detail-section" style="background-color: white;">
     <div class="container">
-        <div class="section-header">
-            <p>{{ g.translations.tours_include_guide }}</p>
-        </div>
 
         <div class="tour-preview-cards">
             <!-- Dubai Half Day Modern Tour -->

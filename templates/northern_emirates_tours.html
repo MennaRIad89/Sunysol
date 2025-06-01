@@ -11,19 +11,20 @@
     background-color: white !important;
 }
 </style>
-<!-- Simple Page Header -->
-<div class="simple-page-header" style="padding-top: 120px;">
+<!-- Dark Hero Header -->
+<div class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/Gallary_Photo3.jpg') }}') no-repeat center center/cover; padding-top: 120px;">
     <div class="container">
-        <h1>{{ g.translations.northern_emirates_adventure_title }}</h1>
+        <div class="hero-content">
+            <h1>{{ g.translations.northern_emirates_adventure_title }}</h1>
+            <p>{{ g.translations.northern_emirates_tours_description or "The Northern Emirates offer a world of hidden treasures—serene mountains, traditional markets, and pristine beaches. Our tours are crafted to unveil the authentic beauty of Sharjah, Fujairah, and beyond, creating memories that last a lifetime." }}</p>
+            <p style="margin-top: 1rem; font-size: 1.1rem; color: rgba(255,255,255,0.9);">{{ g.translations.northern_emirates_tours_include_guide }}</p>
+        </div>
     </div>
 </div>
 
 <!-- Northern Emirates Tours Section -->
 <section class="tours-detail-section" style="background-color: white;">
     <div class="container">
-        <div class="section-header">
-            <p>{{ g.translations.northern_emirates_tours_include_guide }}</p>
-        </div>
 
         <div class="tour-preview-cards">
             <!-- Half-Day Sharjah City Tour -->

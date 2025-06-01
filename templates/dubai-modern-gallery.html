@@ -1,29 +1,45 @@
 {% extends "layout.html" %}
 
-{% block title %}{{ g.translations.dubai_modern_gallery_title }} - Sun y Sol{% endblock %}
+{% block title %}Dubai Modern Tour Gallery - Sun y Sol{% endblock %}
 
 {% block content %}
-<!-- Simple Page Header -->
-<div class="simple-page-header" style="padding-top: 120px;">
+<div class="gallery-page">
+<!-- Dark Hero Header -->
+<div class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/dubai-modern-1.jpg') }}') no-repeat center center/cover; padding-top: 120px;">
     <div class="container">
-        <h1>{{ g.translations.dubai_modern_gallery_title }}</h1>
+        <div class="hero-content">
+            <h1>Dubai Modern Tour Gallery</h1>
+            <p>Experience the contemporary marvels of Dubai</p>
+            <div class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-top: 1rem;">
+                <a href="/" style="color: rgba(255,255,255,0.8);">{{ g.translations.nav_home or "Home" }}</a> 
+                <span>/</span> 
+                <a href="/dubai-tours" style="color: rgba(255,255,255,0.8);">Dubai Tours</a>
+                <span>/</span>
+                <span style="color: white;">Gallery</span>
+            </div>
+        </div>
     </div>
 </div>
 
 <!-- Gallery Section -->
 <section class="galleries-section">
     <div class="container">
-        <div class="section-header">
-            <p>{{ g.translations.gallery_intro_text }}</p>
-        </div>
         <div class="gallery-preview-grid">
-            <!-- Add gallery images here -->
-            <img src="{{ url_for('static', filename='images/dubai-modern-1.jpg') }}" alt="Dubai Modern Tour 1" class="gallery-thumb">
-            <img src="{{ url_for('static', filename='images/dubai-modern-2.jpg') }}" alt="Dubai Modern Tour 2" class="gallery-thumb">
-            <img src="{{ url_for('static', filename='images/dubai-modern-3.jpg') }}" alt="Dubai Modern Tour 3" class="gallery-thumb">
-            <!-- Add more as needed -->
+            <img src="{{ url_for('static', filename='images/dubai-modern-1.jpg') }}" alt="Dubai Modern Architecture" class="gallery-thumb">
+            <img src="{{ url_for('static', filename='images/dubai-modern-2.jpg') }}" alt="Dubai Skyline View" class="gallery-thumb">
+            <img src="{{ url_for('static', filename='images/dubai-modern-3.jpg') }}" alt="Modern Dubai Landmarks" class="gallery-thumb">
+            <img src="{{ url_for('static', filename='images/burj-khalifa.png') }}" alt="Burj Khalifa Tower" class="gallery-thumb">
+            <img src="{{ url_for('static', filename='images/combo-dubai.jpg') }}" alt="Dubai City Combo" class="gallery-thumb">
+        </div>
+        
+        <!-- Back to Tours Button -->
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="/dubai-tours" class="btn primary-btn">
+                <i class="fas fa-arrow-left"></i> {{ g.translations.back_to_dubai_tours or "Back to Dubai Tours" }}
+            </a>
         </div>
     </div>
 </section>
+</div>
 
 {% endblock %}
