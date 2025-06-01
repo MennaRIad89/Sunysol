@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ gallery.title }} - Sun y Sol{% endblock %}
+
+{% block content %}
+<!-- Simple Page Header -->
+<div class="simple-page-header" style="padding-top: 120px;">
+    <div class="container">
+        <h1>{{ gallery.title }}</h1>
+        <p>{{ gallery.description }}</p>
+        <div class="breadcrumb">
+            <a href="/">{{ g.translations.nav_home or "Home" }}</a> 
+            <span>/</span> 
+            <span>{{ gallery.title }}</span>
+        </div>
+    </div>
+</div>
+
+<!-- Gallery Section -->
+<section class="galleries-section">
+    <div class="container">
+        <div class="gallery-preview-grid">
+            {% for image in gallery.images %}
+            <img src="{{ url_for('static', filename=image.src) }}" alt="{{ image.alt }}" class="gallery-thumb">
+            {% endfor %}
+        </div>
+        
+        <!-- Back to Tours Button -->
+        <div style="text-align: center; margin-top: 3rem;">
+            {% if 'dubai' in gallery_type %}
+                <a href="/dubai-tours" class="btn primary-btn">{{ g.translations.back_to_tours or "Back to Dubai Tours" }}</a>
+            {% elif 'abudhabi' in gallery_type %}
+                <a href="/abudhabi-tours" class="btn primary-btn">{{ g.translations.back_to_tours or "Back to Abu Dhabi Tours" }}</a>
+            {% elif 'northern' in gallery_type %}
+                <a href="/northern-emirates-tours" class="btn primary-btn">{{ g.translations.back_to_tours or "Back to Northern Emirates Tours" }}</a>
+            {% else %}
+                <a href="/#tours" class="btn primary-btn">{{ g.translations.back_to_tours or "Back to Tours" }}</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="tours-contact" style="margin-top: 0;">
+    <div class="contact-card">
+        <h3>{{ g.translations.ready_to_book or "Ready to Book This Tour?" }}</h3>
+        <p>{{ g.translations.contact_gallery_description or "Contact us to customize your perfect UAE experience" }}</p>
+        <div class="contact-options" style="justify-content: center;">
+            <a href="/#contact" class="btn primary-btn">{{ g.translations.get_in_touch or "Get In Touch" }}</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

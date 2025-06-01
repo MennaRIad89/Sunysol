@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ g.translations.dubai_modern_gallery_title }} - Sun y Sol{% endblock %}
+
+{% block content %}
+<!-- Simple Page Header -->
+<div class="simple-page-header" style="padding-top: 120px;">
+    <div class="container">
+        <h1>{{ g.translations.dubai_modern_gallery_title }}</h1>
+    </div>
+</div>
+
+<!-- Gallery Section -->
+<section class="galleries-section">
+    <div class="container">
+        <div class="section-header">
+            <p>{{ g.translations.gallery_intro_text }}</p>
+        </div>
+        <div class="gallery-preview-grid">
+            <!-- Add gallery images here -->
+            <img src="{{ url_for('static', filename='images/dubai-modern-1.jpg') }}" alt="Dubai Modern Tour 1" class="gallery-thumb">
+            <img src="{{ url_for('static', filename='images/dubai-modern-2.jpg') }}" alt="Dubai Modern Tour 2" class="gallery-thumb">
+            <img src="{{ url_for('static', filename='images/dubai-modern-3.jpg') }}" alt="Dubai Modern Tour 3" class="gallery-thumb">
+            <!-- Add more as needed -->
+        </div>
+    </div>
+</section>
+
+{% endblock %}

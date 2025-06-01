@@ -39,7 +39,7 @@
         </div>
         <div class="about-content">
             <div class="about-image">
-                <img src="https://pixabay.com/get/g447595d41fa6630883a2466429ff3297cc795acb49b43158bec806320027990ef5e4bca5954865a900dcfe8bd9cbdc7359643b3547bb737e7d2774c8e0a5e02f_1280.jpg" alt="Menna, your tour guide" />
+                <img src="{{ url_for('static', filename='images/Meet Menna.jpg') }}" alt="Menna, your tour guide" />
             </div>
             <div class="about-text">
                 <h3>{{ g.translations.about_subtitle }}</h3>
@@ -96,7 +96,7 @@
             <!-- Abu Dhabi Tours Block -->
             <a href="/abudhabi-tours" class="city-block-small">
                 <div class="city-image-small">
-                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Abu Dhabi Sheikh Zayed Mosque" />
+                    <img src="{{ url_for('static', filename='images/SZ_MSQ.jpg') }}" alt="Abu Dhabi Sheikh Zayed Mosque" />
                     <div class="city-overlay-small">
                         <h3>Abu Dhabi Tours</h3>
                         <i class="fas fa-arrow-right"></i>
@@ -107,7 +107,7 @@
             <!-- Northern Emirates Tours Block -->
             <a href="/northern-emirates-tours" class="city-block-small">
                 <div class="city-image-small">
-                    <img src="https://images.unsplash.com/photo-1578068558264-c4b8a7c4a1e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Northern Emirates Mountains" />
+                    <img src="{{ url_for('static', filename='images/SHJ_Tour.jpg') }}" alt="Northern Emirates Mountains" />
                     <div class="city-overlay-small">
                         <h3>Northern Emirates Tours</h3>
                         <i class="fas fa-arrow-right"></i>
@@ -160,6 +160,25 @@
                 
                 <a href="/agencies" class="btn primary-btn">Learn More</a>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="galleries" class="galleries-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>{{ g.translations.gallery_title or "Our Gallery" }}</h2>
+            <div class="divider"></div>
+            <p>{{ g.translations.gallery_description or "Discover the beauty of UAE through our curated photo collection" }}</p>
+        </div>
+        <div class="gallery-preview-grid">
+            <img src="{{ url_for('static', filename='images/Gallary_Photo1.jpg') }}" alt="Dubai Tours - Modern City" class="gallery-thumb">
+            <img src="{{ url_for('static', filename='images/Gallary_Photo2.jpg') }}" alt="Abu Dhabi Heritage Sites" class="gallery-thumb">
+            <img src="{{ url_for('static', filename='images/Gallary_Photo3.jpg') }}" alt="Northern Emirates Adventure" class="gallery-thumb">
+            <img src="{{ url_for('static', filename='images/burj-khalifa.png') }}" alt="Burj Khalifa - Dubai Icon" class="gallery-thumb">
+            <img src="{{ url_for('static', filename='images/desert-safari.jpg') }}" alt="Desert Safari Experience" class="gallery-thumb">
+            <img src="{{ url_for('static', filename='images/marina-cruise.jpg') }}" alt="Dubai Marina Dhow Cruise" class="gallery-thumb">
         </div>
     </div>
 </section>
@@ -333,34 +352,4 @@
     </div>
 </section>
 
-<!-- Gallery Section (Additional) -->
-<section class="gallery-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Experience the UAE</h2>
-            <div class="divider"></div>
-        </div>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://pixabay.com/get/g8ad8bc6b01885255b35a4d5923fa2d9b95f905a14758a11066907c5f229b8d3b40f7b4d835e01154546f6f8634a959862e6d0b56c291d41623311d99379bc68c_1280.jpg" alt="Dubai Skyline at Night">
-            </div>
-            <div class="gallery-item">
-                <img src="https://pixabay.com/get/g25c763fd15e6e978cedefda98e0bd9543a9cc2c7382ccd0040795a1681aa4ce9c275ab6e409d45662850f4bb1dbe4fbd2137fb6506ff32c03b4993421e90b773_1280.jpg" alt="Abu Dhabi Grand Mosque">
-            </div>
-            <div class="gallery-item">
-                <img src="https://pixabay.com/get/gad6e9e58c5ccbc638a309599b78f002eb7f5c5c53f67190fb0485ef51e503585086a765a3f08ddc25542d90555a281baa4cba36c84b6910404dc84f38134f2e8_1280.jpg" alt="Desert Landscape">
-            </div>
-            <div class="gallery-item">
-                <img src="https://pixabay.com/get/g575c0e5423427757d4d1c09fd50a409f5b86cdd8e099bedc950f6db42f238a61b2a530ec8a1b5a42dfdcdeae26e11405ce91107aa9d99c0e1198a597df1e80b8_1280.jpg" alt="Tourist Experience">
-            </div>
-            <div class="gallery-item">
-                <img src="https://pixabay.com/get/g47fabaf3fbca3fcd9cda8d9b7a6751369eb7131feafb93da2bfc22fade5eb6943004fe00bd845abccf5c4d673c38a8b402045b74880281f4ce497a504c22cd47_1280.jpg" alt="Dubai Marina">
-            </div>
-            <div class="gallery-item">
-                <img src="https://pixabay.com/get/g8bdd7c0a78207b18f112ff48f1c463296f2a93d2ce5e32b83a1619744529fd9e1d54c2ecaf2807cd2bd796d0c53d06f5a5de4345d04b93099328bcfe16643409_1280.jpg" alt="Desert Safari">
-            </div>
-        </div>
-    </div>
-</section>
 {% endblock %}

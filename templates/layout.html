@@ -15,6 +15,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
 </head>
 <body>
     <header>
@@ -44,6 +45,8 @@
                     <li><a href="/#about" class="nav-link">{{ g.translations.nav_about }}</a></li>
                     <li><a href="/#tours" class="nav-link">{{ g.translations.nav_tours }}</a></li>
                     <li><a href="/#agencies" class="nav-link">{{ g.translations.nav_agencies }}</a></li>
+                    <li><a href="/#galleries" class="nav-link">{{ g.translations.nav_galleries or "Galleries" }}</a></li>
+
                     <li><a href="/#reviews" class="nav-link">{{ g.translations.nav_reviews }}</a></li>
                     <li><a href="/#contact" class="nav-link">{{ g.translations.nav_contact }}</a></li>
                 </ul>
@@ -61,17 +64,6 @@
                 <img src="{{ url_for('static', filename='images/logo.png', v='1.2') }}" alt="Sun y Sol" width="175" class="logo-img">
             </div>
             <div class="footer-links">
-                <div class="footer-nav">
-                    <h4>{{ g.translations.quick_links }}</h4>
-                    <ul>
-                        <li><a href="/#home">{{ g.translations.nav_home }}</a></li>
-                        <li><a href="/#about">{{ g.translations.nav_about }}</a></li>
-                        <li><a href="/#tours">{{ g.translations.nav_tours }}</a></li>
-                        <li><a href="/#agencies">{{ g.translations.nav_agencies }}</a></li>
-                        <li><a href="/#reviews">{{ g.translations.nav_reviews }}</a></li>
-                        <li><a href="/#contact">{{ g.translations.nav_contact }}</a></li>
-                    </ul>
-                </div>
                 <div class="footer-social">
                     <h4>{{ g.translations.connect_with_us }}</h4>
                     <div class="social-icons">
@@ -90,5 +82,6 @@
 
     <!-- JavaScript -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
 </body>
 </html>

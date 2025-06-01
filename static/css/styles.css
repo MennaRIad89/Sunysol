@@ -20,6 +20,12 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 30px; /* Try 100~120px depending on header height */
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -341,7 +347,7 @@ body.dubai-tours-page {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     border: 1px solid #f0f0f0;
-    scroll-margin-top: 100px;
+    
 }
 
 .tour-preview-card:hover {
@@ -1759,7 +1765,7 @@ body.dubai-tours-page {
 }
 
 /* ===== Gallery Section ===== */
-.gallery-section {
+.galleries-section {
     padding: 6rem 0;
     background-color: var(--light-gray);
 }
@@ -2041,7 +2047,7 @@ footer {
         margin-bottom: 2rem;
     }
     
-    .about-section, .tours-section, .agencies-section, .reviews-section, .contact-section, .gallery-section {
+    .about-section, .tours-section, .agencies-section, .reviews-section, .contact-section, .galleries-section {
         padding: 4rem 0;
     }
     
@@ -2051,3 +2057,65 @@ footer {
         right: 5%;
     }
 }
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 150px; /* height of navbar */
+  min-height: calc(100vh - 0px); /* Use full viewport height */
+  background: url('../images/burj-khalifa.png') no-repeat center center/cover;
+  position: relative;
+}
+
+.hero-content {
+  background: rgba(32, 24, 12, 0.68); /* Or your current bg */
+  border-radius: 20px;
+  padding: 4rem 2rem 4rem 2rem; /* Increase top/bottom padding! */
+  width: 80vw;
+  max-width: 900px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  margin-top: 0; /* sits right under navbar */
+  margin-bottom: 4rem; /* stretches it further down */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+/* ADD THIS MOBILE FIX INSTEAD */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: unset !important;
+    height: auto !important;
+    padding-top: 120px !important;
+    padding-bottom: 2rem !important;
+  }
+  .hero-content {
+    padding: 1.5rem 0.5rem 2rem 0.5rem !important;
+    width: 99vw !important;
+    max-width: 99vw !important;
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 700px) {
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px; /* space between logo and socials */
+    flex-direction: row;
+    padding: 16px 0;
+  }
+  .footer-logo {
+    margin: 0; /* remove extra margin */
+    text-align: right;
+  }
+  .footer-links {
+    margin: 0; /* remove extra margin */
+    text-align: left;
+  }
+  .footer-social h4 {
+    margin-bottom: 8px; /* reduce spacing */
+  }
