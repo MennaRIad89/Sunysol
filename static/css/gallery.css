@@ -316,11 +316,12 @@
     background-color: #3D3228;
     color: #FFFFFF;
     border: none;
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 500;
     font-size: 1rem;
-    font-family: inherit;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-flex;
@@ -329,6 +330,7 @@
     cursor: pointer;
     text-align: center;
     vertical-align: middle;
+    min-height: 44px;
 }
 
 .tour-action .btn.secondary-btn:hover {
