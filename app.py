@@ -116,8 +116,8 @@ def gallery_page(gallery_type):
             ]
         },
         'dubai-classic': {
-            'title': 'Dubai Half Day Classic Heritage Tour',
-            'description': 'Discover Dubai\'s traditional charm with visits to historic souks, heritage villages, and authentic cultural sites.',
+            'title': g.translations.get('dubai_heritage_tour', 'Dubai Half Day Classic Heritage Tour'),
+            'description': g.translations.get('dubai_heritage_description', 'Discover Dubai\'s traditional charm with visits to historic souks, heritage villages, and authentic cultural sites.'),
             'images': [
                 {'src': 'images/heritage-dubai.jpg', 'alt': 'Dubai Heritage Village'},
                 {'src': 'images/Gallary_Photo1.jpg', 'alt': 'Traditional Dubai Souks'},
@@ -126,8 +126,8 @@ def gallery_page(gallery_type):
             ]
         },
         'dubai-full': {
-            'title': 'Dubai Full Day Modern & Classic Tour',
-            'description': 'Complete Dubai experience combining modern landmarks and traditional heritage in one comprehensive journey.',
+            'title': g.translations.get('combo_tour', 'Dubai Full Day Modern & Classic Tour'),
+            'description': g.translations.get('combo_description', 'Complete Dubai experience combining modern landmarks and traditional heritage in one comprehensive journey.'),
             'images': [
                 {'src': 'images/combo-dubai.jpg', 'alt': 'Full Day Dubai Tour'},
                 {'src': 'images/dubai-modern-1.jpg', 'alt': 'Modern Dubai Highlights'},
@@ -137,8 +137,8 @@ def gallery_page(gallery_type):
             ]
         },
         'dubai-cruise': {
-            'title': 'Dubai Marina Cruise Experience',
-            'description': 'Enjoy a scenic dhow cruise along Dubai Marina with dinner, entertainment, and stunning waterfront views.',
+            'title': g.translations.get('marina_cruise_tour', 'Dubai Marina Cruise Experience'),
+            'description': g.translations.get('marina_cruise_description', 'Enjoy a scenic dhow cruise along Dubai Marina with dinner, entertainment, and stunning waterfront views.'),
             'images': [
                 {'src': 'images/marina-cruise.jpg', 'alt': 'Dubai Marina Dhow Cruise'},
                 {'src': 'images/dubai-modern-2.jpg', 'alt': 'Marina Skyline Views'},
@@ -147,8 +147,8 @@ def gallery_page(gallery_type):
             ]
         },
         'dubai-desert': {
-            'title': 'Desert Safari Tour',
-            'description': 'Adventure and culture in the Arabian desert with dune bashing, camel riding, and traditional Bedouin entertainment.',
+            'title': g.translations.get('desert_safari_tour', 'Desert Safari Tour'),
+            'description': g.translations.get('desert_safari_description', 'Adventure and culture in the Arabian desert with dune bashing, camel riding, and traditional Bedouin entertainment.'),
             'images': [
                 {'src': 'images/desert-safari.jpg', 'alt': 'Desert Safari Adventure'},
                 {'src': 'images/Gallary_Photo3.jpg', 'alt': 'Desert Experience'},
@@ -157,8 +157,8 @@ def gallery_page(gallery_type):
             ]
         },
         'abudhabi-heritage': {
-            'title': 'Abu Dhabi Full Day Heritage Edition Tour',
-            'description': 'Explore Abu Dhabi\'s magnificent landmarks, cultural heritage, and traditional Bedouin lifestyle with visits to Grand Mosque, Presidential Palace, and Heritage Village.',
+            'title': g.translations.get('abudhabi_heritage_tour', 'Abu Dhabi Full Day Heritage Edition Tour'),
+            'description': g.translations.get('abudhabi_heritage_description', 'Explore Abu Dhabi\'s magnificent landmarks, cultural heritage, and traditional Bedouin lifestyle with visits to Grand Mosque, Presidential Palace, and Heritage Village.'),
             'images': [
                 {'src': 'images/abu-dhabi-heritage.jpg', 'alt': 'Abu Dhabi Heritage Sites'},
                 {'src': 'images/Gallary_Photo2.jpg', 'alt': 'Cultural Heritage Tour'},
@@ -167,8 +167,8 @@ def gallery_page(gallery_type):
             ]
         },
         'abudhabi-louvre': {
-            'title': 'Abu Dhabi Full Day Louvre Edition Tour',
-            'description': 'Experience Abu Dhabi\'s cultural treasures including the world-famous Louvre museum, majestic mosques, and architectural masterpieces.',
+            'title': g.translations.get('abudhabi_louvre_tour', 'Abu Dhabi Full Day Louvre Edition Tour'),
+            'description': g.translations.get('abudhabi_louvre_description', 'Experience Abu Dhabi\'s cultural treasures including the world-famous Louvre museum, majestic mosques, and architectural masterpieces.'),
             'images': [
                 {'src': 'images/louvre-edition-tour.jpg', 'alt': 'Louvre Abu Dhabi Museum'},
                 {'src': 'images/abu-dhabi-louvre.jpg', 'alt': 'Louvre Art Collections'},
@@ -177,8 +177,8 @@ def gallery_page(gallery_type):
             ]
         },
         'northern-emirates': {
-            'title': 'Northern Emirates Adventure Tours',
-            'description': 'Discover the hidden treasures of Sharjah and Fujairah with scenic mountains, traditional markets, and pristine beaches.',
+            'title': g.translations.get('northern_emirates_adventure_title', 'Northern Emirates Adventure Tours'),
+            'description': g.translations.get('northern_emirates_tours_description', 'Discover the hidden treasures of Sharjah and Fujairah with scenic mountains, traditional markets, and pristine beaches.'),
             'images': [
                 {'src': 'images/Gallary_Photo3.jpg', 'alt': 'Northern Emirates Landscapes'},
                 {'src': 'images/heritage-dubai.jpg', 'alt': 'Traditional Emirates'},
