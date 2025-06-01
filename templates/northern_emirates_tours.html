@@ -12,7 +12,8 @@
 }
 </style>
 <!-- Hero Section -->
-<section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/Gallary_Photo3.jpg') }}') no-repeat center center/cover;">
+<section id="northern-hero" class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/Gallary_Photo3.jpg') }}') no-repeat center center/cover;">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
         <h1>{{ g.translations.northern_emirates_adventure_title }}</h1>
         <h2>{{ g.translations.northern_emirates_tours_include_guide }}</h2>

@@ -5,7 +5,8 @@
 {% block content %}
 <div class="gallery-page">
 <!-- Hero Section -->
-<section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename=gallery.images[0].src) }}') no-repeat center center/cover;">
+<section id="gallery-hero" class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename=gallery.images[0].src) }}') no-repeat center center/cover;">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
         <h1>{{ gallery.title }}</h1>
         <h2>{{ gallery.description }}</h2>
