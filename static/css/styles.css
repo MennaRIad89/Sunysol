@@ -2106,6 +2106,27 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     margin-top: 2rem;
+    min-height: 600px;
+    align-items: start;
+}
+
+.review-form-container {
+    position: sticky;
+    top: 2rem;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    height: fit-content;
+}
+
+.reviews-display-container {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
 }
 
 .reviews-info h3 {
@@ -3003,11 +3024,18 @@ footer {
         gap: 2rem;
     }
     
-    .featured-review-placeholder {
+    .review-form-container {
+        position: static;
         padding: 1.5rem;
+        order: 2;
     }
     
-    .review-form-container {
+    .reviews-display-container {
+        padding: 1.5rem;
+        order: 1;
+    }
+    
+    .featured-review-placeholder {
         padding: 1.5rem;
     }
     
