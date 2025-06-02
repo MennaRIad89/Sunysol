@@ -236,9 +236,6 @@
             
             <div class="review-form-container">
                 <h3>{{ g.translations.share_experience }}</h3>
-                <div class="menna-signature-compact">
-                    <p>{{ g.translations.menna_signature }}</p>
-                </div>
                 <form action="/submit_review" method="post" class="review-form compact">
                     <div class="form-row">
                         <input type="text" name="name" placeholder="{{ g.translations.review_name }}">
@@ -273,6 +270,9 @@
                         <label for="review-photos" class="file-label">
                             <i class="fas fa-camera"></i> {{ g.translations.review_photos }}
                         </label>
+                    </div>
+                    <div class="menna-signature-compact">
+                        <p>{{ g.translations.menna_signature }}</p>
                     </div>
                     <button type="submit" class="btn primary-btn compact-btn">{{ g.translations.submit_review }}</button>
                 </form>
