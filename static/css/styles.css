@@ -3569,3 +3569,177 @@ footer {
     padding: 0 !important;
   }
 }
+.reviews-carousel-container {
+    overflow: hidden; /* prevent vertical scroll */
+}
+
+.featured-reviews-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* crucial for horizontal scrolling */
+    scroll-snap-type: x mandatory; /* enables snap effect */
+    scrollbar-width: none; /* Firefox hide scrollbar */
+    -ms-overflow-style: none; /* IE and Edge hide scrollbar */
+    padding: 10px 5px; /* some padding for aesthetics */
+}
+
+.featured-reviews-carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari hide scrollbar */
+}
+
+.review-card-original {
+    flex: 0 0 auto; /* stops shrinking, allows scroll */
+    width: 280px; /* consistent card width */
+    scroll-snap-align: start; /* ensures snapping alignment */
+}
+@media (max-width: 768px) {
+    .reviews-container,
+    .reviews-container.reviews-container,
+    section#reviews .reviews-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    .reviews-carousel-container,
+    .reviews-carousel-container.reviews-carousel-container,
+    section#reviews .reviews-carousel-container {
+        overflow: hidden !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+
+    .featured-reviews-carousel,
+    .featured-reviews-carousel.featured-reviews-carousel,
+    section#reviews .featured-reviews-carousel {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        gap: 10px !important;
+        padding: 10px 0 !important;
+    }
+
+    .featured-reviews-carousel::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .review-card-original,
+    .review-card-original.review-card-original,
+    section#reviews .review-card-original {
+        flex: 0 0 auto !important;
+        width: 85vw !important;
+        max-width: 280px !important;
+        scroll-snap-align: start !important;
+    }
+
+    .review-form-container,
+    .review-form-container.review-form-container,
+    section#reviews .review-form-container {
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+}
+@media (max-width: 768px) {
+  .reviews-container,
+  .reviews-container.reviews-container,
+  section#reviews .reviews-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .reviews-carousel-section,
+  .reviews-carousel-container {
+    width: 100% !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+
+  .featured-reviews-carousel {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    gap: 10px !important;
+    padding: 10px 0 !important;
+  }
+
+  .featured-reviews-carousel::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .review-card-original {
+    flex: 0 0 auto !important;
+    width: 85vw !important;
+    max-width: 280px !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  .review-form-container {
+    width: 100% !important;
+    margin-top: 20px !important;
+  }
+}
+.featured-reviews-carousel {
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.9);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    color: var(--accent-color);
+}
+
+.carousel-nav-left {
+    left: 10px; /* inside the carousel area */
+}
+
+.carousel-nav-right {
+    right: 10px; /* inside the carousel area */
+}
+
+.carousel-nav:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
