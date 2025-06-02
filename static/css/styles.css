@@ -2305,6 +2305,90 @@ footer {
     margin-top: 0;
 }
 
+/* Review Cards Styles */
+.featured-reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.review-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.review-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.reviewer-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.nationality {
+    font-size: 0.8rem;
+    color: #666;
+    font-style: italic;
+}
+
+.review-rating {
+    display: flex;
+    gap: 2px;
+}
+
+.review-rating .fas {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.review-rating .far {
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+.tour-name {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.review-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+.review-photos {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.review-photo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
 /* Mobile responsiveness for reviews section */
 @media screen and (max-width: 768px) {
     .reviews-container {
@@ -2332,6 +2416,15 @@ footer {
     .menna-signature-compact {
         padding: 0.6rem;
         font-size: 0.85rem;
+    }
+    
+    .featured-reviews {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .review-card {
+        padding: 0.8rem;
     }
 }
 

@@ -1,5 +1,6 @@
 import os
 import logging
+from datetime import datetime
 from werkzeug.utils import secure_filename
 from flask import Flask, render_template, request, flash, redirect, url_for, session, g
 from flask_sqlalchemy import SQLAlchemy
@@ -65,7 +66,9 @@ def switch_language(language):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # Get featured reviews for display
+    featured_reviews = Review.query.filter_by(is_featured=True).order_by(Review.created_at.desc()).limit(6).all()
+    return render_template('index.html', featured_reviews=featured_reviews)
 
 
 @app.route('/agencies')
@@ -96,22 +99,66 @@ def dubai_modern_gallery():
 @app.route('/submit_review', methods=['POST'])
 def submit_review():
     try:
-        name = request.form.get('name')
-        email = request.form.get('email')
-        country = request.form.get('country')
-        tour = request.form.get('tour')
-        comment = request.form.get('comment')
-
-        # Here we would normally save the review to a database
-        # For now, we'll just log it
-        logging.info(
-            f"Review received from {name} ({email}) from {country} about {tour}: {comment}"
+        # Get form data
+        name = request.form.get('name', '').strip()
+        email = request.form.get('email', '').strip()
+        country = request.form.get('country', '').strip()
+        tour = request.form.get('tour', '').strip()
+        rating = request.form.get('rating', '').strip()
+        comment = request.form.get('comment', '').strip()
+        
+        # Validation - Name and rating are required
+        if not name:
+            flash("Name is required", "error")
+            return redirect(url_for('index', _anchor='reviews'))
+            
+        if not rating or not rating.isdigit() or int(rating) < 1 or int(rating) > 5:
+            flash("Valid rating (1-5 stars) is required", "error")
+            return redirect(url_for('index', _anchor='reviews'))
+        
+        # Handle file uploads
+        uploaded_photos = []
+        if 'photos' in request.files:
+            files = request.files.getlist('photos')
+            for file in files:
+                if file and file.filename and file.filename != '':
+                    if allowed_file(file.filename):
+                        # Generate unique filename
+                        filename = secure_filename(file.filename)
+                        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S_')
+                        filename = timestamp + filename
+                        
+                        # Save file
+                        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                        file.save(file_path)
+                        uploaded_photos.append(filename)
+                    else:
+                        flash("Invalid file type. Please upload PNG, JPG, JPEG, or GIF files.", "error")
+                        return redirect(url_for('index', _anchor='reviews'))
+        
+        # Create review record
+        review = Review(
+            name=name,
+            email=email if email else None,
+            nationality=country if country else None,
+            tour=tour if tour else None,
+            rating=int(rating),
+            comment=comment if comment else None,
+            photos=','.join(uploaded_photos) if uploaded_photos else None,
+            is_featured=True  # Auto-feature new reviews
         )
-
-        flash(g.translations['thank_you_review'], "success")
+        
+        # Save to database
+        db.session.add(review)
+        db.session.commit()
+        
+        flash("Thank you for sharing your experience! Your review has been submitted successfully.", "success")
+        logging.info(f"Review submitted by {name} with rating {rating}")
+        
     except Exception as e:
+        db.session.rollback()
         logging.error(f"Error processing review: {str(e)}")
-        flash(g.translations['error_review'], "error")
+        flash("Sorry, there was an error submitting your review. Please try again.", "error")
 
     return redirect(url_for('index', _anchor='reviews'))
 
