@@ -307,6 +307,7 @@
                             <i class="fas fa-camera"></i> {{ g.translations.review_photos }}
                         </label>
                         <div class="file-status" id="file-status"></div>
+                        <div class="photo-preview-container" id="photo-preview-container"></div>
                     </div>
                     <div class="menna-signature-compact">
                         <p>{{ g.translations.menna_signature }}</p>
@@ -319,20 +320,67 @@
 </section>
 
 <script>
+let selectedFiles = [];
+
 function updateFileStatus() {
     const fileInput = document.getElementById('review-photos');
     const fileStatus = document.getElementById('file-status');
+    const previewContainer = document.getElementById('photo-preview-container');
     
-    if (fileInput.files.length > 0) {
-        const fileNames = Array.from(fileInput.files).map(file => file.name);
-        if (fileNames.length === 1) {
-            fileStatus.innerHTML = `<span class="file-selected">1 photo selected: ${fileNames[0]}</span>`;
+    // Convert FileList to array and store
+    selectedFiles = Array.from(fileInput.files);
+    
+    // Update status text
+    if (selectedFiles.length > 0) {
+        if (selectedFiles.length === 1) {
+            fileStatus.innerHTML = `<span class="file-selected">1 photo selected</span>`;
         } else {
-            fileStatus.innerHTML = `<span class="file-selected">${fileNames.length} photos selected</span>`;
+            fileStatus.innerHTML = `<span class="file-selected">${selectedFiles.length} photos selected</span>`;
         }
+        
+        // Create photo previews
+        previewContainer.innerHTML = '';
+        selectedFiles.forEach((file, index) => {
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'photo-preview-wrapper';
+                    
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'photo-preview';
+                    img.alt = file.name;
+                    
+                    const removeBtn = document.createElement('button');
+                    removeBtn.className = 'remove-photo';
+                    removeBtn.innerHTML = '×';
+                    removeBtn.type = 'button';
+                    removeBtn.onclick = () => removePhoto(index);
+                    
+                    wrapper.appendChild(img);
+                    wrapper.appendChild(removeBtn);
+                    previewContainer.appendChild(wrapper);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
     } else {
         fileStatus.innerHTML = '';
+        previewContainer.innerHTML = '';
     }
+}
+
+function removePhoto(index) {
+    selectedFiles.splice(index, 1);
+    
+    // Create new FileList and update input
+    const dt = new DataTransfer();
+    selectedFiles.forEach(file => dt.items.add(file));
+    document.getElementById('review-photos').files = dt.files;
+    
+    // Update display
+    updateFileStatus();
 }
 </script>
 

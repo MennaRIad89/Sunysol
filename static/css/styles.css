@@ -2310,6 +2310,44 @@ footer {
     font-weight: 500;
 }
 
+.photo-preview-container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.photo-preview {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 2px solid var(--border-color);
+    position: relative;
+}
+
+.photo-preview-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.remove-photo {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .compact-btn {
     padding: 0.8rem 2rem;
     font-size: 0.9rem;
@@ -2335,6 +2373,9 @@ footer {
     visibility: visible !important;
     opacity: 1 !important;
     display: block !important;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
 }
 
 .review-card:hover {
