@@ -3524,3 +3524,28 @@ footer {
   .footer-social h4 {
     margin-bottom: 8px; /* reduce spacing */
   }
+}
+
+/* Mobile-only override for reviews section alignment */
+@media (max-width: 768px) {
+  .reviews-section {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .reviews-section .container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .reviews-container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
