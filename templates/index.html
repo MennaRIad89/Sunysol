@@ -236,60 +236,45 @@
             
             <div class="review-form-container">
                 <h3>{{ g.translations.share_experience }}</h3>
-                <form action="/submit_review" method="post" class="review-form">
-                    <div class="review-form-grid">
-                        <div class="form-group">
-                            <label for="review-name">{{ g.translations.review_name }}</label>
-                            <input type="text" id="review-name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="review-email">{{ g.translations.review_email }}</label>
-                            <input type="email" id="review-email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="country">{{ g.translations.review_country }}</label>
-                            <input type="text" id="country" name="country" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="rating">{{ g.translations.review_rating }}</label>
-                            <select id="rating" name="rating" required>
-                                <option value="">{{ g.translations.rate_experience }}</option>
-                                <option value="5">{{ g.translations.five_stars }}</option>
-                                <option value="4">{{ g.translations.four_stars }}</option>
-                                <option value="3">{{ g.translations.three_stars }}</option>
-                                <option value="2">{{ g.translations.two_stars }}</option>
-                                <option value="1">{{ g.translations.one_star }}</option>
-                            </select>
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="tour">{{ g.translations.review_tour }}</label>
-                            <select id="tour" name="tour" required>
-                                <option value="">{{ g.translations.select_tour }}</option>
-                                <option value="Dubai Modern Tour">{{ g.translations.dubai_modern_tour_review }}</option>
-                                <option value="Dubai Heritage Tour">{{ g.translations.dubai_heritage_tour_review }}</option>
-                                <option value="Dubai Full Day Tour">{{ g.translations.dubai_full_day_tour_review }}</option>
-                                <option value="Abu Dhabi Heritage Tour">{{ g.translations.abu_dhabi_heritage_tour_review }}</option>
-                                <option value="Abu Dhabi Louvre Tour">{{ g.translations.abu_dhabi_louvre_tour_review }}</option>
-                                <option value="Northern Emirates Tour">{{ g.translations.northern_emirates_tour_review }}</option>
-                                <option value="Desert Safari">{{ g.translations.desert_safari_review }}</option>
-                                <option value="Marina Cruise">{{ g.translations.marina_cruise_review }}</option>
-                                <option value="Custom Tour">{{ g.translations.custom_tour_review }}</option>
-                            </select>
-                        </div>
+                <div class="menna-signature-compact">
+                    <p>{{ g.translations.menna_signature }}</p>
+                </div>
+                <form action="/submit_review" method="post" class="review-form compact">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="{{ g.translations.review_name }}" required>
+                        <input type="email" name="email" placeholder="{{ g.translations.review_email }}" required>
+                        <input type="text" name="country" placeholder="{{ g.translations.review_country }}" required>
                     </div>
-                    <div class="form-group">
-                        <label for="review-comment">{{ g.translations.your_experience }}</label>
-                        <textarea id="review-comment" name="comment" rows="3" placeholder="{{ g.translations.experience_placeholder }}" required></textarea>
+                    <div class="form-row">
+                        <select name="tour" required>
+                            <option value="">{{ g.translations.select_tour }}</option>
+                            <option value="Dubai Modern Tour">{{ g.translations.dubai_modern_tour_review }}</option>
+                            <option value="Dubai Heritage Tour">{{ g.translations.dubai_heritage_tour_review }}</option>
+                            <option value="Dubai Full Day Tour">{{ g.translations.dubai_full_day_tour_review }}</option>
+                            <option value="Abu Dhabi Heritage Tour">{{ g.translations.abu_dhabi_heritage_tour_review }}</option>
+                            <option value="Abu Dhabi Louvre Tour">{{ g.translations.abu_dhabi_louvre_tour_review }}</option>
+                            <option value="Northern Emirates Tour">{{ g.translations.northern_emirates_tour_review }}</option>
+                            <option value="Desert Safari">{{ g.translations.desert_safari_review }}</option>
+                            <option value="Marina Cruise">{{ g.translations.marina_cruise_review }}</option>
+                            <option value="Custom Tour">{{ g.translations.custom_tour_review }}</option>
+                        </select>
+                        <select name="rating" required>
+                            <option value="">{{ g.translations.rate_experience }}</option>
+                            <option value="5">{{ g.translations.five_stars }}</option>
+                            <option value="4">{{ g.translations.four_stars }}</option>
+                            <option value="3">{{ g.translations.three_stars }}</option>
+                            <option value="2">{{ g.translations.two_stars }}</option>
+                            <option value="1">{{ g.translations.one_star }}</option>
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <label for="review-photos">{{ g.translations.review_photos }}</label>
+                    <textarea name="comment" rows="2" placeholder="{{ g.translations.experience_placeholder }}" required></textarea>
+                    <div class="file-upload-compact">
                         <input type="file" id="review-photos" name="photos" multiple accept="image/*">
-                        <small class="form-help">{{ g.translations.photos_help }}</small>
+                        <label for="review-photos" class="file-label">
+                            <i class="fas fa-camera"></i> {{ g.translations.review_photos }}
+                        </label>
                     </div>
-                    <div class="menna-signature">
-                        <p>{{ g.translations.menna_signature }}</p>
-                    </div>
-                    <button type="submit" class="btn primary-btn">{{ g.translations.submit_review }}</button>
+                    <button type="submit" class="btn primary-btn compact-btn">{{ g.translations.submit_review }}</button>
                 </form>
             </div>
         </div>

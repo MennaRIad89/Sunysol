@@ -2211,109 +2211,98 @@ footer {
     font-size: 1.5rem;
 }
 
-.review-form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+/* Compact Review Form Styles */
+.review-form.compact {
+    max-width: 100%;
 }
 
-.review-form-grid .form-group {
-    margin-bottom: 0;
+.menna-signature-compact {
+    text-align: center;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.8rem;
+    background-color: #faf8f5;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 4px 4px 0;
 }
 
-.review-form .form-group {
-    margin-bottom: 1rem;
-}
-
-.review-form .form-group.full-width {
-    grid-column: 1 / -1;
-}
-
-.review-form label {
-    display: block;
-    margin-bottom: 0.4rem;
+.menna-signature-compact p {
+    margin: 0;
+    font-style: italic;
     color: var(--text-color);
-    font-weight: 500;
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
-.review-form input,
-.review-form select,
-.review-form textarea {
-    width: 100%;
-    padding: 0.6rem;
-    border: 2px solid var(--border-color);
-    border-radius: 6px;
-    font-size: 0.9rem;
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.review-form.compact input,
+.review-form.compact select,
+.review-form.compact textarea {
+    padding: 0.7rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.85rem;
     transition: var(--transition);
     background-color: var(--white);
     color: var(--text-color);
 }
 
-.review-form input:focus,
-.review-form select:focus,
-.review-form textarea:focus {
+.review-form.compact input:focus,
+.review-form.compact select:focus,
+.review-form.compact textarea:focus {
     outline: none;
     border-color: var(--accent-color);
     box-shadow: 0 0 0 2px rgba(232, 106, 51, 0.1);
 }
 
-.review-form textarea {
+.review-form.compact textarea {
     resize: vertical;
-    min-height: 80px;
-    grid-column: 1 / -1;
+    margin-bottom: 0.8rem;
+    min-height: 60px;
 }
 
-.review-form button {
-    width: 100%;
-    margin-top: 0.5rem;
-    padding: 0.8rem;
+.file-upload-compact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
-.review-form .form-help {
-    display: block;
-    margin-top: 0.3rem;
-    font-size: 0.8rem;
-    color: #666;
-    font-style: italic;
+.file-upload-compact input[type="file"] {
+    display: none;
 }
 
-.review-form input[type="file"] {
-    padding: 0.4rem;
+.file-upload-compact .file-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background-color: #f8f9fa;
     border: 2px dashed var(--border-color);
-    background-color: #fafafa;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
     transition: var(--transition);
+    font-size: 0.85rem;
+    color: var(--text-color);
 }
 
-.review-form input[type="file"]:hover {
+.file-upload-compact .file-label:hover {
     border-color: var(--accent-color);
     background-color: #f5f5f5;
 }
 
-.review-form input[type="file"]:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    background-color: var(--white);
-    box-shadow: 0 0 0 2px rgba(232, 106, 51, 0.1);
+.file-upload-compact .file-label i {
+    color: var(--accent-color);
 }
 
-.menna-signature {
-    text-align: center;
-    margin: 1.5rem 0 1rem 0;
-    padding: 1rem;
-    background-color: #faf8f5;
-    border-left: 4px solid var(--accent-color);
-    border-radius: 0 6px 6px 0;
-}
-
-.menna-signature p {
-    margin: 0;
-    font-style: italic;
-    color: var(--text-color);
-    font-size: 1rem;
-    font-weight: 500;
+.compact-btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    margin-top: 0;
 }
 
 /* Mobile responsiveness for reviews section */
@@ -2335,13 +2324,14 @@ footer {
         align-items: center;
     }
     
-    .review-form-grid {
+    .form-row {
         grid-template-columns: 1fr;
-        gap: 0.8rem;
+        gap: 0.6rem;
     }
     
-    .review-form .form-group.full-width {
-        grid-column: 1;
+    .menna-signature-compact {
+        padding: 0.6rem;
+        font-size: 0.85rem;
     }
 }
 
