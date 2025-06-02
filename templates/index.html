@@ -201,81 +201,7 @@
         </div>
         
         <div class="reviews-container">
-            <div class="review-form-container">
-                <h3>{{ g.translations.share_experience }}</h3>
-                <p style="color: #666; margin-bottom: 1.5rem;">{{ g.translations.review_form_intro }}</p>
-                
-                <form action="{{ url_for('submit_review') }}" method="POST" enctype="multipart/form-data" class="review-form-compact">
-                    <div class="form-row">
-                        <input type="text" name="name" placeholder="{{ g.translations.your_name }}" required>
-                        <input type="email" name="email" placeholder="{{ g.translations.email_optional }}">
-                    </div>
-                    <div class="form-row">
-                        <input type="text" name="country" placeholder="{{ g.translations.country_optional }}">
-                        <select name="tour">
-                            <option value="">{{ g.translations.select_tour_optional }}</option>
-                            <option value="Dubai City Tour">Dubai City Tour</option>
-                            <option value="Desert Safari">Desert Safari</option>
-                            <option value="Burj Khalifa Tour">Burj Khalifa Tour</option>
-                            <option value="Marina Dhow Cruise">Marina Dhow Cruise</option>
-                            <option value="Abu Dhabi Tour">Abu Dhabi Tour</option>
-                            <option value="Northern Emirates">Northern Emirates</option>
-                            <option value="Custom Tour">Custom Tour</option>
-                        </select>
-                    </div>
-                    <div class="rating-row">
-                        <label>{{ g.translations.your_rating }}</label>
-                        <select name="rating" required>
-                            <option value="">{{ g.translations.select_rating }}</option>
-                            <option value="5">{{ g.translations.five_stars }}</option>
-                            <option value="4">{{ g.translations.four_stars }}</option>
-                            <option value="3">{{ g.translations.three_stars }}</option>
-                            <option value="2">{{ g.translations.two_stars }}</option>
-                            <option value="1">{{ g.translations.one_star }}</option>
-                        </select>
-                    </div>
-                    <textarea name="comment" rows="2" placeholder="{{ g.translations.experience_placeholder }}"></textarea>
-                    <div class="visit-date-row">
-                        <select name="visit_month" class="visit-date-select">
-                            <option value="">Month</option>
-                            <option value="January">January</option>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                            <option value="April">April</option>
-                            <option value="May">May</option>
-                            <option value="June">June</option>
-                            <option value="July">July</option>
-                            <option value="August">August</option>
-                            <option value="September">September</option>
-                            <option value="October">October</option>
-                            <option value="November">November</option>
-                            <option value="December">December</option>
-                        </select>
-                        <select name="visit_year" class="visit-date-select">
-                            <option value="">Year</option>
-                            {% for year in range(2020, 2036) %}
-                                <option value="{{ year }}">{{ year }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="file-upload-compact">
-                        <input type="file" id="review-photos" name="photos" multiple accept="image/*" onchange="updateFileStatus()">
-                        <label for="review-photos" class="file-label">
-                            <i class="fas fa-camera"></i> {{ g.translations.review_photos }}
-                        </label>
-                        <small class="upload-help">{{ g.translations.photos_help }}</small>
-                        <div id="file-status" class="file-status"></div>
-                        <div id="photo-previews" class="photo-preview-container"></div>
-                    </div>
-                    <button type="submit" class="btn-primary compact-btn">{{ g.translations.submit_review }}</button>
-                </form>
-                
-                <div class="menna-signature-compact">
-                    <p>{{ g.translations.menna_signature }}</p>
-                </div>
-            </div>
-            
-            <div class="reviews-display-container">
+            <div class="reviews-info">
                 <h3>{{ g.translations.stories_from_adventures }}</h3>
                 <p>{{ g.translations.reviews_description }}</p>
                 
@@ -291,31 +217,37 @@
                     <div class="featured-reviews-carousel">
                     {% if featured_reviews %}
                         {% for review in featured_reviews %}
-                        <div class="review-card-compact">
-                            <div class="compact-header">
-                                <div class="compact-avatar">{{ review.name[0].upper() }}</div>
-                                <div class="compact-info">
-                                    <h4 class="compact-name">{{ review.name }}</h4>
-                                    <div class="compact-rating">
-                                        {% for i in range(review.rating) %}
-                                            <i class="fas fa-star"></i>
-                                        {% endfor %}
-                                        {% for i in range(5 - review.rating) %}
-                                            <i class="far fa-star"></i>
-                                        {% endfor %}
-                                    </div>
+                        <div class="review-card-original">
+                            <div class="reviewer-header">
+                                <div class="reviewer-avatar-circle">{{ review.name[0].upper() }}</div>
+                                <div class="reviewer-details">
+                                    <h4 class="reviewer-name">{{ review.name }}</h4>
+                                    {% if review.nationality %}
+                                        <span class="reviewer-country">{{ review.nationality }}</span>
+                                    {% endif %}
                                 </div>
                             </div>
+                            <div class="review-rating-stars">
+                                {% for i in range(review.rating) %}
+                                    <i class="fas fa-star"></i>
+                                {% endfor %}
+                                {% for i in range(5 - review.rating) %}
+                                    <i class="far fa-star"></i>
+                                {% endfor %}
+                            </div>
+                            {% if review.tour %}
+                                <div class="tour-type-badge">{{ review.tour }}</div>
+                            {% endif %}
                             {% if review.comment %}
-                                <p class="compact-comment">{{ review.comment }}</p>
+                                <p class="review-text-content">{{ review.comment }}</p>
                             {% endif %}
                             {% if review.photos %}
-                                <div class="compact-photos">
+                                <div class="review-photos-small">
                                     {% for photo in review.photos.split(',')[:2] %}
-                                        <img src="{{ url_for('static', filename='uploads/reviews/' + photo) }}" alt="Review photo" class="compact-thumb">
+                                        <img src="{{ url_for('static', filename='uploads/reviews/' + photo) }}" alt="Review photo" class="photo-thumb-small">
                                     {% endfor %}
                                     {% if review.photos.split(',')|length > 2 %}
-                                        <span class="more-photos">+{{ review.photos.split(',')|length - 2 }}</span>
+                                        <span class="extra-photos">+{{ review.photos.split(',')|length - 2 }}</span>
                                     {% endif %}
                                 </div>
                             {% endif %}
@@ -518,7 +450,7 @@ function updateCarousel() {
     if (!carousel) return;
     
     const isMobile = window.innerWidth < 768;
-    const cardWidth = isMobile ? window.innerWidth - 48 : 280; // mobile: full width minus padding, desktop: 280px
+    const cardWidth = isMobile ? window.innerWidth - 48 : 300; // mobile: full width minus padding, desktop: 300px
     const gap = isMobile ? 16 : 24;
     const offset = currentSlide * (cardWidth + gap);
     carousel.style.transform = `translateX(-${offset}px)`;
@@ -529,9 +461,9 @@ function updateCarousel() {
     
     if (prevBtn) prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
     if (nextBtn) {
-        const cards = carousel.querySelectorAll('.review-card-compact');
-        const reviewsPerSlide = isMobile ? 1 : 3;
-        const maxSlides = Math.max(0, cards.length - reviewsPerSlide);
+        const cards = carousel.querySelectorAll('.review-card-original');
+        const reviewsPerSlide = isMobile ? 1 : 1.5; // Show 1.5 cards on desktop
+        const maxSlides = Math.max(0, cards.length - Math.ceil(reviewsPerSlide));
         nextBtn.style.opacity = currentSlide >= maxSlides ? '0.5' : '1';
     }
 }
