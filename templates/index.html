@@ -200,15 +200,13 @@
             <p>{{ g.translations.reviews_intro }}</p>
         </div>
         
-        <div class="reviews-left-content">
-            <div class="left-section-header">
-                <h3>{{ g.translations.stories_from_adventures }}</h3>
-                <p>{{ g.translations.reviews_description }}</p>
-            </div>
-        </div>
-        
         <div class="reviews-container">
-            <div class="reviews-carousel-section">
+            <div class="reviews-left-column">
+                <div class="left-section-header">
+                    <h3>{{ g.translations.stories_from_adventures }}</h3>
+                    <p>{{ g.translations.reviews_description }}</p>
+                </div>
+                <div class="reviews-carousel-section">
                 <div class="reviews-carousel-container">
                     <div class="carousel-controls">
                         <button class="carousel-btn prev-btn" onclick="prevReview()">
@@ -271,6 +269,23 @@
                     </div>
                     <div class="see-all-reviews">
                         <a href="/all-reviews" class="btn secondary-btn">See All Reviews</a>
+                    </div>
+                </div>
+                
+                <div class="reviews-stats-inline">
+                    <div class="stat">
+                        <i class="fas fa-heart" style="color: #e74c3c;"></i>
+                        <div>
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">{{ g.translations.happy_travelers }}</div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star" style="color: #f39c12;"></i>
+                        <div>
+                            <div class="stat-number">4.9/5</div>
+                            <div class="stat-label">{{ g.translations.exceptional_experiences }}</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -345,26 +360,7 @@
             </div>
         </div>
         
-        <!-- Review Stats Section - Below the split layout -->
-        <div class="review-stats-section">
-            <div class="review-stats">
-                <div class="stat">
-                    <i class="fas fa-users"></i>
-                    <div class="stat-details">
-                        <h4>{{ g.translations.happy_travelers }}</h4>
-                        <p>{{ g.translations.happy_travelers_desc }}</p>
-                    </div>
-                </div>
-                
-                <div class="stat">
-                    <i class="fas fa-star"></i>
-                    <div class="stat-details">
-                        <h4>{{ g.translations.exceptional_experiences }}</h4>
-                        <p>{{ g.translations.exceptional_experiences_desc }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </section>
 
 <script>
