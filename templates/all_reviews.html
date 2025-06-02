@@ -61,15 +61,27 @@
                 {% if review.photos %}
                     <div class="review-photo-gallery">
                         <h4>Photos from the Experience</h4>
-                        <div class="photo-grid">
-                            {% for photo in review.photos.split(',') %}
-                                <div class="photo-item">
-                                    <img src="{{ url_for('static', filename='uploads/reviews/' + photo) }}" 
-                                         alt="Photo from {{ review.name }}'s tour" 
-                                         class="gallery-image"
-                                         onclick="openImageModal(this.src)">
-                                </div>
-                            {% endfor %}
+                        <div class="photo-gallery-container" data-review-id="{{ review.id }}">
+                            <div class="photo-gallery-slider">
+                                {% for photo in review.photos.split(',') %}
+                                    <div class="photo-item">
+                                        <img src="{{ url_for('static', filename='uploads/reviews/' + photo) }}" 
+                                             alt="Photo from {{ review.name }}'s tour" 
+                                             class="gallery-image"
+                                             data-review-id="{{ review.id }}"
+                                             data-photo-index="{{ loop.index0 }}"
+                                             onclick="openReviewGallery('{{ review.id }}', {{ loop.index0 }})">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            {% if review.photos.split(',')|length > 4 %}
+                                <button class="gallery-nav gallery-prev" onclick="scrollGallery('{{ review.id }}', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="gallery-nav gallery-next" onclick="scrollGallery('{{ review.id }}', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            {% endif %}
                         </div>
                     </div>
                 {% endif %}
@@ -96,30 +108,106 @@
     </div>
 </section>
 
-<!-- Image Modal -->
-<div id="imageModal" class="image-modal" onclick="closeImageModal()">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <img id="modalImage" src="" alt="Enlarged photo">
+<!-- Review Gallery Modal -->
+<div id="reviewGalleryModal" class="review-gallery-modal" onclick="closeReviewGallery()">
+    <div class="review-modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="closeReviewGallery()">&times;</span>
+        <div class="main-image-container">
+            <button class="modal-nav modal-prev" onclick="previousModalImage()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <img id="reviewModalImage" src="" alt="Review photo">
+            <button class="modal-nav modal-next" onclick="nextModalImage()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="modal-thumbnails">
+            <div id="modalThumbnailContainer"></div>
+        </div>
+        <div class="modal-counter">
+            <span id="modalImageCounter"></span>
+        </div>
     </div>
 </div>
 
 <script>
-function openImageModal(src) {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    modal.style.display = 'block';
-    modalImg.src = src;
+let currentReviewPhotos = [];
+let currentModalIndex = 0;
+
+function openReviewGallery(reviewId, photoIndex) {
+    // Get all photos for this specific review
+    const reviewContainer = document.querySelector(`[data-review-id="${reviewId}"]`);
+    const images = reviewContainer.querySelectorAll('.gallery-image');
+    
+    currentReviewPhotos = Array.from(images).map(img => img.src);
+    currentModalIndex = photoIndex;
+    
+    updateModalDisplay();
+    document.getElementById('reviewGalleryModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
 }
 
-function closeImageModal() {
-    document.getElementById('imageModal').style.display = 'none';
+function closeReviewGallery() {
+    document.getElementById('reviewGalleryModal').style.display = 'none';
+    document.body.style.overflow = '';
+    currentReviewPhotos = [];
+}
+
+function nextModalImage() {
+    currentModalIndex = (currentModalIndex + 1) % currentReviewPhotos.length;
+    updateModalDisplay();
+}
+
+function previousModalImage() {
+    currentModalIndex = (currentModalIndex - 1 + currentReviewPhotos.length) % currentReviewPhotos.length;
+    updateModalDisplay();
+}
+
+function updateModalDisplay() {
+    const modalImage = document.getElementById('reviewModalImage');
+    const counter = document.getElementById('modalImageCounter');
+    const thumbnailContainer = document.getElementById('modalThumbnailContainer');
+    
+    // Update main image
+    modalImage.src = currentReviewPhotos[currentModalIndex];
+    
+    // Update counter
+    counter.textContent = `${currentModalIndex + 1} / ${currentReviewPhotos.length}`;
+    
+    // Update thumbnails
+    thumbnailContainer.innerHTML = '';
+    currentReviewPhotos.forEach((src, index) => {
+        const thumb = document.createElement('img');
+        thumb.src = src;
+        thumb.className = 'modal-thumbnail' + (index === currentModalIndex ? ' active' : '');
+        thumb.onclick = () => {
+            currentModalIndex = index;
+            updateModalDisplay();
+        };
+        thumbnailContainer.appendChild(thumb);
+    });
+}
+
+function scrollGallery(reviewId, direction) {
+    const container = document.querySelector(`[data-review-id="${reviewId}"] .photo-gallery-slider`);
+    const scrollAmount = 150;
+    container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+    });
 }
 
 // Close modal with escape key
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
-        closeImageModal();
+        closeReviewGallery();
+    }
+    if (document.getElementById('reviewGalleryModal').style.display === 'block') {
+        if (event.key === 'ArrowLeft') {
+            previousModalImage();
+        } else if (event.key === 'ArrowRight') {
+            nextModalImage();
+        }
     }
 });
 </script>
