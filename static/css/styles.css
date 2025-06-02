@@ -2299,6 +2299,17 @@ footer {
     color: var(--accent-color);
 }
 
+.file-upload-compact .file-status {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.file-upload-compact .file-selected {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
 .compact-btn {
     padding: 0.8rem 2rem;
     font-size: 0.9rem;
@@ -2307,19 +2318,23 @@ footer {
 
 /* Review Cards Styles */
 .featured-reviews {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
     margin-bottom: 2rem;
+    min-height: 200px;
 }
 
 .review-card {
-    background: var(--white);
+    background: var(--white) !important;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
 }
 
 .review-card:hover {

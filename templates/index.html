@@ -302,10 +302,11 @@
                     </div>
                     <textarea name="comment" rows="2" placeholder="{{ g.translations.experience_placeholder }}"></textarea>
                     <div class="file-upload-compact">
-                        <input type="file" id="review-photos" name="photos" multiple accept="image/*">
+                        <input type="file" id="review-photos" name="photos" multiple accept="image/*" onchange="updateFileStatus()">
                         <label for="review-photos" class="file-label">
                             <i class="fas fa-camera"></i> {{ g.translations.review_photos }}
                         </label>
+                        <div class="file-status" id="file-status"></div>
                     </div>
                     <div class="menna-signature-compact">
                         <p>{{ g.translations.menna_signature }}</p>
@@ -316,6 +317,24 @@
         </div>
     </div>
 </section>
+
+<script>
+function updateFileStatus() {
+    const fileInput = document.getElementById('review-photos');
+    const fileStatus = document.getElementById('file-status');
+    
+    if (fileInput.files.length > 0) {
+        const fileNames = Array.from(fileInput.files).map(file => file.name);
+        if (fileNames.length === 1) {
+            fileStatus.innerHTML = `<span class="file-selected">1 photo selected: ${fileNames[0]}</span>`;
+        } else {
+            fileStatus.innerHTML = `<span class="file-selected">${fileNames.length} photos selected</span>`;
+        }
+    } else {
+        fileStatus.innerHTML = '';
+    }
+}
+</script>
 
 <!-- Contact Section -->
 <section id="contact" class="contact-section color-b">

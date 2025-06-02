@@ -152,7 +152,7 @@ def submit_review():
         db.session.add(review)
         db.session.commit()
         
-        flash("Thank you for sharing your experience! Your review has been submitted successfully.", "success")
+        flash("Thank you so much for sharing your story! Your words mean so much to me, and they help other travelers feel the spirit of Sun y Sol. I'm grateful to have been a part of your adventure here in the UAE. Hope our paths cross again soon! — Menna", "success")
         logging.info(f"Review submitted by {name} with rating {rating}")
         
     except Exception as e:
