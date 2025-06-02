@@ -205,39 +205,52 @@
                 <h3>{{ g.translations.stories_from_adventures }}</h3>
                 <p>{{ g.translations.reviews_description }}</p>
                 
-                <div class="featured-reviews">
+                <div class="reviews-carousel-container">
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn" onclick="prevReview()">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next-btn" onclick="nextReview()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="featured-reviews-carousel">
                     {% if featured_reviews %}
                         {% for review in featured_reviews %}
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="reviewer-info">
-                                    <h4>{{ review.name }}</h4>
+                        <div class="review-card-premium">
+                            <div class="reviewer-avatar">
+                                <div class="avatar-circle">{{ review.name[0].upper() }}</div>
+                            </div>
+                            <div class="review-content">
+                                <div class="reviewer-details">
+                                    <h4 class="reviewer-name">{{ review.name }}</h4>
                                     {% if review.nationality %}
-                                        <span class="nationality">{{ review.nationality }}</span>
+                                        <span class="reviewer-country">{{ review.nationality }}</span>
                                     {% endif %}
+                                    <span class="review-date">{{ review.created_at.strftime('%B %Y') }}</span>
                                 </div>
-                                <div class="review-rating">
+                                <div class="rating-stars">
                                     {% for i in range(review.rating) %}
-                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-filled"></i>
                                     {% endfor %}
                                     {% for i in range(5 - review.rating) %}
-                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star star-empty"></i>
                                     {% endfor %}
                                 </div>
+                                {% if review.tour %}
+                                    <div class="tour-badge">{{ review.tour }}</div>
+                                {% endif %}
+                                {% if review.comment %}
+                                    <p class="review-comment">{{ review.comment }}</p>
+                                {% endif %}
+                                {% if review.photos %}
+                                    <div class="review-image-gallery">
+                                        {% for photo in review.photos.split(',') %}
+                                            <img src="{{ url_for('static', filename='uploads/reviews/' + photo) }}" alt="Review photo" class="gallery-thumb">
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
                             </div>
-                            {% if review.tour %}
-                                <div class="tour-name">{{ review.tour }}</div>
-                            {% endif %}
-                            {% if review.comment %}
-                                <p class="review-text">{{ review.comment }}</p>
-                            {% endif %}
-                            {% if review.photos %}
-                                <div class="review-photos">
-                                    {% for photo in review.photos.split(',') %}
-                                        <img src="{{ url_for('static', filename='uploads/reviews/' + photo) }}" alt="Review photo" class="review-photo">
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
                         </div>
                         {% endfor %}
                     {% else %}
@@ -249,6 +262,10 @@
                             <p>{{ g.translations.featured_reviews_placeholder }}</p>
                         </div>
                     {% endif %}
+                    </div>
+                    <div class="see-all-reviews">
+                        <a href="/all-reviews" class="btn secondary-btn">See All Reviews</a>
+                    </div>
                 </div>
                 
                 <div class="review-stats">
@@ -382,6 +399,51 @@ function removePhoto(index) {
     // Update display
     updateFileStatus();
 }
+
+// Review Carousel Functionality
+let currentSlide = 0;
+const reviewsPerSlide = window.innerWidth < 768 ? 1 : 3;
+
+function nextReview() {
+    const carousel = document.querySelector('.featured-reviews-carousel');
+    const cards = carousel.querySelectorAll('.review-card-premium');
+    const maxSlides = Math.max(0, cards.length - reviewsPerSlide);
+    
+    if (currentSlide < maxSlides) {
+        currentSlide++;
+        updateCarousel();
+    }
+}
+
+function prevReview() {
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateCarousel();
+    }
+}
+
+function updateCarousel() {
+    const carousel = document.querySelector('.featured-reviews-carousel');
+    const cardWidth = 350 + 24; // card width + gap
+    const offset = currentSlide * cardWidth;
+    carousel.style.transform = `translateX(-${offset}px)`;
+    
+    // Update button states
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    if (prevBtn) prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+    if (nextBtn) {
+        const cards = carousel.querySelectorAll('.review-card-premium');
+        const maxSlides = Math.max(0, cards.length - reviewsPerSlide);
+        nextBtn.style.opacity = currentSlide >= maxSlides ? '0.5' : '1';
+    }
+}
+
+// Initialize carousel on page load
+document.addEventListener('DOMContentLoaded', function() {
+    updateCarousel();
+});
 </script>
 
 <!-- Contact Section -->

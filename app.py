@@ -76,6 +76,13 @@ def agencies():
     return render_template('agencies.html')
 
 
+@app.route('/all-reviews')
+def all_reviews():
+    # Get all reviews ordered by date (newest first)
+    all_reviews_data = Review.query.order_by(Review.created_at.desc()).all()
+    return render_template('all_reviews.html', reviews=all_reviews_data)
+
+
 @app.route('/dubai-tours')
 def dubai_tours():
     return render_template('dubai_tours.html')

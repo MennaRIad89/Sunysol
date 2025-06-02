@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block title %}All Guest Reviews - {{ g.translations.site_title }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section all-reviews-hero">
+    <div class="hero-content">
+        <h1>All Guest Reviews</h1>
+        <p>Read what our travelers say about their unforgettable experiences with Menna</p>
+    </div>
+</section>
+
+<!-- All Reviews Section -->
+<section class="all-reviews-section">
+    <div class="container">
+        <div class="reviews-header">
+            <h2>{{ reviews|length }} Happy Travelers Share Their Stories</h2>
+            <p>Every review tells a unique story of discovery, friendship, and the magic we create together in the UAE.</p>
+        </div>
+        
+        <div class="all-reviews-grid">
+            {% for review in reviews %}
+            <article class="full-review-card">
+                <div class="review-card-header">
+                    <div class="reviewer-profile">
+                        <div class="profile-avatar">{{ review.name[0].upper() }}</div>
+                        <div class="profile-info">
+                            <h3 class="reviewer-full-name">{{ review.name }}</h3>
+                            {% if review.nationality %}
+                                <span class="reviewer-location">{{ review.nationality }}</span>
+                            {% endif %}
+                            <time class="review-visit-date">{{ review.created_at.strftime('%B %Y') }}</time>
+                        </div>
+                    </div>
+                    <div class="review-rating-display">
+                        {% for i in range(review.rating) %}
+                            <i class="fas fa-star star-gold"></i>
+                        {% endfor %}
+                        {% for i in range(5 - review.rating) %}
+                            <i class="far fa-star star-gray"></i>
+                        {% endfor %}
+                        <span class="rating-text">{{ review.rating }}/5</span>
+                    </div>
+                </div>
+                
+                {% if review.tour %}
+                    <div class="tour-experience">{{ review.tour }}</div>
+                {% endif %}
+                
+                {% if review.comment %}
+                    <div class="review-story">
+                        <p>{{ review.comment }}</p>
+                    </div>
+                {% endif %}
+                
+                {% if review.photos %}
+                    <div class="review-photo-gallery">
+                        <h4>Photos from the Experience</h4>
+                        <div class="photo-grid">
+                            {% for photo in review.photos.split(',') %}
+                                <div class="photo-item">
+                                    <img src="{{ url_for('static', filename='uploads/reviews/' + photo) }}" 
+                                         alt="Photo from {{ review.name }}'s tour" 
+                                         class="gallery-image"
+                                         onclick="openImageModal(this.src)">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+        
+        {% if not reviews %}
+            <div class="no-reviews-state">
+                <div class="no-reviews-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>No reviews yet</h3>
+                <p>Be the first to share your experience with Menna!</p>
+                <a href="/#reviews" class="btn primary-btn">Share Your Review</a>
+            </div>
+        {% endif %}
+        
+        <div class="back-to-home">
+            <a href="/#reviews" class="btn secondary-btn">
+                <i class="fas fa-arrow-left"></i> Back to Homepage
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Image Modal -->
+<div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img id="modalImage" src="" alt="Enlarged photo">
+    </div>
+</div>
+
+<script>
+function openImageModal(src) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    modal.style.display = 'block';
+    modalImg.src = src;
+}
+
+function closeImageModal() {
+    document.getElementById('imageModal').style.display = 'none';
+}
+
+// Close modal with escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeImageModal();
+    }
+});
+</script>
+{% endblock %}
