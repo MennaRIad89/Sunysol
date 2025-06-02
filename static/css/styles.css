@@ -2103,7 +2103,7 @@ footer {
 /* ===== Redesigned Reviews Section ===== */
 .reviews-container {
     display: grid;
-    grid-template-columns: 40% 55%;
+    grid-template-columns: 45% 50%;
     gap: 5%;
     margin: 2rem auto 0;
     max-width: 1200px;
