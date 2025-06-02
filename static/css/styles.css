@@ -2703,28 +2703,33 @@ footer {
 @media (max-width: 768px) {
     .featured-reviews-carousel {
         width: 100% !important;
-        max-width: 100vw !important;
+        max-width: 100% !important;
         min-width: 0 !important;
         gap: 1rem;
     }
     
     .reviews-carousel-section,
-    .reviews-carousel-container,
-    .carousel-viewport {
+    .reviews-carousel-container {
         width: 100% !important;
-        max-width: 100vw !important;
+        max-width: 100% !important;
         padding: 0 !important;
         margin: 0 auto !important;
         overflow: hidden !important;
         box-sizing: border-box !important;
     }
     
-    .review-card-original {
-        min-width: 100% !important;
-        max-width: 100% !important;
+    .carousel-viewport {
+        overflow: hidden !important;
         width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .review-card-original {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 auto 1.2rem auto !important;
         box-sizing: border-box !important;
-        margin: 0 auto !important;
     }
     
     body {
