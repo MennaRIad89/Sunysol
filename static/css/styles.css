@@ -3306,6 +3306,10 @@ footer {
 
 /* Mobile responsiveness for reviews section */
 @media screen and (max-width: 768px) {
+    .reviews-section {
+        padding: 3rem 0;
+    }
+    
     .left-section-header {
         text-align: center;
         margin-bottom: 1.5rem;
@@ -3317,7 +3321,9 @@ footer {
     
     .reviews-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
+        padding: 0 1rem;
+        margin: 1.5rem auto 0;
     }
     
     .reviews-left-column {
@@ -3325,17 +3331,19 @@ footer {
     }
     
     .reviews-carousel-section {
-        padding: 1.5rem;
+        padding: 1rem;
         order: 1;
+        margin: 0;
     }
     
     .review-form-container {
-        padding: 1.5rem;
+        padding: 1rem;
         order: 2;
     }
     
     .reviews-stats-external {
         gap: 1rem;
+        margin-top: 1rem;
     }
     
     .stat-item {
@@ -3355,7 +3363,7 @@ footer {
     }
     
     .featured-review-placeholder {
-        padding: 1.5rem;
+        padding: 1rem;
     }
     
     .stat {
@@ -3379,6 +3387,16 @@ footer {
     
     .review-card {
         padding: 0.8rem;
+    }
+    
+    .review-stats-section {
+        padding: 2rem 0 1.5rem 0;
+    }
+    
+    .review-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
     }
 }
 
