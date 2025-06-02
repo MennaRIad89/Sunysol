@@ -195,23 +195,23 @@
 <section id="reviews" class="reviews-section color-a">
     <div class="container">
         <div class="section-header">
-            <h2>Guest Reviews</h2>
+            <h2>{{ g.translations.guest_reviews }}</h2>
             <div class="divider"></div>
-            <p>Your feedback means the world to me! If you've joined me on a tour, I'd love to hear about your experience and help other travelers feel inspired. Thank you for being part of our journey!</p>
+            <p>{{ g.translations.reviews_intro }}</p>
         </div>
         
         <div class="reviews-container">
             <div class="reviews-info">
-                <h3>Stories From Our Adventures</h3>
-                <p>Every tour creates new friendships and unforgettable memories. Here are some heartwarming stories from fellow travelers who have explored the UAE with me.</p>
+                <h3>{{ g.translations.stories_from_adventures }}</h3>
+                <p>{{ g.translations.reviews_description }}</p>
                 
                 <div class="featured-reviews">
                     <div class="featured-review-placeholder">
                         <div class="placeholder-icon">
                             <i class="fas fa-heart"></i>
                         </div>
-                        <h4>Featured Reviews Coming Soon</h4>
-                        <p>This space will soon showcase real stories from happy guests! Each review tells a unique story of discovery, friendship, and the magic we create together in the UAE.</p>
+                        <h4>{{ g.translations.featured_reviews_coming }}</h4>
+                        <p>{{ g.translations.featured_reviews_placeholder }}</p>
                     </div>
                 </div>
                 
@@ -219,67 +219,67 @@
                     <div class="stat">
                         <i class="fas fa-users"></i>
                         <div class="stat-details">
-                            <h4>Happy Travelers</h4>
-                            <p>Join hundreds of satisfied guests from around the world</p>
+                            <h4>{{ g.translations.happy_travelers }}</h4>
+                            <p>{{ g.translations.happy_travelers_desc }}</p>
                         </div>
                     </div>
                     
                     <div class="stat">
                         <i class="fas fa-star"></i>
                         <div class="stat-details">
-                            <h4>Exceptional Experiences</h4>
-                            <p>Personalized tours that create lasting memories</p>
+                            <h4>{{ g.translations.exceptional_experiences }}</h4>
+                            <p>{{ g.translations.exceptional_experiences_desc }}</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="review-form-container">
-                <h3>Share Your Experience</h3>
+                <h3>{{ g.translations.share_experience }}</h3>
                 <form action="/submit_review" method="post" class="review-form">
                     <div class="form-group">
-                        <label for="review-name">Name</label>
+                        <label for="review-name">{{ g.translations.review_name }}</label>
                         <input type="text" id="review-name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="review-email">Email</label>
+                        <label for="review-email">{{ g.translations.review_email }}</label>
                         <input type="email" id="review-email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="country">Country</label>
+                        <label for="country">{{ g.translations.review_country }}</label>
                         <input type="text" id="country" name="country" required>
                     </div>
                     <div class="form-group">
-                        <label for="tour">Tour Taken</label>
+                        <label for="tour">{{ g.translations.review_tour }}</label>
                         <select id="tour" name="tour" required>
-                            <option value="">Select a tour...</option>
-                            <option value="Dubai Modern Tour">Dubai Modern Tour</option>
-                            <option value="Dubai Heritage Tour">Dubai Heritage Tour</option>
-                            <option value="Dubai Full Day Tour">Dubai Full Day Tour</option>
-                            <option value="Abu Dhabi Heritage Tour">Abu Dhabi Heritage Tour</option>
-                            <option value="Abu Dhabi Louvre Tour">Abu Dhabi Louvre Tour</option>
-                            <option value="Northern Emirates Tour">Northern Emirates Tour</option>
-                            <option value="Desert Safari">Desert Safari</option>
-                            <option value="Marina Cruise">Marina Cruise</option>
-                            <option value="Custom Tour">Custom Tour</option>
+                            <option value="">{{ g.translations.select_tour }}</option>
+                            <option value="Dubai Modern Tour">{{ g.translations.dubai_modern_tour_review }}</option>
+                            <option value="Dubai Heritage Tour">{{ g.translations.dubai_heritage_tour_review }}</option>
+                            <option value="Dubai Full Day Tour">{{ g.translations.dubai_full_day_tour_review }}</option>
+                            <option value="Abu Dhabi Heritage Tour">{{ g.translations.abu_dhabi_heritage_tour_review }}</option>
+                            <option value="Abu Dhabi Louvre Tour">{{ g.translations.abu_dhabi_louvre_tour_review }}</option>
+                            <option value="Northern Emirates Tour">{{ g.translations.northern_emirates_tour_review }}</option>
+                            <option value="Desert Safari">{{ g.translations.desert_safari_review }}</option>
+                            <option value="Marina Cruise">{{ g.translations.marina_cruise_review }}</option>
+                            <option value="Custom Tour">{{ g.translations.custom_tour_review }}</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="rating">Rating</label>
+                        <label for="rating">{{ g.translations.review_rating }}</label>
                         <select id="rating" name="rating" required>
-                            <option value="">How would you rate your experience?</option>
-                            <option value="5">5 Stars - Exceptional</option>
-                            <option value="4">4 Stars - Very Good</option>
-                            <option value="3">3 Stars - Good</option>
-                            <option value="2">2 Stars - Fair</option>
-                            <option value="1">1 Star - Poor</option>
+                            <option value="">{{ g.translations.rate_experience }}</option>
+                            <option value="5">{{ g.translations.five_stars }}</option>
+                            <option value="4">{{ g.translations.four_stars }}</option>
+                            <option value="3">{{ g.translations.three_stars }}</option>
+                            <option value="2">{{ g.translations.two_stars }}</option>
+                            <option value="1">{{ g.translations.one_star }}</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="review-comment">Your Experience</label>
-                        <textarea id="review-comment" name="comment" rows="4" placeholder="Tell us about your tour experience with Menna..." required></textarea>
+                        <label for="review-comment">{{ g.translations.your_experience }}</label>
+                        <textarea id="review-comment" name="comment" rows="4" placeholder="{{ g.translations.experience_placeholder }}" required></textarea>
                     </div>
-                    <button type="submit" class="btn primary-btn">Submit Review</button>
+                    <button type="submit" class="btn primary-btn">{{ g.translations.submit_review }}</button>
                 </form>
             </div>
         </div>
