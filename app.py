@@ -1,52 +1,12 @@
 import os
 import logging
-from datetime import datetime
-from werkzeug.utils import secure_filename
 from flask import Flask, render_template, request, flash, redirect, url_for, session, g
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase
 
 from translations import TRANSLATIONS
-
-class Base(DeclarativeBase):
-    pass
-
-db = SQLAlchemy(model_class=Base)
 
 # Create Flask app
 app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
-
-# Database configuration
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL") or "sqlite:///reviews.db"
-app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
-    "pool_recycle": 300,
-    "pool_pre_ping": True,
-}
-
-# File upload configuration
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
-UPLOAD_FOLDER = 'static/uploads/reviews'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-# Initialize database
-db.init_app(app)
-
-# Ensure upload directory exists
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-
-# Helper functions
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-# Create database models
-from models import create_models
-Review = create_models(db)
-
-# Create database tables
-with app.app_context():
-    db.create_all()
 
 
 # Set default language
@@ -66,21 +26,12 @@ def switch_language(language):
 
 @app.route('/')
 def index():
-    # Get featured reviews for display
-    featured_reviews = Review.query.filter_by(is_featured=True).order_by(Review.created_at.desc()).limit(6).all()
-    return render_template('index.html', featured_reviews=featured_reviews)
+    return render_template('index.html')
 
 
 @app.route('/agencies')
 def agencies():
     return render_template('agencies.html')
-
-
-@app.route('/all-reviews')
-def all_reviews():
-    # Get all reviews ordered by date (newest first)
-    all_reviews_data = Review.query.order_by(Review.created_at.desc()).all()
-    return render_template('all_reviews.html', reviews=all_reviews_data)
 
 
 @app.route('/dubai-tours')
@@ -106,78 +57,22 @@ def dubai_modern_gallery():
 @app.route('/submit_review', methods=['POST'])
 def submit_review():
     try:
-        # Get form data
-        name = request.form.get('name', '').strip()
-        email = request.form.get('email', '').strip()
-        country = request.form.get('country', '').strip()
-        tour = request.form.get('tour', '').strip()
-        rating = request.form.get('rating', '').strip()
-        comment = request.form.get('comment', '').strip()
-        visit_month = request.form.get('visit_month', '').strip()
-        visit_year = request.form.get('visit_year', '').strip()
-        
-        # Combine month and year into visit_date
-        visit_date = ''
-        if visit_month and visit_year:
-            visit_date = f"{visit_month} {visit_year}"
-        elif visit_month:
-            visit_date = visit_month
-        elif visit_year:
-            visit_date = visit_year
-        
-        # Validation - Name and rating are required
-        if not name:
-            flash("Name is required", "error")
-            return redirect(url_for('index', _anchor='reviews'))
-            
-        if not rating or not rating.isdigit() or int(rating) < 1 or int(rating) > 5:
-            flash("Valid rating (1-5 stars) is required", "error")
-            return redirect(url_for('index', _anchor='reviews'))
-        
-        # Handle file uploads
-        uploaded_photos = []
-        if 'photos' in request.files:
-            files = request.files.getlist('photos')
-            for file in files:
-                if file and file.filename and file.filename != '':
-                    if allowed_file(file.filename):
-                        # Generate unique filename
-                        filename = secure_filename(file.filename)
-                        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S_')
-                        filename = timestamp + filename
-                        
-                        # Save file
-                        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-                        file.save(file_path)
-                        uploaded_photos.append(filename)
-                    else:
-                        flash("Invalid file type. Please upload PNG, JPG, JPEG, or GIF files.", "error")
-                        return redirect(url_for('index', _anchor='reviews'))
-        
-        # Create review record
-        review = Review(
-            name=name,
-            email=email if email else None,
-            nationality=country if country else None,
-            tour=tour if tour else None,
-            rating=int(rating),
-            comment=comment if comment else None,
-            photos=','.join(uploaded_photos) if uploaded_photos else None,
-            visit_date=visit_date if visit_date else None,
-            is_featured=True  # Auto-feature new reviews
+        name = request.form.get('name')
+        email = request.form.get('email')
+        country = request.form.get('country')
+        tour = request.form.get('tour')
+        comment = request.form.get('comment')
+
+        # Here we would normally save the review to a database
+        # For now, we'll just log it
+        logging.info(
+            f"Review received from {name} ({email}) from {country} about {tour}: {comment}"
         )
-        
-        # Save to database
-        db.session.add(review)
-        db.session.commit()
-        
-        flash("Thank you so much for sharing your story! Your words mean so much to me, and they help other travelers feel the spirit of Sun y Sol. I'm grateful to have been a part of your adventure here in the UAE. Hope our paths cross again soon! — Menna", "success")
-        logging.info(f"Review submitted by {name} with rating {rating}")
-        
+
+        flash(g.translations['thank_you_review'], "success")
     except Exception as e:
-        db.session.rollback()
         logging.error(f"Error processing review: {str(e)}")
-        flash("Sorry, there was an error submitting your review. Please try again.", "error")
+        flash(g.translations['error_review'], "error")
 
     return redirect(url_for('index', _anchor='reviews'))
 
