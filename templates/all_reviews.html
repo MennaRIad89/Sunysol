@@ -30,7 +30,11 @@
                             {% if review.nationality %}
                                 <span class="reviewer-location">{{ review.nationality }}</span>
                             {% endif %}
-                            <time class="review-visit-date">{{ review.created_at.strftime('%B %Y') }}</time>
+                            {% if review.visit_date %}
+                                <time class="review-visit-date">Visited: {{ review.visit_date }}</time>
+                            {% else %}
+                                <time class="review-visit-date">{{ review.created_at.strftime('%B %Y') }}</time>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="review-rating-display">

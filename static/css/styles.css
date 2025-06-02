@@ -2506,6 +2506,18 @@ footer {
     font-weight: 500;
 }
 
+/* Responsive adjustments for compact review cards */
+@media (max-width: 768px) {
+    .review-card-compact {
+        min-width: calc(100vw - 3rem);
+        max-width: calc(100vw - 3rem);
+    }
+    
+    .featured-reviews-carousel {
+        gap: 1rem;
+    }
+}
+
 .review-card-premium:hover {
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
     transform: translateY(-4px);
