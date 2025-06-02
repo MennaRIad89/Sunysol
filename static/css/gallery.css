@@ -227,14 +227,14 @@
     }
     
     .gallery-preview-grid {
-        padding: 0 20px;
+        padding: 0 1rem;
         max-width: 100%;
     }
     
     .gallery-page .gallery-preview-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 15px;
-        padding: 0 20px;
+        padding: 0 1rem;
     }
 
     .gallery-thumb {
