@@ -2116,6 +2116,12 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    .reviews-section .container {
+        padding: 0 1rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
     .reviews-container {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
@@ -3368,15 +3374,30 @@ footer {
     .carousel-viewport {
         max-width: 100%;
         width: 100%;
+        overflow: hidden;
     }
     
     .reviews-carousel-container {
         width: 100%;
         max-width: 100%;
+        overflow: hidden;
     }
     
     .featured-reviews-carousel {
         width: 100%;
+        overflow: hidden;
+    }
+    
+    .reviews-carousel-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden;
+    }
+    
+    .review-form-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden;
     }
     
     .featured-review-placeholder {
