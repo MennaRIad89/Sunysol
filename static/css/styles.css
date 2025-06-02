@@ -2115,6 +2115,17 @@ footer {
     align-items: flex-start;
 }
 
+@media screen and (max-width: 768px) {
+    .reviews-container {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 !important;
+        margin: 1.5rem 0 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
 .reviews-left-column {
     display: flex;
     flex-direction: column;
@@ -3319,14 +3330,7 @@ footer {
         font-size: 1.5rem;
     }
     
-    .reviews-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0;
-        margin: 1.5rem 0 0;
-        max-width: 100%;
-        width: 100%;
-    }
+
     
     .reviews-left-column {
         gap: 1.5rem;
