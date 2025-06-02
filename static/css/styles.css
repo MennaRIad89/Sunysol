@@ -198,6 +198,7 @@ img {
     background-color: var(--white);
     color: var(--text-color);
     border: 2px solid var(--white);
+    border-radius: 50px !important;
 }
 
 .secondary-btn:hover {
