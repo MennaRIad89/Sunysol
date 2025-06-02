@@ -2699,12 +2699,11 @@ footer {
     box-shadow: 0 0 0 2px rgba(232, 106, 51, 0.1);
 }
 
-/* Reviews horizontal scroll - similar to gallery */
+/* Reviews horizontal scroll - like gallery section */
 .reviews-carousel-container {
     position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin-bottom: 2rem;
+    width: 100%;
 }
 
 .featured-reviews-carousel {
@@ -2726,12 +2725,20 @@ footer {
     max-width: 280px;
 }
 
-/* Mobile responsive for reviews */
-@media (max-width: 768px) {
-    .reviews-carousel-container {
-        padding: 0 20px;
+/* Desktop: Keep two-column split intact */
+@media (min-width: 769px) {
+    .reviews-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin: 2rem auto 0;
+        max-width: 1200px;
+        align-items: flex-start;
     }
-    
+}
+
+/* Mobile: Stack vertically but keep review cards scrollable */
+@media (max-width: 768px) {
     .featured-reviews-carousel {
         gap: 15px;
         padding: 5px 0;
@@ -2739,9 +2746,14 @@ footer {
     }
     
     .review-card-original {
-        min-width: calc(100vw - 80px);
-        max-width: calc(100vw - 80px);
+        min-width: 280px;
+        max-width: 280px;
         scroll-snap-align: start;
+        margin-right: 15px;
+    }
+    
+    .review-card-original:last-child {
+        margin-right: 0;
     }
 }
 
