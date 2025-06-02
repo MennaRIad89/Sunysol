@@ -2506,6 +2506,32 @@ footer {
     font-weight: 500;
 }
 
+/* Visit date dropdown styling */
+.visit-date-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.visit-date-select {
+    flex: 1;
+    padding: 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: var(--white);
+    color: var(--text-color);
+    cursor: pointer;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.visit-date-select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(232, 106, 51, 0.1);
+}
+
 /* Responsive adjustments for compact review cards */
 @media (max-width: 768px) {
     .review-card-compact {
@@ -2877,8 +2903,10 @@ footer {
 }
 
 .modal-content {
-    position: relative;
-    margin: 5% auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 90%;
     max-height: 90%;
     text-align: center;

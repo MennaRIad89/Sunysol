@@ -113,7 +113,17 @@ def submit_review():
         tour = request.form.get('tour', '').strip()
         rating = request.form.get('rating', '').strip()
         comment = request.form.get('comment', '').strip()
-        visit_date = request.form.get('visit_date', '').strip()
+        visit_month = request.form.get('visit_month', '').strip()
+        visit_year = request.form.get('visit_year', '').strip()
+        
+        # Combine month and year into visit_date
+        visit_date = ''
+        if visit_month and visit_year:
+            visit_date = f"{visit_month} {visit_year}"
+        elif visit_month:
+            visit_date = visit_month
+        elif visit_year:
+            visit_date = visit_year
         
         # Validation - Name and rating are required
         if not name:
