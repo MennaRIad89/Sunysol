@@ -2720,9 +2720,9 @@ footer {
     }
     
     .review-card-original {
-        min-width: 90vw !important;
-        max-width: 90vw !important;
-        width: 90vw !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
         box-sizing: border-box !important;
         margin: 0 auto !important;
     }
@@ -3532,20 +3532,25 @@ footer {
     width: 100vw !important;
     max-width: 100vw !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 3rem 0 !important;
   }
   
   .reviews-section .container {
     width: 100vw !important;
     max-width: 100vw !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 1rem !important;
   }
   
   .reviews-container {
     width: 100vw !important;
     max-width: 100vw !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 1rem !important;
+  }
+  
+  .reviews-carousel-section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 }
