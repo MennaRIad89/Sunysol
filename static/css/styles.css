@@ -2167,6 +2167,39 @@ footer {
     opacity: 0.8;
 }
 
+/* Inline stats within left column */
+.reviews-stats-inline {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.reviews-stats-inline .stat {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex: 1;
+}
+
+.reviews-stats-inline .stat i {
+    font-size: 1.5rem;
+}
+
+.reviews-stats-inline .stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+.reviews-stats-inline .stat-label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-top: 0.2rem;
+}
+
 /* Review Stats Section - Below the split layout */
 .review-stats-section {
     margin-top: 0;
@@ -3253,10 +3286,6 @@ footer {
 
 /* Mobile responsiveness for reviews section */
 @media screen and (max-width: 768px) {
-    .reviews-left-content {
-        margin-bottom: 1.5rem;
-    }
-    
     .left-section-header {
         text-align: center;
         margin-bottom: 1.5rem;
@@ -3271,22 +3300,28 @@ footer {
         gap: 2rem;
     }
     
+    .reviews-left-column {
+        gap: 1.5rem;
+    }
+    
     .reviews-carousel-section {
         padding: 1.5rem;
         order: 1;
-        min-height: auto;
     }
     
     .review-form-container {
         padding: 1.5rem;
         order: 2;
-        min-height: auto;
     }
     
-    .review-stats {
+    .reviews-stats-inline {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
         text-align: center;
+    }
+    
+    .reviews-stats-inline .stat {
+        justify-content: center;
     }
     
     .carousel-viewport {
