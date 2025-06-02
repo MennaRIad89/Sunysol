@@ -772,7 +772,7 @@ TRANSLATIONS = {
         'experience_placeholder':
         'Tell us about your tour experience with Menna...',
         'review_photos':
-        'Share Your Trip Photos (Optional)',
+        'Share Your Trip Photos',
         'photos_help':
         'Add photos from your tour to make your review more authentic',
         'menna_signature':
@@ -1527,7 +1527,7 @@ TRANSLATIONS = {
         'experience_placeholder':
         'Cuéntanos sobre tu experiencia de tour con Menna...',
         'review_photos':
-        'Comparte Fotos de Tu Viaje (Opcional)',
+        'Comparte Fotos de Tu Viaje',
         'photos_help':
         'Agrega fotos de tu tour para hacer tu reseña más auténtica',
         'menna_signature':

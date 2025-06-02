@@ -241,12 +241,12 @@
                 </div>
                 <form action="/submit_review" method="post" class="review-form compact">
                     <div class="form-row">
-                        <input type="text" name="name" placeholder="{{ g.translations.review_name }}" required>
-                        <input type="email" name="email" placeholder="{{ g.translations.review_email }}" required>
-                        <input type="text" name="country" placeholder="{{ g.translations.review_country }}" required>
+                        <input type="text" name="name" placeholder="{{ g.translations.review_name }}">
+                        <input type="email" name="email" placeholder="{{ g.translations.review_email }}">
+                        <input type="text" name="country" placeholder="{{ g.translations.review_country }}">
                     </div>
                     <div class="form-row">
-                        <select name="tour" required>
+                        <select name="tour">
                             <option value="">{{ g.translations.select_tour }}</option>
                             <option value="Dubai Modern Tour">{{ g.translations.dubai_modern_tour_review }}</option>
                             <option value="Dubai Heritage Tour">{{ g.translations.dubai_heritage_tour_review }}</option>
@@ -258,7 +258,7 @@
                             <option value="Marina Cruise">{{ g.translations.marina_cruise_review }}</option>
                             <option value="Custom Tour">{{ g.translations.custom_tour_review }}</option>
                         </select>
-                        <select name="rating" required>
+                        <select name="rating">
                             <option value="">{{ g.translations.rate_experience }}</option>
                             <option value="5">{{ g.translations.five_stars }}</option>
                             <option value="4">{{ g.translations.four_stars }}</option>
@@ -267,7 +267,7 @@
                             <option value="1">{{ g.translations.one_star }}</option>
                         </select>
                     </div>
-                    <textarea name="comment" rows="2" placeholder="{{ g.translations.experience_placeholder }}" required></textarea>
+                    <textarea name="comment" rows="2" placeholder="{{ g.translations.experience_placeholder }}"></textarea>
                     <div class="file-upload-compact">
                         <input type="file" id="review-photos" name="photos" multiple accept="image/*">
                         <label for="review-photos" class="file-label">
