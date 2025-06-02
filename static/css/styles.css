@@ -3223,15 +3223,20 @@ footer {
         gap: 2rem;
     }
     
+    .reviews-carousel-section {
+        padding: 1.5rem;
+        order: 1;
+    }
+    
     .review-form-container {
-        position: static;
         padding: 1.5rem;
         order: 2;
     }
     
-    .reviews-display-container {
-        padding: 1.5rem;
-        order: 1;
+    .review-stats {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
     }
     
     .featured-review-placeholder {
