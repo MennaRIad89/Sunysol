@@ -10,6 +10,7 @@ def create_models(db):
         rating = db.Column(db.Integer, nullable=False)
         comment = db.Column(db.Text, nullable=True)
         photos = db.Column(db.Text, nullable=True)  # Store comma-separated photo filenames
+        visit_date = db.Column(db.String(20), nullable=True)  # Store visit month/year
         created_at = db.Column(db.DateTime, default=datetime.utcnow)
         is_featured = db.Column(db.Boolean, default=False)
         

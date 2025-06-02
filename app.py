@@ -113,6 +113,7 @@ def submit_review():
         tour = request.form.get('tour', '').strip()
         rating = request.form.get('rating', '').strip()
         comment = request.form.get('comment', '').strip()
+        visit_date = request.form.get('visit_date', '').strip()
         
         # Validation - Name and rating are required
         if not name:
@@ -152,6 +153,7 @@ def submit_review():
             rating=int(rating),
             comment=comment if comment else None,
             photos=','.join(uploaded_photos) if uploaded_photos else None,
+            visit_date=visit_date if visit_date else None,
             is_featured=True  # Auto-feature new reviews
         )
         

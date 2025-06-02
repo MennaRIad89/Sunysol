@@ -771,6 +771,8 @@ TRANSLATIONS = {
         'Your Experience',
         'experience_placeholder':
         'Tell us about your tour experience with Menna...',
+        'visit_date':
+        'When did you visit? (Month & Year)',
         'review_photos':
         'Share Your Trip Photos',
         'photos_help':
@@ -1526,6 +1528,8 @@ TRANSLATIONS = {
         'Tu Experiencia',
         'experience_placeholder':
         'Cuéntanos sobre tu experiencia de tour con Menna...',
+        'visit_date':
+        '¿Cuándo visitaste? (Mes y Año)',
         'review_photos':
         'Comparte Fotos de Tu Viaje',
         'photos_help':
