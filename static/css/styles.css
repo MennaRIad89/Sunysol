@@ -3322,8 +3322,10 @@ footer {
     .reviews-container {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        padding: 0 1rem;
-        margin: 1.5rem auto 0;
+        padding: 0;
+        margin: 1.5rem 0 0;
+        max-width: 100%;
+        width: 100%;
     }
     
     .reviews-left-column {
@@ -3360,6 +3362,16 @@ footer {
     
     .carousel-viewport {
         max-width: 100%;
+        width: 100%;
+    }
+    
+    .reviews-carousel-container {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .featured-reviews-carousel {
+        width: 100%;
     }
     
     .featured-review-placeholder {
