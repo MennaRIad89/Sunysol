@@ -2100,12 +2100,36 @@ footer {
     background-color: var(--color-b);
 }
 
+/* Left content area with title and slogans */
+.reviews-left-content {
+    margin-bottom: 2rem;
+}
+
+.left-section-header {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.left-section-header h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.left-section-header p {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
 /* ===== Redesigned Reviews Section ===== */
 .reviews-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    margin-top: 2rem;
+    margin-bottom: 3rem;
     align-items: start;
 }
 
@@ -2115,6 +2139,10 @@ footer {
     padding: 2rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--border-color);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .review-form-container {
@@ -2123,6 +2151,9 @@ footer {
     padding: 2rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--border-color);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
 .reviews-carousel-section h3 {
@@ -2139,8 +2170,8 @@ footer {
 
 /* Review Stats Section - Below the split layout */
 .review-stats-section {
-    margin-top: 3rem;
-    padding: 2rem 0;
+    margin-top: 0;
+    padding: 3rem 0 2rem 0;
 }
 
 .review-stats {
@@ -3223,6 +3254,19 @@ footer {
 
 /* Mobile responsiveness for reviews section */
 @media screen and (max-width: 768px) {
+    .reviews-left-content {
+        margin-bottom: 1.5rem;
+    }
+    
+    .left-section-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .left-section-header h3 {
+        font-size: 1.5rem;
+    }
+    
     .reviews-container {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -3231,17 +3275,23 @@ footer {
     .reviews-carousel-section {
         padding: 1.5rem;
         order: 1;
+        min-height: auto;
     }
     
     .review-form-container {
         padding: 1.5rem;
         order: 2;
+        min-height: auto;
     }
     
     .review-stats {
         flex-direction: column;
         gap: 2rem;
         text-align: center;
+    }
+    
+    .carousel-viewport {
+        max-width: 100%;
     }
     
     .featured-review-placeholder {
