@@ -2184,20 +2184,27 @@ footer {
 
 .reviews-stats-inline .stat i {
     font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.reviews-stats-inline .stat div {
+    display: flex;
+    flex-direction: column;
 }
 
 .reviews-stats-inline .stat-number {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--text-color);
     line-height: 1;
 }
 
 .reviews-stats-inline .stat-label {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-color);
     opacity: 0.7;
     margin-top: 0.2rem;
+    white-space: nowrap;
 }
 
 /* Review Stats Section - Below the split layout */
