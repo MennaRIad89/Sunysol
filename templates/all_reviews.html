@@ -121,9 +121,7 @@
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>
-        <div class="modal-thumbnails">
-            <div id="modalThumbnailContainer"></div>
-        </div>
+
         <div class="modal-counter">
             <span id="modalImageCounter"></span>
         </div>
@@ -166,26 +164,12 @@ function previousModalImage() {
 function updateModalDisplay() {
     const modalImage = document.getElementById('reviewModalImage');
     const counter = document.getElementById('modalImageCounter');
-    const thumbnailContainer = document.getElementById('modalThumbnailContainer');
     
     // Update main image
     modalImage.src = currentReviewPhotos[currentModalIndex];
     
     // Update counter
     counter.textContent = `${currentModalIndex + 1} / ${currentReviewPhotos.length}`;
-    
-    // Update thumbnails
-    thumbnailContainer.innerHTML = '';
-    currentReviewPhotos.forEach((src, index) => {
-        const thumb = document.createElement('img');
-        thumb.src = src;
-        thumb.className = 'modal-thumbnail' + (index === currentModalIndex ? ' active' : '');
-        thumb.onclick = () => {
-            currentModalIndex = index;
-            updateModalDisplay();
-        };
-        thumbnailContainer.appendChild(thumb);
-    });
 }
 
 function scrollGallery(reviewId, direction) {
