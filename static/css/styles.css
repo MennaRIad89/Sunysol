@@ -2699,65 +2699,62 @@ footer {
     box-shadow: 0 0 0 2px rgba(232, 106, 51, 0.1);
 }
 
-/* Mobile-first: Gallery-style horizontal scroll for reviews */
+/* Desktop: Keep existing review cards layout */
+.featured-reviews-carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow: visible;
+    padding: 1rem 0;
+    transition: none;
+    width: max-content;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.review-card-original {
+    min-width: 280px;
+    max-width: 280px;
+    flex-shrink: 0;
+}
+
+/* Mobile: Gallery-style horizontal scroll for review cards only */
 @media (max-width: 768px) {
     .featured-reviews-carousel {
         display: flex !important;
         overflow-x: auto !important;
         scroll-snap-type: x mandatory !important;
         gap: 1rem !important;
-        padding: 1rem 0 !important;
+        padding: 1rem !important;
         width: 100% !important;
+        max-width: 100% !important;
         scrollbar-width: none !important;
         -ms-overflow-style: none !important;
+        flex-wrap: nowrap !important;
+        transform: none !important;
+        transition: none !important;
     }
     
     .featured-reviews-carousel::-webkit-scrollbar {
         display: none !important;
     }
     
-    .reviews-carousel-section {
-        padding: 1rem !important;
-        overflow: hidden !important;
-    }
-    
-    .reviews-carousel-container {
-        width: 100% !important;
-        overflow: hidden !important;
-        padding: 0 !important;
-    }
-    
     .review-card-original {
         flex: 0 0 auto !important;
-        width: 85vw !important;
-        max-width: 85vw !important;
-        min-width: 85vw !important;
+        width: 90vw !important;
+        max-width: 90vw !important;
+        min-width: 90vw !important;
         scroll-snap-align: start !important;
         margin: 0 !important;
         box-sizing: border-box !important;
     }
     
-    body {
-        overflow-x: hidden;
-    }
-}
-
-/* Desktop: Keep existing split layout */
-@media (min-width: 769px) {
-    .featured-reviews-carousel {
-        display: flex;
-        gap: 1.5rem;
-        overflow: visible;
-        padding: 1rem 0;
-        width: max-content;
-        flex-wrap: wrap;
-        max-width: 100%;
+    .reviews-carousel-section {
+        overflow: hidden !important;
     }
     
-    .review-card-original {
-        min-width: 280px;
-        max-width: 280px;
-        flex-shrink: 0;
+    .reviews-carousel-container {
+        overflow: hidden !important;
+        width: 100% !important;
     }
 }
 
@@ -3558,23 +3555,16 @@ footer {
 /* Mobile-only override for reviews section alignment */
 @media (max-width: 768px) {
   .reviews-section {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
     padding: 3rem 0 !important;
   }
   
   .reviews-section .container {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
     padding: 0 1rem !important;
   }
   
   .reviews-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
     padding: 0 !important;
   }
 }
