@@ -3322,13 +3322,14 @@ footer {
     }
     
     .reviews-stats-inline {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
+        flex-direction: row;
+        gap: 1.5rem;
+        justify-content: space-between;
     }
     
     .reviews-stats-inline .stat {
-        justify-content: center;
+        justify-content: flex-start;
+        text-align: left;
     }
     
     .carousel-viewport {
