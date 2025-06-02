@@ -2702,13 +2702,19 @@ footer {
 /* Responsive adjustments for review cards */
 @media (max-width: 768px) {
     .review-card-original {
-        min-width: 100%;
-        max-width: 100%;
-        width: 100%;
+        min-width: 92vw;
+        max-width: 92vw;
+        width: 92vw;
+        box-sizing: border-box;
+        margin: 0 auto;
     }
     
     .featured-reviews-carousel {
         gap: 1rem;
+    }
+    
+    body {
+        overflow-x: hidden;
     }
 }
 
