@@ -2710,6 +2710,7 @@ footer {
     display: flex;
     gap: 20px;
     overflow-x: auto;
+    scroll-snap-type: x mandatory;
     padding: 10px 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -2723,6 +2724,7 @@ footer {
     flex: 0 0 auto;
     min-width: 280px;
     max-width: 280px;
+    scroll-snap-align: start;
 }
 
 /* Desktop: Keep two-column split intact */
