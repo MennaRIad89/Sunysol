@@ -2699,62 +2699,49 @@ footer {
     box-shadow: 0 0 0 2px rgba(232, 106, 51, 0.1);
 }
 
-/* Desktop: Keep existing review cards layout */
+/* Reviews horizontal scroll - similar to gallery */
+.reviews-carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .featured-reviews-carousel {
     display: flex;
-    gap: 1.5rem;
-    overflow: visible;
-    padding: 1rem 0;
-    transition: none;
-    width: max-content;
-    flex-wrap: wrap;
-    max-width: 100%;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.featured-reviews-carousel::-webkit-scrollbar {
+    display: none;
 }
 
 .review-card-original {
+    flex: 0 0 auto;
     min-width: 280px;
     max-width: 280px;
-    flex-shrink: 0;
 }
 
-/* Mobile: Gallery-style horizontal scroll for review cards only */
+/* Mobile responsive for reviews */
 @media (max-width: 768px) {
-    .featured-reviews-carousel {
-        display: flex !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory !important;
-        gap: 1rem !important;
-        padding: 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-        flex-wrap: nowrap !important;
-        transform: none !important;
-        transition: none !important;
+    .reviews-carousel-container {
+        padding: 0 20px;
     }
     
-    .featured-reviews-carousel::-webkit-scrollbar {
-        display: none !important;
+    .featured-reviews-carousel {
+        gap: 15px;
+        padding: 5px 0;
+        scroll-snap-type: x mandatory;
     }
     
     .review-card-original {
-        flex: 0 0 auto !important;
-        width: 90vw !important;
-        max-width: 90vw !important;
-        min-width: 90vw !important;
-        scroll-snap-align: start !important;
-        margin: 0 !important;
-        box-sizing: border-box !important;
-    }
-    
-    .reviews-carousel-section {
-        overflow: hidden !important;
-    }
-    
-    .reviews-carousel-container {
-        overflow: hidden !important;
-        width: 100% !important;
+        min-width: calc(100vw - 80px);
+        max-width: calc(100vw - 80px);
+        scroll-snap-align: start;
     }
 }
 
