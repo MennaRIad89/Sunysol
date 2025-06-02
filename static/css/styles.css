@@ -2696,8 +2696,9 @@ footer {
 /* Responsive adjustments for review cards */
 @media (max-width: 768px) {
     .review-card-original {
-        min-width: calc(100vw - 3rem);
-        max-width: calc(100vw - 3rem);
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
     }
     
     .featured-reviews-carousel {
