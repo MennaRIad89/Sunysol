@@ -236,7 +236,7 @@
             
             <div class="review-form-container">
                 <h3>{{ g.translations.share_experience }}</h3>
-                <form action="/submit_review" method="post" class="review-form compact">
+                <form action="/submit_review" method="post" class="review-form compact" enctype="multipart/form-data">
                     <div class="form-row">
                         <input type="text" name="name" placeholder="{{ g.translations.review_name }}">
                         <input type="email" name="email" placeholder="{{ g.translations.review_email }}">
