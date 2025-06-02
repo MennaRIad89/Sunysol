@@ -209,15 +209,6 @@
                 
                 <div class="reviews-carousel-section">
                     <div class="reviews-carousel-container">
-                    <div class="carousel-controls">
-                        <button class="carousel-btn prev-btn" onclick="prevReview()">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="carousel-btn next-btn" onclick="nextReview()">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                    <div class="carousel-viewport">
                         <div class="featured-reviews-carousel">
                     {% if featured_reviews %}
                         {% for review in featured_reviews %}
@@ -267,7 +258,6 @@
                         </div>
                     {% endif %}
                         </div>
-                    </div>
                     <div class="see-all-reviews">
                         <a href="/all-reviews" class="btn secondary-btn">See All Reviews</a>
                     </div>
@@ -414,86 +404,7 @@ function removePhoto(index) {
     updateFileStatus();
 }
 
-// Review Carousel Functionality
-let currentSlide = 0;
-let cardsVisible = 2; // Default to show 2 cards
-
-function initializeCarousel() {
-    const carousel = document.querySelector('.featured-reviews-carousel');
-    if (!carousel) return;
-    
-    // Calculate how many cards to show based on container width
-    const containerWidth = carousel.parentElement.offsetWidth - 100; // Account for controls
-    const card = carousel.querySelector('.review-card-original');
-    const cardWidth = card ? card.offsetWidth : 280;
-    const gap = card ? parseInt(getComputedStyle(carousel).gap) || 24 : 24;
-    const isMobile = window.innerWidth < 768;
-    
-    cardsVisible = isMobile ? 1 : Math.min(2, Math.floor(containerWidth / (cardWidth + gap)));
-    
-    updateCarousel();
-}
-
-function nextReview() {
-    const carousel = document.querySelector('.featured-reviews-carousel');
-    if (!carousel) return;
-    
-    const cards = carousel.querySelectorAll('.review-card-original');
-    const maxSlides = Math.max(0, cards.length - cardsVisible);
-    
-    if (currentSlide < maxSlides) {
-        currentSlide++;
-        updateCarousel();
-    }
-}
-
-function prevReview() {
-    if (currentSlide > 0) {
-        currentSlide--;
-        updateCarousel();
-    }
-}
-
-function updateCarousel() {
-    const carousel = document.querySelector('.featured-reviews-carousel');
-    if (!carousel) return;
-    
-    const card = carousel.querySelector('.review-card-original');
-    const cardWidth = card ? card.offsetWidth : 280;
-    const gap = card ? parseInt(getComputedStyle(carousel).gap) || 24 : 24;
-    const offset = currentSlide * (cardWidth + gap);
-    
-    carousel.style.transform = `translateX(-${offset}px)`;
-    carousel.style.transition = 'transform 0.4s ease-in-out';
-    
-    // Update button states
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    const cards = carousel.querySelectorAll('.review-card-original');
-    
-    if (prevBtn) {
-        prevBtn.style.opacity = currentSlide === 0 ? '0.3' : '1';
-        prevBtn.disabled = currentSlide === 0;
-    }
-    
-    if (nextBtn) {
-        const maxSlides = Math.max(0, cards.length - cardsVisible);
-        nextBtn.style.opacity = currentSlide >= maxSlides ? '0.3' : '1';
-        nextBtn.disabled = currentSlide >= maxSlides;
-    }
-}
-
-// Window resize handler
-function handleResize() {
-    currentSlide = 0; // Reset to first slide on resize
-    initializeCarousel();
-}
-
-// Initialize carousel on page load
-document.addEventListener('DOMContentLoaded', function() {
-    initializeCarousel();
-    window.addEventListener('resize', handleResize);
-});
+// Simple scroll-based reviews (no complex carousel logic needed)
 </script>
 
 <!-- Contact Section -->
