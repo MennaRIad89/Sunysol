@@ -2701,16 +2701,30 @@ footer {
 
 /* Responsive adjustments for review cards */
 @media (max-width: 768px) {
-    .review-card-original {
-        min-width: 92vw;
-        max-width: 92vw;
-        width: 92vw;
-        box-sizing: border-box;
-        margin: 0 auto;
+    .featured-reviews-carousel {
+        width: 100% !important;
+        max-width: 100vw !important;
+        min-width: 0 !important;
+        gap: 1rem;
     }
     
-    .featured-reviews-carousel {
-        gap: 1rem;
+    .reviews-carousel-section,
+    .reviews-carousel-container,
+    .carousel-viewport {
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+    
+    .review-card-original {
+        min-width: 90vw !important;
+        max-width: 90vw !important;
+        width: 90vw !important;
+        box-sizing: border-box !important;
+        margin: 0 auto !important;
     }
     
     body {
@@ -3377,34 +3391,7 @@ footer {
         font-size: 0.9rem;
     }
     
-    .carousel-viewport {
-        max-width: 100%;
-        width: 100%;
-        overflow: hidden;
-    }
-    
-    .reviews-carousel-container {
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-    }
-    
-    .featured-reviews-carousel {
-        width: 100%;
-        overflow: hidden;
-    }
-    
-    .reviews-carousel-section {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow: hidden;
-    }
-    
-    .review-form-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow: hidden;
-    }
+
     
     .featured-review-placeholder {
         padding: 1rem;

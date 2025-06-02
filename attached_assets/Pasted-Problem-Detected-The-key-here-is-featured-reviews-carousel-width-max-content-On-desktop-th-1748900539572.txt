@@ -1,0 +1,115 @@
+Problem Detected
+The key here is:
+.featured-reviews-carousel { width: max-content; }
+
+On desktop, this is okay (lets the carousel expand for however many cards, and you scroll via JS).
+
+But on mobile, if your cards are 92vw, and there’s more than one card, .featured-reviews-carousel becomes wider than the viewport!
+
+Even though you set overflow to hidden, the actual width of the carousel is sum of all card widths + gaps, so it can easily go beyond the screen.
+
+If your transform/translateX for the JS slider is off, or the viewport/overflow logic breaks, you’ll see a “blank” or unviewable section.
+3. How to Fix
+A. On mobile, set carousel width to 100% (not max-content)
+Add this in your CSS AFTER all other rules (so it overrides):
+
+css
+Copy
+Edit
+@media (max-width: 768px) {
+  .featured-reviews-carousel {
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+  }
+}
+This ensures the flex container doesn’t overflow the mobile screen.
+
+This is critical: width: max-content is what makes the section break on mobile.
+
+B. Make sure cards do not set a margin that pushes content out (margin, gap, or padding must not accumulate above 100vw)
+C. Ensure Parent Containers Don’t Add Extra Padding
+In your mobile CSS, verify all parent containers (.reviews-carousel-section, .reviews-carousel-container, .carousel-viewport) use:
+
+css
+Copy
+Edit
+@media (max-width: 768px) {
+  .reviews-carousel-section,
+  .reviews-carousel-container,
+  .carousel-viewport {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+}
+This prevents any weird padding/margin from making the container overflow the screen.
+
+D. Double-check JS for “transform: translateX” values on mobile
+Your code:
+
+js
+Copy
+Edit
+carousel.style.transform = `translateX(-${offset}px)`;
+If the offset is calculated for desktop card widths on mobile, cards might be pushed out of view.
+
+Make sure your JS uses the actual card width for mobile.
+
+Quick summary of what to change (step-by-step):
+Override .featured-reviews-carousel to force width 100% on mobile:
+
+css
+Copy
+Edit
+@media (max-width: 768px) {
+  .featured-reviews-carousel {
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+  }
+}
+Force all parents (viewport, container, section) to 100vw width, 0 padding:
+
+css
+Copy
+Edit
+@media (max-width: 768px) {
+  .reviews-carousel-section,
+  .reviews-carousel-container,
+  .carousel-viewport {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+}
+Set .review-card-original to fit:
+
+css
+Copy
+Edit
+@media (max-width: 768px) {
+  .review-card-original {
+    min-width: 90vw !important;
+    max-width: 90vw !important;
+    width: 90vw !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+  }
+}
+Make sure body has overflow-x: hidden:
+
+css
+Copy
+Edit
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
