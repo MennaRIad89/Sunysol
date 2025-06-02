@@ -2270,6 +2270,52 @@ footer {
     padding: 0.8rem;
 }
 
+.review-form .form-help {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    color: #666;
+    font-style: italic;
+}
+
+.review-form input[type="file"] {
+    padding: 0.4rem;
+    border: 2px dashed var(--border-color);
+    background-color: #fafafa;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.review-form input[type="file"]:hover {
+    border-color: var(--accent-color);
+    background-color: #f5f5f5;
+}
+
+.review-form input[type="file"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: var(--white);
+    box-shadow: 0 0 0 2px rgba(232, 106, 51, 0.1);
+}
+
+.menna-signature {
+    text-align: center;
+    margin: 1.5rem 0 1rem 0;
+    padding: 1rem;
+    background-color: #faf8f5;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 6px 6px 0;
+}
+
+.menna-signature p {
+    margin: 0;
+    font-style: italic;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
 /* Mobile responsiveness for reviews section */
 @media screen and (max-width: 768px) {
     .reviews-container {

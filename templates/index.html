@@ -281,6 +281,14 @@
                         <label for="review-comment">{{ g.translations.your_experience }}</label>
                         <textarea id="review-comment" name="comment" rows="3" placeholder="{{ g.translations.experience_placeholder }}" required></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="review-photos">{{ g.translations.review_photos }}</label>
+                        <input type="file" id="review-photos" name="photos" multiple accept="image/*">
+                        <small class="form-help">{{ g.translations.photos_help }}</small>
+                    </div>
+                    <div class="menna-signature">
+                        <p>{{ g.translations.menna_signature }}</p>
+                    </div>
                     <button type="submit" class="btn primary-btn">{{ g.translations.submit_review }}</button>
                 </form>
             </div>

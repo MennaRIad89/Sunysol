@@ -730,7 +730,7 @@ TRANSLATIONS = {
         'review_email':
         'Email',
         'review_country':
-        'Country',
+        'Nationality',
         'review_tour':
         'Tour Taken',
         'select_tour':
@@ -771,6 +771,12 @@ TRANSLATIONS = {
         'Your Experience',
         'experience_placeholder':
         'Tell us about your tour experience with Menna...',
+        'review_photos':
+        'Share Your Trip Photos (Optional)',
+        'photos_help':
+        'Add photos from your tour to make your review more authentic',
+        'menna_signature':
+        '"Thank you for being a part of these memories!" — Menna',
         'submit_review':
         'Submit Review'
     },
@@ -1479,7 +1485,7 @@ TRANSLATIONS = {
         'review_email':
         'Correo Electrónico',
         'review_country':
-        'País',
+        'Nacionalidad',
         'review_tour':
         'Tour Realizado',
         'select_tour':
@@ -1520,6 +1526,12 @@ TRANSLATIONS = {
         'Tu Experiencia',
         'experience_placeholder':
         'Cuéntanos sobre tu experiencia de tour con Menna...',
+        'review_photos':
+        'Comparte Fotos de Tu Viaje (Opcional)',
+        'photos_help':
+        'Agrega fotos de tu tour para hacer tu reseña más auténtica',
+        'menna_signature':
+        '"¡Gracias por ser parte de estos recuerdos!" — Menna',
         'submit_review':
         'Enviar Opinión'
     }
