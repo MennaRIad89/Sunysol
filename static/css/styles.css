@@ -2105,18 +2105,21 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    margin-top: 2rem;
-    align-items: stretch;
+    margin: 2rem auto 0;
+    max-width: 1200px;
+    align-items: flex-start;
 }
 
 .reviews-left-column {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
+    height: 100%;
 }
 
 .left-section-header {
     text-align: left;
+    margin-bottom: 0;
 }
 
 .left-section-header h3 {
@@ -2139,10 +2142,7 @@ footer {
     padding: 2rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--border-color);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-bottom: 0;
 }
 
 .review-form-container {
@@ -2167,44 +2167,53 @@ footer {
     opacity: 0.8;
 }
 
-/* Inline stats within left column */
-.reviews-stats-inline {
+/* External stats below the white card */
+.reviews-stats-external {
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 1.5rem;
     margin-top: 1rem;
 }
 
-.reviews-stats-inline .stat {
+.stat-item {
     display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    flex: 1;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
 }
 
-.reviews-stats-inline .stat i {
-    font-size: 1.5rem;
+.stat-icon {
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
 }
 
-.reviews-stats-inline .stat div {
-    display: flex;
-    flex-direction: column;
+.stat-icon i {
+    font-size: 1.2rem;
 }
 
-.reviews-stats-inline .stat-number {
-    font-size: 1.6rem;
-    font-weight: 700;
+.stat-content h4 {
     color: var(--text-color);
-    line-height: 1;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.3rem 0;
 }
 
-.reviews-stats-inline .stat-label {
-    font-size: 0.85rem;
+.stat-content p {
     color: var(--text-color);
-    opacity: 0.7;
-    margin-top: 0.2rem;
-    white-space: nowrap;
+    opacity: 0.8;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.4;
 }
 
 /* Review Stats Section - Below the split layout */
@@ -3321,15 +3330,20 @@ footer {
         order: 2;
     }
     
-    .reviews-stats-inline {
-        flex-direction: row;
-        gap: 1.5rem;
-        justify-content: space-between;
+    .reviews-stats-external {
+        gap: 1rem;
     }
     
-    .reviews-stats-inline .stat {
-        justify-content: flex-start;
-        text-align: left;
+    .stat-item {
+        padding: 1rem;
+    }
+    
+    .stat-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .stat-content p {
+        font-size: 0.9rem;
     }
     
     .carousel-viewport {

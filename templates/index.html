@@ -206,8 +206,9 @@
                     <h3>{{ g.translations.stories_from_adventures }}</h3>
                     <p>{{ g.translations.reviews_description }}</p>
                 </div>
+                
                 <div class="reviews-carousel-section">
-                <div class="reviews-carousel-container">
+                    <div class="reviews-carousel-container">
                     <div class="carousel-controls">
                         <button class="carousel-btn prev-btn" onclick="prevReview()">
                             <i class="fas fa-chevron-left"></i>
@@ -270,21 +271,26 @@
                     <div class="see-all-reviews">
                         <a href="/all-reviews" class="btn secondary-btn">See All Reviews</a>
                     </div>
+                    </div>
                 </div>
                 
-                <div class="reviews-stats-inline">
-                    <div class="stat">
-                        <i class="fas fa-heart" style="color: #e74c3c;"></i>
-                        <div>
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">{{ g.translations.happy_travelers }}</div>
+                <div class="reviews-stats-external">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4>{{ g.translations.happy_travelers }}</h4>
+                            <p>Join hundreds of satisfied guests from around the world</p>
                         </div>
                     </div>
-                    <div class="stat">
-                        <i class="fas fa-star" style="color: #f39c12;"></i>
-                        <div>
-                            <div class="stat-number">4.9/5</div>
-                            <div class="stat-label">{{ g.translations.exceptional_experiences }}</div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4>{{ g.translations.exceptional_experiences }}</h4>
+                            <p>Personalized tours that create lasting memories</p>
                         </div>
                     </div>
                 </div>
