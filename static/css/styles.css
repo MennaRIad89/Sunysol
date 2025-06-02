@@ -2109,7 +2109,7 @@ footer {
     align-items: start;
 }
 
-.reviews-info {
+.reviews-carousel-section {
     background: var(--white);
     border-radius: 16px;
     padding: 2rem;
@@ -2125,16 +2125,30 @@ footer {
     border: 1px solid var(--border-color);
 }
 
-.reviews-info h3 {
+.reviews-carousel-section h3 {
     color: var(--text-color);
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
-.reviews-info > p {
+.reviews-carousel-section > p {
     margin-bottom: 2rem;
     color: var(--text-color);
     opacity: 0.8;
+}
+
+/* Review Stats Section - Below the split layout */
+.review-stats-section {
+    margin-top: 3rem;
+    padding: 2rem 0;
+}
+
+.review-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .featured-review-placeholder {
