@@ -31,7 +31,7 @@
 </section>
 
 <!-- About Section -->
-<section id="about" class="about-section">
+<section id="about" class="about-section color-a">
     <div class="container">
         <div class="section-header" id="updated-section">
             <h2>{{ g.translations.about_title }}</h2>
@@ -73,7 +73,7 @@
 </section>
 
 <!-- Tours Section -->
-<section id="tours" class="tours-section">
+<section id="tours" class="tours-section color-b">
     <div class="container">
         <div class="section-header">
             <h2>Our Tours</h2>
@@ -119,7 +119,7 @@
 </section>
 
 <!-- Travel Agencies Section -->
-<section id="agencies" class="agencies-section">
+<section id="agencies" class="agencies-section color-a">
     <div class="container">
         <div class="section-header">
             <h2>For Travel Agencies</h2>
@@ -165,7 +165,7 @@
 </section>
 
 <!-- Gallery Section -->
-<section id="galleries" class="galleries-section">
+<section id="galleries" class="galleries-section color-b">
     <div class="container">
         <div class="section-header">
             <h2>{{ g.translations.gallery_title or "Our Gallery" }}</h2>
@@ -192,54 +192,44 @@
 </section>
 
 <!-- Reviews Section -->
-<section id="reviews" class="reviews-section">
+<section id="reviews" class="reviews-section color-a">
     <div class="container">
         <div class="section-header">
             <h2>Guest Reviews</h2>
             <div class="divider"></div>
+            <p>Your feedback means the world to me! If you've joined me on a tour, I'd love to hear about your experience and help other travelers feel inspired. Thank you for being part of our journey!</p>
         </div>
         
         <div class="reviews-container">
-            <div class="reviews-carousel">
-                <!-- Review 1 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+            <div class="reviews-info">
+                <h3>Stories From Our Adventures</h3>
+                <p>Every tour creates new friendships and unforgettable memories. Here are some heartwarming stories from fellow travelers who have explored the UAE with me.</p>
+                
+                <div class="featured-reviews">
+                    <div class="featured-review-placeholder">
+                        <div class="placeholder-icon">
+                            <i class="fas fa-heart"></i>
                         </div>
-                        <div class="review-info">
-                            <h4>María Rodriguez</h4>
-                            <p>Spain • Dubai City Tour</p>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>"Encontrar una guía que hablara español fue increíble. Menna conoce Dubai perfectamente y nos mostró lugares que nunca hubiéramos encontrado por nuestra cuenta. ¡Una experiencia inolvidable!"</p>
-                        <p class="review-translation">"Finding a Spanish-speaking guide was incredible. Menna knows Dubai perfectly and showed us places we would never have found on our own. An unforgettable experience!"</p>
+                        <h4>Featured Reviews Coming Soon</h4>
+                        <p>This space will soon showcase real stories from happy guests! Each review tells a unique story of discovery, friendship, and the magic we create together in the UAE.</p>
                     </div>
                 </div>
                 
-                <!-- Review 2 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="review-info">
-                            <h4>Carlos Mendoza</h4>
-                            <p>Mexico • Abu Dhabi City Tour</p>
+                <div class="review-stats">
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-details">
+                            <h4>Happy Travelers</h4>
+                            <p>Join hundreds of satisfied guests from around the world</p>
                         </div>
                     </div>
-                    <div class="review-content">
-                        <p>"El tour por Abu Dhabi superó todas nuestras expectativas. La Mezquita Sheikh Zayed es impresionante, y Menna explicó todo el contexto cultural e histórico que hizo que nuestra visita fuera mucho más significativa."</p>
-                        <p class="review-translation">"The Abu Dhabi tour exceeded all our expectations. The Sheikh Zayed Mosque is impressive, and Menna explained all the cultural and historical context that made our visit much more meaningful."</p>
+                    
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <div class="stat-details">
+                            <h4>Exceptional Experiences</h4>
+                            <p>Personalized tours that create lasting memories</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -248,12 +238,12 @@
                 <h3>Share Your Experience</h3>
                 <form action="/submit_review" method="post" class="review-form">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="review-name">Name</label>
+                        <input type="text" id="review-name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="review-email">Email</label>
+                        <input type="email" id="review-email" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="country">Country</label>
@@ -263,15 +253,31 @@
                         <label for="tour">Tour Taken</label>
                         <select id="tour" name="tour" required>
                             <option value="">Select a tour...</option>
-                            <option value="Dubai City Tour">Dubai City Tour</option>
-                            <option value="Abu Dhabi City Tour">Abu Dhabi City Tour</option>
+                            <option value="Dubai Modern Tour">Dubai Modern Tour</option>
+                            <option value="Dubai Heritage Tour">Dubai Heritage Tour</option>
+                            <option value="Dubai Full Day Tour">Dubai Full Day Tour</option>
+                            <option value="Abu Dhabi Heritage Tour">Abu Dhabi Heritage Tour</option>
+                            <option value="Abu Dhabi Louvre Tour">Abu Dhabi Louvre Tour</option>
                             <option value="Northern Emirates Tour">Northern Emirates Tour</option>
+                            <option value="Desert Safari">Desert Safari</option>
+                            <option value="Marina Cruise">Marina Cruise</option>
                             <option value="Custom Tour">Custom Tour</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="comment">Your Experience</label>
-                        <textarea id="comment" name="comment" rows="4" required></textarea>
+                        <label for="rating">Rating</label>
+                        <select id="rating" name="rating" required>
+                            <option value="">How would you rate your experience?</option>
+                            <option value="5">5 Stars - Exceptional</option>
+                            <option value="4">4 Stars - Very Good</option>
+                            <option value="3">3 Stars - Good</option>
+                            <option value="2">2 Stars - Fair</option>
+                            <option value="1">1 Star - Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-comment">Your Experience</label>
+                        <textarea id="review-comment" name="comment" rows="4" placeholder="Tell us about your tour experience with Menna..." required></textarea>
                     </div>
                     <button type="submit" class="btn primary-btn">Submit Review</button>
                 </form>
@@ -281,7 +287,7 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="contact-section">
+<section id="contact" class="contact-section color-b">
     <div class="container">
         <div class="section-header">
             <h2>Get In Touch</h2>
