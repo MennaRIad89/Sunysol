@@ -95,8 +95,18 @@ TRANSLATIONS = {
         'Name',
         'review_comment':
         'Your Review',
-        'review_photo':
-        'Photo (Optional)',
+        'review_country':
+        'Country',
+        'review_country_placeholder':
+        'e.g., Spain, Mexico, Argentina...',
+        'review_email':
+        'Email',
+        'review_email_placeholder':
+        'Your email (not shown publicly)',
+        'review_photos':
+        'Photos (Optional)',
+        'review_photos_help':
+        'You can select multiple photos',
         'review_placeholder':
         'Tell us about your experience...',
         'rating':
@@ -814,8 +824,18 @@ TRANSLATIONS = {
         'Nombre',
         'review_comment':
         'Tu Reseña',
-        'review_photo':
-        'Foto (Opcional)',
+        'review_country':
+        'País',
+        'review_country_placeholder':
+        'ej., España, México, Argentina...',
+        'review_email':
+        'Correo Electrónico',
+        'review_email_placeholder':
+        'Tu correo (no se muestra públicamente)',
+        'review_photos':
+        'Fotos (Opcional)',
+        'review_photos_help':
+        'Puedes seleccionar múltiples fotos',
         'review_placeholder':
         'Cuéntanos sobre tu experiencia...',
         'rating':

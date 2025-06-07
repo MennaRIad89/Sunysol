@@ -19,167 +19,47 @@
     <section class="all-reviews-section">
         <div class="container">
             <div class="reviews-grid">
-                <!-- Review 1 -->
+                {% for review in reviews %}
                 <div class="review-card">
                     <div class="review-header">
                         <div class="reviewer-info">
                             <div class="reviewer-photo">
-                                <div class="default-avatar">
+                                {% if review.photos and review.photos|length > 0 %}
+                                    <img src="{{ url_for('static', filename='review_photos/' + review.photos[0]) }}" alt="{{ review.name }}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                {% endif %}
+                                <div class="default-avatar" {% if review.photos and review.photos|length > 0 %}style="display: none;"{% endif %}>
                                     <i class="fas fa-user"></i>
                                 </div>
                             </div>
                             <div class="reviewer-details">
-                                <h4>María González</h4>
+                                <h4>{{ review.name }}{% if review.country %} <span class="country-flag">🌍 {{ review.country }}</span>{% endif %}</h4>
                                 <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                    {% for i in range(5) %}
+                                        {% if i < review.rating %}
+                                            <i class="fas fa-star"></i>
+                                        {% else %}
+                                            <i class="far fa-star"></i>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
-                                <span class="review-date">{{ g.translations.review_date or "March 2024" }}</span>
+                                <span class="review-date">{{ review.date[:10] if review.date else 'Recent' }}</span>
                             </div>
                         </div>
                     </div>
                     <div class="review-content">
-                        <p>"Menna was an amazing guide! She showed us the real Dubai and Abu Dhabi. Speaking Spanish made everything so much easier. The desert safari was incredible and the city tours were very informative. Highly recommended for Spanish-speaking travelers!"</p>
+                        <p>"{{ review.comment }}"</p>
+                        {% if review.photos and review.photos|length > 0 %}
+                            <div class="review-photos">
+                                {% for photo in review.photos %}
+                                    {% if not loop.first %}
+                                        <img src="{{ url_for('static', filename='review_photos/' + photo) }}" alt="Review photo" class="additional-photo">
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
-
-                <!-- Review 2 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <div class="reviewer-photo">
-                                <div class="default-avatar">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                            </div>
-                            <div class="reviewer-details">
-                                <h4>Carlos Méndez</h4>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="review-date">{{ g.translations.review_date or "February 2024" }}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>"Excellent desert safari experience! Menna knows all the best spots and the cultural explanations were perfect. The whole family enjoyed every moment. Professional service and great value for money. Thank you for an unforgettable experience!"</p>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <div class="reviewer-photo">
-                                <div class="default-avatar">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                            </div>
-                            <div class="reviewer-details">
-                                <h4>Ana Rodríguez</h4>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                                <span class="review-date">{{ g.translations.review_date or "January 2024" }}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>"Beautiful tour of Abu Dhabi! The Sheikh Zayed Mosque was breathtaking. Menna provided excellent historical context and made sure we understood the cultural significance. Professional and friendly service throughout."</p>
-                    </div>
-                </div>
-
-                <!-- Review 4 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <div class="reviewer-photo">
-                                <div class="default-avatar">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                            </div>
-                            <div class="reviewer-details">
-                                <h4>Luis Fernández</h4>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="review-date">{{ g.translations.review_date or "December 2023" }}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>"Perfect Dubai city tour! Menna's knowledge of the city is impressive. She took us to both modern attractions and traditional souks. The combination tour was exactly what we wanted. Excellent communication in Spanish throughout."</p>
-                    </div>
-                </div>
-
-                <!-- Review 5 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <div class="reviewer-photo">
-                                <div class="default-avatar">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                            </div>
-                            <div class="reviewer-details">
-                                <h4>Carmen Silva</h4>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="review-date">{{ g.translations.review_date or "November 2023" }}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>"Amazing Northern Emirates tour! We discovered hidden gems that we never would have found on our own. Menna's expertise and passion for the region really showed. Highly recommend for anyone wanting an authentic UAE experience."</p>
-                    </div>
-                </div>
-
-                <!-- Review 6 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <div class="reviewer-photo">
-                                <div class="default-avatar">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                            </div>
-                            <div class="reviewer-details">
-                                <h4>Roberto Jiménez</h4>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="review-date">{{ g.translations.review_date or "October 2023" }}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>"Fantastic marina cruise experience! The views were spectacular and Menna made sure we had the best spots for photos. Great organization and timing. Perfect way to see Dubai from the water. Thank you for a wonderful evening!"</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
             <div class="back-to-home">

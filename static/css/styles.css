@@ -1569,6 +1569,40 @@ body.dubai-tours-page {
     transform: translateY(-2px);
 }
 
+.country-flag {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: normal;
+}
+
+.form-help {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.review-photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.additional-photo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #f0f0f0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.additional-photo:hover {
+    transform: scale(1.05);
+}
+
 /* All Reviews Page Styling */
 .all-reviews-page {
     background-color: var(--white);
