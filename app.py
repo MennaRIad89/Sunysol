@@ -8,6 +8,48 @@ from translations import TRANSLATIONS
 app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
 
+def load_reviews():
+    """Load reviews from JSON file with fallback to default reviews"""
+    import json
+    try:
+        with open('reviews.json', 'r', encoding='utf-8') as f:
+            reviews = json.load(f)
+        # Sort by timestamp, newest first
+        reviews.sort(key=lambda x: x.get('timestamp', 0), reverse=True)
+        return reviews
+    except (FileNotFoundError, json.JSONDecodeError):
+        # Fallback to default reviews if no JSON file exists
+        return get_default_reviews()
+
+def get_default_reviews():
+    """Default reviews to show when no reviews are saved"""
+    return [
+        {
+            'name': 'María González',
+            'country': 'España',
+            'rating': 5,
+            'comment': 'Menna was an amazing guide! She showed us the real Dubai and Abu Dhabi. Speaking Spanish made everything so much easier. Highly recommended!',
+            'photos': [],
+            'date': '2024-03-15T10:30:00'
+        },
+        {
+            'name': 'Carlos Méndez',
+            'country': 'México',
+            'rating': 5,
+            'comment': 'Excellent desert safari experience! Menna knows all the best spots and the cultural explanations were perfect. Thank you!',
+            'photos': [],
+            'date': '2024-02-28T14:20:00'
+        },
+        {
+            'name': 'Ana Rodríguez',
+            'country': 'Argentina',
+            'rating': 4,
+            'comment': 'Beautiful tour of Abu Dhabi! The Sheikh Zayed Mosque was breathtaking. Professional and friendly service.',
+            'photos': [],
+            'date': '2024-01-22T09:15:00'
+        }
+    ]
+
 
 # Set default language
 @app.before_request
@@ -26,7 +68,9 @@ def switch_language(language):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    reviews = load_reviews()
+    recent_reviews = reviews[:3]  # Get 3 most recent reviews
+    return render_template('index.html', reviews=recent_reviews)
 
 
 @app.route('/agencies')
@@ -60,16 +104,63 @@ def dubai_modern_gallery():
 @app.route('/submit_review', methods=['POST'])
 def submit_review():
     try:
+        import json
+        import os
+        from datetime import datetime
+        from werkzeug.utils import secure_filename
+        
+        # Get form data
         name = request.form.get('name')
+        country = request.form.get('country')
+        email = request.form.get('email')
         rating = request.form.get('rating')
         comment = request.form.get('comment')
-        photo = request.files.get('photo')
+        photos = request.files.getlist('photos')
 
-        # Log the review data (in production, save to database)
-        logging.info(f"Review received from {name}: {rating} stars - {comment}")
-        
-        if photo and photo.filename:
-            logging.info(f"Photo uploaded: {photo.filename}")
+        # Create review_photos directory if it doesn't exist
+        photos_dir = os.path.join('static', 'review_photos')
+        os.makedirs(photos_dir, exist_ok=True)
+
+        # Process photo uploads
+        photo_filenames = []
+        if photos:
+            for photo in photos:
+                if photo and photo.filename:
+                    # Generate unique filename
+                    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                    filename = secure_filename(f"{timestamp}_{photo.filename}")
+                    photo_path = os.path.join(photos_dir, filename)
+                    photo.save(photo_path)
+                    photo_filenames.append(filename)
+
+        # Create review data
+        review_data = {
+            'name': name,
+            'country': country,
+            'email': email,
+            'rating': int(rating or 0),
+            'comment': comment,
+            'photos': photo_filenames,
+            'date': datetime.now().isoformat(),
+            'timestamp': datetime.now().timestamp()
+        }
+
+        # Load existing reviews or create empty list
+        reviews_file = 'reviews.json'
+        try:
+            with open(reviews_file, 'r', encoding='utf-8') as f:
+                reviews = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            reviews = []
+
+        # Add new review
+        reviews.append(review_data)
+
+        # Save updated reviews
+        with open(reviews_file, 'w', encoding='utf-8') as f:
+            json.dump(reviews, f, ensure_ascii=False, indent=2)
+
+        logging.info(f"Review saved from {name} ({country}): {rating} stars - {len(photo_filenames)} photos")
 
         flash(g.translations.get('thank_you_review', 'Thank you for your review! We appreciate your feedback.'), "success")
     except Exception as e:
@@ -103,7 +194,8 @@ def send_message():
 
 @app.route('/all-reviews')
 def all_reviews():
-    return render_template('all-reviews.html')
+    reviews = load_reviews()
+    return render_template('all-reviews.html', reviews=reviews)
 
 
 # Gallery Routes
