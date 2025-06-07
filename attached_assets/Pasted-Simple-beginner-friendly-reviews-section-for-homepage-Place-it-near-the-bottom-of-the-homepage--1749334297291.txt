@@ -1,0 +1,56 @@
+Simple, beginner-friendly reviews section for homepage
+•	Place it near the bottom of the homepage, above contact info/footer.
+•	Very basic display: Shows the 3 most recent reviews (user name, text, and photo if uploaded).
+•	Simple form: Name, stars, comment, photo upload, submit button.
+•	“See all reviews” button links to a separate, more detailed page.
+•	Layout: Two columns on desktop (left: reviews, right: form), stacked on mobile.
+•	No advanced effects, sliders, or JavaScript carousels.
+Details:
+1.	Reviews Section (Homepage)
+o	Left: Up to 3 reviews, each with name, stars, short comment, and photo (if added).
+o	Right: Review form (name, rating—can be radio buttons, comment, photo upload, submit).
+2.	Mobile:
+o	One column: reviews at top, form below.
+3.	“See all reviews” button:
+o	Below reviews, links to /all-reviews.
+Visual Example:
+Desktop:
+----------------------------------   ---------------------------------------
+| [Maria]   ★★★★★                   |  Leave a Review             |
+| [photo] “Great tour!”               |  Name: [         ]                |
+|                      			   |  Stars: [*][*][*][*][*]     |
+| [Ahmed]   ★★★★☆        	   |  Review: [         ]              |
+| [no photo] “Loved it.”  	   |  Photo: [Choose file]      |
+|		                              |  [Submit]                         |
+----------------------------------   ---------------------------------------
+                [See all reviews]
+Mobile:
+
+-------------------------
+[Maria] ★★★★★
+[photo] “Great tour!”
+-------------------------
+[Ahmed] ★★★★☆
+[no photo] “Loved it.”
+-------------------------
+[See all reviews]
+-------------------------
+Leave a Review
+Name: [        ]
+Stars: [*][*][*][*][*]
+Review: [        ]
+Photo: [Choose file]
+[Submit]
+-------------------------
+Implementation Tips:
+•	Use only HTML forms and basic CSS.
+•	No carousels or fancy layouts—just 2–3 “review cards” side by side or stacked.
+•	Wrap everything in a container <div> with padding and max-width so nothing overflows.
+•	For photo upload: <input type="file" accept="image/*">
+•	Start with hard-coded reviews, add dynamic later if needed.
+•	Ensure translation is applied for Spanish and English 
+•	“See all reviews” can just be an <a> styled as a button; full page is just a list.
+•	Style tip: Use rounded review cards with a soft shadow, a default user icon if no photo, and a green submit button (same green as WhatsApp button).
+•	Mobile: Double check that nothing overflows the screen and the layout stays clean.
+________________________________________
+

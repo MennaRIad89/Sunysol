@@ -88,21 +88,31 @@ TRANSLATIONS = {
 
         # Reviews section
         'reviews_title':
-        'What Our Clients Say',
+        'What Our Guests Say',
         'leave_review':
         'Leave a Review',
         'review_name':
         'Name',
-        'review_email':
-        'Email',
-        'review_country':
-        'Country',
-        'review_tour':
-        'Tour Experience',
         'review_comment':
-        'Your Comment',
+        'Your Review',
+        'review_photo':
+        'Photo (Optional)',
+        'review_placeholder':
+        'Tell us about your experience...',
+        'rating':
+        'Rating',
         'submit_review':
         'Submit Review',
+        'see_all_reviews':
+        'See All Reviews',
+        'all_reviews_title':
+        'All Guest Reviews',
+        'all_reviews_description':
+        'Read what our guests have to say about their experiences with Sun y Sol tours.',
+        'review_date':
+        'March 2024',
+        'back_to_home':
+        'Back to Home',
 
         # Contact section
         'contact_title':

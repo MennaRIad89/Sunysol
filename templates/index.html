@@ -191,7 +191,142 @@
     </div>
 </section>
 
+<!-- Reviews Section -->
+<section id="reviews" class="reviews-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>{{ g.translations.reviews_title or "What Our Guests Say" }}</h2>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="reviews-container">
+            <!-- Recent Reviews Display -->
+            <div class="reviews-display">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-photo">
+                                <img src="{{ url_for('static', filename='images/review-maria.jpg') }}" alt="Maria" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                <div class="default-avatar" style="display: none;">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4>María González</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Menna was an amazing guide! She showed us the real Dubai and Abu Dhabi. Speaking Spanish made everything so much easier. Highly recommended!"</p>
+                    </div>
+                </div>
 
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-photo">
+                                <div class="default-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4>Carlos Méndez</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Excellent desert safari experience! Menna knows all the best spots and the cultural explanations were perfect. Thank you!"</p>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-photo">
+                                <div class="default-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4>Ana Rodríguez</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Beautiful tour of Abu Dhabi! The Sheikh Zayed Mosque was breathtaking. Professional and friendly service."</p>
+                    </div>
+                </div>
+
+                <div class="see-all-reviews">
+                    <a href="/all-reviews" class="btn secondary-btn">{{ g.translations.see_all_reviews or "See All Reviews" }}</a>
+                </div>
+            </div>
+
+            <!-- Review Form -->
+            <div class="review-form-container">
+                <h3>{{ g.translations.leave_review or "Leave a Review" }}</h3>
+                <form action="/submit_review" method="post" class="review-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="review-name">{{ g.translations.review_name or "Name" }}</label>
+                        <input type="text" id="review-name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>{{ g.translations.rating or "Rating" }}</label>
+                        <div class="rating-input">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1"><i class="fas fa-star"></i></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="review-comment">{{ g.translations.review_comment or "Your Review" }}</label>
+                        <textarea id="review-comment" name="comment" rows="4" required placeholder="{{ g.translations.review_placeholder or 'Tell us about your experience...' }}"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="review-photo">{{ g.translations.review_photo or "Photo (Optional)" }}</label>
+                        <input type="file" id="review-photo" name="photo" accept="image/*">
+                    </div>
+                    
+                    <button type="submit" class="btn primary-btn review-submit">{{ g.translations.submit_review or "Submit Review" }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Contact Section -->
 <section id="contact" class="contact-section">

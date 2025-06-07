@@ -57,6 +57,28 @@ def dubai_modern_gallery():
 
 
 
+@app.route('/submit_review', methods=['POST'])
+def submit_review():
+    try:
+        name = request.form.get('name')
+        rating = request.form.get('rating')
+        comment = request.form.get('comment')
+        photo = request.files.get('photo')
+
+        # Log the review data (in production, save to database)
+        logging.info(f"Review received from {name}: {rating} stars - {comment}")
+        
+        if photo and photo.filename:
+            logging.info(f"Photo uploaded: {photo.filename}")
+
+        flash(g.translations.get('thank_you_review', 'Thank you for your review! We appreciate your feedback.'), "success")
+    except Exception as e:
+        logging.error(f"Error processing review: {str(e)}")
+        flash(g.translations.get('error_review', 'There was an error submitting your review. Please try again.'), "error")
+
+    return redirect(url_for('index', _anchor='reviews'))
+
+
 @app.route('/send_message', methods=['POST'])
 def send_message():
     try:
@@ -77,6 +99,11 @@ def send_message():
         flash(g.translations['error_message'], "error")
 
     return redirect(url_for('index', _anchor='contact'))
+
+
+@app.route('/all-reviews')
+def all_reviews():
+    return render_template('all-reviews.html')
 
 
 # Gallery Routes
@@ -173,6 +200,10 @@ def gallery_page(gallery_type):
         return render_template('404.html'), 404
     
     return render_template('gallery.html', gallery=gallery_data, gallery_type=gallery_type)
+
+@app.route('/%23<anchor>')
+def redirect_from_encoded_anchor(anchor):
+    return redirect(f"/#{anchor}", code=302)
 
 
 if __name__ == '__main__':
