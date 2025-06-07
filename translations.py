@@ -200,6 +200,12 @@ TRANSLATIONS = {
         'back_to_home':
         'Back to Home',
 
+        # Additional review translation keys
+        'thank_you_review':
+        'Thank you for your review! We appreciate your feedback.',
+        'error_review':
+        'There was an error submitting your review. Please try again.',
+
         # Dubai Tours page translations
         'dubai_adventure_title':
         'Choose Your Dubai Adventure',
@@ -801,7 +807,39 @@ TRANSLATIONS = {
 
         # Reviews section
         'reviews_title':
-        'Lo Que Dicen Nuestros Clientes',
+        'Lo Que Dicen Nuestros Huéspedes',
+        'leave_review':
+        'Dejar una Reseña',
+        'review_name':
+        'Nombre',
+        'review_comment':
+        'Tu Reseña',
+        'review_photo':
+        'Foto (Opcional)',
+        'review_placeholder':
+        'Cuéntanos sobre tu experiencia...',
+        'rating':
+        'Calificación',
+        'submit_review':
+        'Enviar Reseña',
+        'see_all_reviews':
+        'Ver Todas las Reseñas',
+        'all_reviews_title':
+        'Todas las Reseñas de Huéspedes',
+        'all_reviews_description':
+        'Lee lo que nuestros huéspedes tienen que decir sobre sus experiencias con los tours de Sun y Sol.',
+        'review_date':
+        'Marzo 2024',
+        'back_to_home':
+        'Volver al Inicio',
+
+        # Additional review translation keys
+        'thank_you_review':
+        'Gracias por tu reseña! Apreciamos tu comentario.',
+        'error_review':
+        'Hubo un error al enviar tu reseña. Por favor intenta de nuevo.',
+
+        # Contact and other translations
         'leave_review':
         'Deja una Opinión',
         'review_name':
