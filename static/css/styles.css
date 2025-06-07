@@ -1430,9 +1430,9 @@ body.dubai-tours-page {
 /* Reviews Carousel Section */
 .reviews-carousel-section {
     background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .reviews-carousel-section h3 {
@@ -1549,9 +1549,9 @@ body.dubai-tours-page {
 /* Feedback Form Section */
 .feedback-form-section {
     background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .feedback-form-section h3 {
@@ -1674,14 +1674,13 @@ body.dubai-tours-page {
 @media (max-width: 968px) {
     .reviews-container {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 3rem;
         max-width: 100%;
-        margin: 40px 20px 0 20px;
     }
     
     .reviews-carousel-section,
     .feedback-form-section {
-        padding: 25px;
+        padding: 2rem;
         max-width: 100%;
         width: 100%;
         box-sizing: border-box;
@@ -1726,18 +1725,25 @@ body.dubai-tours-page {
         padding: 60px 0;
     }
     
+    .reviews-section .container {
+        padding: 0 1rem;
+    }
+    
     .reviews-container {
-        margin: 40px 15px 0 15px;
-        max-width: calc(100% - 30px);
+        margin: 40px 0 0 0;
+        max-width: 100%;
+        gap: 20px;
     }
     
     .reviews-carousel-section,
     .feedback-form-section {
-        padding: 15px;
+        padding: 1.5rem;
         margin: 0;
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
+        box-shadow: 0 5px 15px var(--shadow-color);
+        border-radius: 10px;
     }
     
     .feedback-form .form-group input,
