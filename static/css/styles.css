@@ -1747,28 +1747,28 @@ body.dubai-tours-page {
 
 @media (max-width: 480px) {
     .reviews-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
     
     .reviews-section .container {
-        padding: 0 1rem;
+        padding: 0 0.5rem;
     }
     
     .reviews-container {
-        margin: 40px 0 0 0;
+        margin: 20px 0 0 0;
         max-width: 100%;
-        gap: 20px;
+        gap: 15px;
     }
     
     .reviews-carousel-section,
     .feedback-form-section {
-        padding: 1.5rem;
+        padding: 12px;
         margin: 0;
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
-        box-shadow: 0 5px 15px var(--shadow-color);
-        border-radius: 10px;
+        box-shadow: 0 3px 15px var(--shadow-color);
+        border-radius: 8px;
     }
     
     .feedback-form .form-group input,
@@ -1778,6 +1778,8 @@ body.dubai-tours-page {
         max-width: 100%;
         box-sizing: border-box;
         font-size: 16px; /* Prevents zoom on iOS */
+        padding: 8px 10px;
+        border: 1px solid #e0e0e0;
     }
     
     .form-row {
@@ -1818,16 +1820,16 @@ body.dubai-tours-page {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
-        font-size: 1rem;
-        padding: 12px;
+        font-size: 0.95rem;
+        padding: 10px 8px;
     }
     
     .file-input-label {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
-        padding: 10px;
-        font-size: 0.9rem;
+        padding: 8px;
+        font-size: 0.85rem;
     }
     
     .rating-stars {
