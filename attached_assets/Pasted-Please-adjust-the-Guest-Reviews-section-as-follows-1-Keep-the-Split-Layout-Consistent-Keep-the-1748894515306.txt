@@ -1,0 +1,61 @@
+Please adjust the Guest Reviews section as follows:
+
+1. Keep the Split Layout Consistent
+Keep the original split layout: On desktop, the reviews cards should remain on the left, and the "Share Your Experience" form should remain on the right—just like the Contact Us page.
+
+Do not combine the reviews cards with "Stories from our Adventures" or the "Happy Travelers" and "Exceptional Experiences" slogans into a single block.
+
+The reviews cards, form, and section slogans should remain visually separated for clarity.
+
+2. Reviews Carousel Functionality
+The reviews on the left should be displayed in a horizontal carousel:
+
+Show 1.5 to 2 reviews at a time (depending on screen size).
+
+Add left/right arrows to let users scroll through reviews horizontally.
+
+Hide the extra reviews out of view until the user clicks an arrow.
+
+Do not make the cards stack vertically under each other.
+
+On mobile: Show one review at a time and allow swipe/arrow navigation.
+
+3. Premium Card Design
+Keep the new, premium card look:
+
+Rounded corners, soft shadow, and light background.
+
+Guest name prominent, avatar/initials/flag, bold stars, clear review text, and image gallery row.
+
+Add more spacing between cards, lighter feeling.
+
+(Optional) Show date and country.
+
+4. Slogans Placement
+The "Happy Travelers" and "Exceptional Experiences" row should appear below the reviews carousel, not next to or merged with the review cards.
+
+5. General Notes
+Don’t let the review cards take over the full section width—keep the left-right split layout as originally designed.
+
+Ensure the section looks clean and not overcrowded, even if there are many reviews.
+
+The “See All Reviews” button should still link to a page showing all reviews in full detail.
+
+In short:
+
+Keep the desktop split (reviews left, form right).
+
+Show reviews in a horizontal scrolling row, not vertical stacking.
+
+Do not combine with slogans or adventure stories.
+
+Place slogans under the reviews, outside the split section.
+
+Example Visual Guidance
+“Guest Reviews” section should look like a two-column layout:
+
+Left: horizontally-scrollable reviews carousel (showing 2 at a time).
+
+Right: share your experience form.
+
+Slogans underneath the reviews, spanning the whole section

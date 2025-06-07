@@ -1,264 +1,198 @@
 {% extends "layout.html" %}
 
-{% block title %}{{ g.translations.all_reviews or "All Reviews" }} - Sun y Sol{% endblock %}
+{% block title %}All Guest Reviews - {{ g.translations.site_title }}{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<section id="reviews-hero" class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/combo-dubai.jpg') }}') no-repeat center center/cover;">
-    <div class="hero-overlay"></div>
+<section class="hero-section all-reviews-hero">
     <div class="hero-content">
-        <h1>{{ g.translations.all_reviews or "All Reviews" }}</h1>
-        <h2>{{ g.translations.guest_experiences or "Guest Experiences & Testimonials" }}</h2>
-        <p>{{ g.translations.reviews_page_description or "Read what our guests say about their unforgettable UAE adventures with Sun y Sol tours" }}</p>
+        <h1>All Guest Reviews</h1>
+        <p>Read what our travelers say about their unforgettable experiences with Menna</p>
     </div>
 </section>
 
-<!-- Reviews Grid Section -->
+<!-- All Reviews Section -->
 <section class="all-reviews-section">
     <div class="container">
-        <div class="reviews-stats">
-            <div class="stats-card">
-                <h3>4.9/5</h3>
-                <div class="average-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>{{ g.translations.average_rating or "Average Rating" }}</p>
-            </div>
-            <div class="stats-card">
-                <h3>150+</h3>
-                <p>{{ g.translations.happy_travelers or "Happy Travelers" }}</p>
-            </div>
-            <div class="stats-card">
-                <h3>25+</h3>
-                <p>{{ g.translations.countries_served or "Countries Served" }}</p>
-            </div>
+        <div class="reviews-header">
+            <h2>{{ reviews|length }} Happy Travelers Share Their Stories</h2>
+            <p>Every review tells a unique story of discovery, friendship, and the magic we create together in the UAE.</p>
         </div>
-
-        <div class="reviews-filter">
-            <h3>{{ g.translations.filter_reviews or "Filter Reviews" }}</h3>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">{{ g.translations.all_tours or "All Tours" }}</button>
-                <button class="filter-btn" data-filter="dubai">{{ g.translations.dubai_tours or "Dubai Tours" }}</button>
-                <button class="filter-btn" data-filter="abudhabi">{{ g.translations.abudhabi_tours or "Abu Dhabi Tours" }}</button>
-                <button class="filter-btn" data-filter="northern">{{ g.translations.northern_emirates_tours or "Northern Emirates" }}</button>
-                <button class="filter-btn" data-filter="desert">{{ g.translations.desert_safari_tour or "Desert Safari" }}</button>
-            </div>
+        
+        <div class="all-reviews-grid">
+            {% for review in reviews %}
+            <article class="full-review-card">
+                <div class="review-card-header">
+                    <div class="reviewer-profile">
+                        <div class="profile-avatar">{{ review.name[0].upper() }}</div>
+                        <div class="profile-info">
+                            <h3 class="reviewer-full-name">{{ review.name }}</h3>
+                            {% if review.nationality %}
+                                <span class="reviewer-location">{{ review.nationality }}</span>
+                            {% endif %}
+                            {% if review.visit_date %}
+                                <time class="review-visit-date">Visited: {{ review.visit_date }}</time>
+                            {% else %}
+                                <time class="review-visit-date">{{ review.created_at.strftime('%B %Y') }}</time>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="review-rating-display">
+                        {% for i in range(review.rating) %}
+                            <i class="fas fa-star star-gold"></i>
+                        {% endfor %}
+                        {% for i in range(5 - review.rating) %}
+                            <i class="far fa-star star-gray"></i>
+                        {% endfor %}
+                        <span class="rating-text">{{ review.rating }}/5</span>
+                    </div>
+                </div>
+                
+                {% if review.tour %}
+                    <div class="tour-experience">{{ review.tour }}</div>
+                {% endif %}
+                
+                {% if review.comment %}
+                    <div class="review-story">
+                        <p>{{ review.comment }}</p>
+                    </div>
+                {% endif %}
+                
+                {% if review.photos %}
+                    <div class="review-photo-gallery">
+                        <h4>Photos from the Experience</h4>
+                        <div class="photo-gallery-container" data-review-id="{{ review.id }}">
+                            <div class="photo-gallery-slider">
+                                {% for photo in review.photos.split(',') %}
+                                    <div class="photo-item">
+                                        <img src="{{ url_for('static', filename='uploads/reviews/' + photo) }}" 
+                                             alt="Photo from {{ review.name }}'s tour" 
+                                             class="gallery-image"
+                                             data-review-id="{{ review.id }}"
+                                             data-photo-index="{{ loop.index0 }}"
+                                             onclick="openReviewGallery('{{ review.id }}', {{ loop.index0 }})">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            {% if review.photos.split(',')|length > 4 %}
+                                <button class="gallery-nav gallery-prev" onclick="scrollGallery('{{ review.id }}', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="gallery-nav gallery-next" onclick="scrollGallery('{{ review.id }}', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            </article>
+            {% endfor %}
         </div>
-
-        <div class="reviews-grid">
-            <!-- Review 1 - María from Spain -->
-            <div class="review-card-full" data-category="dubai">
-                <div class="review-header-full">
-                    <div class="reviewer-profile">
-                        <div class="reviewer-avatar">
-                            <span>M</span>
-                        </div>
-                        <div class="reviewer-details">
-                            <h4>María Rodriguez</h4>
-                            <p class="reviewer-location">
-                                <span class="country-flag">🇪🇸</span>
-                                {{ g.translations.spain or "Spain" }}
-                            </p>
-                            <p class="review-date">{{ g.translations.november_2024 or "November 2024" }}</p>
-                        </div>
-                    </div>
-                    <div class="tour-rating">
-                        <div class="rating-stars-display">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="tour-name">{{ g.translations.dubai_heritage_tour or "Dubai Heritage Tour" }}</span>
-                    </div>
+        
+        {% if not reviews %}
+            <div class="no-reviews-state">
+                <div class="no-reviews-icon">
+                    <i class="fas fa-heart"></i>
                 </div>
-                <div class="review-content-full">
-                    <h5>{{ g.translations.unforgettable_experience or "Unforgettable Experience!" }}</h5>
-                    <p>"{{ g.translations.maria_review_full or 'Encontrar una guía que hablara español fue increíble. Menna conoce Dubai perfectamente y nos mostró lugares que nunca hubiéramos encontrado por nuestra cuenta. La visita a los souks tradicionales fue fascinante, y las explicaciones sobre la cultura local hicieron que nuestra experiencia fuera mucho más rica. ¡Una experiencia absolutamente inolvidable!' }}"</p>
-                    <p class="review-translation">"{{ g.translations.maria_review_translation or 'Finding a Spanish-speaking guide was incredible. Menna knows Dubai perfectly and showed us places we would never have found on our own. The visit to the traditional souks was fascinating, and the explanations about local culture made our experience much richer. An absolutely unforgettable experience!' }}"</p>
-                </div>
+                <h3>No reviews yet</h3>
+                <p>Be the first to share your experience with Menna!</p>
+                <a href="/#reviews" class="btn primary-btn">Share Your Review</a>
             </div>
-
-            <!-- Review 2 - Carlos from Mexico -->
-            <div class="review-card-full" data-category="abudhabi">
-                <div class="review-header-full">
-                    <div class="reviewer-profile">
-                        <div class="reviewer-avatar">
-                            <span>C</span>
-                        </div>
-                        <div class="reviewer-details">
-                            <h4>Carlos Mendoza</h4>
-                            <p class="reviewer-location">
-                                <span class="country-flag">🇲🇽</span>
-                                {{ g.translations.mexico or "Mexico" }}
-                            </p>
-                            <p class="review-date">{{ g.translations.october_2024 or "October 2024" }}</p>
-                        </div>
-                    </div>
-                    <div class="tour-rating">
-                        <div class="rating-stars-display">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="tour-name">{{ g.translations.abudhabi_heritage_tour or "Abu Dhabi Heritage Tour" }}</span>
-                    </div>
-                </div>
-                <div class="review-content-full">
-                    <h5>{{ g.translations.exceeded_expectations or "Exceeded All Expectations!" }}</h5>
-                    <p>"{{ g.translations.carlos_review_full or 'El tour por Abu Dhabi superó todas nuestras expectativas. La Mezquita Sheikh Zayed es impresionante, y Menna explicó todo el contexto cultural e histórico que hizo que nuestra visita fuera mucho más significativa. También visitamos el Palacio Presidencial y el Heritage Village. El servicio fue impecable desde el principio hasta el final.' }}"</p>
-                    <p class="review-translation">"{{ g.translations.carlos_review_translation or 'The Abu Dhabi tour exceeded all our expectations. The Sheikh Zayed Mosque is impressive, and Menna explained all the cultural and historical context that made our visit much more meaningful. We also visited the Presidential Palace and Heritage Village. The service was impeccable from start to finish.' }}"</p>
-                </div>
-            </div>
-
-            <!-- Review 3 - Ana from Argentina -->
-            <div class="review-card-full" data-category="desert">
-                <div class="review-header-full">
-                    <div class="reviewer-profile">
-                        <div class="reviewer-avatar">
-                            <span>A</span>
-                        </div>
-                        <div class="reviewer-details">
-                            <h4>Ana Silva</h4>
-                            <p class="reviewer-location">
-                                <span class="country-flag">🇦🇷</span>
-                                {{ g.translations.argentina or "Argentina" }}
-                            </p>
-                            <p class="review-date">{{ g.translations.september_2024 or "September 2024" }}</p>
-                        </div>
-                    </div>
-                    <div class="tour-rating">
-                        <div class="rating-stars-display">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="tour-name">{{ g.translations.desert_safari_tour or "Desert Safari Tour" }}</span>
-                    </div>
-                </div>
-                <div class="review-content-full">
-                    <h5>{{ g.translations.authentic_bedouin_experience or "Authentic Bedouin Experience!" }}</h5>
-                    <p>"{{ g.translations.ana_review_full or 'El safari por el desierto fue una experiencia increíble. El dune bashing fue emocionante, pero lo que más nos gustó fue la experiencia cultural auténtica en el campamento beduino. La comida tradicional era deliciosa, los shows de danza del vientre y tanoura fueron espectaculares. Servicio profesional y auténtico. ¡Altamente recomendado!' }}"</p>
-                    <p class="review-translation">"{{ g.translations.ana_review_translation or 'The desert safari was an incredible experience. The dune bashing was exciting, but what we liked most was the authentic cultural experience at the Bedouin camp. The traditional food was delicious, the belly dance and tanoura shows were spectacular. Professional and authentic service. Highly recommended!' }}"</p>
-                </div>
-            </div>
-
-            <!-- Review 4 - Miguel from Colombia -->
-            <div class="review-card-full" data-category="northern">
-                <div class="review-header-full">
-                    <div class="reviewer-profile">
-                        <div class="reviewer-avatar">
-                            <span>M</span>
-                        </div>
-                        <div class="reviewer-details">
-                            <h4>Miguel Gutierrez</h4>
-                            <p class="reviewer-location">
-                                <span class="country-flag">🇨🇴</span>
-                                {{ g.translations.colombia or "Colombia" }}
-                            </p>
-                            <p class="review-date">{{ g.translations.august_2024 or "August 2024" }}</p>
-                        </div>
-                    </div>
-                    <div class="tour-rating">
-                        <div class="rating-stars-display">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="tour-name">{{ g.translations.northern_emirates_adventure_title or "Northern Emirates Tour" }}</span>
-                    </div>
-                </div>
-                <div class="review-content-full">
-                    <h5>{{ g.translations.hidden_gems_discovered or "Hidden Gems Discovered!" }}</h5>
-                    <p>"{{ g.translations.miguel_review_full or 'El tour por los Emiratos del Norte fue una grata sorpresa. Fujairah y Sharjah tienen tantos tesoros escondidos que nunca hubiéramos descubierto solos. Las montañas, las playas vírgenes, los mercados tradicionales, todo fue perfecto. Menna nos llevó a lugares que no aparecen en las guías turísticas. Una aventura única y auténtica.' }}"</p>
-                    <p class="review-translation">"{{ g.translations.miguel_review_translation or 'The Northern Emirates tour was a pleasant surprise. Fujairah and Sharjah have so many hidden treasures we would never have discovered alone. The mountains, pristine beaches, traditional markets, everything was perfect. Menna took us to places that don\'t appear in tourist guides. A unique and authentic adventure.' }}"</p>
-                </div>
-            </div>
-
-            <!-- Review 5 - Sofia from Chile -->
-            <div class="review-card-full" data-category="dubai">
-                <div class="review-header-full">
-                    <div class="reviewer-profile">
-                        <div class="reviewer-avatar">
-                            <span>S</span>
-                        </div>
-                        <div class="reviewer-details">
-                            <h4>Sofia Castro</h4>
-                            <p class="reviewer-location">
-                                <span class="country-flag">🇨🇱</span>
-                                {{ g.translations.chile or "Chile" }}
-                            </p>
-                            <p class="review-date">{{ g.translations.july_2024 or "July 2024" }}</p>
-                        </div>
-                    </div>
-                    <div class="tour-rating">
-                        <div class="rating-stars-display">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="tour-name">{{ g.translations.combo_tour or "Dubai Full Day Tour" }}</span>
-                    </div>
-                </div>
-                <div class="review-content-full">
-                    <h5>{{ g.translations.perfect_combination or "Perfect Combination of Modern & Traditional!" }}</h5>
-                    <p>"{{ g.translations.sofia_review_full or 'El tour completo de Dubai fue perfecto. Por la mañana exploramos el Dubai tradicional con los souks y el distrito histórico, y por la tarde vimos la parte moderna con el Burj Khalifa y Dubai Marina. Menna balanceó perfectamente ambos aspectos de la ciudad. Su conocimiento y pasión por Dubai se nota en cada explicación. ¡Recomendado al 100%!' }}"</p>
-                    <p class="review-translation">"{{ g.translations.sofia_review_translation or 'The complete Dubai tour was perfect. In the morning we explored traditional Dubai with the souks and historic district, and in the afternoon we saw the modern part with Burj Khalifa and Dubai Marina. Menna perfectly balanced both aspects of the city. Her knowledge and passion for Dubai shows in every explanation. 100% recommended!' }}"</p>
-                </div>
-            </div>
-
-            <!-- Review 6 - Roberto from Peru -->
-            <div class="review-card-full" data-category="abudhabi">
-                <div class="review-header-full">
-                    <div class="reviewer-profile">
-                        <div class="reviewer-avatar">
-                            <span>R</span>
-                        </div>
-                        <div class="reviewer-details">
-                            <h4>Roberto Vargas</h4>
-                            <p class="reviewer-location">
-                                <span class="country-flag">🇵🇪</span>
-                                {{ g.translations.peru or "Peru" }}
-                            </p>
-                            <p class="review-date">{{ g.translations.june_2024 or "June 2024" }}</p>
-                        </div>
-                    </div>
-                    <div class="tour-rating">
-                        <div class="rating-stars-display">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="tour-name">{{ g.translations.abudhabi_louvre_tour or "Abu Dhabi Louvre Tour" }}</span>
-                    </div>
-                </div>
-                <div class="review-content-full">
-                    <h5>{{ g.translations.cultural_masterpiece or "Cultural Masterpiece!" }}</h5>
-                    <p>"{{ g.translations.roberto_review_full or 'La experiencia en el Louvre de Abu Dhabi fue extraordinaria. Menna no solo nos guió por el museo sino que nos explicó el contexto histórico y cultural de cada pieza. Su conocimiento del arte y la historia es impresionante. También visitamos la Gran Mezquita y otros sitios culturales. Un día perfecto para los amantes del arte y la cultura.' }}"</p>
-                    <p class="review-translation">"{{ g.translations.roberto_review_translation or 'The experience at the Louvre Abu Dhabi was extraordinary. Menna not only guided us through the museum but explained the historical and cultural context of each piece. Her knowledge of art and history is impressive. We also visited the Grand Mosque and other cultural sites. A perfect day for art and culture lovers.' }}"</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="back-to-tours">
-            <a href="/#reviews" class="btn primary-btn">{{ g.translations.back_to_homepage or "Back to Homepage" }}</a>
-            <a href="#contact" class="btn secondary-btn">{{ g.translations.share_your_experience or "Share Your Experience" }}</a>
+        {% endif %}
+        
+        <div class="back-to-home">
+            <a href="/#reviews" class="btn secondary-btn">
+                <i class="fas fa-arrow-left"></i> Back to Homepage
+            </a>
         </div>
     </div>
 </section>
+
+<!-- Review Gallery Modal -->
+<div id="reviewGalleryModal" class="review-gallery-modal" onclick="closeReviewGallery()">
+    <div class="review-modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="closeReviewGallery()">&times;</span>
+        <div class="main-image-container">
+            <button class="modal-nav modal-prev" onclick="previousModalImage()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <img id="reviewModalImage" src="" alt="Review photo">
+            <button class="modal-nav modal-next" onclick="nextModalImage()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="modal-counter">
+            <span id="modalImageCounter"></span>
+        </div>
+    </div>
+</div>
+
+<script>
+let currentReviewPhotos = [];
+let currentModalIndex = 0;
+
+function openReviewGallery(reviewId, photoIndex) {
+    // Get all photos for this specific review
+    const reviewContainer = document.querySelector(`[data-review-id="${reviewId}"]`);
+    const images = reviewContainer.querySelectorAll('.gallery-image');
+    
+    currentReviewPhotos = Array.from(images).map(img => img.src);
+    currentModalIndex = photoIndex;
+    
+    updateModalDisplay();
+    document.getElementById('reviewGalleryModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeReviewGallery() {
+    document.getElementById('reviewGalleryModal').style.display = 'none';
+    document.body.style.overflow = '';
+    currentReviewPhotos = [];
+}
+
+function nextModalImage() {
+    currentModalIndex = (currentModalIndex + 1) % currentReviewPhotos.length;
+    updateModalDisplay();
+}
+
+function previousModalImage() {
+    currentModalIndex = (currentModalIndex - 1 + currentReviewPhotos.length) % currentReviewPhotos.length;
+    updateModalDisplay();
+}
+
+function updateModalDisplay() {
+    const modalImage = document.getElementById('reviewModalImage');
+    const counter = document.getElementById('modalImageCounter');
+    
+    // Update main image
+    modalImage.src = currentReviewPhotos[currentModalIndex];
+    
+    // Update counter
+    counter.textContent = `${currentModalIndex + 1} / ${currentReviewPhotos.length}`;
+}
+
+function scrollGallery(reviewId, direction) {
+    const container = document.querySelector(`[data-review-id="${reviewId}"] .photo-gallery-slider`);
+    const scrollAmount = 150;
+    container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+// Close modal with escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeReviewGallery();
+    }
+    if (document.getElementById('reviewGalleryModal').style.display === 'block') {
+        if (event.key === 'ArrowLeft') {
+            previousModalImage();
+        } else if (event.key === 'ArrowRight') {
+            nextModalImage();
+        }
+    }
+});
+</script>
 {% endblock %}

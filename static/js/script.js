@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
     // DOM elements
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -290,79 +289,41 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.querySelector('.featured-reviews-carousel');
+        const leftBtn = document.querySelector('.carousel-nav-left');
+        const rightBtn = document.querySelector('.carousel-nav-right');
 
-    // Reviews Carousel Functionality
-    const reviewsCarousel = document.querySelector('.reviews-carousel');
-    const reviewCards = document.querySelectorAll('.review-card-mini');
-    const prevBtn = document.getElementById('reviews-prev');
-    const nextBtn = document.getElementById('reviews-next');
-    
-    if (reviewsCarousel && reviewCards.length > 0) {
-        let currentReview = 0;
-        
-        function showReview(index) {
-            reviewCards.forEach((card, i) => {
-                card.classList.toggle('active', i === index);
-            });
-        }
-        
-        function nextReview() {
-            currentReview = (currentReview + 1) % reviewCards.length;
-            showReview(currentReview);
-        }
-        
-        function prevReview() {
-            currentReview = (currentReview - 1 + reviewCards.length) % reviewCards.length;
-            showReview(currentReview);
-        }
-        
-        if (nextBtn) nextBtn.addEventListener('click', nextReview);
-        if (prevBtn) prevBtn.addEventListener('click', prevReview);
-        
-        // Auto-advance reviews every 5 seconds
-        setInterval(nextReview, 5000);
-    }
-    
-    // File input functionality for review photos
-    const fileInput = document.getElementById('review_photos');
-    const fileLabel = document.querySelector('.file-input-label span');
-    
-    if (fileInput && fileLabel) {
-        fileInput.addEventListener('change', function() {
-            const fileCount = this.files.length;
-            if (fileCount > 0) {
-                fileLabel.textContent = `${fileCount} photo${fileCount > 1 ? 's' : ''} selected`;
-            } else {
-                fileLabel.textContent = 'Choose photos to share';
-            }
-        });
-    }
-
-    // Reviews filtering functionality for all-reviews page
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const allReviewCards = document.querySelectorAll('.review-card-full');
-
-    if (filterButtons.length > 0 && allReviewCards.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                const filterValue = this.getAttribute('data-filter');
-                
-                allReviewCards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-                    
-                    if (filterValue === 'all' || cardCategory === filterValue) {
-                        card.style.display = 'block';
-                        card.style.animation = 'fadeInUp 0.5s ease';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+        leftBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+                left: -300, // adjust scroll amount if needed
+                behavior: 'smooth'
             });
         });
-    }
+
+        rightBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+                left: 300, // adjust scroll amount if needed
+                behavior: 'smooth'
+            });
+        });
+    });
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.featured-reviews-carousel');
+    const leftBtn = document.querySelector('.carousel-nav-left');
+    const rightBtn = document.querySelector('.carousel-nav-right');
+
+    leftBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: -carousel.offsetWidth / 2, // Scroll half carousel width
+            behavior: 'smooth'
+        });
+    });
+
+    rightBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: carousel.offsetWidth / 2, // Scroll half carousel width
+            behavior: 'smooth'
+        });
+    });
 });

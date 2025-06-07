@@ -31,7 +31,7 @@
 </section>
 
 <!-- About Section -->
-<section id="about" class="about-section">
+<section id="about" class="about-section color-a">
     <div class="container">
         <div class="section-header" id="updated-section">
             <h2>{{ g.translations.about_title }}</h2>
@@ -73,7 +73,7 @@
 </section>
 
 <!-- Tours Section -->
-<section id="tours" class="tours-section">
+<section id="tours" class="tours-section color-b">
     <div class="container">
         <div class="section-header">
             <h2>Our Tours</h2>
@@ -119,7 +119,7 @@
 </section>
 
 <!-- Travel Agencies Section -->
-<section id="agencies" class="agencies-section">
+<section id="agencies" class="agencies-section color-a">
     <div class="container">
         <div class="section-header">
             <h2>For Travel Agencies</h2>
@@ -165,7 +165,7 @@
 </section>
 
 <!-- Gallery Section -->
-<section id="galleries" class="galleries-section">
+<section id="galleries" class="galleries-section color-b">
     <div class="container">
         <div class="section-header">
             <h2>{{ g.translations.gallery_title or "Our Gallery" }}</h2>
@@ -192,184 +192,238 @@
 </section>
 
 <!-- Reviews Section -->
-<section id="reviews" class="reviews-section">
+<section id="reviews" class="reviews-section color-a">
     <div class="container">
         <div class="section-header">
-            <h2>{{ g.translations.guest_reviews or "Guest Reviews" }}</h2>
+            <h2>{{ g.translations.guest_reviews }}</h2>
             <div class="divider"></div>
-            <p>{{ g.translations.reviews_description or "Discover what our guests say about their unforgettable UAE experiences" }}</p>
+            <p>{{ g.translations.reviews_intro }}</p>
         </div>
         
         <div class="reviews-container">
-            <!-- Reviews Carousel Section -->
-            <div class="reviews-carousel-section">
-                <h3>{{ g.translations.recent_experiences or "Recent Experiences" }}</h3>
-                <div class="reviews-carousel-wrapper">
-                    <button class="reviews-nav prev" id="reviews-prev">&#8249;</button>
-                    
-                    <div class="reviews-carousel">
-                        <!-- Review 1 -->
-                        <div class="review-card-mini active">
-                            <div class="reviewer-info">
-                                <span class="reviewer-name">María R.</span>
-                                <span class="country-flag">🇪🇸</span>
-                            </div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p class="review-text">"{{ g.translations.review_maria or 'Incredible experience! Menna made our Dubai tour unforgettable with her perfect Spanish and deep knowledge of the city.' }}"</p>
-                        </div>
-                        
-                        <!-- Review 2 -->
-                        <div class="review-card-mini">
-                            <div class="reviewer-info">
-                                <span class="reviewer-name">Carlos M.</span>
-                                <span class="country-flag">🇲🇽</span>
-                            </div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p class="review-text">"{{ g.translations.review_carlos or 'Abu Dhabi exceeded expectations! The Sheikh Zayed Mosque was breathtaking and Menna explained everything perfectly.' }}"</p>
-                        </div>
-                        
-                        <!-- Review 3 -->
-                        <div class="review-card-mini">
-                            <div class="reviewer-info">
-                                <span class="reviewer-name">Ana S.</span>
-                                <span class="country-flag">🇦🇷</span>
-                            </div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p class="review-text">"{{ g.translations.review_ana or 'Desert safari was amazing! Professional service and authentic Bedouin experience. Highly recommended!' }}"</p>
-                        </div>
-                    </div>
-                    
-                    <button class="reviews-nav next" id="reviews-next">&#8250;</button>
+            <div class="reviews-left-column">
+                <div class="left-section-header">
+                    <h3>{{ g.translations.stories_from_adventures }}</h3>
+                    <p>{{ g.translations.reviews_description }}</p>
                 </div>
                 
-                <div class="view-all-reviews">
-                    <a href="/all-reviews" class="btn secondary-btn">{{ g.translations.view_all_reviews or "View All Reviews" }}</a>
+                <div class="reviews-carousel-section">
+                    <div class="reviews-carousel-container">
+                        <div class="reviews-carousel-container">
+                            <button class="carousel-nav carousel-nav-left">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+
+                            <div class="featured-reviews-carousel">
+                                <!-- Your existing review cards -->
+                            </div>
+
+                            <button class="carousel-nav carousel-nav-right">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        
+                        <div class="featured-reviews-carousel">
+                    {% if featured_reviews %}
+                        {% for review in featured_reviews %}
+                        <div class="review-card-original">
+                            <div class="reviewer-header">
+                                <div class="reviewer-avatar-circle">{{ review.name[0].upper() }}</div>
+                                <div class="reviewer-details">
+                                    <h4 class="reviewer-name">{{ review.name }}</h4>
+                                    {% if review.nationality %}
+                                        <span class="reviewer-country">{{ review.nationality }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="review-rating-stars">
+                                {% for i in range(review.rating) %}
+                                    <i class="fas fa-star"></i>
+                                {% endfor %}
+                                {% for i in range(5 - review.rating) %}
+                                    <i class="far fa-star"></i>
+                                {% endfor %}
+                            </div>
+                            {% if review.tour %}
+                                <div class="tour-type-badge">{{ review.tour }}</div>
+                            {% endif %}
+                            {% if review.comment %}
+                                <p class="review-text-content">{{ review.comment }}</p>
+                            {% endif %}
+                            {% if review.photos %}
+                                <div class="review-photos-small">
+                                    {% for photo in review.photos.split(',')[:2] %}
+                                        <img src="{{ url_for('static', filename='uploads/reviews/' + photo) }}" alt="Review photo" class="photo-thumb-small">
+                                    {% endfor %}
+                                    {% if review.photos.split(',')|length > 2 %}
+                                        <span class="extra-photos">+{{ review.photos.split(',')|length - 2 }}</span>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="featured-review-placeholder">
+                            <div class="placeholder-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>{{ g.translations.featured_reviews_coming }}</h4>
+                            <p>{{ g.translations.featured_reviews_placeholder }}</p>
+                        </div>
+                    {% endif %}
+                        </div>
+                    <div class="see-all-reviews">
+                        <a href="/all-reviews" class="btn secondary-btn">See All Reviews</a>
+                    </div>
+                    </div>
                 </div>
+                
+
             </div>
             
-            <!-- Feedback Form Section -->
-            <div class="feedback-form-section">
-                <h3>{{ g.translations.share_your_experience or "Share Your Experience" }}</h3>
-                <p class="form-description">{{ g.translations.feedback_description or "We'd love to hear about your journey with us" }}</p>
-                
-                <form action="/submit_review" method="post" enctype="multipart/form-data" class="feedback-form">
+            <div class="review-form-container">
+                <h3>{{ g.translations.share_experience }}</h3>
+                <form action="/submit_review" method="post" class="review-form compact" enctype="multipart/form-data">
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="reviewer_name">{{ g.translations.full_name or "Full Name" }} *</label>
-                            <input type="text" id="reviewer_name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="reviewer_email">{{ g.translations.email_address or "Email Address" }} *</label>
-                            <input type="email" id="reviewer_email" name="email" required>
-                        </div>
+                        <input type="text" name="name" placeholder="{{ g.translations.review_name }}">
+                        <input type="email" name="email" placeholder="{{ g.translations.review_email }}">
+                        <input type="text" name="country" placeholder="{{ g.translations.review_country }}">
                     </div>
-                    
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="reviewer_country">{{ g.translations.country_origin or "Country of Origin" }} *</label>
-                            <select id="reviewer_country" name="country" required>
-                                <option value="">{{ g.translations.select_country or "Select your country..." }}</option>
-                                <option value="Spain">🇪🇸 Spain</option>
-                                <option value="Mexico">🇲🇽 Mexico</option>
-                                <option value="Argentina">🇦🇷 Argentina</option>
-                                <option value="Colombia">🇨🇴 Colombia</option>
-                                <option value="Chile">🇨🇱 Chile</option>
-                                <option value="Peru">🇵🇪 Peru</option>
-                                <option value="Venezuela">🇻🇪 Venezuela</option>
-                                <option value="Ecuador">🇪🇨 Ecuador</option>
-                                <option value="Uruguay">🇺🇾 Uruguay</option>
-                                <option value="Paraguay">🇵🇾 Paraguay</option>
-                                <option value="Bolivia">🇧🇴 Bolivia</option>
-                                <option value="Costa Rica">🇨🇷 Costa Rica</option>
-                                <option value="Panama">🇵🇦 Panama</option>
-                                <option value="Guatemala">🇬🇹 Guatemala</option>
-                                <option value="Honduras">🇭🇳 Honduras</option>
-                                <option value="El Salvador">🇸🇻 El Salvador</option>
-                                <option value="Nicaragua">🇳🇮 Nicaragua</option>
-                                <option value="Dominican Republic">🇩🇴 Dominican Republic</option>
-                                <option value="Puerto Rico">🇵🇷 Puerto Rico</option>
-                                <option value="Cuba">🇨🇺 Cuba</option>
-                                <option value="USA">🇺🇸 United States</option>
-                                <option value="Other">🌍 Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="tour_taken">{{ g.translations.tour_experienced or "Tour Experienced" }} *</label>
-                            <select id="tour_taken" name="tour" required>
-                                <option value="">{{ g.translations.select_tour or "Select tour..." }}</option>
-                                <option value="Dubai Modern Tour">{{ g.translations.dubai_modern_tour or "Dubai Modern Tour" }}</option>
-                                <option value="Dubai Heritage Tour">{{ g.translations.dubai_heritage_tour or "Dubai Heritage Tour" }}</option>
-                                <option value="Dubai Full Day Tour">{{ g.translations.combo_tour or "Dubai Full Day Tour" }}</option>
-                                <option value="Dubai Marina Cruise">{{ g.translations.marina_cruise_tour or "Dubai Marina Cruise" }}</option>
-                                <option value="Desert Safari">{{ g.translations.desert_safari_tour or "Desert Safari" }}</option>
-                                <option value="Abu Dhabi Heritage Tour">{{ g.translations.abudhabi_heritage_tour or "Abu Dhabi Heritage Tour" }}</option>
-                                <option value="Abu Dhabi Louvre Tour">{{ g.translations.abudhabi_louvre_tour or "Abu Dhabi Louvre Tour" }}</option>
-                                <option value="Northern Emirates Tour">{{ g.translations.northern_emirates_adventure_title or "Northern Emirates Tour" }}</option>
-                                <option value="Custom Tour">{{ g.translations.custom_tour or "Custom Tour" }}</option>
-                            </select>
-                        </div>
+                        <select name="tour">
+                            <option value="">{{ g.translations.select_tour }}</option>
+                            <option value="Dubai Modern Tour">{{ g.translations.dubai_modern_tour_review }}</option>
+                            <option value="Dubai Heritage Tour">{{ g.translations.dubai_heritage_tour_review }}</option>
+                            <option value="Dubai Full Day Tour">{{ g.translations.dubai_full_day_tour_review }}</option>
+                            <option value="Abu Dhabi Heritage Tour">{{ g.translations.abu_dhabi_heritage_tour_review }}</option>
+                            <option value="Abu Dhabi Louvre Tour">{{ g.translations.abu_dhabi_louvre_tour_review }}</option>
+                            <option value="Northern Emirates Tour">{{ g.translations.northern_emirates_tour_review }}</option>
+                            <option value="Desert Safari">{{ g.translations.desert_safari_review }}</option>
+                            <option value="Marina Cruise">{{ g.translations.marina_cruise_review }}</option>
+                            <option value="Custom Tour">{{ g.translations.custom_tour_review }}</option>
+                        </select>
+                        <select name="rating">
+                            <option value="">{{ g.translations.rate_experience }}</option>
+                            <option value="5">{{ g.translations.five_stars }}</option>
+                            <option value="4">{{ g.translations.four_stars }}</option>
+                            <option value="3">{{ g.translations.three_stars }}</option>
+                            <option value="2">{{ g.translations.two_stars }}</option>
+                            <option value="1">{{ g.translations.one_star }}</option>
+                        </select>
                     </div>
-                    
-                    <div class="form-group rating-group">
-                        <label>{{ g.translations.overall_rating or "Overall Rating" }} *</label>
-                        <div class="rating-stars">
-                            <input type="radio" id="star5" name="rating" value="5" required>
-                            <label for="star5" class="star">★</label>
-                            <input type="radio" id="star4" name="rating" value="4">
-                            <label for="star4" class="star">★</label>
-                            <input type="radio" id="star3" name="rating" value="3">
-                            <label for="star3" class="star">★</label>
-                            <input type="radio" id="star2" name="rating" value="2">
-                            <label for="star2" class="star">★</label>
-                            <input type="radio" id="star1" name="rating" value="1">
-                            <label for="star1" class="star">★</label>
-                        </div>
+                    <textarea name="comment" rows="2" placeholder="{{ g.translations.experience_placeholder }}"></textarea>
+                    <div class="visit-date-row">
+                        <select name="visit_month" class="visit-date-select">
+                            <option value="">Month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                        <select name="visit_year" class="visit-date-select">
+                            <option value="">Year</option>
+                            {% for year in range(2020, 2036) %}
+                                <option value="{{ year }}">{{ year }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="review_text">{{ g.translations.your_review or "Your Review" }} *</label>
-                        <textarea id="review_text" name="review" rows="4" placeholder="{{ g.translations.review_placeholder or 'Tell us about your experience...' }}" required></textarea>
+                    <div class="file-upload-compact">
+                        <input type="file" id="review-photos" name="photos" multiple accept="image/*" onchange="updateFileStatus()">
+                        <label for="review-photos" class="file-label">
+                            <i class="fas fa-camera"></i> {{ g.translations.review_photos }}
+                        </label>
+                        <div class="file-status" id="file-status"></div>
+                        <div class="photo-preview-container" id="photo-preview-container"></div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="review_photos">{{ g.translations.add_photos or "Add Photos" }} ({{ g.translations.optional or "Optional" }})</label>
-                        <input type="file" id="review_photos" name="photos" multiple accept="image/*" class="file-input">
-                        <div class="file-input-label">
-                            <i class="fas fa-camera"></i>
-                            <span>{{ g.translations.choose_photos or "Choose photos to share" }}</span>
-                        </div>
+                    <div class="menna-signature-compact">
+                        <p>{{ g.translations.menna_signature }}</p>
                     </div>
-                    
-                    <button type="submit" class="btn primary-btn submit-review-btn">
-                        <i class="fas fa-paper-plane"></i>
-                        {{ g.translations.submit_review or "Submit Review" }}
-                    </button>
+                    <button type="submit" class="btn primary-btn compact-btn">{{ g.translations.submit_review }}</button>
                 </form>
             </div>
         </div>
-    </div>
-</section>
+        
+
+    </section>
+
+<script>
+let selectedFiles = [];
+
+function updateFileStatus() {
+    const fileInput = document.getElementById('review-photos');
+    const fileStatus = document.getElementById('file-status');
+    const previewContainer = document.getElementById('photo-preview-container');
+    
+    // Convert FileList to array and store
+    selectedFiles = Array.from(fileInput.files);
+    
+    // Update status text
+    if (selectedFiles.length > 0) {
+        if (selectedFiles.length === 1) {
+            fileStatus.innerHTML = `<span class="file-selected">1 photo selected</span>`;
+        } else {
+            fileStatus.innerHTML = `<span class="file-selected">${selectedFiles.length} photos selected</span>`;
+        }
+        
+        // Create photo previews
+        previewContainer.innerHTML = '';
+        selectedFiles.forEach((file, index) => {
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'photo-preview-wrapper';
+                    
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'photo-preview';
+                    img.alt = file.name;
+                    
+                    const removeBtn = document.createElement('button');
+                    removeBtn.className = 'remove-photo';
+                    removeBtn.innerHTML = '×';
+                    removeBtn.type = 'button';
+                    removeBtn.onclick = () => removePhoto(index);
+                    
+                    wrapper.appendChild(img);
+                    wrapper.appendChild(removeBtn);
+                    previewContainer.appendChild(wrapper);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    } else {
+        fileStatus.innerHTML = '';
+        previewContainer.innerHTML = '';
+    }
+}
+
+function removePhoto(index) {
+    selectedFiles.splice(index, 1);
+    
+    // Create new FileList and update input
+    const dt = new DataTransfer();
+    selectedFiles.forEach(file => dt.items.add(file));
+    document.getElementById('review-photos').files = dt.files;
+    
+    // Update display
+    updateFileStatus();
+}
+
+// Simple scroll-based reviews (no complex carousel logic needed)
+</script>
 
 <!-- Contact Section -->
-<section id="contact" class="contact-section">
+<section id="contact" class="contact-section color-b">
     <div class="container">
         <div class="section-header">
             <h2>Get In Touch</h2>
