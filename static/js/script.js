@@ -289,41 +289,4 @@
             });
         });
     });
-    document.addEventListener('DOMContentLoaded', function() {
-        const carousel = document.querySelector('.featured-reviews-carousel');
-        const leftBtn = document.querySelector('.carousel-nav-left');
-        const rightBtn = document.querySelector('.carousel-nav-right');
-
-        leftBtn.addEventListener('click', () => {
-            carousel.scrollBy({
-                left: -300, // adjust scroll amount if needed
-                behavior: 'smooth'
-            });
-        });
-
-        rightBtn.addEventListener('click', () => {
-            carousel.scrollBy({
-                left: 300, // adjust scroll amount if needed
-                behavior: 'smooth'
-            });
-        });
-    });
-document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.featured-reviews-carousel');
-    const leftBtn = document.querySelector('.carousel-nav-left');
-    const rightBtn = document.querySelector('.carousel-nav-right');
-
-    leftBtn.addEventListener('click', () => {
-        carousel.scrollBy({
-            left: -carousel.offsetWidth / 2, // Scroll half carousel width
-            behavior: 'smooth'
-        });
-    });
-
-    rightBtn.addEventListener('click', () => {
-        carousel.scrollBy({
-            left: carousel.offsetWidth / 2, // Scroll half carousel width
-            behavior: 'smooth'
-        });
-    });
-});
+    
