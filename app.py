@@ -100,6 +100,10 @@ def send_message():
 
 
 # Gallery Routes
+@app.route('/all-reviews')
+def all_reviews():
+    return render_template('all_reviews.html')
+
 @app.route('/galleries/<gallery_type>')
 def gallery_page(gallery_type):
     # Gallery data with existing images
