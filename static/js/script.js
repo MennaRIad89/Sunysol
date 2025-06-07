@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
     // DOM elements
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -365,4 +366,3 @@
         });
     }
 });
-    
