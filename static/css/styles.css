@@ -1719,6 +1719,22 @@ body.dubai-tours-page {
     }
 }
 
+/* Safe animation fix for reviews, tours, and gallery only */
+.review-card,
+.tour-card,
+.gallery-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.review-card.animate,
+.tour-card.animate,
+.gallery-item.animate {
+  opacity: 1;
+  transform: none;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
