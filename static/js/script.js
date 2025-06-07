@@ -86,43 +86,7 @@
     }
     
     // Form validation
-    const reviewForm = document.querySelector('.review-form');
     const contactForm = document.querySelector('.contact-form');
-    
-    if (reviewForm) {
-        reviewForm.addEventListener('submit', (e) => {
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            const commentInput = document.getElementById('comment');
-            
-            let isValid = true;
-            
-            if (nameInput.value.trim() === '') {
-                highlightError(nameInput);
-                isValid = false;
-            } else {
-                resetError(nameInput);
-            }
-            
-            if (emailInput.value.trim() === '' || !isValidEmail(emailInput.value)) {
-                highlightError(emailInput);
-                isValid = false;
-            } else {
-                resetError(emailInput);
-            }
-            
-            if (commentInput.value.trim() === '') {
-                highlightError(commentInput);
-                isValid = false;
-            } else {
-                resetError(commentInput);
-            }
-            
-            if (!isValid) {
-                e.preventDefault();
-            }
-        });
-    }
     
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {

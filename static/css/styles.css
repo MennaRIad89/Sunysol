@@ -1404,7 +1404,7 @@ body.dubai-tours-page {
 
 
 
-.review-form, .contact-form {
+.contact-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;

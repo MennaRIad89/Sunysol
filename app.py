@@ -54,27 +54,7 @@ def dubai_modern_gallery():
     return render_template('dubai-modern-gallery.html')
 
 
-@app.route('/submit_review', methods=['POST'])
-def submit_review():
-    try:
-        name = request.form.get('name')
-        email = request.form.get('email')
-        country = request.form.get('country')
-        tour = request.form.get('tour')
-        comment = request.form.get('comment')
 
-        # Here we would normally save the review to a database
-        # For now, we'll just log it
-        logging.info(
-            f"Review received from {name} ({email}) from {country} about {tour}: {comment}"
-        )
-
-        flash(g.translations['thank_you_review'], "success")
-    except Exception as e:
-        logging.error(f"Error processing review: {str(e)}")
-        flash(g.translations['error_review'], "error")
-
-    return redirect(url_for('index', _anchor='reviews'))
 
 
 @app.route('/send_message', methods=['POST'])
