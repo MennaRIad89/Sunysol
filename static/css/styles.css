@@ -1676,12 +1676,14 @@ body.dubai-tours-page {
         grid-template-columns: 1fr;
         gap: 30px;
         max-width: 100%;
+        margin: 40px 20px 0 20px;
     }
     
     .reviews-carousel-section,
     .feedback-form-section {
-        padding: 30px 20px;
+        padding: 25px;
         max-width: 100%;
+        width: 100%;
         box-sizing: border-box;
     }
     
@@ -1692,13 +1694,22 @@ body.dubai-tours-page {
     
     .review-card-mini {
         max-width: 100%;
+        width: 100%;
         box-sizing: border-box;
         padding: 20px;
     }
     
+    .feedback-form .form-group input,
+    .feedback-form .form-group select,
+    .feedback-form .form-group textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
     .form-row {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 15px;
     }
     
     .reviews-nav.prev {
@@ -1715,12 +1726,32 @@ body.dubai-tours-page {
         padding: 60px 0;
     }
     
+    .reviews-container {
+        margin: 40px 15px 0 15px;
+        max-width: calc(100% - 30px);
+    }
+    
     .reviews-carousel-section,
     .feedback-form-section {
-        padding: 20px 15px;
-        margin: 0 10px;
-        max-width: calc(100% - 20px);
+        padding: 15px;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
         box-sizing: border-box;
+    }
+    
+    .feedback-form .form-group input,
+    .feedback-form .form-group select,
+    .feedback-form .form-group textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     .rating-stars .star {
@@ -1736,12 +1767,41 @@ body.dubai-tours-page {
     .review-card-mini {
         padding: 15px;
         font-size: 0.9rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
     .reviewer-info {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+    }
+    
+    .reviews-carousel-wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .submit-review-btn {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 1rem;
+        padding: 12px;
+    }
+    
+    .file-input-label {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .rating-stars {
+        justify-content: center;
+        gap: 3px;
     }
 }
 
