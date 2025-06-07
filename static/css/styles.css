@@ -28,6 +28,8 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 html.no-smooth-scroll {
@@ -40,6 +42,8 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -151,6 +155,13 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
 }
 
 .section-header {
@@ -1664,11 +1675,25 @@ body.dubai-tours-page {
     .reviews-container {
         grid-template-columns: 1fr;
         gap: 30px;
+        max-width: 100%;
     }
     
     .reviews-carousel-section,
     .feedback-form-section {
         padding: 30px 20px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .reviews-carousel-wrapper {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .review-card-mini {
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
     }
     
     .form-row {
@@ -1686,9 +1711,16 @@ body.dubai-tours-page {
 }
 
 @media (max-width: 480px) {
+    .reviews-section {
+        padding: 60px 0;
+    }
+    
     .reviews-carousel-section,
     .feedback-form-section {
         padding: 20px 15px;
+        margin: 0 10px;
+        max-width: calc(100% - 20px);
+        box-sizing: border-box;
     }
     
     .rating-stars .star {
@@ -1699,6 +1731,17 @@ body.dubai-tours-page {
         width: 35px;
         height: 35px;
         font-size: 1rem;
+    }
+    
+    .review-card-mini {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .reviewer-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 }
 
