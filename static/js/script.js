@@ -151,6 +151,9 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
+                    // Reveal the card!
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'none';
                     observer.unobserve(entry.target);
                 }
             });
