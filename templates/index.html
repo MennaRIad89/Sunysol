@@ -494,4 +494,59 @@
     </div>
 </section>
 
+<!-- Structured Data for Local Business -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Sun y Sol Tours",
+    "description": "Professional Spanish-speaking tour guide in UAE offering private tours in Dubai, Abu Dhabi and Northern Emirates",
+    "url": "{{ request.url_root }}",
+    "telephone": "+971564649609",
+    "email": "info@sunysoltravel.com",
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AE",
+        "addressRegion": "Dubai"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "25.2048",
+        "longitude": "55.2708"
+    },
+    "openingHours": "Mo-Su 08:00-20:00",
+    "priceRange": "$$",
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "UAE Tours",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Dubai Private Tours",
+                    "description": "Private guided tours of Dubai including modern and heritage attractions"
+                }
+            },
+            {
+                "@type": "Offer", 
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Abu Dhabi Tours",
+                    "description": "Comprehensive tours of Abu Dhabi including Sheikh Zayed Mosque and cultural sites"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service", 
+                    "name": "Northern Emirates Tours",
+                    "description": "Explore the hidden gems of Sharjah, Ajman, Fujairah and the Hajar Mountains"
+                }
+            }
+        ]
+    }
+}
+</script>
+
 {% endblock %}

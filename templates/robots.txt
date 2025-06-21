@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: {{ request.url_root }}sitemap.xml
+
+# Block access to sensitive areas
+Disallow: /static/review_photos/
+
+# Allow indexing of main pages
+Allow: /
+Allow: /dubai-tours
+Allow: /abudhabi-tours
+Allow: /northern-emirates-tours
+Allow: /agencies
+Allow: /all-reviews
+Allow: /galleries/
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
