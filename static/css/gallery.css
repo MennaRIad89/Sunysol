@@ -344,7 +344,7 @@
 .tour-navigation {
     padding: 40px 0;
     text-align: center;
-    background-color: var(--light-gray);
+    background-color: var(--bg-color);
 }
 
 .nav-buttons {
