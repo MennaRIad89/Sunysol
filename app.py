@@ -139,7 +139,8 @@ def switch_language(language):
 def index():
     reviews = load_reviews()
     recent_reviews = reviews[:3]  # Get 3 most recent reviews
-    return render_template('index.html', reviews=recent_reviews)
+    gallery_images = get_gallery_images()
+    return render_template('index.html', reviews=recent_reviews, gallery_images=gallery_images)
 
 
 @app.route('/agencies')
