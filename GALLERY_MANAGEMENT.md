@@ -58,10 +58,12 @@ static/images/
 **Add Dubai Modern Tour images:**
 - Upload to: `static/images/Tour Galleries/dubai-modern/`
 - Files: `01-burj-khalifa.jpg`, `02-palm-jumeirah.jpg`, etc.
+- Gallery URL: `/tour-galleries/dubai-modern`
 
 **Add Desert Safari images:**
 - Upload to: `static/images/Tour Galleries/dubai-desert/`
 - Files: `01-dune-bashing.jpg`, `02-camel-ride.jpg`, etc.
+- Gallery URL: `/tour-galleries/dubai-desert`
 
 ## Current Status
 

@@ -280,7 +280,7 @@ def all_reviews():
 
 
 # Gallery Routes
-@app.route('/galleries/<gallery_type>')
+@app.route('/tour-galleries/<gallery_type>')
 def gallery_page(gallery_type):
     # Gallery data with existing images
     galleries = {
@@ -330,7 +330,7 @@ def gallery_page(gallery_type):
     if not gallery_data:
         # Handle legacy routes
         if gallery_type == 'abudhabi-heritage':
-            return redirect('/galleries/abudhabi-city', code=301)
+            return redirect('/tour-galleries/abudhabi-city', code=301)
         return render_template('404.html'), 404
     
     return render_template('gallery.html', gallery=gallery_data, gallery_type=gallery_type)
