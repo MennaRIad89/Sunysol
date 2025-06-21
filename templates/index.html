@@ -176,14 +176,9 @@
             <button class="gallery-carousel-nav prev" id="gallery-prev">&#8249;</button>
             <div class="gallery-carousel-container">
                 <div class="gallery-carousel" id="gallery-carousel">
-                    <img src="{{ url_for('static', filename='images/Gallary_Photo1.jpg') }}" alt="Dubai Tours - Modern City" class="gallery-thumb">
-                    <img src="{{ url_for('static', filename='images/Gallary_Photo2.jpg') }}" alt="Abu Dhabi Heritage Sites" class="gallery-thumb">
-                    <img src="{{ url_for('static', filename='images/Gallary_Photo3.jpg') }}" alt="Northern Emirates Adventure" class="gallery-thumb">
-                    <img src="{{ url_for('static', filename='images/burj-khalifa.png') }}" alt="Burj Khalifa - Dubai Icon" class="gallery-thumb">
-                    <img src="{{ url_for('static', filename='images/desert-safari.jpg') }}" alt="Desert Safari Experience" class="gallery-thumb">
-                    <img src="{{ url_for('static', filename='images/marina-cruise.jpg') }}" alt="Dubai Marina Dhow Cruise" class="gallery-thumb">
-                    <img src="{{ url_for('static', filename='images/heritage-dubai.jpg') }}" alt="Dubai Heritage Experience" class="gallery-thumb">
-                    <img src="{{ url_for('static', filename='images/combo-dubai.jpg') }}" alt="Complete Dubai Experience" class="gallery-thumb">
+                    {% for image in gallery_images %}
+                        <img src="{{ url_for('static', filename=image.src) }}" alt="{{ image.alt }}" class="gallery-thumb">
+                    {% endfor %}
                 </div>
             </div>
             <button class="gallery-carousel-nav next" id="gallery-next">&#8250;</button>
