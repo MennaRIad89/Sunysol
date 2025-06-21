@@ -66,8 +66,15 @@ static/images/
 ## Current Status
 
 - **Homepage Gallery:** Uses your 37 optimized images from `Gallaries/` folder
-- **Tour Galleries:** Currently empty, will fallback to homepage images
-- **Ready for customization:** You can now add tour-specific images anytime
+- **Tour Galleries:** All tours now have sample images with smart fallback system
+- **Dubai Modern:** 3 images (modern architecture, marina, frame)
+- **Dubai Classic:** 3 images (traditional souqs, heritage sites)
+- **Dubai Full Day:** 4 images (combination of modern and classic)
+- **Dubai Cruise:** 2 images (marina views, waterfront)
+- **Desert Safari:** 3 images (desert adventure, safari experiences)
+- **Abu Dhabi City:** 4 images (Sheikh Zayed Mosque, city views)
+- **Abu Dhabi Louvre:** 3 images (museum, cultural sites)
+- **Northern Emirates:** 3 images (landscapes, traditional areas)
 
 ## Quick Start
 
