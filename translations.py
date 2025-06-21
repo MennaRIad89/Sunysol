@@ -898,6 +898,56 @@ TRANSLATIONS = {
         'Enviar Reseña',
         'see_all_reviews':
         'Ver Todas las Reseñas',
+
+        # Homepage sections Spanish
+        'homepage_agencies_title':
+        'Para Agencias de Viajes',
+        'homepage_agencies_subtitle':
+        'Para Agencias de Viajes y Operadores Turísticos',
+        'homepage_agencies_description':
+        'Si eres una agencia de viajes u operador turístico que busca colaborar en los EAU, haz clic abajo para conocer más sobre nuestros programas de asociación.',
+        'homepage_agencies_intro':
+        'Explora modelos de colaboración flexibles diseñados para profesionales del turismo.',
+        'homepage_benefit_commission':
+        'Basado en Comisiones',
+        'homepage_benefit_commission_desc':
+        'Estructura de comisiones competitiva con términos claros y pagos transparentes.',
+        'homepage_benefit_whitelabel':
+        'Opciones de Marca Blanca',
+        'homepage_benefit_whitelabel_desc':
+        'Tu marca, mi servicio: integración perfecta con la imagen de tu empresa.',
+        'homepage_benefit_pricing':
+        'Precios Personalizados',
+        'homepage_benefit_pricing_desc':
+        'Opciones flexibles de reserva por tour o paquete para adaptarse a tu modelo de negocio.',
+        'homepage_benefit_longterm':
+        'Colaboraciones a Largo Plazo',
+        'homepage_benefit_longterm_desc':
+        'Desarrolla relaciones continuas con estatus preferencial y beneficios mejorados.',
+        'homepage_agencies_learn_more':
+        'Saber Más',
+        'homepage_contact_title':
+        'Ponte en Contacto',
+        'homepage_contact_description':
+        '¿Listo para explorar los EAU con nosotros? ¿Tienes preguntas sobre nuestros tours? ¡Nos encantaría saber de ti!',
+        'homepage_contact_planning_title':
+        'Comencemos a Planificar tu Aventura',
+        'homepage_contact_planning_desc':
+        'Ya sea que estés comenzando a planificar tu viaje o listo para reservar, estamos aquí para ayudarte a hacer que tu experiencia en los EAU sea inolvidable. Sin presión, solo consejos amigables y orientación experta.',
+        'homepage_contact_whatsapp':
+        'WhatsApp',
+        'homepage_contact_whatsapp_desc':
+        'Para preguntas rápidas y asistencia inmediata',
+        'homepage_contact_whatsapp_btn':
+        'Contactar vía WhatsApp',
+        'homepage_contact_email':
+        'Correo Electrónico',
+        'homepage_contact_email_desc':
+        'Para consultas detalladas y reservas',
+        'homepage_contact_follow':
+        'Síguenos',
+        'homepage_contact_form_title':
+        'Envíanos un Mensaje',
         'all_reviews_title':
         'Todas las Reseñas de Huéspedes',
         'all_reviews_subtitle':
