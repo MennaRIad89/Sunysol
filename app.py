@@ -4,33 +4,21 @@ from flask import Flask, render_template, request, flash, redirect, url_for, ses
 
 from translations import TRANSLATIONS
 
-# Country flag mapping for reviews - using Unicode flag emojis
+# Country flag mapping for reviews - using direct emoji flags
 COUNTRY_FLAGS = {
-    'Afghanistan': '\U0001F1E6\U0001F1EB', 'Albania': '\U0001F1E6\U0001F1F1', 
-    'Algeria': '\U0001F1E9\U0001F1FF', 'Argentina': '\U0001F1E6\U0001F1F7',
-    'Australia': '\U0001F1E6\U0001F1FA', 'Austria': '\U0001F1E6\U0001F1F9', 
-    'Bangladesh': '\U0001F1E7\U0001F1E9', 'Belgium': '\U0001F1E7\U0001F1EA',
-    'Brazil': '\U0001F1E7\U0001F1F7', 'Canada': '\U0001F1E8\U0001F1E6', 
-    'Chile': '\U0001F1E8\U0001F1F1', 'China': '\U0001F1E8\U0001F1F3',
-    'Colombia': '\U0001F1E8\U0001F1F4', 'Denmark': '\U0001F1E9\U0001F1F0', 
-    'Egypt': '\U0001F1EA\U0001F1EC', 'France': '\U0001F1EB\U0001F1F7',
-    'Germany': '\U0001F1E9\U0001F1EA', 'India': '\U0001F1EE\U0001F1F3', 
-    'Indonesia': '\U0001F1EE\U0001F1E9', 'Iran': '\U0001F1EE\U0001F1F7',
-    'Iraq': '\U0001F1EE\U0001F1F6', 'Italy': '\U0001F1EE\U0001F1F9', 
-    'Japan': '\U0001F1EF\U0001F1F5', 'Jordan': '\U0001F1EF\U0001F1F4',
-    'Kuwait': '\U0001F1F0\U0001F1FC', 'Lebanon': '\U0001F1F1\U0001F1E7', 
-    'Malaysia': '\U0001F1F2\U0001F1FE', 'Mexico': '\U0001F1F2\U0001F1FD',
-    'Morocco': '\U0001F1F2\U0001F1E6', 'Netherlands': '\U0001F1F3\U0001F1F1', 
-    'Norway': '\U0001F1F3\U0001F1F4', 'Pakistan': '\U0001F1F5\U0001F1F0',
-    'Philippines': '\U0001F1F5\U0001F1ED', 'Qatar': '\U0001F1F6\U0001F1E6', 
-    'Russia': '\U0001F1F7\U0001F1FA', 'Saudi Arabia': '\U0001F1F8\U0001F1E6',
-    'Singapore': '\U0001F1F8\U0001F1EC', 'South Africa': '\U0001F1FF\U0001F1E6', 
-    'South Korea': '\U0001F1F0\U0001F1F7', 'Spain': '\U0001F1EA\U0001F1F8',
-    'España': '\U0001F1EA\U0001F1F8', 'Sweden': '\U0001F1F8\U0001F1EA', 
-    'Switzerland': '\U0001F1E8\U0001F1ED', 'Thailand': '\U0001F1F9\U0001F1ED',
-    'Turkey': '\U0001F1F9\U0001F1F7', 'UAE': '\U0001F1E6\U0001F1EA', 
-    'United Arab Emirates': '\U0001F1E6\U0001F1EA', 'United Kingdom': '\U0001F1EC\U0001F1E7', 
-    'United States': '\U0001F1FA\U0001F1F8', 'Venezuela': '\U0001F1FB\U0001F1EA'
+    'Afghanistan': '🇦🇫', 'Albania': '🇦🇱', 'Algeria': '🇩🇿', 'Argentina': '🇦🇷',
+    'Australia': '🇦🇺', 'Austria': '🇦🇹', 'Bangladesh': '🇧🇩', 'Belgium': '🇧🇪',
+    'Brazil': '🇧🇷', 'Canada': '🇨🇦', 'Chile': '🇨🇱', 'China': '🇨🇳',
+    'Colombia': '🇨🇴', 'Denmark': '🇩🇰', 'Egypt': '🇪🇬', 'France': '🇫🇷',
+    'Germany': '🇩🇪', 'India': '🇮🇳', 'Indonesia': '🇮🇩', 'Iran': '🇮🇷',
+    'Iraq': '🇮🇶', 'Italy': '🇮🇹', 'Japan': '🇯🇵', 'Jordan': '🇯🇴',
+    'Kuwait': '🇰🇼', 'Lebanon': '🇱🇧', 'Malaysia': '🇲🇾', 'Mexico': '🇲🇽',
+    'Morocco': '🇲🇦', 'Netherlands': '🇳🇱', 'Norway': '🇳🇴', 'Pakistan': '🇵🇰',
+    'Philippines': '🇵🇭', 'Qatar': '🇶🇦', 'Russia': '🇷🇺', 'Saudi Arabia': '🇸🇦',
+    'Singapore': '🇸🇬', 'South Africa': '🇿🇦', 'South Korea': '🇰🇷', 'Spain': '🇪🇸',
+    'España': '🇪🇸', 'Sweden': '🇸🇪', 'Switzerland': '🇨🇭', 'Thailand': '🇹🇭',
+    'Turkey': '🇹🇷', 'UAE': '🇦🇪', 'United Arab Emirates': '🇦🇪', 
+    'United Kingdom': '🇬🇧', 'United States': '🇺🇸', 'Venezuela': '🇻🇪'
 }
 
 # Create Flask app
