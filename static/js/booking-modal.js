@@ -141,7 +141,7 @@ class BookingModal {
 
                             <div class="booking-form-note">
                                 <i class="fas fa-info-circle"></i>
-                                <strong>Note:</strong> This is not a confirmed booking. We'll contact you within 2 hours to confirm availability, provide exact pricing, and arrange payment details.
+                                <strong>Note:</strong> This is not a confirmed booking. We'll contact you within 24 hours to confirm availability, provide exact pricing, and arrange payment details.
                             </div>
 
                             <div class="booking-actions">
@@ -397,7 +397,7 @@ class BookingModal {
 
                 <div class="booking-form-note">
                     <i class="fas fa-info-circle"></i>
-                    <strong>Note:</strong> This is not a confirmed booking. We'll contact you within 2 hours to confirm availability, provide exact pricing, and arrange payment details.
+                    <strong>Note:</strong> This is not a confirmed booking. We'll contact you within 24 hours to confirm availability, provide exact pricing, and arrange payment details.
                 </div>
 
                 <div class="booking-actions">
@@ -543,7 +543,7 @@ class BookingModal {
                     <i class="fas fa-check-circle"></i>
                 </div>
                 <h4>Booking Request Sent!</h4>
-                <p>Thank you for your interest in <strong>${this.currentTour.title}</strong>. We've received your booking request via ${method} and will contact you within 2 hours to confirm availability and provide pricing details.</p>
+                <p>Thank you for your interest in <strong>${this.currentTour.title}</strong>. We've received your booking request via ${method} and will contact you within 24 hours to confirm availability and provide pricing details.</p>
                 <div class="booking-actions">
                     <button type="button" class="booking-btn booking-btn-email" onclick="bookingModal.closeModal()">
                         <i class="fas fa-check"></i>
