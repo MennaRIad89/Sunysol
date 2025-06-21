@@ -116,6 +116,7 @@ Tour Page Access → Template Rendering → Interactive Elements Loading → Gal
 
 ## Recent Changes
 
+- June 21, 2025: Updated all website contact information to use new domain sunysol.ae with emails info@sunysol.ae and booking@sunysol.ae
 - June 21, 2025: Implemented professional booking modal system with hybrid WhatsApp/Email options and consistent site styling
 - June 21, 2025: Populated all 8 tour galleries with relevant images and dynamic loading system
 - June 21, 2025: Implemented separate gallery system for each tour with fallback to main gallery

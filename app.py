@@ -268,7 +268,7 @@ def send_message():
             special_requests = request.form.get('special_requests')
             
             logging.info(
-                f"Tour booking request from {name} ({email}, {phone}) for {tour_name} on {tour_date}, group size: {group_size}, type: {tour_type}, requests: {special_requests}"
+                f"Tour booking request from {name} ({email}, {phone}) for {tour_name} on {tour_date}, group size: {group_size}, type: {tour_type}, requests: {special_requests} - Forward to booking@sunysol.ae"
             )
             
             return jsonify({'status': 'success', 'message': 'Booking request received'})
@@ -278,7 +278,7 @@ def send_message():
             message = request.form.get('message')
             
             logging.info(
-                f"Contact message received from {name} ({email}), {traveler_type}: {message}"
+                f"Contact message received from {name} ({email}), {traveler_type}: {message} - Forward to info@sunysol.ae"
             )
             
             flash(g.translations['thank_you_message'], "success")
