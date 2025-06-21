@@ -116,6 +116,7 @@ Tour Page Access → Template Rendering → Interactive Elements Loading → Gal
 
 ## Recent Changes
 
+- June 21, 2025: Fixed gallery system to load from static/images/Gallaries/ folder containing 42 user gallery images with auto-generated descriptive alt text
 - June 21, 2025: Updated gallery system to automatically generate descriptive alt text from filenames and load all user images dynamically
 - June 21, 2025: Implemented comprehensive SEO optimization including meta tags, structured data, sitemap, and robots.txt
 - June 21, 2025: Cleared all test reviews and photos, ready for real customer reviews

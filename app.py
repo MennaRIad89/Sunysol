@@ -52,12 +52,12 @@ def get_gallery_images(gallery_type=None):
     
     images = []
     
-    # First try to load from Gallaries folder (note the spelling)
+    # Load from Gallaries folder for user's 42 gallery images
     if os.path.exists('static/images/Gallaries'):
         image_files = glob.glob('static/images/Gallaries/*.jpg') + glob.glob('static/images/Gallaries/*.jpeg') + glob.glob('static/images/Gallaries/*.png')
         folder_path = 'images/Gallaries/'
     else:
-        # Fallback to main images folder, excluding system files
+        # Fallback to main images folder for tour images, excluding system files
         image_files = glob.glob('static/images/*.jpg') + glob.glob('static/images/*.jpeg') + glob.glob('static/images/*.png')
         excluded_files = ['logo.png', 'logo.svg', 'partner-collaboration.png', 'Meet Menna.jpg']
         image_files = [f for f in image_files if os.path.basename(f) not in excluded_files]
