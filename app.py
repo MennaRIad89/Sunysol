@@ -4,22 +4,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for, ses
 
 from translations import TRANSLATIONS
 
-# Country flag mapping for reviews - using direct emoji flags
-COUNTRY_FLAGS = {
-    'Afghanistan': '🇦🇫', 'Albania': '🇦🇱', 'Algeria': '🇩🇿', 'Argentina': '🇦🇷',
-    'Australia': '🇦🇺', 'Austria': '🇦🇹', 'Bangladesh': '🇧🇩', 'Belgium': '🇧🇪',
-    'Brazil': '🇧🇷', 'Canada': '🇨🇦', 'Chile': '🇨🇱', 'China': '🇨🇳',
-    'Colombia': '🇨🇴', 'Denmark': '🇩🇰', 'Egypt': '🇪🇬', 'France': '🇫🇷',
-    'Germany': '🇩🇪', 'India': '🇮🇳', 'Indonesia': '🇮🇩', 'Iran': '🇮🇷',
-    'Iraq': '🇮🇶', 'Italy': '🇮🇹', 'Japan': '🇯🇵', 'Jordan': '🇯🇴',
-    'Kuwait': '🇰🇼', 'Lebanon': '🇱🇧', 'Malaysia': '🇲🇾', 'Mexico': '🇲🇽',
-    'Morocco': '🇲🇦', 'Netherlands': '🇳🇱', 'Norway': '🇳🇴', 'Pakistan': '🇵🇰',
-    'Philippines': '🇵🇭', 'Qatar': '🇶🇦', 'Russia': '🇷🇺', 'Saudi Arabia': '🇸🇦',
-    'Singapore': '🇸🇬', 'South Africa': '🇿🇦', 'South Korea': '🇰🇷', 'Spain': '🇪🇸',
-    'España': '🇪🇸', 'Sweden': '🇸🇪', 'Switzerland': '🇨🇭', 'Thailand': '🇹🇭',
-    'Turkey': '🇹🇷', 'UAE': '🇦🇪', 'United Arab Emirates': '🇦🇪', 
-    'United Kingdom': '🇬🇧', 'United States': '🇺🇸', 'Venezuela': '🇻🇪'
-}
+
 
 # Create Flask app
 app = Flask(__name__)
@@ -74,7 +59,6 @@ def before_request():
     language = session.get('language', 'en')
     g.language = language
     g.translations = TRANSLATIONS[language]
-    g.country_flags = COUNTRY_FLAGS
 
 
 @app.route('/switch_language/<language>')

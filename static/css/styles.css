@@ -1501,25 +1501,6 @@ body.dubai-tours-page {
     color: var(--text-color);
 }
 
-.reviewer-country {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 2px;
-}
-
-.country-flag {
-    font-size: 1.3rem;
-    line-height: 1;
-    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", sans-serif;
-}
-
-.country-name {
-    font-size: 0.9rem;
-    color: var(--secondary-accent);
-    font-weight: 500;
-}
-
 .stars {
     display: flex;
     gap: 2px;

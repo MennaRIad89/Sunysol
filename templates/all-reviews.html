@@ -41,13 +41,7 @@ main {
                                 </div>
                             </div>
                             <div class="reviewer-details">
-                                <h4>{{ review.name }}</h4>
-                                {% if review.country %}
-                                    <div class="reviewer-country">
-                                        <span class="country-flag">{{ g.country_flags.get(review.country, '🌍') }}</span>
-                                        <span class="country-name">{{ review.country }}</span>
-                                    </div>
-                                {% endif %}
+                                <h4>{{ review.name }}{% if review.country %}, {{ review.country }}{% endif %}</h4>
                                 <div class="stars">
                                     {% for i in range(5) %}
                                         {% if i < review.rating %}
