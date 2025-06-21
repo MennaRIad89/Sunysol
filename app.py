@@ -11,25 +11,19 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
 
 def get_gallery_images(gallery_type=None):
-    """Load gallery images from static/images/galleries folder if it exists, otherwise fallback to main images"""
+    """Load gallery images based on gallery type or fallback to main gallery"""
     import glob
-    import re
     import os
     
     def filename_to_alt_text(filename):
         """Convert filename to descriptive alt text"""
-        # Remove file extension
         name = os.path.splitext(filename)[0]
-        
-        # Replace underscores with spaces
         name = name.replace('_', ' ')
         
-        # Capitalize words
         words = name.split()
         capitalized_words = []
         
         for word in words:
-            # Special handling for common UAE locations
             if word.lower() in ['dubai', 'abudhabi', 'abu', 'dhabi', 'sharjah', 'ajman', 'fujairah', 'uae']:
                 if word.lower() == 'abudhabi':
                     capitalized_words.append('Abu Dhabi')
@@ -39,12 +33,10 @@ def get_gallery_images(gallery_type=None):
                     capitalized_words.append('Dhabi')
                 else:
                     capitalized_words.append(word.capitalize())
-            # Special handling for landmarks
             elif word.lower() in ['burj', 'khalifa', 'mosque', 'louvre', 'marina', 'frame', 'safari', 'desert']:
                 capitalized_words.append(word.capitalize())
-            # Handle numbers at the end
             elif word.isdigit():
-                continue  # Skip number suffixes in alt text
+                continue
             else:
                 capitalized_words.append(word.capitalize())
         
@@ -52,24 +44,45 @@ def get_gallery_images(gallery_type=None):
     
     images = []
     
-    # Load from Gallaries folder for user's 42 gallery images
+    # Check for specific tour gallery first
+    if gallery_type:
+        tour_gallery_path = f'static/images/Tour Galleries/{gallery_type}'
+        if os.path.exists(tour_gallery_path):
+            image_files = (glob.glob(f'{tour_gallery_path}/*.jpg') + 
+                          glob.glob(f'{tour_gallery_path}/*.jpeg') + 
+                          glob.glob(f'{tour_gallery_path}/*.png'))
+            folder_path = f'images/Tour Galleries/{gallery_type}/'
+            
+            if image_files:  # If tour-specific images exist, use them
+                image_files.sort()
+                for image_path in image_files:
+                    filename = os.path.basename(image_path)
+                    alt_text = filename_to_alt_text(filename)
+                    images.append({
+                        'src': f'{folder_path}{filename}',
+                        'alt': alt_text
+                    })
+                return images
+    
+    # Fallback to main Gallaries folder
     if os.path.exists('static/images/Gallaries'):
-        image_files = glob.glob('static/images/Gallaries/*.jpg') + glob.glob('static/images/Gallaries/*.jpeg') + glob.glob('static/images/Gallaries/*.png')
+        image_files = (glob.glob('static/images/Gallaries/*.jpg') + 
+                      glob.glob('static/images/Gallaries/*.jpeg') + 
+                      glob.glob('static/images/Gallaries/*.png'))
         folder_path = 'images/Gallaries/'
     else:
-        # Fallback to main images folder for tour images, excluding system files
-        image_files = glob.glob('static/images/*.jpg') + glob.glob('static/images/*.jpeg') + glob.glob('static/images/*.png')
+        # Final fallback to main images folder
+        image_files = (glob.glob('static/images/*.jpg') + 
+                      glob.glob('static/images/*.jpeg') + 
+                      glob.glob('static/images/*.png'))
         excluded_files = ['logo.png', 'logo.svg', 'partner-collaboration.png', 'Meet Menna.jpg']
         image_files = [f for f in image_files if os.path.basename(f) not in excluded_files]
         folder_path = 'images/'
     
-    # Sort by filename to maintain order
     image_files.sort()
-    
     for image_path in image_files:
         filename = os.path.basename(image_path)
         alt_text = filename_to_alt_text(filename)
-        
         images.append({
             'src': f'{folder_path}{filename}',
             'alt': alt_text
