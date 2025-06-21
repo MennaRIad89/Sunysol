@@ -116,6 +116,7 @@ Tour Page Access → Template Rendering → Interactive Elements Loading → Gal
 
 ## Recent Changes
 
+- June 21, 2025: Cleared all test reviews and photos, ready for real customer reviews
 - June 21, 2025: Connected WhatsApp button to business number (+971564649609)
 - June 21, 2025: Completed full Spanish translation system for all homepage sections including Travel Agencies and Contact Us sections
 - June 21, 2025: Enhanced country dropdown with 90+ countries and keyboard search functionality
