@@ -112,13 +112,35 @@ class BookingModal {
             if (e.target.classList.contains('book-tour-btn')) {
                 console.log('Book tour button clicked!');
                 e.preventDefault();
-                const tourCard = e.target.closest('.tour-preview-card');
+                
+                // Find the tour card - button is in tour-details, need to find the associated preview card
+                const tourDetails = e.target.closest('.tour-details');
+                let tourCard = null;
+                let tourTitle = '';
+                let tourDescription = '';
+                
+                if (tourDetails) {
+                    // Get the ID from tour-details (e.g., "modern-details")
+                    const detailsId = tourDetails.id;
+                    const tourType = detailsId.replace('-details', '');
+                    
+                    // Find the corresponding tour preview card
+                    tourCard = document.querySelector(`.tour-preview-card[data-tour="${tourType}"]`);
+                }
+                
                 if (!tourCard) {
-                    console.error('Tour card not found');
+                    console.error('Tour card not found, trying fallback method');
+                    // Fallback: try to find any tour card near the button
+                    tourCard = e.target.closest('.tour-section').querySelector('.tour-preview-card');
+                }
+                
+                if (!tourCard) {
+                    console.error('Still no tour card found');
                     return;
                 }
-                const tourTitle = tourCard.querySelector('h3').textContent;
-                const tourDescription = tourCard.querySelector('p').textContent;
+                
+                tourTitle = tourCard.querySelector('h3').textContent;
+                tourDescription = tourCard.querySelector('p').textContent;
                 console.log('Opening modal for:', tourTitle);
                 this.openModal(tourTitle, tourDescription);
             }
