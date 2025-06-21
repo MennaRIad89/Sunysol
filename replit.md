@@ -114,6 +114,13 @@ Tour Page Access → Template Rendering → Interactive Elements Loading → Gal
 - **CSS/JS**: Bundled and served as static assets
 - **Uploads**: Review photos stored in static/review_photos/
 
+## Recent Changes
+
+- June 21, 2025: Completed full Spanish translation system for all homepage sections including Travel Agencies and Contact Us sections
+- June 21, 2025: Enhanced country dropdown with 90+ countries and keyboard search functionality
+- June 21, 2025: Updated review display format to show reviewer name (bold) and country (small text) separately
+- June 21, 2025: Fixed tour navigation background color consistency (#FFF8E9) across all sections
+
 ## Changelog
 
 - June 17, 2025. Initial setup
