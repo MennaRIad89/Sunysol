@@ -1,6 +1,6 @@
 import os
 import logging
-from flask import Flask, render_template, request, flash, redirect, url_for, session, g
+from flask import Flask, render_template, request, flash, redirect, url_for, session, g, jsonify
 
 from translations import TRANSLATIONS
 
@@ -256,19 +256,39 @@ def send_message():
     try:
         name = request.form.get('name')
         email = request.form.get('email')
-        traveler_type = request.form.get('traveler_type')
-        message = request.form.get('message')
+        message_type = request.form.get('message_type', 'contact')
+        
+        if message_type == 'tour_booking':
+            # Handle tour booking request
+            tour_name = request.form.get('tour_name')
+            phone = request.form.get('phone')
+            tour_date = request.form.get('tour_date')
+            group_size = request.form.get('group_size')
+            tour_type = request.form.get('tour_type')
+            special_requests = request.form.get('special_requests')
+            
+            logging.info(
+                f"Tour booking request from {name} ({email}, {phone}) for {tour_name} on {tour_date}, group size: {group_size}, type: {tour_type}, requests: {special_requests}"
+            )
+            
+            return jsonify({'status': 'success', 'message': 'Booking request received'})
+        else:
+            # Handle regular contact form
+            traveler_type = request.form.get('traveler_type')
+            message = request.form.get('message')
+            
+            logging.info(
+                f"Contact message received from {name} ({email}), {traveler_type}: {message}"
+            )
+            
+            flash(g.translations['thank_you_message'], "success")
 
-        # Here we would normally send an email or save to a database
-        # For now, we'll just log it
-        logging.info(
-            f"Contact message received from {name} ({email}), {traveler_type}: {message}"
-        )
-
-        flash(g.translations['thank_you_message'], "success")
     except Exception as e:
-        logging.error(f"Error processing contact form: {str(e)}")
-        flash(g.translations['error_message'], "error")
+        logging.error(f"Error processing form: {str(e)}")
+        if message_type == 'tour_booking':
+            return jsonify({'status': 'error', 'message': 'Error processing booking request'})
+        else:
+            flash(g.translations['error_message'], "error")
 
     return redirect(url_for('index', _anchor='contact'))
 
