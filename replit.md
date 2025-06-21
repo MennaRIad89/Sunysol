@@ -116,6 +116,7 @@ Tour Page Access → Template Rendering → Interactive Elements Loading → Gal
 
 ## Recent Changes
 
+- June 21, 2025: Implemented separate gallery system for each tour with fallback to main gallery
 - June 21, 2025: Enhanced lightbox navigation with image preloading and transition optimization for smooth browsing
 - June 21, 2025: Optimized gallery loading speed by compressing images (80-90% size reduction) and adding lazy loading
 - June 21, 2025: Fixed lightbox image sizing to display consistently on mobile and desktop with proper viewport constraints
