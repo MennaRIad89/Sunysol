@@ -50,12 +50,8 @@ def get_gallery_images(gallery_type=None):
         return ' '.join(capitalized_words) + ' - UAE Tour'
     
     images = []
-    # Look for any image files in the images folder (not just gallery_*)
-    image_files = glob.glob('static/images/*.jpg') + glob.glob('static/images/*.jpeg') + glob.glob('static/images/*.png')
-    
-    # Filter out logo and system images
-    excluded_files = ['logo.png', 'logo.svg', 'partner-collaboration.png']
-    image_files = [f for f in image_files if os.path.basename(f) not in excluded_files]
+    # Look for image files in the galleries folder
+    image_files = glob.glob('static/images/galleries/*.jpg') + glob.glob('static/images/galleries/*.jpeg') + glob.glob('static/images/galleries/*.png')
     
     # Sort by filename to maintain order
     image_files.sort()
@@ -65,7 +61,7 @@ def get_gallery_images(gallery_type=None):
         alt_text = filename_to_alt_text(filename)
         
         images.append({
-            'src': f'images/{filename}',
+            'src': f'images/galleries/{filename}',
             'alt': alt_text
         })
     
