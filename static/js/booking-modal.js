@@ -108,11 +108,18 @@ class BookingModal {
     bindEvents() {
         // Book tour button clicks
         document.addEventListener('click', (e) => {
+            console.log('Click detected on:', e.target);
             if (e.target.classList.contains('book-tour-btn')) {
+                console.log('Book tour button clicked!');
                 e.preventDefault();
                 const tourCard = e.target.closest('.tour-preview-card');
+                if (!tourCard) {
+                    console.error('Tour card not found');
+                    return;
+                }
                 const tourTitle = tourCard.querySelector('h3').textContent;
                 const tourDescription = tourCard.querySelector('p').textContent;
+                console.log('Opening modal for:', tourTitle);
                 this.openModal(tourTitle, tourDescription);
             }
         });
@@ -303,5 +310,7 @@ class BookingModal {
 
 // Initialize booking modal when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing booking modal...');
     window.bookingModal = new BookingModal();
+    console.log('Booking modal initialized');
 });
