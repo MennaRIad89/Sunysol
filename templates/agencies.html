@@ -1,6 +1,17 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+<style>
+body {
+    background-color: var(--bg-color) !important;
+}
+main {
+    background-color: var(--bg-color) !important;
+}
+.agency-intro-section, .agency-offers-section {
+    background-color: var(--bg-color) !important;
+}
+</style>
 <!-- Flash Messages -->
 {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
