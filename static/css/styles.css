@@ -402,7 +402,7 @@ body.dubai-tours-page {
 .tour-preview-card {
     display: flex;
     align-items: center;
-    background: white;
+    background: #f8efe5;
     border-radius: 15px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -498,7 +498,7 @@ body.dubai-tours-page {
     overflow: hidden;
     transition: max-height 0.5s ease, opacity 0.3s ease;
     opacity: 0;
-    background: white;
+    background: #f8efe5;
     border-radius: 0 0 15px 15px;
     margin-top: -20px;
     margin-bottom: 20px;
