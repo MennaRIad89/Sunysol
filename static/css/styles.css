@@ -1496,9 +1496,16 @@ body.dubai-tours-page {
 }
 
 .reviewer-details h4 {
-    margin: 0 0 4px 0;
+    margin: 0 0 2px 0;
     font-size: 1.1rem;
     color: var(--text-color);
+    font-weight: bold;
+}
+
+.reviewer-country {
+    font-size: 0.85rem;
+    color: var(--secondary-accent);
+    margin-bottom: 4px;
 }
 
 .stars {

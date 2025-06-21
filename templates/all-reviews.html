@@ -41,7 +41,10 @@ main {
                                 </div>
                             </div>
                             <div class="reviewer-details">
-                                <h4>{{ review.name }}{% if review.country %}, {{ review.country }}{% endif %}</h4>
+                                <h4>{{ review.name }}</h4>
+                                {% if review.country %}
+                                    <div class="reviewer-country">{{ review.country }}</div>
+                                {% endif %}
                                 <div class="stars">
                                     {% for i in range(5) %}
                                         {% if i < review.rating %}
