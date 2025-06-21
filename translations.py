@@ -115,6 +115,56 @@ TRANSLATIONS = {
         'Submit Review',
         'see_all_reviews':
         'See All Reviews',
+
+        # Homepage sections
+        'homepage_agencies_title':
+        'For Travel Agencies',
+        'homepage_agencies_subtitle':
+        'For Travel Agencies & Tour Operators',
+        'homepage_agencies_description':
+        'If you\'re a travel agency or tour operator looking to collaborate in the UAE, click below to learn more about our partnership programs.',
+        'homepage_agencies_intro':
+        'Explore flexible collaboration models tailored for travel professionals.',
+        'homepage_benefit_commission':
+        'Commission-Based',
+        'homepage_benefit_commission_desc':
+        'Competitive commission structure with clear terms and transparent payments.',
+        'homepage_benefit_whitelabel':
+        'White-Label Options',
+        'homepage_benefit_whitelabel_desc':
+        'Your brand, my service – seamless integration with your company image.',
+        'homepage_benefit_pricing':
+        'Custom Pricing',
+        'homepage_benefit_pricing_desc':
+        'Flexible per-tour or package booking options to suit your business model.',
+        'homepage_benefit_longterm':
+        'Long-Term Collaborations',
+        'homepage_benefit_longterm_desc':
+        'Develop ongoing relationships with preferred status and enhanced benefits.',
+        'homepage_agencies_learn_more':
+        'Learn More',
+        'homepage_contact_title':
+        'Get In Touch',
+        'homepage_contact_description':
+        'Ready to explore the UAE with us? Have questions about our tours? We\'d love to hear from you!',
+        'homepage_contact_planning_title':
+        'Let\'s Start Planning Your Adventure',
+        'homepage_contact_planning_desc':
+        'Whether you\'re just starting to plan your trip or ready to book, we\'re here to help make your UAE experience unforgettable. No pressure, just friendly advice and expert guidance.',
+        'homepage_contact_whatsapp':
+        'WhatsApp',
+        'homepage_contact_whatsapp_desc':
+        'For quick questions and immediate assistance',
+        'homepage_contact_whatsapp_btn':
+        'Contact via WhatsApp',
+        'homepage_contact_email':
+        'Email',
+        'homepage_contact_email_desc':
+        'For detailed inquiries and bookings',
+        'homepage_contact_follow':
+        'Follow Us',
+        'homepage_contact_form_title':
+        'Send Us a Message',
         'all_reviews_title':
         'All Guest Reviews',
         'all_reviews_subtitle':
