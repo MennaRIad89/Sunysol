@@ -1407,7 +1407,7 @@ body.dubai-tours-page {
 /* ===== Reviews Section ===== */
 .reviews-section {
     padding: 6rem 0;
-    background-color: var(--white);
+    background-color: var(--light-gray);
 }
 
 .reviews-container {
@@ -1554,24 +1554,25 @@ body.dubai-tours-page {
 }
 
 .review-submit {
-    background: linear-gradient(135deg, #e17055, #d63031);
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(232, 106, 51, 0.3);
     border: none;
     padding: 1rem 2rem;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(225, 112, 85, 0.3);
-    text-transform: none;
-    letter-spacing: normal;
+    transition: all 0.4s ease;
+    letter-spacing: 0.5px;
+    min-width: 180px;
 }
 
 .review-submit:hover {
-    background: linear-gradient(135deg, #d63031, #e17055);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(225, 112, 85, 0.4);
+    background-color: var(--secondary-accent);
+    color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(232, 106, 51, 0.4);
 }
 
 .country-flag {
@@ -1777,7 +1778,7 @@ body.dubai-tours-page {
 /* ===== Contact Section ===== */
 .contact-section {
     padding: 6rem 0;
-    background-color: var(--light-gray);
+    background-color: var(--white);
 }
 
 .contact-container {
