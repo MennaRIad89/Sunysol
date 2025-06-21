@@ -177,7 +177,7 @@
             <div class="gallery-carousel-container">
                 <div class="gallery-carousel" id="gallery-carousel">
                     {% for image in gallery_images %}
-                        <img src="{{ url_for('static', filename=image.src) }}" alt="{{ image.alt }}" class="gallery-thumb">
+                        <img src="{{ url_for('static', filename=image.src) }}" alt="{{ image.alt }}" class="gallery-thumb" loading="lazy" decoding="async">
                     {% endfor %}
                 </div>
             </div>

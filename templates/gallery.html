@@ -18,7 +18,7 @@
     <div class="container">
         <div class="gallery-preview-grid">
             {% for image in gallery.images %}
-            <img src="{{ url_for('static', filename=image.src) }}" alt="{{ image.alt }}" class="gallery-thumb">
+            <img src="{{ url_for('static', filename=image.src) }}" alt="{{ image.alt }}" class="gallery-thumb" loading="lazy" decoding="async">
             {% endfor %}
         </div>
         
