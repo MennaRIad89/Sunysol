@@ -74,6 +74,7 @@ def before_request():
     language = session.get('language', 'en')
     g.language = language
     g.translations = TRANSLATIONS[language]
+    g.country_flags = COUNTRY_FLAGS
 
 
 @app.route('/switch_language/<language>')

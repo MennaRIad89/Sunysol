@@ -97,8 +97,8 @@ TRANSLATIONS = {
         'Your Review',
         'review_country':
         'Country',
-        'review_country_placeholder':
-        'e.g., Spain, Mexico, Argentina...',
+        'select_country':
+        'Select your country...',
         'review_email':
         'Email',
         'review_email_placeholder':
@@ -828,8 +828,8 @@ TRANSLATIONS = {
         'Tu Reseña',
         'review_country':
         'País',
-        'review_country_placeholder':
-        'ej., España, México, Argentina...',
+        'select_country':
+        'Selecciona tu país...',
         'review_email':
         'Correo Electrónico',
         'review_email_placeholder':
