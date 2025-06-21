@@ -328,6 +328,9 @@ def gallery_page(gallery_type):
     
     gallery_data = galleries.get(gallery_type)
     if not gallery_data:
+        # Handle legacy routes
+        if gallery_type == 'abudhabi-heritage':
+            return redirect('/galleries/abudhabi-city', code=301)
         return render_template('404.html'), 404
     
     return render_template('gallery.html', gallery=gallery_data, gallery_type=gallery_type)
