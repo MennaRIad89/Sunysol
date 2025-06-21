@@ -289,37 +289,27 @@ def gallery_page(gallery_type):
         'dubai-modern': {
             'title': g.translations.get('dubai_modern_tour', 'Dubai Half Day Modern Tour'),
             'description': g.translations.get('dubai_modern_description', 'Experience Dubai\'s futuristic skyline, luxury hotels, and iconic landmarks including Burj Khalifa, Palm Jumeirah, and Dubai Marina.'),
-            'images': get_gallery_images()
+            'images': get_gallery_images('dubai-modern')
         },
         'dubai-classic': {
             'title': g.translations.get('dubai_heritage_tour', 'Dubai Half Day Classic Heritage Tour'),
             'description': g.translations.get('dubai_heritage_description', 'Discover Dubai\'s traditional charm with visits to historic souks, heritage villages, and authentic cultural sites.'),
-            'images': get_gallery_images()
+            'images': get_gallery_images('dubai-classic')
         },
         'dubai-full': {
             'title': g.translations.get('combo_tour', 'Dubai Full Day Modern & Classic Tour'),
             'description': g.translations.get('combo_description', 'Complete Dubai experience combining modern landmarks and traditional heritage in one comprehensive journey.'),
-            'images': get_gallery_images()
+            'images': get_gallery_images('dubai-full')
         },
         'dubai-cruise': {
             'title': g.translations.get('marina_cruise_tour', 'Dubai Marina Cruise Experience'),
             'description': g.translations.get('marina_cruise_description', 'Enjoy a scenic dhow cruise along Dubai Marina with dinner, entertainment, and stunning waterfront views.'),
-            'images': [
-                {'src': 'images/marina-cruise.jpg', 'alt': 'Dubai Marina Dhow Cruise'},
-                {'src': 'images/dubai-modern-2.jpg', 'alt': 'Marina Skyline Views'},
-                {'src': 'images/Gallary_Photo2.jpg', 'alt': 'Cruise Experience'},
-                {'src': 'images/combo-dubai.jpg', 'alt': 'Dubai Marina Tour'},
-            ]
+            'images': get_gallery_images('dubai-cruise')
         },
         'dubai-desert': {
             'title': g.translations.get('desert_safari_tour', 'Desert Safari Tour'),
             'description': g.translations.get('desert_safari_description', 'Adventure and culture in the Arabian desert with dune bashing, camel riding, and traditional Bedouin entertainment.'),
-            'images': [
-                {'src': 'images/desert-safari.jpg', 'alt': 'Desert Safari Adventure'},
-                {'src': 'images/Gallary_Photo3.jpg', 'alt': 'Desert Experience'},
-                {'src': 'images/heritage-dubai.jpg', 'alt': 'Desert Cultural Activities'},
-                {'src': 'images/combo-dubai.jpg', 'alt': 'Desert Safari Tour'},
-            ]
+            'images': get_gallery_images('dubai-desert')
         },
         'abudhabi-heritage': {
             'title': g.translations.get('abudhabi_heritage_tour', 'Abu Dhabi Full Day Heritage Edition Tour'),
