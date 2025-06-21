@@ -13,18 +13,60 @@ app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
 def get_gallery_images(gallery_type=None):
     """Load gallery images from static/images folder"""
     import glob
+    import re
+    
+    def filename_to_alt_text(filename):
+        """Convert filename to descriptive alt text"""
+        # Remove file extension
+        name = os.path.splitext(filename)[0]
+        
+        # Replace underscores with spaces
+        name = name.replace('_', ' ')
+        
+        # Capitalize words
+        words = name.split()
+        capitalized_words = []
+        
+        for word in words:
+            # Special handling for common UAE locations
+            if word.lower() in ['dubai', 'abudhabi', 'abu', 'dhabi', 'sharjah', 'ajman', 'fujairah', 'uae']:
+                if word.lower() == 'abudhabi':
+                    capitalized_words.append('Abu Dhabi')
+                elif word.lower() == 'abu':
+                    capitalized_words.append('Abu')
+                elif word.lower() == 'dhabi':
+                    capitalized_words.append('Dhabi')
+                else:
+                    capitalized_words.append(word.capitalize())
+            # Special handling for landmarks
+            elif word.lower() in ['burj', 'khalifa', 'mosque', 'louvre', 'marina', 'frame', 'safari', 'desert']:
+                capitalized_words.append(word.capitalize())
+            # Handle numbers at the end
+            elif word.isdigit():
+                continue  # Skip number suffixes in alt text
+            else:
+                capitalized_words.append(word.capitalize())
+        
+        return ' '.join(capitalized_words) + ' - UAE Tour'
     
     images = []
-    image_files = glob.glob('static/images/gallery_*.jpg') + glob.glob('static/images/gallery_*.jpeg') + glob.glob('static/images/gallery_*.png')
+    # Look for any image files in the images folder (not just gallery_*)
+    image_files = glob.glob('static/images/*.jpg') + glob.glob('static/images/*.jpeg') + glob.glob('static/images/*.png')
+    
+    # Filter out logo and system images
+    excluded_files = ['logo.png', 'logo.svg', 'partner-collaboration.png']
+    image_files = [f for f in image_files if os.path.basename(f) not in excluded_files]
     
     # Sort by filename to maintain order
     image_files.sort()
     
-    for i, image_path in enumerate(image_files, 1):
+    for image_path in image_files:
         filename = os.path.basename(image_path)
+        alt_text = filename_to_alt_text(filename)
+        
         images.append({
             'src': f'images/{filename}',
-            'alt': f'UAE Tour Gallery Image {i}'
+            'alt': alt_text
         })
     
     return images
