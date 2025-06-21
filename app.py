@@ -176,9 +176,7 @@ def northern_emirates_tours():
     return render_template('northern_emirates_tours.html')
 
 
-@app.route('/galleries/dubai-modern')
-def dubai_modern_gallery():
-    return render_template('dubai-modern-gallery.html')
+
 
 
 
