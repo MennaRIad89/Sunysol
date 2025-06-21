@@ -1407,7 +1407,6 @@ body.dubai-tours-page {
 /* ===== Reviews Section ===== */
 .reviews-section {
     padding: 6rem 0;
-    background-color: var(--light-gray);
 }
 
 .reviews-container {
@@ -1778,7 +1777,7 @@ body.dubai-tours-page {
 /* ===== Contact Section ===== */
 .contact-section {
     padding: 6rem 0;
-    background-color: var(--white);
+    background-color: var(--light-gray);
 }
 
 .contact-container {
