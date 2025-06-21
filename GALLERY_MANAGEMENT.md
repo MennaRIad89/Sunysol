@@ -9,7 +9,7 @@ Your website now supports separate galleries for each tour. Here's how to add, r
 ```
 static/images/
 ├── Gallaries/                    # Main homepage gallery (your current 37 images)
-└── galleries/                    # Tour-specific galleries
+└── Tour Galleries/               # Tour-specific galleries
     ├── dubai-modern/            # Dubai Modern Tour images
     ├── dubai-classic/           # Dubai Classic Heritage Tour images  
     ├── dubai-full/              # Dubai Full Day Tour images
@@ -30,12 +30,12 @@ static/images/
 ## Managing Tour Images
 
 ### To Add Images to a Specific Tour:
-1. Go to `static/images/galleries/[tour-name]/`
+1. Go to `static/images/Tour Galleries/[tour-name]/`
 2. Upload your tour-specific images
 3. Images will automatically appear in that tour's gallery
 
 ### To Remove Images from a Tour:
-1. Delete image files from `static/images/galleries/[tour-name]/`
+1. Delete image files from `static/images/Tour Galleries/[tour-name]/`
 2. If you delete all images, the tour will show your main gallery as fallback
 
 ### To Change Image Order:
@@ -56,11 +56,11 @@ static/images/
 ## Examples
 
 **Add Dubai Modern Tour images:**
-- Upload to: `static/images/galleries/dubai-modern/`
+- Upload to: `static/images/Tour Galleries/dubai-modern/`
 - Files: `01-burj-khalifa.jpg`, `02-palm-jumeirah.jpg`, etc.
 
 **Add Desert Safari images:**
-- Upload to: `static/images/galleries/dubai-desert/`
+- Upload to: `static/images/Tour Galleries/dubai-desert/`
 - Files: `01-dune-bashing.jpg`, `02-camel-ride.jpg`, etc.
 
 ## Current Status
