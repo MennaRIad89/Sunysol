@@ -117,8 +117,10 @@ TRANSLATIONS = {
         'See All Reviews',
         'all_reviews_title':
         'All Guest Reviews',
+        'all_reviews_subtitle':
+        'Authentic experiences from our valued guests',
         'all_reviews_description':
-        'Read what our guests have to say about their experiences with Sun y Sol tours.',
+        'Read what our guests have to say about their experiences with Sun y Sol tours. Every review helps us continue providing exceptional service and unforgettable memories.',
         'review_date':
         'March 2024',
         'back_to_home':
@@ -846,8 +848,10 @@ TRANSLATIONS = {
         'Ver Todas las Reseñas',
         'all_reviews_title':
         'Todas las Reseñas de Huéspedes',
+        'all_reviews_subtitle':
+        'Experiencias auténticas de nuestros huéspedes valorados',
         'all_reviews_description':
-        'Lee lo que nuestros huéspedes tienen que decir sobre sus experiencias con los tours de Sun y Sol.',
+        'Lee lo que nuestros huéspedes tienen que decir sobre sus experiencias con los tours de Sun y Sol. Cada reseña nos ayuda a continuar brindando un servicio excepcional y recuerdos inolvidables.',
         'review_date':
         'Marzo 2024',
         'back_to_home':

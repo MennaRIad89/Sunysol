@@ -3,17 +3,26 @@
 {% block title %}{{ g.translations.all_reviews_title or "All Reviews" }} - Sun y Sol{% endblock %}
 
 {% block content %}
-<div class="all-reviews-page">
-    <!-- Hero Section -->
-    <section class="reviews-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>{{ g.translations.all_reviews_title or "All Guest Reviews" }}</h1>
-                <p>{{ g.translations.all_reviews_description or "Read what our guests have to say about their experiences with Sun y Sol tours." }}</p>
-                <a href="{{ url_for('index') }}#reviews" class="btn primary-btn">{{ g.translations.leave_review or "Leave a Review" }}</a>
-            </div>
-        </div>
-    </section>
+<style>
+body {
+    background-color: white !important;
+}
+main {
+    background-color: white !important;
+}
+.all-reviews-section {
+    background-color: white !important;
+}
+</style>
+<!-- Hero Section -->
+<section id="reviews-hero" class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ url_for('static', filename='images/burj-khalifa.png') }}') no-repeat center center/cover;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>{{ g.translations.all_reviews_title or "All Guest Reviews" }}</h1>
+        <h2>{{ g.translations.all_reviews_subtitle or "Authentic experiences from our valued guests" }}</h2>
+        <p>{{ g.translations.all_reviews_description or "Read what our guests have to say about their experiences with Sun y Sol tours. Every review helps us continue providing exceptional service and unforgettable memories." }}</p>
+    </div>
+</section>
 
     <!-- All Reviews List -->
     <section class="all-reviews-section">
@@ -25,7 +34,7 @@
                         <div class="reviewer-info">
                             <div class="reviewer-photo">
                                 {% if review.photos and review.photos|length > 0 %}
-                                    <img src="{{ url_for('static', filename='review_photos/' + review.photos[0]) }}" alt="{{ review.name }}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="{{ url_for('static', filename='review_photos/' + review.photos[0]) }}" alt="{{ review.name }}" class="clickable-photo" onclick="openPhotoModal('{{ url_for('static', filename='review_photos/' + review.photos[0]) }}')" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                 {% endif %}
                                 <div class="default-avatar" {% if review.photos and review.photos|length > 0 %}style="display: none;"{% endif %}>
                                     <i class="fas fa-user"></i>
@@ -52,7 +61,7 @@
                             <div class="review-photos">
                                 {% for photo in review.photos %}
                                     {% if not loop.first %}
-                                        <img src="{{ url_for('static', filename='review_photos/' + photo) }}" alt="Review photo" class="additional-photo">
+                                        <img src="{{ url_for('static', filename='review_photos/' + photo) }}" alt="Review photo" class="additional-photo clickable-photo" onclick="openPhotoModal('{{ url_for('static', filename='review_photos/' + photo) }}')">
                                     {% endif %}
                                 {% endfor %}
                             </div>
@@ -68,4 +77,40 @@
         </div>
     </section>
 </div>
+
+<!-- Photo Modal -->
+<div id="photoModal" class="photo-modal" onclick="closePhotoModal()">
+    <span class="photo-modal-close" onclick="closePhotoModal()">&times;</span>
+    <img class="photo-modal-content" id="modalPhoto" alt="Review photo">
+</div>
+
+<script>
+function openPhotoModal(photoSrc) {
+    var modal = document.getElementById('photoModal');
+    var modalImg = document.getElementById('modalPhoto');
+    modal.style.display = 'block';
+    modalImg.src = photoSrc;
+    document.body.style.overflow = 'hidden';
+}
+
+function closePhotoModal() {
+    var modal = document.getElementById('photoModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside the image
+document.getElementById('photoModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closePhotoModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closePhotoModal();
+    }
+});
+</script>
 {% endblock %}
