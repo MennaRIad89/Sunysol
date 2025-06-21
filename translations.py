@@ -373,6 +373,8 @@ TRANSLATIONS = {
         'Back to Northern Emirates Tours',
         
         # Tours intro text
+        'tours_title':
+        'Our Tours',
         'tours_intro_text':
         'Whether you\'re looking for adventure, culture, or simply a memorable time with your loved ones, I\'ll make sure you have fun, feel relaxed, and enjoy every moment of your journey through the UAE.',
         
@@ -1132,6 +1134,8 @@ TRANSLATIONS = {
         'Volver a Tours de los Emiratos del Norte',
         
         # Tours intro text
+        'tours_title':
+        'Nuestros Tours',
         'tours_intro_text':
         'Ya sea que busques aventura, cultura, o simplemente un momento memorable con tus seres queridos, me aseguraré de que te diviertas, te sientas relajado y disfrutes cada momento de tu viaje por los Emiratos Árabes Unidos.',
         
