@@ -116,6 +116,7 @@ Tour Page Access → Template Rendering → Interactive Elements Loading → Gal
 
 ## Recent Changes
 
+- June 21, 2025: Fixed lightbox image sizing to display consistently on mobile and desktop with proper viewport constraints
 - June 21, 2025: Updated homepage gallery section to display all 42 user images from Gallaries folder with descriptive alt text
 - June 21, 2025: Fixed gallery system to load from static/images/Gallaries/ folder containing 42 user gallery images with auto-generated descriptive alt text
 - June 21, 2025: Updated gallery system to automatically generate descriptive alt text from filenames and load all user images dynamically
