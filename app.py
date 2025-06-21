@@ -11,9 +11,10 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
 
 def get_gallery_images(gallery_type=None):
-    """Load gallery images from static/images folder"""
+    """Load gallery images from static/images/galleries folder if it exists, otherwise fallback to main images"""
     import glob
     import re
+    import os
     
     def filename_to_alt_text(filename):
         """Convert filename to descriptive alt text"""
@@ -50,8 +51,17 @@ def get_gallery_images(gallery_type=None):
         return ' '.join(capitalized_words) + ' - UAE Tour'
     
     images = []
-    # Look for image files in the galleries folder
-    image_files = glob.glob('static/images/galleries/*.jpg') + glob.glob('static/images/galleries/*.jpeg') + glob.glob('static/images/galleries/*.png')
+    
+    # First try to load from Gallaries folder (note the spelling)
+    if os.path.exists('static/images/Gallaries'):
+        image_files = glob.glob('static/images/Gallaries/*.jpg') + glob.glob('static/images/Gallaries/*.jpeg') + glob.glob('static/images/Gallaries/*.png')
+        folder_path = 'images/Gallaries/'
+    else:
+        # Fallback to main images folder, excluding system files
+        image_files = glob.glob('static/images/*.jpg') + glob.glob('static/images/*.jpeg') + glob.glob('static/images/*.png')
+        excluded_files = ['logo.png', 'logo.svg', 'partner-collaboration.png', 'Meet Menna.jpg']
+        image_files = [f for f in image_files if os.path.basename(f) not in excluded_files]
+        folder_path = 'images/'
     
     # Sort by filename to maintain order
     image_files.sort()
@@ -61,7 +71,7 @@ def get_gallery_images(gallery_type=None):
         alt_text = filename_to_alt_text(filename)
         
         images.append({
-            'src': f'images/galleries/{filename}',
+            'src': f'{folder_path}{filename}',
             'alt': alt_text
         })
     
@@ -265,17 +275,17 @@ def gallery_page(gallery_type):
         'dubai-modern': {
             'title': g.translations.get('dubai_modern_tour', 'Dubai Half Day Modern Tour'),
             'description': g.translations.get('dubai_modern_description', 'Experience Dubai\'s futuristic skyline, luxury hotels, and iconic landmarks including Burj Khalifa, Palm Jumeirah, and Dubai Marina.'),
-            'images': get_gallery_images('dubai-modern')
+            'images': get_gallery_images()
         },
         'dubai-classic': {
             'title': g.translations.get('dubai_heritage_tour', 'Dubai Half Day Classic Heritage Tour'),
             'description': g.translations.get('dubai_heritage_description', 'Discover Dubai\'s traditional charm with visits to historic souks, heritage villages, and authentic cultural sites.'),
-            'images': get_gallery_images('dubai-classic')
+            'images': get_gallery_images()
         },
         'dubai-full': {
             'title': g.translations.get('combo_tour', 'Dubai Full Day Modern & Classic Tour'),
             'description': g.translations.get('combo_description', 'Complete Dubai experience combining modern landmarks and traditional heritage in one comprehensive journey.'),
-            'images': get_gallery_images('dubai-full')
+            'images': get_gallery_images()
         },
         'dubai-cruise': {
             'title': g.translations.get('marina_cruise_tour', 'Dubai Marina Cruise Experience'),
