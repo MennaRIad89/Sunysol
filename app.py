@@ -267,6 +267,13 @@ def send_message():
             tour_type = request.form.get('tour_type')
             special_requests = request.form.get('special_requests')
             
+            # Send email notification to booking@sunysol.ae
+            try:
+                send_booking_email(name, email, phone, tour_name, tour_date, group_size, tour_type, special_requests)
+                logging.info(f"Booking email sent successfully for {tour_name} from {name}")
+            except Exception as email_error:
+                logging.error(f"Failed to send booking email: {str(email_error)}")
+            
             logging.info(
                 f"Tour booking request from {name} ({email}, {phone}) for {tour_name} on {tour_date}, group size: {group_size}, type: {tour_type}, requests: {special_requests} - Forward to booking@sunysol.ae"
             )
@@ -276,6 +283,13 @@ def send_message():
             # Handle regular contact form
             traveler_type = request.form.get('traveler_type')
             message = request.form.get('message')
+            
+            # Send email notification to info@sunysol.ae
+            try:
+                send_contact_email(name, email, traveler_type, message)
+                logging.info(f"Contact email sent successfully from {name}")
+            except Exception as email_error:
+                logging.error(f"Failed to send contact email: {str(email_error)}")
             
             logging.info(
                 f"Contact message received from {name} ({email}), {traveler_type}: {message} - Forward to info@sunysol.ae"
@@ -291,6 +305,107 @@ def send_message():
             flash(g.translations['error_message'], "error")
 
     return redirect(url_for('index', _anchor='contact'))
+
+
+def send_booking_email(name, email, phone, tour_name, tour_date, group_size, tour_type, special_requests):
+    """Send booking notification email to booking@sunysol.ae"""
+    
+    # Email configuration - will use environment variables for SMTP settings
+    smtp_server = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
+    smtp_port = int(os.environ.get('SMTP_PORT', '587'))
+    smtp_username = os.environ.get('SMTP_USERNAME', 'info@sunysol.ae')
+    smtp_password = os.environ.get('SMTP_PASSWORD', '')
+    
+    if not smtp_password:
+        # Log that email sending is skipped due to missing configuration
+        logging.info("Email configuration not found - booking logged but not emailed")
+        return
+    
+    # Create message
+    msg = MIMEMultipart()
+    msg['From'] = smtp_username
+    msg['To'] = 'booking@sunysol.ae'
+    msg['Subject'] = f'New Tour Booking Request - {tour_name}'
+    
+    # Email body
+    body = f"""
+New Tour Booking Request
+
+Tour Details:
+- Tour: {tour_name}
+- Date: {tour_date or 'Flexible'}
+- Group Size: {group_size}
+- Tour Type: {tour_type or 'Private Tour'}
+
+Customer Information:
+- Name: {name}
+- Email: {email}
+- Phone: {phone}
+
+Special Requests:
+{special_requests or 'None'}
+
+Please contact the customer within 24 hours to confirm availability and provide pricing.
+
+---
+Sun y Sol Tours
+www.sunysol.ae
+    """
+    
+    msg.attach(MIMEText(body, 'plain'))
+    
+    # Send email
+    server = smtplib.SMTP(smtp_server, smtp_port)
+    server.starttls()
+    server.login(smtp_username, smtp_password)
+    server.send_message(msg)
+    server.quit()
+
+
+def send_contact_email(name, email, traveler_type, message):
+    """Send contact form notification email to info@sunysol.ae"""
+    
+    # Email configuration
+    smtp_server = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
+    smtp_port = int(os.environ.get('SMTP_PORT', '587'))
+    smtp_username = os.environ.get('SMTP_USERNAME', 'info@sunysol.ae')
+    smtp_password = os.environ.get('SMTP_PASSWORD', '')
+    
+    if not smtp_password:
+        logging.info("Email configuration not found - contact message logged but not emailed")
+        return
+    
+    # Create message
+    msg = MIMEMultipart()
+    msg['From'] = smtp_username
+    msg['To'] = 'info@sunysol.ae'
+    msg['Subject'] = f'New Contact Message from {name}'
+    
+    # Email body
+    body = f"""
+New Contact Form Submission
+
+Customer Information:
+- Name: {name}
+- Email: {email}
+- Traveler Type: {traveler_type}
+
+Message:
+{message}
+
+---
+Sun y Sol Tours
+www.sunysol.ae
+    """
+    
+    msg.attach(MIMEText(body, 'plain'))
+    
+    # Send email
+    server = smtplib.SMTP(smtp_server, smtp_port)
+    server.starttls()
+    server.login(smtp_username, smtp_password)
+    server.send_message(msg)
+    server.quit()
 
 
 @app.route('/all-reviews')
