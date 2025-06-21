@@ -194,11 +194,105 @@ class BookingModal {
     closeModal() {
         this.modal.classList.remove('active');
         document.body.style.overflow = '';
-        this.resetForm();
+        // Delay form reset to allow for smooth closing animation
+        setTimeout(() => {
+            this.resetForm();
+        }, 300);
     }
 
     resetForm() {
-        document.getElementById('bookingForm').reset();
+        const form = document.getElementById('bookingForm');
+        if (form) {
+            form.reset();
+        }
+        
+        // Reset modal body to original form
+        const modalBody = this.modal.querySelector('.booking-modal-body');
+        if (modalBody && !modalBody.querySelector('#bookingForm')) {
+            this.createModalForm();
+        }
+    }
+    
+    createModalForm() {
+        const modalBody = this.modal.querySelector('.booking-modal-body');
+        modalBody.innerHTML = `
+            <form id="bookingForm">
+                <div class="booking-form-group">
+                    <label for="bookingName" class="required">Full Name</label>
+                    <input type="text" id="bookingName" name="name" required>
+                </div>
+                
+                <div class="booking-form-row">
+                    <div class="booking-form-group">
+                        <label for="bookingEmail" class="required">Email Address</label>
+                        <input type="email" id="bookingEmail" name="email" required>
+                    </div>
+                    <div class="booking-form-group">
+                        <label for="bookingPhone" class="required">Phone Number</label>
+                        <input type="tel" id="bookingPhone" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="booking-form-row">
+                    <div class="booking-form-group">
+                        <label for="bookingDate">Preferred Date</label>
+                        <input type="date" id="bookingDate" name="date" min="">
+                    </div>
+                    <div class="booking-form-group">
+                        <label for="bookingGroupSize" class="required">Group Size</label>
+                        <select id="bookingGroupSize" name="groupSize" required>
+                            <option value="">Select group size</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6 People</option>
+                            <option value="7">7 People</option>
+                            <option value="8">8 People</option>
+                            <option value="9+">9+ People</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="booking-form-group">
+                    <label for="bookingType">Tour Type</label>
+                    <select id="bookingType" name="tourType">
+                        <option value="private">Private Tour (Recommended)</option>
+                        <option value="group">Join Group Tour</option>
+                        <option value="vip">VIP Experience</option>
+                    </select>
+                </div>
+
+                <div class="booking-form-group">
+                    <label for="bookingRequests">Special Requests or Questions</label>
+                    <textarea id="bookingRequests" name="requests" placeholder="Any special requirements, dietary restrictions, accessibility needs, or questions about the tour..."></textarea>
+                </div>
+
+                <div class="booking-form-note">
+                    <i class="fas fa-info-circle"></i>
+                    <strong>Note:</strong> This is not a confirmed booking. We'll contact you within 2 hours to confirm availability, provide exact pricing, and arrange payment details.
+                </div>
+
+                <div class="booking-actions">
+                    <button type="button" class="booking-btn booking-btn-whatsapp" id="bookingWhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                        Send via WhatsApp
+                    </button>
+                    <button type="submit" class="booking-btn booking-btn-email">
+                        <i class="fas fa-envelope"></i>
+                        Send via Email
+                    </button>
+                </div>
+            </form>
+        `;
+        
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        const dateInput = modalBody.querySelector('#bookingDate');
+        if (dateInput) {
+            dateInput.setAttribute('min', today);
+        }
     }
 
     getFormData() {
@@ -327,6 +421,11 @@ class BookingModal {
                 </div>
             </div>
         `;
+        
+        // Auto-close after 3 seconds to allow multiple bookings
+        setTimeout(() => {
+            this.closeModal();
+        }, 3000);
     }
 }
 
