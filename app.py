@@ -10,6 +10,25 @@ from translations import TRANSLATIONS
 app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
 
+def get_gallery_images(gallery_type=None):
+    """Load gallery images from static/images folder"""
+    import glob
+    
+    images = []
+    image_files = glob.glob('static/images/gallery_*.jpg') + glob.glob('static/images/gallery_*.jpeg') + glob.glob('static/images/gallery_*.png')
+    
+    # Sort by filename to maintain order
+    image_files.sort()
+    
+    for i, image_path in enumerate(image_files, 1):
+        filename = os.path.basename(image_path)
+        images.append({
+            'src': f'images/{filename}',
+            'alt': f'UAE Tour Gallery Image {i}'
+        })
+    
+    return images
+
 def load_reviews():
     """Load reviews from JSON file with fallback to default reviews"""
     import json
@@ -208,34 +227,17 @@ def gallery_page(gallery_type):
         'dubai-modern': {
             'title': g.translations.get('dubai_modern_tour', 'Dubai Half Day Modern Tour'),
             'description': g.translations.get('dubai_modern_description', 'Experience Dubai\'s futuristic skyline, luxury hotels, and iconic landmarks including Burj Khalifa, Palm Jumeirah, and Dubai Marina.'),
-            'images': [
-                {'src': 'images/dubai-modern-1.jpg', 'alt': 'Dubai Modern Architecture'},
-                {'src': 'images/dubai-modern-2.jpg', 'alt': 'Dubai Skyline View'},
-                {'src': 'images/dubai-modern-3.jpg', 'alt': 'Modern Dubai Landmarks'},
-                {'src': 'images/burj-khalifa.png', 'alt': 'Burj Khalifa Tower'},
-                {'src': 'images/combo-dubai.jpg', 'alt': 'Dubai City Combo'},
-            ]
+            'images': get_gallery_images('dubai-modern')
         },
         'dubai-classic': {
             'title': g.translations.get('dubai_heritage_tour', 'Dubai Half Day Classic Heritage Tour'),
             'description': g.translations.get('dubai_heritage_description', 'Discover Dubai\'s traditional charm with visits to historic souks, heritage villages, and authentic cultural sites.'),
-            'images': [
-                {'src': 'images/heritage-dubai.jpg', 'alt': 'Dubai Heritage Village'},
-                {'src': 'images/Gallary_Photo1.jpg', 'alt': 'Traditional Dubai Souks'},
-                {'src': 'images/combo-dubai.jpg', 'alt': 'Classic Dubai Tour'},
-                {'src': 'images/burj-khalifa.png', 'alt': 'Dubai Iconic Views'},
-            ]
+            'images': get_gallery_images('dubai-classic')
         },
         'dubai-full': {
             'title': g.translations.get('combo_tour', 'Dubai Full Day Modern & Classic Tour'),
             'description': g.translations.get('combo_description', 'Complete Dubai experience combining modern landmarks and traditional heritage in one comprehensive journey.'),
-            'images': [
-                {'src': 'images/combo-dubai.jpg', 'alt': 'Full Day Dubai Tour'},
-                {'src': 'images/dubai-modern-1.jpg', 'alt': 'Modern Dubai Highlights'},
-                {'src': 'images/heritage-dubai.jpg', 'alt': 'Heritage Dubai Sites'},
-                {'src': 'images/burj-khalifa.png', 'alt': 'Burj Khalifa Experience'},
-                {'src': 'images/Gallary_Photo1.jpg', 'alt': 'Dubai Complete Tour'},
-            ]
+            'images': get_gallery_images('dubai-full')
         },
         'dubai-cruise': {
             'title': g.translations.get('marina_cruise_tour', 'Dubai Marina Cruise Experience'),
