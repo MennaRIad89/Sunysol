@@ -25,7 +25,7 @@ class BookingModal {
                     <div class="booking-modal-body">
                         <form id="bookingForm">
                             <div class="booking-form-group">
-                                <label for="bookingName" class="required">Full Name</label>
+                                <label for="bookingName" class="required">${this.getTranslation('booking_name', 'Full Name')}</label>
                                 <input type="text" id="bookingName" name="name" required>
                             </div>
                             
