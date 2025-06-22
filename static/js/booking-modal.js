@@ -645,10 +645,17 @@ class BookingModal {
     }
 
     getFormData() {
+        // Get the correct country code based on screen size
+        const mobileSelect = document.getElementById('bookingCountryCodeMobile');
+        const desktopSelect = document.getElementById('bookingCountryCodeDesktop');
+        const activeSelect = (window.innerWidth <= 768 ? mobileSelect : desktopSelect);
+        const countryCode = activeSelect ? activeSelect.value : '+971';
+        const phoneNumber = document.getElementById('bookingPhone').value;
+        
         return {
             name: document.getElementById('bookingName').value,
             email: document.getElementById('bookingEmail').value,
-            phone: document.getElementById('bookingPhone').value,
+            phone: countryCode + phoneNumber,
             startDate: document.getElementById('bookingStartDate').value,
             endDate: document.getElementById('bookingEndDate').value,
             groupSize: document.getElementById('bookingGroupSize').value,
@@ -753,11 +760,16 @@ class BookingModal {
         const fullPhone = countryCode + phoneNumber;
         
         const emailData = {
-            ...data,
+            name: data.name,
+            email: data.email,
             phone: fullPhone,
             tour_name: this.currentTour.title,
+            tour_date: data.startDate,
             start_date: data.startDate,
             end_date: data.endDate,
+            group_size: data.groupSize,
+            tour_type: data.tourType,
+            special_requests: data.requests,
             message_type: 'tour_booking'
         };
         
