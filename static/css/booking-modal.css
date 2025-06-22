@@ -112,13 +112,33 @@
     gap: 0.5rem;
 }
 
+/* Country Select Styling */
+.country-select {
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+}
+
 .phone-input-group select {
-    width: 200px;
+    width: 280px;
     flex-shrink: 0;
 }
 
 .phone-input-group input {
     flex: 1;
+    min-width: 0;
+}
+
+/* Desktop specific styling for better flag display */
+@media (min-width: 769px) {
+    .booking-modal {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .country-select option {
+        font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', system-ui, sans-serif;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -129,6 +149,11 @@
     .phone-input-group select {
         width: 100%;
         margin-bottom: 0.5rem;
+    }
+    
+    .booking-modal {
+        align-items: flex-start;
+        padding-top: 2rem;
     }
 }
 

@@ -44,7 +44,7 @@ class BookingModal {
                                 <div class="booking-form-group">
                                     <label for="bookingPhone" class="required">Phone Number</label>
                                     <div class="phone-input-group">
-                                        <select id="bookingCountryCode" name="countryCode" required>
+                                        <select id="bookingCountryCode" name="countryCode" required class="country-select">
                                                 <option value="+971" data-country="United Arab Emirates">🇦🇪 United Arab Emirates (+971)</option>
                                                 <option value="+1" data-country="United States">🇺🇸 United States (+1)</option>
                                                 <option value="+44" data-country="United Kingdom">🇬🇧 United Kingdom (+44)</option>

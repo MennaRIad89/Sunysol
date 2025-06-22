@@ -116,6 +116,9 @@ Tour Page Access → Template Rendering → Interactive Elements Loading → Gal
 
 ## Recent Changes
 
+- June 22, 2025: Fixed booking modal centering issue on desktop and improved country dropdown with proper flag display and keyboard navigation
+- June 22, 2025: Enhanced phone input field width for better desktop experience while maintaining mobile responsiveness
+- June 22, 2025: Implemented working booking modal with Spanish translation support and proper tour detection across all tour pages
 - June 21, 2025: Updated all website contact information to use new domain sunysol.ae with emails info@sunysol.ae and booking@sunysol.ae
 - June 21, 2025: Implemented professional booking modal system with hybrid WhatsApp/Email options and consistent site styling
 - June 21, 2025: Populated all 8 tour galleries with relevant images and dynamic loading system
