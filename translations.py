@@ -325,6 +325,30 @@ TRANSLATIONS = {
         'Choose Your Dubai Adventure',
         'tours_include_guide':
         'All tours include professional English/Spanish-speaking guide and modern air-conditioned transport',
+
+        # Optional Add-ons translations
+        'burj_khalifa_addon':
+        'Burj Khalifa – At The Top – Access the 124th & 125th floors for stunning city views',
+        'view_palm_addon':
+        'The View at The Palm – 360° views of Palm Jumeirah from a sky-high observatory',
+        'museum_future_addon':
+        'Museum of the Future Entry – Explore futuristic innovations and tech exhibits',
+        'burj_al_arab_addon':
+        'Burj Al Arab Tour – Guided visit inside the world\'s most luxurious hotel',
+        'ain_dubai_addon':
+        'Ain Dubai Ticket – Ride the world\'s tallest observation wheel',
+        'dubai_frame_addon':
+        'Dubai Frame Entry – Iconic golden frame structure with city views and museum',
+        'private_yacht_addon':
+        'Private Yacht Upgrade – Exclusive luxury yacht experience for your group',
+        'celebration_cake_addon':
+        'Birthday or Anniversary Cake – Special celebration cake on board',
+        'special_decorations_addon':
+        'Special Decorations – Custom decor for celebrations or events',
+        'eye_emirates_addon':
+        'Eye of the Emirates Ferris Wheel – Giant observation wheel with panoramic views of Sharjah',
+        'traditional_lunch_addon':
+        'Traditional Lunch Experience – Authentic local cuisine at a mountain-view restaurant',
         'dubai_modern_tour':
         'Dubai Half Day Modern Tour',
         'dubai_modern_description':
