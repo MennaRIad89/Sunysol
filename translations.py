@@ -245,6 +245,10 @@ TRANSLATIONS = {
         'Trip Start Date',
         'trip_end_date':
         'Trip End Date',
+        'person':
+        'Person',
+        'people':
+        'People',
         'thank_you_review':
         'Thank you for your review! We appreciate your feedback.',
         'error_review':
@@ -1098,6 +1102,10 @@ TRANSLATIONS = {
         'Fecha de Inicio del Viaje',
         'trip_end_date':
         'Fecha de Fin del Viaje',
+        'person':
+        'Persona',
+        'people':
+        'Personas',
         'thank_you_review':
         '¡Gracias por tu opinión! Apreciamos tus comentarios.',
         'error_review':

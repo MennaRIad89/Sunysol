@@ -204,6 +204,7 @@ class BookingModal {
                                 <div class="booking-form-group">
                                     <label for="bookingType">Tour Type</label>
                                     <select id="bookingType" name="tourType">
+                                        <option value="">Select tour type...</option>
                                         <option value="private">Private Tour</option>
                                         <option value="group">Join Group Tour</option>
                                         <option value="vip">VIP Experience</option>
@@ -257,14 +258,24 @@ class BookingModal {
             }
         });
         
-        // Update labels with translations after modal is created
-        this.updateLabelsWithTranslations();
-        
         // Initialize country search functionality
         this.initializeCountrySearch();
+        
+        // Update labels with translations after modal is created (delay to ensure DOM is ready)
+        setTimeout(() => {
+            this.updateLabelsWithTranslations();
+        }, 100);
     }
 
     updateLabelsWithTranslations() {
+        console.log('Updating translations, current language:', document.documentElement.lang);
+        
+        // Update modal title
+        const modalTitle = document.querySelector('#modalTourTitle');
+        if (modalTitle) {
+            modalTitle.textContent = this.getTranslation('booking_modal_title', 'Book This Tour');
+        }
+        
         // Update all form labels with appropriate translations
         const labelUpdates = [
             { selector: 'label[for="bookingName"]', key: 'booking_name', fallback: 'Full Name' },
@@ -280,7 +291,9 @@ class BookingModal {
         labelUpdates.forEach(update => {
             const element = document.querySelector(update.selector);
             if (element) {
-                element.textContent = this.getTranslation(update.key, update.fallback);
+                const translatedText = this.getTranslation(update.key, update.fallback);
+                element.textContent = translatedText;
+                console.log(`Updated ${update.selector}: ${translatedText}`);
             }
         });
 
@@ -301,7 +314,7 @@ class BookingModal {
         const tourTypeSelect = document.querySelector('#bookingType');
         if (tourTypeSelect) {
             if (tourTypeSelect.options[0]) {
-                tourTypeSelect.options[0].textContent = this.getTranslation('select_option', 'Select an option...');
+                tourTypeSelect.options[0].textContent = this.getTranslation('select_option', 'Select tour type...');
             }
             if (tourTypeSelect.options[1]) {
                 tourTypeSelect.options[1].textContent = this.getTranslation('private_tour', 'Private Tour');
@@ -311,6 +324,23 @@ class BookingModal {
             }
             if (tourTypeSelect.options[3]) {
                 tourTypeSelect.options[3].textContent = this.getTranslation('vip_tour', 'VIP Experience');
+            }
+        }
+        
+        // Update group size options text
+        const groupSizeOptions = document.querySelectorAll('#bookingGroupSize option');
+        if (groupSizeOptions.length > 1) {
+            // Update individual person/people labels
+            for (let i = 1; i < groupSizeOptions.length; i++) {
+                const option = groupSizeOptions[i];
+                const value = option.value;
+                if (value === '1') {
+                    option.textContent = `1 ${this.getTranslation('person', 'Person')}`;
+                } else if (value === '9+') {
+                    option.textContent = `9+ ${this.getTranslation('people', 'People')}`;
+                } else if (value && !isNaN(value)) {
+                    option.textContent = `${value} ${this.getTranslation('people', 'People')}`;
+                }
             }
         }
 
@@ -331,6 +361,9 @@ class BookingModal {
             const noteText = this.getTranslation('booking_note', 'Note: This is not a confirmed booking. We\'ll contact you within 24 hours to confirm availability, provide exact pricing, and arrange payment details.');
             noteElement.innerHTML = `<i class="fas fa-info-circle"></i> <strong>${noteText}</strong>`;
         }
+        
+        console.log('Translation update completed');
+    }
     }
 
     initializeCountrySearch() {
