@@ -364,7 +364,6 @@ class BookingModal {
         
         console.log('Translation update completed');
     }
-    }
 
     initializeCountrySearch() {
         const mobileSelect = document.getElementById('bookingCountryCodeMobile');
