@@ -31,73 +31,76 @@ class BookingModal {
                             
                             <div class="booking-form-row">
                                 <div class="booking-form-group">
-                                    <label for="bookingEmail" class="required">Email Address</label>
+                                    <label for="bookingEmail" class="required">${this.getTranslation('booking_email', 'Email Address')}</label>
                                     <input type="email" id="bookingEmail" name="email" required>
                                 </div>
                                 <div class="booking-form-group">
-                                    <label for="bookingPhone" class="required">Phone Number</label>
+                                    <label for="bookingPhone" class="required">${this.getTranslation('booking_phone', 'Phone Number')}</label>
                                     <div class="phone-input-group">
-                                        <select id="bookingCountryCode" name="countryCode" required>
-                                            <option value="+971">🇦🇪 +971</option>
-                                            <option value="+1">🇺🇸 +1</option>
-                                            <option value="+44">🇬🇧 +44</option>
-                                            <option value="+33">🇫🇷 +33</option>
-                                            <option value="+49">🇩🇪 +49</option>
-                                            <option value="+39">🇮🇹 +39</option>
-                                            <option value="+34">🇪🇸 +34</option>
-                                            <option value="+31">🇳🇱 +31</option>
-                                            <option value="+41">🇨🇭 +41</option>
-                                            <option value="+43">🇦🇹 +43</option>
-                                            <option value="+32">🇧🇪 +32</option>
-                                            <option value="+45">🇩🇰 +45</option>
-                                            <option value="+46">🇸🇪 +46</option>
-                                            <option value="+47">🇳🇴 +47</option>
-                                            <option value="+358">🇫🇮 +358</option>
-                                            <option value="+351">🇵🇹 +351</option>
-                                            <option value="+30">🇬🇷 +30</option>
-                                            <option value="+48">🇵🇱 +48</option>
-                                            <option value="+420">🇨🇿 +420</option>
-                                            <option value="+36">🇭🇺 +36</option>
-                                            <option value="+385">🇭🇷 +385</option>
-                                            <option value="+386">🇸🇮 +386</option>
-                                            <option value="+421">🇸🇰 +421</option>
-                                            <option value="+372">🇪🇪 +372</option>
-                                            <option value="+371">🇱🇻 +371</option>
-                                            <option value="+370">🇱🇹 +370</option>
-                                            <option value="+7">🇷🇺 +7</option>
-                                            <option value="+90">🇹🇷 +90</option>
-                                            <option value="+20">🇪🇬 +20</option>
-                                            <option value="+966">🇸🇦 +966</option>
-                                            <option value="+962">🇯🇴 +962</option>
-                                            <option value="+961">🇱🇧 +961</option>
-                                            <option value="+965">🇰🇼 +965</option>
-                                            <option value="+973">🇧🇭 +973</option>
-                                            <option value="+974">🇶🇦 +974</option>
-                                            <option value="+968">🇴🇲 +968</option>
-                                            <option value="+91">🇮🇳 +91</option>
-                                            <option value="+92">🇵🇰 +92</option>
-                                            <option value="+880">🇧🇩 +880</option>
-                                            <option value="+94">🇱🇰 +94</option>
-                                            <option value="+86">🇨🇳 +86</option>
-                                            <option value="+81">🇯🇵 +81</option>
-                                            <option value="+82">🇰🇷 +82</option>
-                                            <option value="+65">🇸🇬 +65</option>
-                                            <option value="+60">🇲🇾 +60</option>
-                                            <option value="+66">🇹🇭 +66</option>
-                                            <option value="+84">🇻🇳 +84</option>
-                                            <option value="+63">🇵🇭 +63</option>
-                                            <option value="+62">🇮🇩 +62</option>
-                                            <option value="+61">🇦🇺 +61</option>
-                                            <option value="+64">🇳🇿 +64</option>
-                                            <option value="+27">🇿🇦 +27</option>
-                                            <option value="+55">🇧🇷 +55</option>
-                                            <option value="+54">🇦🇷 +54</option>
-                                            <option value="+56">🇨🇱 +56</option>
-                                            <option value="+57">🇨🇴 +57</option>
-                                            <option value="+51">🇵🇪 +51</option>
-                                            <option value="+52">🇲🇽 +52</option>
-                                            <option value="+1">🇨🇦 +1</option>
-                                        </select>
+                                        <div class="country-selector">
+                                            <input type="text" class="country-search" placeholder="${this.getTranslation('search_country', 'Search country...')}" />
+                                            <select id="bookingCountryCode" name="countryCode" required>
+                                                <option value="+971" data-country="United Arab Emirates">🇦🇪 United Arab Emirates (+971)</option>
+                                                <option value="+1" data-country="United States">🇺🇸 United States (+1)</option>
+                                                <option value="+44" data-country="United Kingdom">🇬🇧 United Kingdom (+44)</option>
+                                                <option value="+33" data-country="France">🇫🇷 France (+33)</option>
+                                                <option value="+49" data-country="Germany">🇩🇪 Germany (+49)</option>
+                                                <option value="+39" data-country="Italy">🇮🇹 Italy (+39)</option>
+                                                <option value="+34" data-country="Spain">🇪🇸 Spain (+34)</option>
+                                                <option value="+31" data-country="Netherlands">🇳🇱 Netherlands (+31)</option>
+                                                <option value="+41" data-country="Switzerland">🇨🇭 Switzerland (+41)</option>
+                                                <option value="+43" data-country="Austria">🇦🇹 Austria (+43)</option>
+                                                <option value="+32" data-country="Belgium">🇧🇪 Belgium (+32)</option>
+                                                <option value="+45" data-country="Denmark">🇩🇰 Denmark (+45)</option>
+                                                <option value="+46" data-country="Sweden">🇸🇪 Sweden (+46)</option>
+                                                <option value="+47" data-country="Norway">🇳🇴 Norway (+47)</option>
+                                                <option value="+358" data-country="Finland">🇫🇮 Finland (+358)</option>
+                                                <option value="+351" data-country="Portugal">🇵🇹 Portugal (+351)</option>
+                                                <option value="+30" data-country="Greece">🇬🇷 Greece (+30)</option>
+                                                <option value="+48" data-country="Poland">🇵🇱 Poland (+48)</option>
+                                                <option value="+420" data-country="Czech Republic">🇨🇿 Czech Republic (+420)</option>
+                                                <option value="+36" data-country="Hungary">🇭🇺 Hungary (+36)</option>
+                                                <option value="+385" data-country="Croatia">🇭🇷 Croatia (+385)</option>
+                                                <option value="+386" data-country="Slovenia">🇸🇮 Slovenia (+386)</option>
+                                                <option value="+421" data-country="Slovakia">🇸🇰 Slovakia (+421)</option>
+                                                <option value="+372" data-country="Estonia">🇪🇪 Estonia (+372)</option>
+                                                <option value="+371" data-country="Latvia">🇱🇻 Latvia (+371)</option>
+                                                <option value="+370" data-country="Lithuania">🇱🇹 Lithuania (+370)</option>
+                                                <option value="+7" data-country="Russia">🇷🇺 Russia (+7)</option>
+                                                <option value="+90" data-country="Turkey">🇹🇷 Turkey (+90)</option>
+                                                <option value="+20" data-country="Egypt">🇪🇬 Egypt (+20)</option>
+                                                <option value="+966" data-country="Saudi Arabia">🇸🇦 Saudi Arabia (+966)</option>
+                                                <option value="+962" data-country="Jordan">🇯🇴 Jordan (+962)</option>
+                                                <option value="+961" data-country="Lebanon">🇱🇧 Lebanon (+961)</option>
+                                                <option value="+965" data-country="Kuwait">🇰🇼 Kuwait (+965)</option>
+                                                <option value="+973" data-country="Bahrain">🇧🇭 Bahrain (+973)</option>
+                                                <option value="+974" data-country="Qatar">🇶🇦 Qatar (+974)</option>
+                                                <option value="+968" data-country="Oman">🇴🇲 Oman (+968)</option>
+                                                <option value="+91" data-country="India">🇮🇳 India (+91)</option>
+                                                <option value="+92" data-country="Pakistan">🇵🇰 Pakistan (+92)</option>
+                                                <option value="+880" data-country="Bangladesh">🇧🇩 Bangladesh (+880)</option>
+                                                <option value="+94" data-country="Sri Lanka">🇱🇰 Sri Lanka (+94)</option>
+                                                <option value="+86" data-country="China">🇨🇳 China (+86)</option>
+                                                <option value="+81" data-country="Japan">🇯🇵 Japan (+81)</option>
+                                                <option value="+82" data-country="South Korea">🇰🇷 South Korea (+82)</option>
+                                                <option value="+65" data-country="Singapore">🇸🇬 Singapore (+65)</option>
+                                                <option value="+60" data-country="Malaysia">🇲🇾 Malaysia (+60)</option>
+                                                <option value="+66" data-country="Thailand">🇹🇭 Thailand (+66)</option>
+                                                <option value="+84" data-country="Vietnam">🇻🇳 Vietnam (+84)</option>
+                                                <option value="+63" data-country="Philippines">🇵🇭 Philippines (+63)</option>
+                                                <option value="+62" data-country="Indonesia">🇮🇩 Indonesia (+62)</option>
+                                                <option value="+61" data-country="Australia">🇦🇺 Australia (+61)</option>
+                                                <option value="+64" data-country="New Zealand">🇳🇿 New Zealand (+64)</option>
+                                                <option value="+27" data-country="South Africa">🇿🇦 South Africa (+27)</option>
+                                                <option value="+55" data-country="Brazil">🇧🇷 Brazil (+55)</option>
+                                                <option value="+54" data-country="Argentina">🇦🇷 Argentina (+54)</option>
+                                                <option value="+56" data-country="Chile">🇨🇱 Chile (+56)</option>
+                                                <option value="+57" data-country="Colombia">🇨🇴 Colombia (+57)</option>
+                                                <option value="+51" data-country="Peru">🇵🇪 Peru (+51)</option>
+                                                <option value="+52" data-country="Mexico">🇲🇽 Mexico (+52)</option>
+                                                <option value="+1" data-country="Canada">🇨🇦 Canada (+1)</option>
+                                            </select>
+                                        </div>
                                         <input type="tel" id="bookingPhone" name="phone" placeholder="123456789" required>
                                     </div>
                                 </div>
@@ -135,13 +138,13 @@ class BookingModal {
                             </div>
 
                             <div class="booking-form-group">
-                                <label for="bookingRequests">Special Requests or Questions</label>
-                                <textarea id="bookingRequests" name="requests" placeholder="Any special requirements, dietary restrictions, accessibility needs, or questions about the tour..."></textarea>
+                                <label for="bookingRequests">${this.getTranslation('booking_requests', 'Special Requests or Questions')}</label>
+                                <textarea id="bookingRequests" name="requests" placeholder="${this.getTranslation('booking_requests_placeholder', 'Any special requirements, dietary restrictions, accessibility needs, or questions about the tour...')}"></textarea>
                             </div>
 
                             <div class="booking-form-note">
                                 <i class="fas fa-info-circle"></i>
-                                <strong>Note:</strong> This is not a confirmed booking. We'll contact you within 24 hours to confirm availability, provide exact pricing, and arrange payment details.
+                                <strong>${this.getTranslation('booking_note', 'Note: This is not a confirmed booking. We\'ll contact you within 24 hours to confirm availability, provide exact pricing, and arrange payment details.')}</strong>
                             </div>
 
                             <div class="booking-actions">
@@ -166,6 +169,9 @@ class BookingModal {
         // Set minimum date to today
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('bookingDate').setAttribute('min', today);
+        
+        // Initialize country search functionality
+        this.initializeCountrySearch();
     }
 
     bindEvents() {

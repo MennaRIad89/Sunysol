@@ -197,6 +197,50 @@ TRANSLATIONS = {
         'Your Message',
         'send_message':
         'Send Message',
+        
+        # Booking modal translations
+        'booking_modal_title':
+        'Book This Tour',
+        'booking_name':
+        'Full Name',
+        'booking_email':
+        'Email Address',
+        'booking_phone':
+        'Phone Number',
+        'booking_date':
+        'Preferred Date',
+        'booking_group_size':
+        'Group Size',
+        'booking_tour_type':
+        'Tour Type',
+        'booking_requests':
+        'Special Requests or Questions',
+        'booking_requests_placeholder':
+        'Any special requirements, dietary restrictions, accessibility needs, or questions about the tour...',
+        'booking_note':
+        'Note: This is not a confirmed booking. We\'ll contact you within 24 hours to confirm availability, provide exact pricing, and arrange payment details.',
+        'booking_whatsapp':
+        'Send via WhatsApp',
+        'booking_email_btn':
+        'Send via Email',
+        'booking_success_title':
+        'Booking Request Sent!',
+        'booking_success_message':
+        'Thank you for your interest in {tour}. We\'ve received your booking request via {method} and will contact you within 24 hours to confirm availability and provide pricing details.',
+        'booking_close':
+        'Close',
+        'select_option':
+        'Select an option...',
+        'select_group_size':
+        'Select group size',
+        'private_tour':
+        'Private Tour',
+        'group_tour':
+        'Group Tour',
+        'vip_tour':
+        'VIP Tour',
+        'search_country':
+        'Search country...',
         'thank_you_review':
         'Thank you for your review! We appreciate your feedback.',
         'error_review':
@@ -1002,6 +1046,50 @@ TRANSLATIONS = {
         'Tu Mensaje',
         'send_message':
         'Enviar Mensaje',
+        
+        # Booking modal translations
+        'booking_modal_title':
+        'Reservar Este Tour',
+        'booking_name':
+        'Nombre Completo',
+        'booking_email':
+        'Correo Electrónico',
+        'booking_phone':
+        'Número de Teléfono',
+        'booking_date':
+        'Fecha Preferida',
+        'booking_group_size':
+        'Tamaño del Grupo',
+        'booking_tour_type':
+        'Tipo de Tour',
+        'booking_requests':
+        'Solicitudes Especiales o Preguntas',
+        'booking_requests_placeholder':
+        'Cualquier requisito especial, restricciones dietéticas, necesidades de accesibilidad, o preguntas sobre el tour...',
+        'booking_note':
+        'Nota: Esta no es una reserva confirmada. Te contactaremos dentro de 24 horas para confirmar disponibilidad, proporcionar precios exactos y organizar los detalles de pago.',
+        'booking_whatsapp':
+        'Enviar por WhatsApp',
+        'booking_email_btn':
+        'Enviar por Correo',
+        'booking_success_title':
+        '¡Solicitud de Reserva Enviada!',
+        'booking_success_message':
+        'Gracias por tu interés en {tour}. Hemos recibido tu solicitud de reserva vía {method} y te contactaremos dentro de 24 horas para confirmar disponibilidad y proporcionar detalles de precios.',
+        'booking_close':
+        'Cerrar',
+        'select_option':
+        'Selecciona una opción...',
+        'select_group_size':
+        'Selecciona el tamaño del grupo',
+        'private_tour':
+        'Tour Privado',
+        'group_tour':
+        'Tour Grupal',
+        'vip_tour':
+        'Tour VIP',
+        'search_country':
+        'Buscar país...',
         'thank_you_review':
         '¡Gracias por tu opinión! Apreciamos tus comentarios.',
         'error_review':

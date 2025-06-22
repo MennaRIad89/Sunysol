@@ -81,6 +81,10 @@
     </footer>
 
     <!-- JavaScript -->
+    <script>
+        // Make translations available to JavaScript
+        window.translations = {{ g.translations | tojson }};
+    </script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
     <script src="{{ url_for('static', filename='js/booking-modal.js') }}"></script>
