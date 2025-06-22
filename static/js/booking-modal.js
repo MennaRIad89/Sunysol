@@ -703,7 +703,10 @@ class BookingModal {
         const whatsappNumber = '971564649609'; // Your WhatsApp number
         
         // Get phone number with country code
-        const countryCode = document.getElementById('bookingCountryCode').value;
+        const mobileSelect = document.getElementById('bookingCountryCodeMobile');
+        const desktopSelect = document.getElementById('bookingCountryCodeDesktop');
+        const activeSelect = (window.innerWidth <= 768 ? mobileSelect : desktopSelect);
+        const countryCode = activeSelect ? activeSelect.value : '+971';
         const phoneNumber = document.getElementById('bookingPhone').value;
         const fullPhone = countryCode + phoneNumber;
         
@@ -741,8 +744,11 @@ class BookingModal {
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         
-        // Get phone number with country code
-        const countryCode = document.getElementById('bookingCountryCode').value;
+        // Get phone number with country code  
+        const mobileSelect = document.getElementById('bookingCountryCodeMobile');
+        const desktopSelect = document.getElementById('bookingCountryCodeDesktop');
+        const activeSelect = (window.innerWidth <= 768 ? mobileSelect : desktopSelect);
+        const countryCode = activeSelect ? activeSelect.value : '+971';
         const phoneNumber = document.getElementById('bookingPhone').value;
         const fullPhone = countryCode + phoneNumber;
         
@@ -777,6 +783,15 @@ class BookingModal {
             // Re-enable button
             submitBtn.disabled = false;
             submitBtn.innerHTML = `<i class="fas fa-envelope"></i> ${this.getTranslation('booking_email_btn', 'Send via Email')}`;
+        })
+        .finally(() => {
+            // Always re-enable button after 10 seconds as fallback
+            setTimeout(() => {
+                if (submitBtn.disabled) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = `<i class="fas fa-envelope"></i> ${this.getTranslation('booking_email_btn', 'Send via Email')}`;
+                }
+            }, 10000);
         });
     }
 
