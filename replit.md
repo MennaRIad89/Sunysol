@@ -116,6 +116,8 @@ Tour Page Access → Template Rendering → Interactive Elements Loading → Gal
 
 ## Recent Changes
 
+- June 22, 2025: Configured complete SMTP email system with Zoho credentials - Contact form sends to info@sunysol.ae, Booking form sends to booking@sunysol.ae
+- June 22, 2025: Added Burj Khalifa SKY premium option to Dubai Modern Tour with bilingual support
 - June 22, 2025: Expanded booking form phone country list from 58 to 90+ countries matching review form for comprehensive global coverage
 - June 22, 2025: Fixed booking modal JavaScript syntax error and implemented complete Spanish translation system for all form fields and dropdowns
 - June 22, 2025: Added trip start/end date fields with smart validation and improved desktop layout (dates side-by-side, group size beside tour type)
