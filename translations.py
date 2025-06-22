@@ -899,6 +899,30 @@ TRANSLATIONS = {
         'contact_us':
         'Contáctanos',
 
+        # Optional Add-ons Spanish translations
+        'burj_khalifa_addon':
+        'Burj Khalifa – At The Top – Acceso a los pisos 124 y 125 para vistas impresionantes de la ciudad',
+        'view_palm_addon':
+        'The View at The Palm – Vistas de 360° de Palm Jumeirah desde observatorio en el cielo',
+        'museum_future_addon':
+        'Entrada al Museo del Futuro – Explora innovaciones futuristas y exhibiciones tecnológicas',
+        'burj_al_arab_addon':
+        'Tour del Burj Al Arab – Visita guiada dentro del hotel más lujoso del mundo',
+        'ain_dubai_addon':
+        'Boleto Ain Dubai – Viaja en la rueda de observación más alta del mundo',
+        'dubai_frame_addon':
+        'Entrada Dubai Frame – Estructura icónica dorada con vistas de la ciudad y museo',
+        'private_yacht_addon':
+        'Upgrade a Yate Privado – Experiencia exclusiva de yate de lujo para tu grupo',
+        'celebration_cake_addon':
+        'Pastel de Cumpleaños o Aniversario – Pastel especial de celebración a bordo',
+        'special_decorations_addon':
+        'Decoraciones Especiales – Decoración personalizada para celebraciones o eventos',
+        'eye_emirates_addon':
+        'Rueda de Observación Eye of the Emirates – Rueda gigante con vistas panorámicas de Sharjah',
+        'traditional_lunch_addon':
+        'Experiencia de Almuerzo Tradicional – Cocina local auténtica en restaurante con vista a las montañas',
+
         # About section
         'about_title':
         'Conoce a Tu Guía',
