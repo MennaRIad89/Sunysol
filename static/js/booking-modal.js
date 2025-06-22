@@ -146,6 +146,7 @@ class BookingModal {
                                         <option value="+963" data-country="Syria">🇸🇾 Syria (+963)</option>
                                         <option value="+886" data-country="Taiwan">🇹🇼 Taiwan (+886)</option>
                                         <option value="+66" data-country="Thailand">🇹🇭 Thailand (+66)</option>
+                                        <option value="+216" data-country="Tunisia">🇹🇳 Tunisia (+216)</option>
                                         <option value="+90" data-country="Turkey">🇹🇷 Turkey (+90)</option>
                                         <option value="+380" data-country="Ukraine">🇺🇦 Ukraine (+380)</option>
                                         <option value="+44" data-country="United Kingdom">🇬🇧 UK (+44)</option>
@@ -258,6 +259,7 @@ class BookingModal {
                                         <option value="+963" data-country="Syria">Syria (+963)</option>
                                         <option value="+886" data-country="Taiwan">Taiwan (+886)</option>
                                         <option value="+66" data-country="Thailand">Thailand (+66)</option>
+                                        <option value="+216" data-country="Tunisia">Tunisia (+216)</option>
                                         <option value="+90" data-country="Turkey">Turkey (+90)</option>
                                         <option value="+380" data-country="Ukraine">Ukraine (+380)</option>
                                         <option value="+44" data-country="United Kingdom">United Kingdom (+44)</option>
