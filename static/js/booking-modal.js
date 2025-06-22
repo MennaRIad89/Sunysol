@@ -174,11 +174,18 @@ class BookingModal {
                                 </div>
                             </div>
 
-                            <div class="booking-form-row">
+                            <div class="booking-form-row booking-dates-row">
                                 <div class="booking-form-group">
-                                    <label for="bookingDate">Preferred Date</label>
-                                    <input type="date" id="bookingDate" name="date" min="" placeholder="Select your preferred tour date">
+                                    <label for="bookingStartDate">Trip Start Date</label>
+                                    <input type="date" id="bookingStartDate" name="startDate" min="">
                                 </div>
+                                <div class="booking-form-group">
+                                    <label for="bookingEndDate">Trip End Date</label>
+                                    <input type="date" id="bookingEndDate" name="endDate" min="">
+                                </div>
+                            </div>
+
+                            <div class="booking-form-row booking-details-row">
                                 <div class="booking-form-group">
                                     <label for="bookingGroupSize" class="required">Group Size</label>
                                     <select id="bookingGroupSize" name="groupSize" required>
@@ -194,15 +201,14 @@ class BookingModal {
                                         <option value="9+">9+ People</option>
                                     </select>
                                 </div>
-                            </div>
-
-                            <div class="booking-form-group">
-                                <label for="bookingType">Tour Type</label>
-                                <select id="bookingType" name="tourType">
-                                    <option value="private">Private Tour (Recommended)</option>
-                                    <option value="group">Join Group Tour</option>
-                                    <option value="vip">VIP Experience</option>
-                                </select>
+                                <div class="booking-form-group">
+                                    <label for="bookingType">Tour Type</label>
+                                    <select id="bookingType" name="tourType">
+                                        <option value="private">Private Tour</option>
+                                        <option value="group">Join Group Tour</option>
+                                        <option value="vip">VIP Experience</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="booking-form-group">
@@ -234,9 +240,22 @@ class BookingModal {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
         this.modal = document.getElementById('bookingModal');
         
-        // Set minimum date to today
+        // Set minimum date to today for trip dates
         const today = new Date().toISOString().split('T')[0];
-        document.getElementById('bookingDate').setAttribute('min', today);
+        document.getElementById('bookingStartDate').setAttribute('min', today);
+        document.getElementById('bookingEndDate').setAttribute('min', today);
+        
+        // Add event listener to ensure end date is after start date
+        document.getElementById('bookingStartDate').addEventListener('change', (e) => {
+            const startDate = e.target.value;
+            const endDateInput = document.getElementById('bookingEndDate');
+            endDateInput.setAttribute('min', startDate);
+            
+            // Clear end date if it's before the new start date
+            if (endDateInput.value && endDateInput.value < startDate) {
+                endDateInput.value = '';
+            }
+        });
         
         // Update labels with translations after modal is created
         this.updateLabelsWithTranslations();
@@ -251,7 +270,8 @@ class BookingModal {
             { selector: 'label[for="bookingName"]', key: 'booking_name', fallback: 'Full Name' },
             { selector: 'label[for="bookingEmail"]', key: 'booking_email', fallback: 'Email Address' },
             { selector: 'label[for="bookingPhone"]', key: 'booking_phone', fallback: 'Phone Number' },
-            { selector: 'label[for="bookingDate"]', key: 'booking_date', fallback: 'Preferred Date' },
+            { selector: 'label[for="bookingStartDate"]', key: 'trip_start_date', fallback: 'Trip Start Date' },
+            { selector: 'label[for="bookingEndDate"]', key: 'trip_end_date', fallback: 'Trip End Date' },
             { selector: 'label[for="bookingGroupSize"]', key: 'booking_group_size', fallback: 'Group Size' },
             { selector: 'label[for="bookingType"]', key: 'booking_tour_type', fallback: 'Tour Type' },
             { selector: 'label[for="bookingRequests"]', key: 'booking_requests', fallback: 'Special Requests or Questions' }
@@ -275,6 +295,23 @@ class BookingModal {
         const groupSizeSelect = document.querySelector('#bookingGroupSize');
         if (groupSizeSelect && groupSizeSelect.options[0]) {
             groupSizeSelect.options[0].textContent = this.getTranslation('select_group_size', 'Select group size');
+        }
+
+        // Update tour type options
+        const tourTypeSelect = document.querySelector('#bookingType');
+        if (tourTypeSelect) {
+            if (tourTypeSelect.options[0]) {
+                tourTypeSelect.options[0].textContent = this.getTranslation('select_option', 'Select an option...');
+            }
+            if (tourTypeSelect.options[1]) {
+                tourTypeSelect.options[1].textContent = this.getTranslation('private_tour', 'Private Tour');
+            }
+            if (tourTypeSelect.options[2]) {
+                tourTypeSelect.options[2].textContent = this.getTranslation('group_tour', 'Join Group Tour');
+            }
+            if (tourTypeSelect.options[3]) {
+                tourTypeSelect.options[3].textContent = this.getTranslation('vip_tour', 'VIP Experience');
+            }
         }
 
         // Update button text
@@ -479,7 +516,8 @@ class BookingModal {
             name: document.getElementById('bookingName').value,
             email: document.getElementById('bookingEmail').value,
             phone: document.getElementById('bookingPhone').value,
-            date: document.getElementById('bookingDate').value,
+            startDate: document.getElementById('bookingStartDate').value,
+            endDate: document.getElementById('bookingEndDate').value,
             groupSize: document.getElementById('bookingGroupSize').value,
             tourType: document.getElementById('bookingType').value,
             requests: document.getElementById('bookingRequests').value
@@ -543,7 +581,8 @@ class BookingModal {
         message += `📧 Email: ${data.email}\n`;
         message += `📱 Phone: ${fullPhone}\n\n`;
         message += `*Tour Details:*\n`;
-        message += `📅 Preferred Date: ${data.date || 'Flexible'}\n`;
+        message += `📅 Start Date: ${data.startDate || 'Flexible'}\n`;
+        message += `📅 End Date: ${data.endDate || 'Flexible'}\n`;
         message += `👥 Group Size: ${data.groupSize}\n`;
         message += `🎯 Tour Type: ${data.tourType || 'Private Tour'}\n\n`;
         
@@ -578,6 +617,8 @@ class BookingModal {
             ...data,
             phone: fullPhone,
             tour_name: this.currentTour.title,
+            start_date: data.startDate,
+            end_date: data.endDate,
             message_type: 'tour_booking'
         };
         

@@ -154,6 +154,20 @@
 }
 
 /* Show/hide based on device */
+/* Desktop layout for dates and details */
+@media (min-width: 769px) {
+    .booking-dates-row,
+    .booking-details-row {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .booking-dates-row .booking-form-group,
+    .booking-details-row .booking-form-group {
+        flex: 1;
+    }
+}
+
 @media (max-width: 768px) {
     .country-select-desktop {
         display: none;
@@ -179,6 +193,12 @@
     .booking-modal {
         align-items: flex-start;
         padding-top: 2rem;
+    }
+    
+    .booking-dates-row,
+    .booking-details-row {
+        flex-direction: column;
+        gap: 0;
     }
 }
 

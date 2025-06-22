@@ -241,6 +241,10 @@ TRANSLATIONS = {
         'VIP Tour',
         'search_country':
         'Search country...',
+        'trip_start_date':
+        'Trip Start Date',
+        'trip_end_date':
+        'Trip End Date',
         'thank_you_review':
         'Thank you for your review! We appreciate your feedback.',
         'error_review':
@@ -1090,6 +1094,10 @@ TRANSLATIONS = {
         'Tour VIP',
         'search_country':
         'Buscar país...',
+        'trip_start_date':
+        'Fecha de Inicio del Viaje',
+        'trip_end_date':
+        'Fecha de Fin del Viaje',
         'thank_you_review':
         '¡Gracias por tu opinión! Apreciamos tus comentarios.',
         'error_review':
