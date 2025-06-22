@@ -595,6 +595,32 @@ body.dubai-tours-page {
     gap: 10px;
 }
 
+.tour-addons {
+    margin: 30px 0;
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.tour-addons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tour-addons ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.tour-addons ul li:last-child {
+    border-bottom: none;
+}
+
 .tour-itinerary ul,
 .tour-food ul {
     list-style: none;
@@ -644,6 +670,7 @@ body.dubai-tours-page {
     margin-top: 10px;
 }
 
+/* Legacy addon-item styles for backward compatibility */
 .addon-item {
     background: linear-gradient(135deg, #D2691E, #FF8C00);
     color: white;
