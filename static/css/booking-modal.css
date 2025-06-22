@@ -107,48 +107,55 @@
     font-family: inherit;
 }
 
+/* This rule is now handled above in the country select section */
+
+/* Country Select Styling - Force emoji display */
+.country-select {
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Segoe UI Symbol', system-ui, sans-serif !important;
+}
+
+.country-select option {
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Segoe UI Symbol', system-ui, sans-serif !important;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
 .phone-input-group {
     display: flex;
     gap: 0.5rem;
-}
-
-/* Country Select Styling */
-.country-select {
-    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+    align-items: center;
 }
 
 .phone-input-group select {
-    width: 280px;
+    width: 300px;
     flex-shrink: 0;
 }
 
 .phone-input-group input {
     flex: 1;
-    min-width: 0;
+    min-width: 150px;
 }
 
-/* Desktop specific styling for better flag display */
+/* Desktop specific styling */
 @media (min-width: 769px) {
     .booking-modal {
         align-items: center;
         justify-content: center;
-    }
-    
-    .country-select option {
-        font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', system-ui, sans-serif;
-        padding: 8px 12px;
-        font-size: 14px;
     }
 }
 
 @media (max-width: 768px) {
     .phone-input-group {
         flex-direction: column;
+        gap: 0.5rem;
     }
     
     .phone-input-group select {
         width: 100%;
-        margin-bottom: 0.5rem;
+    }
+    
+    .phone-input-group input {
+        width: 100%;
     }
     
     .booking-modal {

@@ -36,15 +36,15 @@ class BookingModal {
                                 <input type="text" id="bookingName" name="name" required>
                             </div>
                             
-                            <div class="booking-form-row">
-                                <div class="booking-form-group">
-                                    <label for="bookingEmail" class="required">Email Address</label>
-                                    <input type="email" id="bookingEmail" name="email" required>
-                                </div>
-                                <div class="booking-form-group">
-                                    <label for="bookingPhone" class="required">Phone Number</label>
-                                    <div class="phone-input-group">
-                                        <select id="bookingCountryCode" name="countryCode" required class="country-select">
+                            <div class="booking-form-group">
+                                <label for="bookingEmail" class="required">Email Address</label>
+                                <input type="email" id="bookingEmail" name="email" required>
+                            </div>
+                            
+                            <div class="booking-form-group">
+                                <label for="bookingPhone" class="required">Phone Number</label>
+                                <div class="phone-input-group">
+                                    <select id="bookingCountryCode" name="countryCode" required class="country-select">
                                                 <option value="+971" data-country="United Arab Emirates">🇦🇪 United Arab Emirates (+971)</option>
                                                 <option value="+1" data-country="United States">🇺🇸 United States (+1)</option>
                                                 <option value="+44" data-country="United Kingdom">🇬🇧 United Kingdom (+44)</option>
@@ -104,9 +104,8 @@ class BookingModal {
                                                 <option value="+51" data-country="Peru">🇵🇪 Peru (+51)</option>
                                                 <option value="+52" data-country="Mexico">🇲🇽 Mexico (+52)</option>
                                                 <option value="+1" data-country="Canada">🇨🇦 Canada (+1)</option>
-                                            </select>
-                                        <input type="tel" id="bookingPhone" name="phone" placeholder="123456789" required>
-                                    </div>
+                                        </select>
+                                    <input type="tel" id="bookingPhone" name="phone" placeholder="123456789" required>
                                 </div>
                             </div>
 
