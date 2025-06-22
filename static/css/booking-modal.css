@@ -112,31 +112,9 @@
     gap: 0.5rem;
 }
 
-.country-selector {
-    position: relative;
-    width: 250px;
-    flex-shrink: 0;
-}
-
-.country-search {
-    width: 100%;
-    padding: 0.75rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    transition: border-color 0.3s ease;
-}
-
-.country-search:focus {
-    border-color: var(--primary-color);
-    outline: none;
-}
-
 .phone-input-group select {
-    width: 100%;
-    max-height: 200px;
-    overflow-y: auto;
+    width: 200px;
+    flex-shrink: 0;
 }
 
 .phone-input-group input {
@@ -148,7 +126,7 @@
         flex-direction: column;
     }
     
-    .country-selector {
+    .phone-input-group select {
         width: 100%;
         margin-bottom: 0.5rem;
     }

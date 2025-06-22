@@ -44,9 +44,7 @@ class BookingModal {
                                 <div class="booking-form-group">
                                     <label for="bookingPhone" class="required">Phone Number</label>
                                     <div class="phone-input-group">
-                                        <div class="country-selector">
-                                            <input type="text" class="country-search" placeholder="Search country..." />
-                                            <select id="bookingCountryCode" name="countryCode" required>
+                                        <select id="bookingCountryCode" name="countryCode" required>
                                                 <option value="+971" data-country="United Arab Emirates">🇦🇪 United Arab Emirates (+971)</option>
                                                 <option value="+1" data-country="United States">🇺🇸 United States (+1)</option>
                                                 <option value="+44" data-country="United Kingdom">🇬🇧 United Kingdom (+44)</option>
@@ -107,7 +105,6 @@ class BookingModal {
                                                 <option value="+52" data-country="Mexico">🇲🇽 Mexico (+52)</option>
                                                 <option value="+1" data-country="Canada">🇨🇦 Canada (+1)</option>
                                             </select>
-                                        </div>
                                         <input type="tel" id="bookingPhone" name="phone" placeholder="123456789" required>
                                     </div>
                                 </div>
@@ -177,11 +174,11 @@ class BookingModal {
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('bookingDate').setAttribute('min', today);
         
-        // Initialize country search functionality
-        this.initializeCountrySearch();
-        
         // Update labels with translations after modal is created
         this.updateLabelsWithTranslations();
+        
+        // Initialize country search functionality
+        this.initializeCountrySearch();
     }
 
     updateLabelsWithTranslations() {
@@ -203,11 +200,7 @@ class BookingModal {
             }
         });
 
-        // Update placeholder text
-        const searchInput = document.querySelector('.country-search');
-        if (searchInput) {
-            searchInput.placeholder = this.getTranslation('search_country', 'Search country...');
-        }
+        // No search input to update anymore
 
         const requestsTextarea = document.querySelector('#bookingRequests');
         if (requestsTextarea) {
@@ -240,38 +233,38 @@ class BookingModal {
     }
 
     initializeCountrySearch() {
-        const searchInput = document.querySelector('.country-search');
+        // Country dropdown now works with standard keyboard navigation
+        // When user types 'e', it will jump to Egypt, etc.
         const select = document.getElementById('bookingCountryCode');
-        const options = Array.from(select.options);
         
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
+        // Add keyboard search functionality to the select element
+        let searchText = '';
+        let searchTimeout;
+        
+        select.addEventListener('keydown', (e) => {
+            // Clear search text after 1 second of no typing
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                searchText = '';
+            }, 1000);
             
-            // Clear existing options
-            select.innerHTML = '';
-            
-            // Filter and add matching options
-            const filteredOptions = options.filter(option => {
-                const countryName = option.getAttribute('data-country')?.toLowerCase() || '';
-                const optionText = option.textContent.toLowerCase();
-                return countryName.includes(searchTerm) || optionText.includes(searchTerm);
-            });
-            
-            filteredOptions.forEach(option => {
-                select.appendChild(option.cloneNode(true));
-            });
-            
-            // If no matches, show all options
-            if (filteredOptions.length === 0) {
-                options.forEach(option => {
-                    select.appendChild(option.cloneNode(true));
+            // Only handle letter keys
+            if (e.key.length === 1 && e.key.match(/[a-zA-Z]/)) {
+                e.preventDefault();
+                searchText += e.key.toLowerCase();
+                
+                // Find the first option that starts with the search text
+                const options = Array.from(select.options);
+                const matchingOption = options.find(option => {
+                    const countryName = option.getAttribute('data-country')?.toLowerCase() || '';
+                    return countryName.startsWith(searchText);
                 });
+                
+                if (matchingOption) {
+                    select.value = matchingOption.value;
+                    matchingOption.selected = true;
+                }
             }
-        });
-        
-        // Clear search when option is selected
-        select.addEventListener('change', () => {
-            searchInput.value = '';
         });
     }
 
