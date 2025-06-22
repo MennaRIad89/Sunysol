@@ -289,14 +289,47 @@ class BookingModal {
                 console.log('Book tour button clicked!');
                 
                 const button = e.target.matches('.book-tour-btn') ? e.target : e.target.closest('.book-tour-btn');
-                const tourCard = button.closest('.tour-card');
+                
+                // Find the tour card - could be tour-card, tour-preview-card, or tour-detail-card
+                const tourCard = button.closest('.tour-card') || 
+                                button.closest('.tour-preview-card') || 
+                                button.closest('.tour-detail-card') ||
+                                button.closest('.tour-details');
                 
                 if (tourCard) {
-                    const tourTitle = tourCard.querySelector('h3').textContent;
-                    const tourDescription = tourCard.querySelector('.tour-description p').textContent;
+                    // Find tour title - could be in different locations
+                    let tourTitle = '';
+                    let tourDescription = '';
+                    
+                    // Try to find title in current card or previous card
+                    const titleElement = tourCard.querySelector('h3') || 
+                                       (tourCard.previousElementSibling && tourCard.previousElementSibling.querySelector('h3'));
+                    
+                    if (titleElement) {
+                        tourTitle = titleElement.textContent.trim();
+                    }
+                    
+                    // Try to find description in current card or previous card
+                    const descElement = tourCard.querySelector('p') || 
+                                      tourCard.querySelector('.tour-description p') ||
+                                      (tourCard.previousElementSibling && tourCard.previousElementSibling.querySelector('p'));
+                    
+                    if (descElement) {
+                        tourDescription = descElement.textContent.trim();
+                    }
+                    
+                    // Fallback if we still don't have a title
+                    if (!tourTitle) {
+                        tourTitle = 'Tour Booking Request';
+                        tourDescription = 'Thank you for your interest in our tours!';
+                    }
                     
                     console.log('Opening modal for:', tourTitle);
                     this.openModal(tourTitle, tourDescription);
+                } else {
+                    // Fallback - open modal anyway with generic content
+                    console.log('No tour card found, opening modal with generic content');
+                    this.openModal('Tour Booking Request', 'Thank you for your interest in our tours!');
                 }
             }
         });
