@@ -269,19 +269,21 @@ def send_message():
             tour_name = request.form.get('tour_name')
             phone = request.form.get('phone')
             tour_date = request.form.get('tour_date')
+            start_date = request.form.get('start_date')
+            end_date = request.form.get('end_date')
             group_size = request.form.get('group_size')
             tour_type = request.form.get('tour_type')
             special_requests = request.form.get('special_requests')
             
             # Send email notification to booking@sunysol.ae
             try:
-                send_booking_email(name, email, phone, tour_name, tour_date, group_size, tour_type, special_requests)
+                send_booking_email(name, email, phone, tour_name, start_date, end_date, group_size, tour_type, special_requests)
                 logging.info(f"Booking email sent successfully for {tour_name} from {name}")
             except Exception as email_error:
                 logging.error(f"Failed to send booking email: {str(email_error)}")
             
             logging.info(
-                f"Tour booking request from {name} ({email}, {phone}) for {tour_name} on {tour_date}, group size: {group_size}, type: {tour_type}, requests: {special_requests} - Forward to booking@sunysol.ae"
+                f"Tour booking request from {name} ({email}, {phone}) for {tour_name} from {start_date} to {end_date}, group size: {group_size}, type: {tour_type}, requests: {special_requests} - Forward to booking@sunysol.ae"
             )
             
             return jsonify({'status': 'success', 'message': 'Booking request received'})
@@ -313,7 +315,7 @@ def send_message():
     return redirect(url_for('index', _anchor='contact'))
 
 
-def send_booking_email(name, email, phone, tour_name, tour_date, group_size, tour_type, special_requests):
+def send_booking_email(name, email, phone, tour_name, start_date, end_date, group_size, tour_type, special_requests):
     """Send booking notification email to booking@sunysol.ae"""
     
     # Email configuration for booking emails (Zoho)
@@ -331,31 +333,35 @@ def send_booking_email(name, email, phone, tour_name, tour_date, group_size, tou
     msg = MIMEMultipart()
     msg['From'] = smtp_username
     msg['To'] = 'booking@sunysol.ae'
-    msg['Subject'] = f'New Tour Booking Request - {tour_name}'
+    msg['Subject'] = f'🌟 New Tour Booking Request - {tour_name}'
     
-    # Email body
-    body = f"""
-New Tour Booking Request
+    # Email body using same format as WhatsApp message
+    body = f"""🌟 Sun y Sol Tour Booking Request 🌟
 
-Tour Details:
-- Tour: {tour_name}
-- Date: {tour_date or 'Flexible'}
-- Group Size: {group_size}
-- Tour Type: {tour_type or 'Private Tour'}
+TOUR: {tour_name}
 
-Customer Information:
-- Name: {name}
-- Email: {email}
-- Phone: {phone}
+CUSTOMER DETAILS:
+👤 Name: {name}
+📧 Email: {email}
+📱 Phone: {phone}
 
-Special Requests:
-{special_requests or 'None'}
+TOUR DETAILS:
+📅 Start Date: {start_date or 'Flexible'}
+📅 End Date: {end_date or 'Flexible'}
+👥 Group Size: {group_size or 'Not specified'}
+🎯 Tour Type: {tour_type or 'Private Tour'}
 
-Please contact the customer within 24 hours to confirm availability and provide pricing.
+SPECIAL REQUESTS:
+{special_requests or 'No special requests'}
+
+ACTION REQUIRED:
+Please contact the customer within 24 hours to confirm availability and provide pricing details.
 
 ---
 Sun y Sol Tours
 www.sunysol.ae
+📱 WhatsApp: +971564649609
+📧 Email: booking@sunysol.ae
     """
     
     msg.attach(MIMEText(body, 'plain'))
