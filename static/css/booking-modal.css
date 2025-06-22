@@ -109,15 +109,116 @@
 
 /* This rule is now handled above in the country select section */
 
-/* Country Select Styling - Force emoji display */
-.country-select {
-    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Segoe UI Symbol', system-ui, sans-serif !important;
+/* Custom Country Dropdown */
+.custom-country-dropdown {
+    position: relative;
+    width: 300px;
+    flex-shrink: 0;
 }
 
-.country-select option {
-    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Segoe UI Symbol', system-ui, sans-serif !important;
+.country-dropdown-selected {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.country-dropdown-selected:hover {
+    border-color: var(--primary-color);
+}
+
+.country-dropdown-selected .flag {
+    font-size: 1.2rem;
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', system-ui, sans-serif;
+}
+
+.country-dropdown-selected .country-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.country-dropdown-selected i {
+    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.country-dropdown-selected.open i {
+    transform: rotate(180deg);
+}
+
+.country-dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 250px;
+    overflow: hidden;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.country-dropdown-list.open {
+    display: block;
+}
+
+.country-search-box {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.country-search-box input {
+    width: 100%;
     padding: 8px 12px;
-    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.country-options {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.country-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.country-option:hover {
+    background-color: #f5f5f5;
+}
+
+.country-option.selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.country-option .flag {
+    font-size: 1.1rem;
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', system-ui, sans-serif;
+    width: 20px;
+    text-align: center;
+}
+
+.country-option .country-text {
+    font-size: 0.9rem;
 }
 
 .phone-input-group {
@@ -126,12 +227,7 @@
     align-items: center;
 }
 
-.phone-input-group select {
-    width: 300px;
-    flex-shrink: 0;
-}
-
-.phone-input-group input {
+.phone-input-group input[type="tel"] {
     flex: 1;
     min-width: 150px;
 }
@@ -150,11 +246,11 @@
         gap: 0.5rem;
     }
     
-    .phone-input-group select {
+    .custom-country-dropdown {
         width: 100%;
     }
     
-    .phone-input-group input {
+    .phone-input-group input[type="tel"] {
         width: 100%;
     }
     
