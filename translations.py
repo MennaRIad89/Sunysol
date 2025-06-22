@@ -15,6 +15,10 @@ TRANSLATIONS = {
         'Reviews',
         'nav_contact':
         'Contact',
+        'nav_galleries':
+        'Galleries',
+        'nav_reviews':
+        'Reviews',
         'dubai_tours':
         'Dubai Tours',
         'abudhabi_tours':
@@ -876,6 +880,10 @@ TRANSLATIONS = {
         'Opiniones',
         'nav_contact':
         'Contacto',
+        'nav_galleries':
+        'Galerías',
+        'nav_reviews':
+        'Reseñas',
         'dubai_tours':
         'Tours de Dubái',
         'abudhabi_tours':
