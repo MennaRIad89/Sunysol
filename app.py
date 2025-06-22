@@ -399,9 +399,8 @@ www.sunysol.ae
     
     msg.attach(MIMEText(body, 'plain'))
     
-    # Send email
-    server = smtplib.SMTP(smtp_server, smtp_port)
-    server.starttls()
+    # Send email using SSL for Zoho (contact emails)
+    server = smtplib.SMTP_SSL(smtp_server, smtp_port)
     server.login(smtp_username, smtp_password)
     server.send_message(msg)
     server.quit()
