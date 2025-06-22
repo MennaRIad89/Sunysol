@@ -7,8 +7,9 @@ class BookingModal {
     }
 
     getTranslation(key, fallback) {
-        if (window.translations && window.translations[document.documentElement.lang]) {
-            return window.translations[document.documentElement.lang][key] || fallback;
+        // window.translations is already the current language's translations from Flask
+        if (window.translations && window.translations[key]) {
+            return window.translations[key];
         }
         return fallback;
     }
