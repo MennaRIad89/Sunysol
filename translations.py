@@ -329,6 +329,8 @@ TRANSLATIONS = {
         # Optional Add-ons translations
         'burj_khalifa_addon':
         'Burj Khalifa – At The Top – Access the 124th & 125th floors for stunning city views',
+        'burj_khalifa_sky_addon':
+        'Burj Khalifa – At The Top SKY – Premium access to the 148th floor with lounge experience',
         'view_palm_addon':
         'The View at The Palm – 360° views of Palm Jumeirah from a sky-high observatory',
         'museum_future_addon':
@@ -902,6 +904,8 @@ TRANSLATIONS = {
         # Optional Add-ons Spanish translations
         'burj_khalifa_addon':
         'Burj Khalifa – At The Top – Acceso a los pisos 124 y 125 para vistas impresionantes de la ciudad',
+        'burj_khalifa_sky_addon':
+        'Burj Khalifa – At The Top SKY – Acceso premium al piso 148 con experiencia de salón VIP',
         'view_palm_addon':
         'The View at The Palm – Vistas de 360° de Palm Jumeirah desde observatorio en el cielo',
         'museum_future_addon':
