@@ -44,257 +44,132 @@ class BookingModal {
                             <div class="booking-form-group">
                                 <label for="bookingPhone" class="required">Phone Number</label>
                                 <div class="phone-input-group">
-                                    <div class="custom-country-dropdown">
-                                        <div class="country-dropdown-selected" id="countryDropdownSelected">
-                                            <span class="flag">🇦🇪</span>
-                                            <span class="country-text">United Arab Emirates (+971)</span>
-                                            <i class="fas fa-chevron-down"></i>
-                                        </div>
-                                        <div class="country-dropdown-list" id="countryDropdownList">
-                                            <div class="country-search-box">
-                                                <input type="text" placeholder="Search country..." id="countrySearchInput">
-                                            </div>
-                                            <div class="country-options" id="countryOptions">
-                                                <div class="country-option" data-value="+971" data-country="United Arab Emirates">
-                                                    <span class="flag">🇦🇪</span>
-                                                    <span class="country-text">United Arab Emirates (+971)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+1" data-country="United States">
-                                                    <span class="flag">🇺🇸</span>
-                                                    <span class="country-text">United States (+1)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+44" data-country="United Kingdom">
-                                                    <span class="flag">🇬🇧</span>
-                                                    <span class="country-text">United Kingdom (+44)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+33" data-country="France">
-                                                    <span class="flag">🇫🇷</span>
-                                                    <span class="country-text">France (+33)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+49" data-country="Germany">
-                                                    <span class="flag">🇩🇪</span>
-                                                    <span class="country-text">Germany (+49)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+39" data-country="Italy">
-                                                    <span class="flag">🇮🇹</span>
-                                                    <span class="country-text">Italy (+39)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+34" data-country="Spain">
-                                                    <span class="flag">🇪🇸</span>
-                                                    <span class="country-text">Spain (+34)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+31" data-country="Netherlands">
-                                                    <span class="flag">🇳🇱</span>
-                                                    <span class="country-text">Netherlands (+31)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+41" data-country="Switzerland">
-                                                    <span class="flag">🇨🇭</span>
-                                                    <span class="country-text">Switzerland (+41)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+43" data-country="Austria">
-                                                    <span class="flag">🇦🇹</span>
-                                                    <span class="country-text">Austria (+43)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+32" data-country="Belgium">
-                                                    <span class="flag">🇧🇪</span>
-                                                    <span class="country-text">Belgium (+32)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+45" data-country="Denmark">
-                                                    <span class="flag">🇩🇰</span>
-                                                    <span class="country-text">Denmark (+45)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+46" data-country="Sweden">
-                                                    <span class="flag">🇸🇪</span>
-                                                    <span class="country-text">Sweden (+46)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+47" data-country="Norway">
-                                                    <span class="flag">🇳🇴</span>
-                                                    <span class="country-text">Norway (+47)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+358" data-country="Finland">
-                                                    <span class="flag">🇫🇮</span>
-                                                    <span class="country-text">Finland (+358)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+351" data-country="Portugal">
-                                                    <span class="flag">🇵🇹</span>
-                                                    <span class="country-text">Portugal (+351)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+30" data-country="Greece">
-                                                    <span class="flag">🇬🇷</span>
-                                                    <span class="country-text">Greece (+30)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+48" data-country="Poland">
-                                                    <span class="flag">🇵🇱</span>
-                                                    <span class="country-text">Poland (+48)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+420" data-country="Czech Republic">
-                                                    <span class="flag">🇨🇿</span>
-                                                    <span class="country-text">Czech Republic (+420)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+36" data-country="Hungary">
-                                                    <span class="flag">🇭🇺</span>
-                                                    <span class="country-text">Hungary (+36)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+385" data-country="Croatia">
-                                                    <span class="flag">🇭🇷</span>
-                                                    <span class="country-text">Croatia (+385)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+386" data-country="Slovenia">
-                                                    <span class="flag">🇸🇮</span>
-                                                    <span class="country-text">Slovenia (+386)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+421" data-country="Slovakia">
-                                                    <span class="flag">🇸🇰</span>
-                                                    <span class="country-text">Slovakia (+421)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+372" data-country="Estonia">
-                                                    <span class="flag">🇪🇪</span>
-                                                    <span class="country-text">Estonia (+372)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+371" data-country="Latvia">
-                                                    <span class="flag">🇱🇻</span>
-                                                    <span class="country-text">Latvia (+371)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+370" data-country="Lithuania">
-                                                    <span class="flag">🇱🇹</span>
-                                                    <span class="country-text">Lithuania (+370)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+7" data-country="Russia">
-                                                    <span class="flag">🇷🇺</span>
-                                                    <span class="country-text">Russia (+7)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+90" data-country="Turkey">
-                                                    <span class="flag">🇹🇷</span>
-                                                    <span class="country-text">Turkey (+90)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+20" data-country="Egypt">
-                                                    <span class="flag">🇪🇬</span>
-                                                    <span class="country-text">Egypt (+20)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+966" data-country="Saudi Arabia">
-                                                    <span class="flag">🇸🇦</span>
-                                                    <span class="country-text">Saudi Arabia (+966)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+962" data-country="Jordan">
-                                                    <span class="flag">🇯🇴</span>
-                                                    <span class="country-text">Jordan (+962)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+961" data-country="Lebanon">
-                                                    <span class="flag">🇱🇧</span>
-                                                    <span class="country-text">Lebanon (+961)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+965" data-country="Kuwait">
-                                                    <span class="flag">🇰🇼</span>
-                                                    <span class="country-text">Kuwait (+965)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+973" data-country="Bahrain">
-                                                    <span class="flag">🇧🇭</span>
-                                                    <span class="country-text">Bahrain (+973)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+974" data-country="Qatar">
-                                                    <span class="flag">🇶🇦</span>
-                                                    <span class="country-text">Qatar (+974)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+968" data-country="Oman">
-                                                    <span class="flag">🇴🇲</span>
-                                                    <span class="country-text">Oman (+968)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+91" data-country="India">
-                                                    <span class="flag">🇮🇳</span>
-                                                    <span class="country-text">India (+91)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+92" data-country="Pakistan">
-                                                    <span class="flag">🇵🇰</span>
-                                                    <span class="country-text">Pakistan (+92)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+880" data-country="Bangladesh">
-                                                    <span class="flag">🇧🇩</span>
-                                                    <span class="country-text">Bangladesh (+880)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+94" data-country="Sri Lanka">
-                                                    <span class="flag">🇱🇰</span>
-                                                    <span class="country-text">Sri Lanka (+94)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+86" data-country="China">
-                                                    <span class="flag">🇨🇳</span>
-                                                    <span class="country-text">China (+86)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+81" data-country="Japan">
-                                                    <span class="flag">🇯🇵</span>
-                                                    <span class="country-text">Japan (+81)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+82" data-country="South Korea">
-                                                    <span class="flag">🇰🇷</span>
-                                                    <span class="country-text">South Korea (+82)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+65" data-country="Singapore">
-                                                    <span class="flag">🇸🇬</span>
-                                                    <span class="country-text">Singapore (+65)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+60" data-country="Malaysia">
-                                                    <span class="flag">🇲🇾</span>
-                                                    <span class="country-text">Malaysia (+60)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+66" data-country="Thailand">
-                                                    <span class="flag">🇹🇭</span>
-                                                    <span class="country-text">Thailand (+66)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+84" data-country="Vietnam">
-                                                    <span class="flag">🇻🇳</span>
-                                                    <span class="country-text">Vietnam (+84)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+63" data-country="Philippines">
-                                                    <span class="flag">🇵🇭</span>
-                                                    <span class="country-text">Philippines (+63)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+62" data-country="Indonesia">
-                                                    <span class="flag">🇮🇩</span>
-                                                    <span class="country-text">Indonesia (+62)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+61" data-country="Australia">
-                                                    <span class="flag">🇦🇺</span>
-                                                    <span class="country-text">Australia (+61)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+64" data-country="New Zealand">
-                                                    <span class="flag">🇳🇿</span>
-                                                    <span class="country-text">New Zealand (+64)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+27" data-country="South Africa">
-                                                    <span class="flag">🇿🇦</span>
-                                                    <span class="country-text">South Africa (+27)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+55" data-country="Brazil">
-                                                    <span class="flag">🇧🇷</span>
-                                                    <span class="country-text">Brazil (+55)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+54" data-country="Argentina">
-                                                    <span class="flag">🇦🇷</span>
-                                                    <span class="country-text">Argentina (+54)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+56" data-country="Chile">
-                                                    <span class="flag">🇨🇱</span>
-                                                    <span class="country-text">Chile (+56)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+57" data-country="Colombia">
-                                                    <span class="flag">🇨🇴</span>
-                                                    <span class="country-text">Colombia (+57)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+51" data-country="Peru">
-                                                    <span class="flag">🇵🇪</span>
-                                                    <span class="country-text">Peru (+51)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+52" data-country="Mexico">
-                                                    <span class="flag">🇲🇽</span>
-                                                    <span class="country-text">Mexico (+52)</span>
-                                                </div>
-                                                <div class="country-option" data-value="+1" data-country="Canada">
-                                                    <span class="flag">🇨🇦</span>
-                                                    <span class="country-text">Canada (+1)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <input type="hidden" id="bookingCountryCode" name="countryCode" value="+971" required>
-                                    </div>
+                                    <!-- Mobile version with flags -->
+                                    <select id="bookingCountryCodeMobile" name="countryCode" required class="country-select-mobile">
+                                        <option value="+971" data-country="United Arab Emirates">🇦🇪 UAE (+971)</option>
+                                        <option value="+1" data-country="United States">🇺🇸 USA (+1)</option>
+                                        <option value="+44" data-country="United Kingdom">🇬🇧 UK (+44)</option>
+                                        <option value="+33" data-country="France">🇫🇷 France (+33)</option>
+                                        <option value="+49" data-country="Germany">🇩🇪 Germany (+49)</option>
+                                        <option value="+39" data-country="Italy">🇮🇹 Italy (+39)</option>
+                                        <option value="+34" data-country="Spain">🇪🇸 Spain (+34)</option>
+                                        <option value="+31" data-country="Netherlands">🇳🇱 Netherlands (+31)</option>
+                                        <option value="+41" data-country="Switzerland">🇨🇭 Switzerland (+41)</option>
+                                        <option value="+43" data-country="Austria">🇦🇹 Austria (+43)</option>
+                                        <option value="+32" data-country="Belgium">🇧🇪 Belgium (+32)</option>
+                                        <option value="+45" data-country="Denmark">🇩🇰 Denmark (+45)</option>
+                                        <option value="+46" data-country="Sweden">🇸🇪 Sweden (+46)</option>
+                                        <option value="+47" data-country="Norway">🇳🇴 Norway (+47)</option>
+                                        <option value="+358" data-country="Finland">🇫🇮 Finland (+358)</option>
+                                        <option value="+351" data-country="Portugal">🇵🇹 Portugal (+351)</option>
+                                        <option value="+30" data-country="Greece">🇬🇷 Greece (+30)</option>
+                                        <option value="+48" data-country="Poland">🇵🇱 Poland (+48)</option>
+                                        <option value="+420" data-country="Czech Republic">🇨🇿 Czech Republic (+420)</option>
+                                        <option value="+36" data-country="Hungary">🇭🇺 Hungary (+36)</option>
+                                        <option value="+385" data-country="Croatia">🇭🇷 Croatia (+385)</option>
+                                        <option value="+386" data-country="Slovenia">🇸🇮 Slovenia (+386)</option>
+                                        <option value="+421" data-country="Slovakia">🇸🇰 Slovakia (+421)</option>
+                                        <option value="+372" data-country="Estonia">🇪🇪 Estonia (+372)</option>
+                                        <option value="+371" data-country="Latvia">🇱🇻 Latvia (+371)</option>
+                                        <option value="+370" data-country="Lithuania">🇱🇹 Lithuania (+370)</option>
+                                        <option value="+7" data-country="Russia">🇷🇺 Russia (+7)</option>
+                                        <option value="+90" data-country="Turkey">🇹🇷 Turkey (+90)</option>
+                                        <option value="+20" data-country="Egypt">🇪🇬 Egypt (+20)</option>
+                                        <option value="+966" data-country="Saudi Arabia">🇸🇦 Saudi Arabia (+966)</option>
+                                        <option value="+962" data-country="Jordan">🇯🇴 Jordan (+962)</option>
+                                        <option value="+961" data-country="Lebanon">🇱🇧 Lebanon (+961)</option>
+                                        <option value="+965" data-country="Kuwait">🇰🇼 Kuwait (+965)</option>
+                                        <option value="+973" data-country="Bahrain">🇧🇭 Bahrain (+973)</option>
+                                        <option value="+974" data-country="Qatar">🇶🇦 Qatar (+974)</option>
+                                        <option value="+968" data-country="Oman">🇴🇲 Oman (+968)</option>
+                                        <option value="+91" data-country="India">🇮🇳 India (+91)</option>
+                                        <option value="+92" data-country="Pakistan">🇵🇰 Pakistan (+92)</option>
+                                        <option value="+880" data-country="Bangladesh">🇧🇩 Bangladesh (+880)</option>
+                                        <option value="+94" data-country="Sri Lanka">🇱🇰 Sri Lanka (+94)</option>
+                                        <option value="+86" data-country="China">🇨🇳 China (+86)</option>
+                                        <option value="+81" data-country="Japan">🇯🇵 Japan (+81)</option>
+                                        <option value="+82" data-country="South Korea">🇰🇷 South Korea (+82)</option>
+                                        <option value="+65" data-country="Singapore">🇸🇬 Singapore (+65)</option>
+                                        <option value="+60" data-country="Malaysia">🇲🇾 Malaysia (+60)</option>
+                                        <option value="+66" data-country="Thailand">🇹🇭 Thailand (+66)</option>
+                                        <option value="+84" data-country="Vietnam">🇻🇳 Vietnam (+84)</option>
+                                        <option value="+63" data-country="Philippines">🇵🇭 Philippines (+63)</option>
+                                        <option value="+62" data-country="Indonesia">🇮🇩 Indonesia (+62)</option>
+                                        <option value="+61" data-country="Australia">🇦🇺 Australia (+61)</option>
+                                        <option value="+64" data-country="New Zealand">🇳🇿 New Zealand (+64)</option>
+                                        <option value="+27" data-country="South Africa">🇿🇦 South Africa (+27)</option>
+                                        <option value="+55" data-country="Brazil">🇧🇷 Brazil (+55)</option>
+                                        <option value="+54" data-country="Argentina">🇦🇷 Argentina (+54)</option>
+                                        <option value="+56" data-country="Chile">🇨🇱 Chile (+56)</option>
+                                        <option value="+57" data-country="Colombia">🇨🇴 Colombia (+57)</option>
+                                        <option value="+51" data-country="Peru">🇵🇪 Peru (+51)</option>
+                                        <option value="+52" data-country="Mexico">🇲🇽 Mexico (+52)</option>
+                                        <option value="+1" data-country="Canada">🇨🇦 Canada (+1)</option>
+                                    </select>
+                                    
+                                    <!-- Desktop version with country names -->
+                                    <select id="bookingCountryCodeDesktop" name="countryCode" required class="country-select-desktop">
+                                        <option value="+971" data-country="United Arab Emirates">United Arab Emirates (+971)</option>
+                                        <option value="+1" data-country="United States">United States (+1)</option>
+                                        <option value="+44" data-country="United Kingdom">United Kingdom (+44)</option>
+                                        <option value="+33" data-country="France">France (+33)</option>
+                                        <option value="+49" data-country="Germany">Germany (+49)</option>
+                                        <option value="+39" data-country="Italy">Italy (+39)</option>
+                                        <option value="+34" data-country="Spain">Spain (+34)</option>
+                                        <option value="+31" data-country="Netherlands">Netherlands (+31)</option>
+                                        <option value="+41" data-country="Switzerland">Switzerland (+41)</option>
+                                        <option value="+43" data-country="Austria">Austria (+43)</option>
+                                        <option value="+32" data-country="Belgium">Belgium (+32)</option>
+                                        <option value="+45" data-country="Denmark">Denmark (+45)</option>
+                                        <option value="+46" data-country="Sweden">Sweden (+46)</option>
+                                        <option value="+47" data-country="Norway">Norway (+47)</option>
+                                        <option value="+358" data-country="Finland">Finland (+358)</option>
+                                        <option value="+351" data-country="Portugal">Portugal (+351)</option>
+                                        <option value="+30" data-country="Greece">Greece (+30)</option>
+                                        <option value="+48" data-country="Poland">Poland (+48)</option>
+                                        <option value="+420" data-country="Czech Republic">Czech Republic (+420)</option>
+                                        <option value="+36" data-country="Hungary">Hungary (+36)</option>
+                                        <option value="+385" data-country="Croatia">Croatia (+385)</option>
+                                        <option value="+386" data-country="Slovenia">Slovenia (+386)</option>
+                                        <option value="+421" data-country="Slovakia">Slovakia (+421)</option>
+                                        <option value="+372" data-country="Estonia">Estonia (+372)</option>
+                                        <option value="+371" data-country="Latvia">Latvia (+371)</option>
+                                        <option value="+370" data-country="Lithuania">Lithuania (+370)</option>
+                                        <option value="+7" data-country="Russia">Russia (+7)</option>
+                                        <option value="+90" data-country="Turkey">Turkey (+90)</option>
+                                        <option value="+20" data-country="Egypt">Egypt (+20)</option>
+                                        <option value="+966" data-country="Saudi Arabia">Saudi Arabia (+966)</option>
+                                        <option value="+962" data-country="Jordan">Jordan (+962)</option>
+                                        <option value="+961" data-country="Lebanon">Lebanon (+961)</option>
+                                        <option value="+965" data-country="Kuwait">Kuwait (+965)</option>
+                                        <option value="+973" data-country="Bahrain">Bahrain (+973)</option>
+                                        <option value="+974" data-country="Qatar">Qatar (+974)</option>
+                                        <option value="+968" data-country="Oman">Oman (+968)</option>
+                                        <option value="+91" data-country="India">India (+91)</option>
+                                        <option value="+92" data-country="Pakistan">Pakistan (+92)</option>
+                                        <option value="+880" data-country="Bangladesh">Bangladesh (+880)</option>
+                                        <option value="+94" data-country="Sri Lanka">Sri Lanka (+94)</option>
+                                        <option value="+86" data-country="China">China (+86)</option>
+                                        <option value="+81" data-country="Japan">Japan (+81)</option>
+                                        <option value="+82" data-country="South Korea">South Korea (+82)</option>
+                                        <option value="+65" data-country="Singapore">Singapore (+65)</option>
+                                        <option value="+60" data-country="Malaysia">Malaysia (+60)</option>
+                                        <option value="+66" data-country="Thailand">Thailand (+66)</option>
+                                        <option value="+84" data-country="Vietnam">Vietnam (+84)</option>
+                                        <option value="+63" data-country="Philippines">Philippines (+63)</option>
+                                        <option value="+62" data-country="Indonesia">Indonesia (+62)</option>
+                                        <option value="+61" data-country="Australia">Australia (+61)</option>
+                                        <option value="+64" data-country="New Zealand">New Zealand (+64)</option>
+                                        <option value="+27" data-country="South Africa">South Africa (+27)</option>
+                                        <option value="+55" data-country="Brazil">Brazil (+55)</option>
+                                        <option value="+54" data-country="Argentina">Argentina (+54)</option>
+                                        <option value="+56" data-country="Chile">Chile (+56)</option>
+                                        <option value="+57" data-country="Colombia">Colombia (+57)</option>
+                                        <option value="+51" data-country="Peru">Peru (+51)</option>
+                                        <option value="+52" data-country="Mexico">Mexico (+52)</option>
+                                        <option value="+1" data-country="Canada">Canada (+1)</option>
+                                    </select>
+                                    
                                     <input type="tel" id="bookingPhone" name="phone" placeholder="123456789" required>
                                 </div>
                             </div>
@@ -422,118 +297,57 @@ class BookingModal {
     }
 
     initializeCountrySearch() {
-        const selected = document.getElementById('countryDropdownSelected');
-        const list = document.getElementById('countryDropdownList');
-        const searchInput = document.getElementById('countrySearchInput');
-        const options = document.getElementById('countryOptions');
-        const hiddenInput = document.getElementById('bookingCountryCode');
+        const mobileSelect = document.getElementById('bookingCountryCodeMobile');
+        const desktopSelect = document.getElementById('bookingCountryCodeDesktop');
         
-        let allOptions = Array.from(options.children);
-        
-        // Toggle dropdown
-        selected.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isOpen = list.classList.contains('open');
-            if (isOpen) {
-                this.closeCountryDropdown();
-            } else {
-                this.openCountryDropdown();
-            }
-        });
-        
-        // Search functionality
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            
-            allOptions.forEach(option => {
-                const countryName = option.getAttribute('data-country').toLowerCase();
-                const countryText = option.textContent.toLowerCase();
-                
-                if (countryName.includes(searchTerm) || countryText.includes(searchTerm)) {
-                    option.style.display = 'flex';
-                } else {
-                    option.style.display = 'none';
-                }
+        // Sync selections between mobile and desktop dropdowns
+        if (mobileSelect && desktopSelect) {
+            mobileSelect.addEventListener('change', () => {
+                desktopSelect.value = mobileSelect.value;
             });
-        });
+            
+            desktopSelect.addEventListener('change', () => {
+                mobileSelect.value = desktopSelect.value;
+            });
+        }
         
-        // Option selection
-        options.addEventListener('click', (e) => {
-            const option = e.target.closest('.country-option');
-            if (option) {
-                this.selectCountryOption(option);
+        // Add keyboard search functionality for both selects
+        [mobileSelect, desktopSelect].forEach(select => {
+            if (select) {
+                let searchText = '';
+                let searchTimeout;
+                
+                select.addEventListener('keydown', (e) => {
+                    // Clear search text after 1 second of no typing
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        searchText = '';
+                    }, 1000);
+                    
+                    // Only handle letter keys
+                    if (e.key.length === 1 && e.key.match(/[a-zA-Z]/)) {
+                        e.preventDefault();
+                        searchText += e.key.toLowerCase();
+                        
+                        // Find the first option that starts with the search text
+                        const options = Array.from(select.options);
+                        const matchingOption = options.find(option => {
+                            const countryName = option.getAttribute('data-country')?.toLowerCase() || '';
+                            return countryName.startsWith(searchText);
+                        });
+                        
+                        if (matchingOption) {
+                            select.value = matchingOption.value;
+                            // Sync the other select
+                            const otherSelect = select === mobileSelect ? desktopSelect : mobileSelect;
+                            if (otherSelect) {
+                                otherSelect.value = matchingOption.value;
+                            }
+                        }
+                    }
+                });
             }
         });
-        
-        // Close on outside click
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.custom-country-dropdown')) {
-                this.closeCountryDropdown();
-            }
-        });
-        
-        // Keyboard navigation
-        searchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                const visibleOptions = allOptions.filter(opt => opt.style.display !== 'none');
-                if (visibleOptions.length > 0) {
-                    this.selectCountryOption(visibleOptions[0]);
-                }
-            } else if (e.key === 'Escape') {
-                this.closeCountryDropdown();
-            }
-        });
-    }
-    
-    openCountryDropdown() {
-        const selected = document.getElementById('countryDropdownSelected');
-        const list = document.getElementById('countryDropdownList');
-        const searchInput = document.getElementById('countrySearchInput');
-        
-        selected.classList.add('open');
-        list.classList.add('open');
-        searchInput.focus();
-        searchInput.value = '';
-        
-        // Show all options
-        const options = document.getElementById('countryOptions');
-        Array.from(options.children).forEach(option => {
-            option.style.display = 'flex';
-        });
-    }
-    
-    closeCountryDropdown() {
-        const selected = document.getElementById('countryDropdownSelected');
-        const list = document.getElementById('countryDropdownList');
-        
-        selected.classList.remove('open');
-        list.classList.remove('open');
-    }
-    
-    selectCountryOption(option) {
-        const flag = option.querySelector('.flag').textContent;
-        const countryText = option.querySelector('.country-text').textContent;
-        const value = option.getAttribute('data-value');
-        
-        // Update selected display
-        const selected = document.getElementById('countryDropdownSelected');
-        selected.querySelector('.flag').textContent = flag;
-        selected.querySelector('.country-text').textContent = countryText;
-        
-        // Update hidden input
-        const hiddenInput = document.getElementById('bookingCountryCode');
-        hiddenInput.value = value;
-        
-        // Remove previous selection
-        document.querySelectorAll('.country-option.selected').forEach(opt => {
-            opt.classList.remove('selected');
-        });
-        
-        // Mark as selected
-        option.classList.add('selected');
-        
-        this.closeCountryDropdown();
     }
 
     bindEvents() {
@@ -685,6 +499,18 @@ class BookingModal {
                 field.style.borderColor = '';
             }
         });
+
+        // Validate country code selection
+        const mobileSelect = document.getElementById('bookingCountryCodeMobile');
+        const desktopSelect = document.getElementById('bookingCountryCodeDesktop');
+        const activeSelect = (window.innerWidth <= 768 ? mobileSelect : desktopSelect);
+        
+        if (!activeSelect.value) {
+            activeSelect.style.borderColor = '#e74c3c';
+            isValid = false;
+        } else {
+            activeSelect.style.borderColor = '';
+        }
 
         // Validate email format
         const emailField = document.getElementById('bookingEmail');
