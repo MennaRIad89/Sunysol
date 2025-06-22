@@ -310,15 +310,15 @@ def send_message():
 def send_booking_email(name, email, phone, tour_name, tour_date, group_size, tour_type, special_requests):
     """Send booking notification email to booking@sunysol.ae"""
     
-    # Email configuration - will use environment variables for SMTP settings
-    smtp_server = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
-    smtp_port = int(os.environ.get('SMTP_PORT', '587'))
-    smtp_username = os.environ.get('SMTP_USERNAME', 'info@sunysol.ae')
-    smtp_password = os.environ.get('SMTP_PASSWORD', '')
+    # Email configuration for booking emails (Zoho)
+    smtp_server = 'smtp.zoho.com'
+    smtp_port = 465
+    smtp_username = 'booking@sunysol.ae'
+    smtp_password = os.environ.get('BOOKING_SMTP_PASSWORD', '')
     
     if not smtp_password:
         # Log that email sending is skipped due to missing configuration
-        logging.info("Email configuration not found - booking logged but not emailed")
+        logging.info("Booking email configuration not found - booking logged but not emailed")
         return
     
     # Create message
@@ -354,9 +354,8 @@ www.sunysol.ae
     
     msg.attach(MIMEText(body, 'plain'))
     
-    # Send email
-    server = smtplib.SMTP(smtp_server, smtp_port)
-    server.starttls()
+    # Send email using SSL for Zoho (booking emails)
+    server = smtplib.SMTP_SSL(smtp_server, smtp_port)
     server.login(smtp_username, smtp_password)
     server.send_message(msg)
     server.quit()
@@ -365,14 +364,14 @@ www.sunysol.ae
 def send_contact_email(name, email, traveler_type, message):
     """Send contact form notification email to info@sunysol.ae"""
     
-    # Email configuration
-    smtp_server = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
-    smtp_port = int(os.environ.get('SMTP_PORT', '587'))
-    smtp_username = os.environ.get('SMTP_USERNAME', 'info@sunysol.ae')
-    smtp_password = os.environ.get('SMTP_PASSWORD', '')
+    # Email configuration for contact emails (Zoho)
+    smtp_server = 'smtp.zoho.com'
+    smtp_port = 465
+    smtp_username = 'info@sunysol.ae'
+    smtp_password = os.environ.get('CONTACT_SMTP_PASSWORD', '')
     
     if not smtp_password:
-        logging.info("Email configuration not found - contact message logged but not emailed")
+        logging.info("Contact email configuration not found - contact message logged but not emailed")
         return
     
     # Create message
