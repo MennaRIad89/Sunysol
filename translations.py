@@ -216,9 +216,9 @@ TRANSLATIONS = {
         'booking_requests':
         'Special Requests or Questions',
         'booking_requests_placeholder':
-        'Any special requirements, dietary restrictions, accessibility needs, or questions about the tour...',
+        'Tell us what you\'re hoping for, curious about, or need for your dream tour 🌞',
         'booking_note':
-        'Note: This is not a confirmed booking. We\'ll contact you within 24 hours to confirm availability, provide exact pricing, and arrange payment details.',
+        'Just a heads-up: this isn\'t a confirmed booking yet. Our team will get in touch within 24 hours to check availability, share final details, and guide you through the next steps. 🌞',
         'booking_whatsapp':
         'Send via WhatsApp',
         'booking_email_btn':
@@ -1125,7 +1125,7 @@ TRANSLATIONS = {
         'booking_requests':
         'Solicitudes Especiales o Preguntas',
         'booking_requests_placeholder':
-        'Cualquier requisito especial, restricciones dietéticas, necesidades de accesibilidad, o preguntas sobre el tour...',
+        'Cuéntanos qué esperas, qué te da curiosidad o qué necesitas para tu tour de ensueño 🌞',
         'booking_note':
         'Nota: Esta no es una reserva confirmada. Te contactaremos dentro de 24 horas para confirmar disponibilidad, proporcionar precios exactos y organizar los detalles de pago.',
         'booking_whatsapp':
