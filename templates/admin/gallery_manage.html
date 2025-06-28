@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ gallery_title }} - Admin - Sun y Sol</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <nav class="admin-nav">
+        <div class="nav-brand">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Sun y Sol">
+            <span>Admin Panel</span>
+        </div>
+        <div class="nav-user">
+            <span>Welcome, {{ current_user.username }}</span>
+            <a href="{{ url_for('admin_logout') }}" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </a>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <header class="admin-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="{{ url_for('admin_dashboard') }}" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Dashboard
+                    </a>
+                    <h1>{{ gallery_title }}</h1>
+                    <p>{{ images|length }} images in this gallery</p>
+                </div>
+            </div>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash-message flash-{{ category }}">
+                            {% if category == 'error' %}
+                                <i class="fas fa-exclamation-circle"></i>
+                            {% elif category == 'success' %}
+                                <i class="fas fa-check-circle"></i>
+                            {% elif category == 'warning' %}
+                                <i class="fas fa-exclamation-triangle"></i>
+                            {% else %}
+                                <i class="fas fa-info-circle"></i>
+                            {% endif %}
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <h2><i class="fas fa-cloud-upload-alt"></i> Upload New Images</h2>
+            <form method="POST" action="{{ url_for('admin_gallery_upload', gallery_type=gallery_type) }}" 
+                  enctype="multipart/form-data" class="upload-form">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Click to select images or drag and drop</h3>
+                        <p>Supports JPG, JPEG, and PNG files</p>
+                        <input type="file" id="fileInput" name="files" multiple accept=".jpg,.jpeg,.png" hidden>
+                    </div>
+                </div>
+                
+                <div class="selected-files" id="selectedFiles" style="display: none;">
+                    <h4>Selected files:</h4>
+                    <div id="fileList"></div>
+                </div>
+                
+                <button type="submit" class="btn-upload" id="uploadBtn" style="display: none;">
+                    <i class="fas fa-upload"></i>
+                    Upload Images
+                </button>
+            </form>
+        </div>
+
+        <!-- Images Grid -->
+        <div class="images-section">
+            <h2><i class="fas fa-images"></i> Current Images</h2>
+            
+            {% if images %}
+            <div class="images-grid">
+                {% for image in images %}
+                <div class="image-card">
+                    <div class="image-preview">
+                        <img src="{{ url_for('static', filename=image.path) }}" 
+                             alt="{{ image.filename }}" 
+                             loading="lazy">
+                    </div>
+                    <div class="image-info">
+                        <h4>{{ image.filename }}</h4>
+                        <div class="image-meta">
+                            <span><i class="fas fa-weight-hanging"></i> {{ "%.1f"|format(image.size / 1024) }} KB</span>
+                            <span><i class="fas fa-calendar"></i> {{ image.modified.strftime('%Y-%m-%d') }}</span>
+                        </div>
+                        <div class="image-actions">
+                            <button class="btn-danger" onclick="deleteImage('{{ image.filename }}')">
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="empty-state">
+                <i class="fas fa-images"></i>
+                <h3>No images in this gallery</h3>
+                <p>Upload some images to get started</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3><i class="fas fa-exclamation-triangle"></i> Confirm Delete</h3>
+            <p>Are you sure you want to delete this image? This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeDeleteModal()">Cancel</button>
+                <form id="deleteForm" method="POST" style="display: inline;">
+                    <button type="submit" class="btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // File upload handling
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const selectedFiles = document.getElementById('selectedFiles');
+        const fileList = document.getElementById('fileList');
+        const uploadBtn = document.getElementById('uploadBtn');
+
+        uploadArea.addEventListener('click', () => fileInput.click());
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            fileInput.files = e.dataTransfer.files;
+            updateFileList();
+        });
+
+        fileInput.addEventListener('change', updateFileList);
+
+        function updateFileList() {
+            const files = fileInput.files;
+            if (files.length > 0) {
+                selectedFiles.style.display = 'block';
+                uploadBtn.style.display = 'block';
+                
+                fileList.innerHTML = '';
+                for (let file of files) {
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'file-item';
+                    fileItem.innerHTML = `
+                        <i class="fas fa-image"></i>
+                        <span>${file.name}</span>
+                        <span class="file-size">${(file.size / 1024).toFixed(1)} KB</span>
+                    `;
+                    fileList.appendChild(fileItem);
+                }
+            } else {
+                selectedFiles.style.display = 'none';
+                uploadBtn.style.display = 'none';
+            }
+        }
+
+        // Delete functionality
+        function deleteImage(filename) {
+            document.getElementById('deleteForm').action = 
+                `{{ url_for('admin_gallery_delete', gallery_type=gallery_type, filename='FILENAME') }}`.replace('FILENAME', filename);
+            document.getElementById('deleteModal').style.display = 'flex';
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+        }
+
+        // Close modal on outside click
+        document.getElementById('deleteModal').addEventListener('click', (e) => {
+            if (e.target.id === 'deleteModal') {
+                closeDeleteModal();
+            }
+        });
+    </script>
+</body>
+</html>

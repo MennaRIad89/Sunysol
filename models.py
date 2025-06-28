@@ -1,19 +1,17 @@
-from app import db
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 
 
-class AdminUser(UserMixin, db.Model):
-    __tablename__ = 'admin_users'
-    
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    password_hash = db.Column(db.String(256), nullable=False)
-    is_active = db.Column(db.Boolean, default=True)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    last_login = db.Column(db.DateTime)
+class AdminUser(UserMixin):
+    def __init__(self, username=None, email=None):
+        self.username = username
+        self.email = email
+        self.password_hash = None
+        self.is_admin_active = True  # renamed to avoid conflict
+        self.created_at = datetime.utcnow()
+        self.last_login = None
+        self.id = None
     
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -25,18 +23,12 @@ class AdminUser(UserMixin, db.Model):
         return f'<AdminUser {self.username}>'
 
 
-class GalleryImage(db.Model):
-    __tablename__ = 'gallery_images'
-    
-    id = db.Column(db.Integer, primary_key=True)
-    filename = db.Column(db.String(255), nullable=False)
-    gallery_type = db.Column(db.String(100), nullable=False)  # 'main', 'dubai-modern', etc.
-    alt_text = db.Column(db.String(255))
-    upload_date = db.Column(db.DateTime, default=datetime.utcnow)
-    uploaded_by = db.Column(db.Integer, db.ForeignKey('admin_users.id'))
-    file_size = db.Column(db.Integer)  # in bytes
-    
-    uploader = db.relationship('AdminUser', backref='uploaded_images')
+# Simplified model for now - we'll use file system instead of database for images
+class GalleryImage():
+    def __init__(self, filename, gallery_type):
+        self.filename = filename
+        self.gallery_type = gallery_type
+        self.upload_date = datetime.utcnow()
     
     def __repr__(self):
         return f'<GalleryImage {self.filename} in {self.gallery_type}>'

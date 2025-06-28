@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Sun y Sol</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <nav class="admin-nav">
+        <div class="nav-brand">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Sun y Sol">
+            <span>Admin Panel</span>
+        </div>
+        <div class="nav-user">
+            <span>Welcome, {{ current_user.username }}</span>
+            <a href="{{ url_for('admin_logout') }}" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </a>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>Gallery Management Dashboard</h1>
+            <p>Manage photos for your website galleries</p>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash-message flash-{{ category }}">
+                            {% if category == 'error' %}
+                                <i class="fas fa-exclamation-circle"></i>
+                            {% elif category == 'success' %}
+                                <i class="fas fa-check-circle"></i>
+                            {% elif category == 'warning' %}
+                                <i class="fas fa-exclamation-triangle"></i>
+                            {% else %}
+                                <i class="fas fa-info-circle"></i>
+                            {% endif %}
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <div class="gallery-grid">
+            <!-- Main Homepage Gallery -->
+            <div class="gallery-card">
+                <div class="gallery-header">
+                    <div class="gallery-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Homepage Gallery</h3>
+                    <span class="image-count">{{ main_gallery_count }} images</span>
+                </div>
+                <div class="gallery-description">
+                    <p>Main gallery displayed on the homepage</p>
+                </div>
+                <div class="gallery-actions">
+                    <a href="{{ url_for('admin_gallery_manage', gallery_type='main') }}" class="btn-primary">
+                        <i class="fas fa-cog"></i>
+                        Manage
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tour Galleries -->
+            {% for tour_name, image_count in tour_galleries.items() %}
+            <div class="gallery-card">
+                <div class="gallery-header">
+                    <div class="gallery-icon">
+                        {% if 'dubai' in tour_name %}
+                            <i class="fas fa-building"></i>
+                        {% elif 'abudhabi' in tour_name %}
+                            <i class="fas fa-mosque"></i>
+                        {% elif 'desert' in tour_name %}
+                            <i class="fas fa-sun"></i>
+                        {% elif 'cruise' in tour_name %}
+                            <i class="fas fa-ship"></i>
+                        {% elif 'sharjah' in tour_name %}
+                            <i class="fas fa-landmark"></i>
+                        {% elif 'fujairah' in tour_name %}
+                            <i class="fas fa-mountain"></i>
+                        {% else %}
+                            <i class="fas fa-camera"></i>
+                        {% endif %}
+                    </div>
+                    <h3>{{ tour_name.replace('-', ' ').title() }}</h3>
+                    <span class="image-count">{{ image_count }} images</span>
+                </div>
+                <div class="gallery-description">
+                    <p>Tour-specific gallery for {{ tour_name.replace('-', ' ') }}</p>
+                </div>
+                <div class="gallery-actions">
+                    <a href="{{ url_for('admin_gallery_manage', gallery_type=tour_name) }}" class="btn-primary">
+                        <i class="fas fa-cog"></i>
+                        Manage
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="admin-footer">
+            <p>
+                <a href="{{ url_for('index') }}" class="back-to-site">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Website
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

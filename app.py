@@ -7,14 +7,49 @@ from datetime import datetime
 import json
 from werkzeug.utils import secure_filename
 from flask import Flask, render_template, request, flash, redirect, url_for, session, g, jsonify
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import DeclarativeBase
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 from translations import TRANSLATIONS
 
 
 
+# Database setup
+class Base(DeclarativeBase):
+    pass
+
+db = SQLAlchemy(model_class=Base)
+
 # Create Flask app
 app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
+
+# Configure database
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+    "pool_recycle": 300,
+    "pool_pre_ping": True,
+}
+db.init_app(app)
+
+# Initialize Flask-Login
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'admin_login'
+login_manager.login_message = 'Please log in to access the admin panel.'
+login_manager.login_message_category = 'info'
+
+@login_manager.user_loader
+def load_user(user_id):
+    from models import AdminUser
+    if user_id == '1':
+        user = AdminUser(username='admin', email='admin@sunysol.ae')
+        user.id = 1
+        return user
+    return None
 
 def get_gallery_images(gallery_type=None):
     """Load gallery images based on gallery type or fallback to main gallery"""
@@ -432,12 +467,11 @@ def admin_login():
         username = request.form.get('username')
         password = request.form.get('password')
         
-        from models import AdminUser
-        user = AdminUser.query.filter_by(username=username).first()
-        
-        if user and user.check_password(password):
-            user.last_login = datetime.utcnow()
-            db.session.commit()
+        # Simple hardcoded admin for now
+        if username == 'admin' and password == 'sunysol2025':
+            from models import AdminUser
+            user = AdminUser(username='admin', email='admin@sunysol.ae')
+            user.id = 1
             login_user(user)
             
             next_page = request.args.get('next')
