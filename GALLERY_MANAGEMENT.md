@@ -51,7 +51,8 @@ static/images/
 - **Desert Safari:** `dubai-desert`
 - **Abu Dhabi City:** `abudhabi-city`
 - **Louvre Museum:** `abudhabi-louvre`
-- **Northern Emirates:** `northern-emirates`
+- **Sharjah City Tour:** `sharjah-city`
+- **Fujairah East Coast:** `fujairah-east`
 
 ## Examples
 
@@ -76,7 +77,8 @@ static/images/
 - **Desert Safari:** 3 images (desert adventure, safari experiences)
 - **Abu Dhabi City:** 4 images (Sheikh Zayed Mosque, city views)
 - **Abu Dhabi Louvre:** 3 images (museum, cultural sites)
-- **Northern Emirates:** 3 images (landscapes, traditional areas)
+- **Sharjah City:** 3 images (cultural heritage, traditional markets)
+- **Fujairah East Coast:** 3 images (mountains, beaches, eastern landscapes)
 
 ## Quick Start
 
