@@ -468,6 +468,16 @@ def gallery_page(gallery_type):
             'title': g.translations.get('northern_emirates_tour', 'Northern Emirates Discovery'),
             'description': g.translations.get('northern_emirates_description', 'Journey through the diverse landscapes and hidden gems of Sharjah, Ajman, Ras Al Khaimah, and Fujairah.'),
             'images': get_gallery_images('northern-emirates')
+        },
+        'sharjah-city': {
+            'title': g.translations.get('sharjah_city_tour', 'Half-Day Sharjah City Tour'),
+            'description': g.translations.get('sharjah_city_description', 'Discover the cultural capital of UAE with visits to traditional souks, heritage areas, and authentic cultural sites.'),
+            'images': get_gallery_images('sharjah-city')
+        },
+        'fujairah-east': {
+            'title': g.translations.get('fujairah_east_tour', 'Full-Day Fujairah & East Coast Tour'),
+            'description': g.translations.get('fujairah_east_description', 'Explore the stunning east coast with mountains, beaches, museums and traditional markets.'),
+            'images': get_gallery_images('fujairah-east')
         }
     }
     
