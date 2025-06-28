@@ -116,6 +116,7 @@ Tour Page Access → Template Rendering → Interactive Elements Loading → Gal
 
 ## Recent Changes
 
+- June 28, 2025: Connected official Facebook and Instagram pages across website and added Google organization schema for SEO association
 - June 28, 2025: Updated admin credentials to use personalized username "Mennariad" with secure password
 - June 28, 2025: Fixed image rotation issues in admin panel by adding EXIF orientation correction during upload
 - June 28, 2025: Implemented complete Flask admin panel with login system and gallery management interface for non-technical users
