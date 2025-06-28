@@ -468,7 +468,7 @@ def admin_login():
         password = request.form.get('password')
         
         # Simple hardcoded admin for now
-        if username == 'Mennariad' and password == 'SunySol@Dubai2025':
+        if username == 'Mennariad' and password == 'M3nn@$uny$ol':
             from models import AdminUser
             user = AdminUser(username='Mennariad', email='mennariad@sunysol.ae')
             user.id = 1
