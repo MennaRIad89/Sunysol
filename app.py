@@ -598,8 +598,24 @@ def admin_gallery_upload(gallery_type):
                 # Save and optimize image
                 file.save(file_path)
                 
-                # Optional: Resize large images to save space
+                # Process and optimize image
                 with Image.open(file_path) as img:
+                    # Fix image orientation based on EXIF data
+                    from PIL.ExifTags import ORIENTATION
+                    try:
+                        exif = img._getexif()
+                        if exif is not None:
+                            orientation = exif.get(0x0112)  # Orientation tag
+                            if orientation == 3:
+                                img = img.rotate(180, expand=True)
+                            elif orientation == 6:
+                                img = img.rotate(270, expand=True)
+                            elif orientation == 8:
+                                img = img.rotate(90, expand=True)
+                    except (AttributeError, KeyError, TypeError):
+                        # No EXIF data or orientation tag, skip rotation
+                        pass
+                    
                     # Convert RGBA to RGB for JPEG
                     if img.mode in ('RGBA', 'LA', 'P'):
                         img = img.convert('RGB')
@@ -608,7 +624,9 @@ def admin_gallery_upload(gallery_type):
                     max_size = (1920, 1080)
                     if img.size[0] > max_size[0] or img.size[1] > max_size[1]:
                         img.thumbnail(max_size, Image.Resampling.LANCZOS)
-                        img.save(file_path, optimize=True, quality=85)
+                    
+                    # Save with optimization and remove EXIF data to prevent future rotation issues
+                    img.save(file_path, optimize=True, quality=85, exif=b'')
                 
                 successful_uploads += 1
                 
