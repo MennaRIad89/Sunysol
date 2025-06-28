@@ -600,20 +600,13 @@ def admin_gallery_upload(gallery_type):
                 
                 # Process and optimize image
                 with Image.open(file_path) as img:
-                    # Fix image orientation based on EXIF data
-                    from PIL.ExifTags import ORIENTATION
+                    # Fix image orientation using PIL's built-in method
                     try:
-                        exif = img._getexif()
-                        if exif is not None:
-                            orientation = exif.get(0x0112)  # Orientation tag
-                            if orientation == 3:
-                                img = img.rotate(180, expand=True)
-                            elif orientation == 6:
-                                img = img.rotate(270, expand=True)
-                            elif orientation == 8:
-                                img = img.rotate(90, expand=True)
-                    except (AttributeError, KeyError, TypeError):
-                        # No EXIF data or orientation tag, skip rotation
+                        # Use PIL's ImageOps.exif_transpose for automatic orientation correction
+                        from PIL import ImageOps
+                        img = ImageOps.exif_transpose(img)
+                    except Exception:
+                        # If EXIF orientation fails, continue without rotation
                         pass
                     
                     # Convert RGBA to RGB for JPEG
