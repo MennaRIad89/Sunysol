@@ -726,3 +726,27 @@ def redirect_from_encoded_anchor(anchor):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
+from flask import Response
+
+@app.route('/sitemap.xml', methods=['GET'])
+def sitemap():
+    sitemap_xml = '''<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url>
+            <loc>https://sunysol.ae/</loc>
+        </url>
+        <url>
+            <loc>https://sunysol.ae/dubai-tours</loc>
+        </url>
+        <url>
+            <loc>https://sunysol.ae/abudhabi-tours</loc>
+        </url>
+        <url>
+            <loc>https://sunysol.ae/northern-emirates-tours</loc>
+        </url>
+        <url>
+            <loc>https://sunysol.ae/#contact</loc>
+        </url>
+    </urlset>'''
+    return Response(sitemap_xml, mimetype='application/xml')
