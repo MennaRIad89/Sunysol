@@ -425,6 +425,190 @@ def all_reviews():
 
 
 # Gallery Routes
+# Admin routes
+@app.route('/admin/login', methods=['GET', 'POST'])
+def admin_login():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        
+        from models import AdminUser
+        user = AdminUser.query.filter_by(username=username).first()
+        
+        if user and user.check_password(password):
+            user.last_login = datetime.utcnow()
+            db.session.commit()
+            login_user(user)
+            
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('admin_dashboard'))
+        else:
+            flash('Invalid username or password', 'error')
+    
+    return render_template('admin/login.html')
+
+@app.route('/admin/logout')
+@login_required
+def admin_logout():
+    logout_user()
+    flash('You have been logged out successfully', 'success')
+    return redirect(url_for('admin_login'))
+
+@app.route('/admin')
+@app.route('/admin/dashboard')
+@login_required
+def admin_dashboard():
+    import glob
+    import os
+    
+    # Get gallery statistics
+    main_gallery_count = len(glob.glob('static/images/Gallaries/*.jpg') + 
+                            glob.glob('static/images/Gallaries/*.jpeg') + 
+                            glob.glob('static/images/Gallaries/*.png'))
+    
+    tour_galleries = {}
+    tour_gallery_path = 'static/images/Tour Galleries'
+    if os.path.exists(tour_gallery_path):
+        for folder in os.listdir(tour_gallery_path):
+            folder_path = os.path.join(tour_gallery_path, folder)
+            if os.path.isdir(folder_path):
+                image_count = len(glob.glob(f'{folder_path}/*.jpg') + 
+                                glob.glob(f'{folder_path}/*.jpeg') + 
+                                glob.glob(f'{folder_path}/*.png'))
+                tour_galleries[folder] = image_count
+    
+    return render_template('admin/dashboard.html', 
+                          main_gallery_count=main_gallery_count,
+                          tour_galleries=tour_galleries)
+
+@app.route('/admin/gallery/<gallery_type>')
+@login_required
+def admin_gallery_manage(gallery_type):
+    import glob
+    import os
+    
+    if gallery_type == 'main':
+        gallery_path = 'static/images/Gallaries'
+        gallery_title = 'Main Homepage Gallery'
+    else:
+        gallery_path = f'static/images/Tour Galleries/{gallery_type}'
+        gallery_title = f'{gallery_type.replace("-", " ").title()} Tour Gallery'
+    
+    if not os.path.exists(gallery_path):
+        flash(f'Gallery folder not found: {gallery_type}', 'error')
+        return redirect(url_for('admin_dashboard'))
+    
+    # Get images in this gallery
+    image_files = (glob.glob(f'{gallery_path}/*.jpg') + 
+                  glob.glob(f'{gallery_path}/*.jpeg') + 
+                  glob.glob(f'{gallery_path}/*.png'))
+    
+    images = []
+    for image_path in image_files:
+        filename = os.path.basename(image_path)
+        file_stats = os.stat(image_path)
+        images.append({
+            'filename': filename,
+            'size': file_stats.st_size,
+            'modified': datetime.fromtimestamp(file_stats.st_mtime),
+            'path': image_path.replace('static/', '')
+        })
+    
+    images.sort(key=lambda x: x['filename'])
+    
+    return render_template('admin/gallery_manage.html', 
+                          gallery_type=gallery_type,
+                          gallery_title=gallery_title,
+                          images=images)
+
+@app.route('/admin/gallery/<gallery_type>/upload', methods=['POST'])
+@login_required
+def admin_gallery_upload(gallery_type):
+    import os
+    from PIL import Image
+    
+    if 'files' not in request.files:
+        flash('No files selected', 'error')
+        return redirect(url_for('admin_gallery_manage', gallery_type=gallery_type))
+    
+    files = request.files.getlist('files')
+    
+    if gallery_type == 'main':
+        upload_path = 'static/images/Gallaries'
+    else:
+        upload_path = f'static/images/Tour Galleries/{gallery_type}'
+    
+    if not os.path.exists(upload_path):
+        os.makedirs(upload_path, exist_ok=True)
+    
+    successful_uploads = 0
+    
+    for file in files:
+        if file and file.filename:
+            # Validate file type
+            allowed_extensions = {'jpg', 'jpeg', 'png'}
+            if not ('.' in file.filename and 
+                   file.filename.rsplit('.', 1)[1].lower() in allowed_extensions):
+                flash(f'Invalid file type for {file.filename}. Only JPG, JPEG, and PNG allowed.', 'error')
+                continue
+            
+            filename = secure_filename(file.filename)
+            file_path = os.path.join(upload_path, filename)
+            
+            # Check if file already exists
+            if os.path.exists(file_path):
+                flash(f'File {filename} already exists. Skipped.', 'warning')
+                continue
+            
+            try:
+                # Save and optimize image
+                file.save(file_path)
+                
+                # Optional: Resize large images to save space
+                with Image.open(file_path) as img:
+                    # Convert RGBA to RGB for JPEG
+                    if img.mode in ('RGBA', 'LA', 'P'):
+                        img = img.convert('RGB')
+                    
+                    # Resize if too large
+                    max_size = (1920, 1080)
+                    if img.size[0] > max_size[0] or img.size[1] > max_size[1]:
+                        img.thumbnail(max_size, Image.Resampling.LANCZOS)
+                        img.save(file_path, optimize=True, quality=85)
+                
+                successful_uploads += 1
+                
+            except Exception as e:
+                flash(f'Error uploading {filename}: {str(e)}', 'error')
+                if os.path.exists(file_path):
+                    os.remove(file_path)
+    
+    if successful_uploads > 0:
+        flash(f'Successfully uploaded {successful_uploads} image(s)', 'success')
+    
+    return redirect(url_for('admin_gallery_manage', gallery_type=gallery_type))
+
+@app.route('/admin/gallery/<gallery_type>/delete/<filename>', methods=['POST'])
+@login_required
+def admin_gallery_delete(gallery_type, filename):
+    import os
+    
+    if gallery_type == 'main':
+        file_path = f'static/images/Gallaries/{filename}'
+    else:
+        file_path = f'static/images/Tour Galleries/{gallery_type}/{filename}'
+    
+    if os.path.exists(file_path):
+        try:
+            os.remove(file_path)
+            flash(f'Image {filename} deleted successfully', 'success')
+        except Exception as e:
+            flash(f'Error deleting {filename}: {str(e)}', 'error')
+    else:
+        flash(f'Image {filename} not found', 'error')
+    
+    return redirect(url_for('admin_gallery_manage', gallery_type=gallery_type))
+
 @app.route('/tour-galleries/<gallery_type>')
 def gallery_page(gallery_type):
     # Gallery data with existing images
