@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ g.language }}">
-<head>
+<head>addEventListener
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PTC65P09YE"></script>
@@ -99,5 +99,45 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
     <script src="{{ url_for('static', filename='js/booking-modal.js') }}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Contact form
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+          contactForm.addEventListener('submit', function () {
+            gtag('event', 'contact_form_submitted', {
+              event_category: 'Forms',
+              event_label: 'Contact Section'
+            });
+          });
+        }
+
+        // Review form
+        const reviewForm = document.querySelector('.review-form');
+        if (reviewForm) {
+          reviewForm.addEventListener('submit', function () {
+            gtag('event', 'review_form_submitted', {
+              event_category: 'Forms',
+              event_label: 'Review Section'
+            });
+          });
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const whatsappBtn = document.querySelector('a[href*="wa.me"]');
+        if (whatsappBtn) {
+          whatsappBtn.addEventListener('click', function () {
+            gtag('event', 'whatsapp_click', {
+              event_category: 'Contact',
+              event_label: 'WhatsApp Button'
+            });
+          });
+        }
+      });
+    </script>
+    
 </body>
 </html>
