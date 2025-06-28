@@ -46,7 +46,7 @@ login_manager.login_message_category = 'info'
 def load_user(user_id):
     from models import AdminUser
     if user_id == '1':
-        user = AdminUser(username='admin', email='admin@sunysol.ae')
+        user = AdminUser(username='Mennariad', email='mennariad@sunysol.ae')
         user.id = 1
         return user
     return None
@@ -468,9 +468,9 @@ def admin_login():
         password = request.form.get('password')
         
         # Simple hardcoded admin for now
-        if username == 'admin' and password == 'sunysol2025':
+        if username == 'Mennariad' and password == 'SunySol@Dubai2025':
             from models import AdminUser
-            user = AdminUser(username='admin', email='admin@sunysol.ae')
+            user = AdminUser(username='Mennariad', email='mennariad@sunysol.ae')
             user.id = 1
             login_user(user)
             

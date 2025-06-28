@@ -7,3 +7,5 @@ oauthlib
 pyjwt
 werkzeug
 flask-login
+Pillow==9.5.0
+

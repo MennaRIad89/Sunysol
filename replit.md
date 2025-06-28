@@ -116,6 +116,7 @@ Tour Page Access → Template Rendering → Interactive Elements Loading → Gal
 
 ## Recent Changes
 
+- June 28, 2025: Updated admin credentials to use personalized username "Mennariad" with secure password
 - June 28, 2025: Fixed image rotation issues in admin panel by adding EXIF orientation correction during upload
 - June 28, 2025: Implemented complete Flask admin panel with login system and gallery management interface for non-technical users
 - June 28, 2025: Fixed Northern Emirates gallery 404 errors by creating separate galleries for Sharjah City and Fujairah East Coast tours, matching Dubai/Abu Dhabi structure
